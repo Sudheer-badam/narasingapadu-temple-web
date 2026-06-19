@@ -1264,9 +1264,9 @@ body.lang-te .intro-text p:first-of-type::first-letter {
 
 .gallery-item img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-  max-height: 340px;
+  height: 260px;
+  object-fit: cover;
+  object-position: center top;
   transition: var(--transition-smooth);
   display: block;
 }
@@ -1971,6 +1971,7 @@ body:not(.map-marker-container) @keyframes bounce {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
@@ -3126,7 +3127,13 @@ body:not(.map-marker-container) @keyframes bounce {
 
   /* Intro */
   .intro-grid { grid-template-columns: 1fr; }
-  .intro-visual { display: none; }
+  .intro-visual {
+    display: block;
+    margin-top: 2rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   /* Poems */
   .poems-grid { grid-template-columns: 1fr; }
@@ -3267,7 +3274,14 @@ body:not(.map-marker-container) @keyframes bounce {
 
   /* Gallery */
   .gallery-grid { grid-template-columns: 1fr; gap: 0.75rem; }
-  .gallery-item img { height: 220px; object-fit: cover; }
+  .gallery-item {
+    min-height: unset;
+  }
+  .gallery-item img {
+    height: 260px;
+    object-fit: cover;
+    object-position: center top;
+  }
 
   /* Poems */
   .poem-card { padding: 1.2rem; }
@@ -3330,5 +3344,442 @@ body:not(.map-marker-container) @keyframes bounce {
   .hero-description { font-size: 0.8rem; }
   h2 { font-size: 1.35rem !important; }
   .poem-card { padding: 1rem; }
-  .gallery-item img { height: 180px; }
+  .gallery-item img {
+    height: 230px;
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+
+/* ==========================================================================
+   INTRO SPLASH SCREEN (Cloth Banner Mode - 7 Seconds Splash)
+   ========================================================================== */
+
+.intro-splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #140b07; /* Sanctum darkness background */
+  background-image: 
+    radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.18), transparent 75%),
+    radial-gradient(circle at 50% 80%, rgba(230, 81, 0, 0.08), transparent 60%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+  overflow-y: auto;
+  padding: 20px;
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.8s;
+}
+
+/* Floating flowers disabled */
+
+.intro-splash.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Standard Intro Card Container */
+.intro-card {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+  background: linear-gradient(135deg, #d35400 0%, #c0392b 40%, #a82c1e 75%, #7f1d1d 100%);
+  border-radius: 12px;
+  padding: 40px 45px;
+  z-index: 5;
+  border: 5px solid #d4af37;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+}
+
+.gold-border-outer {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border: 2px solid #ffd700;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.gold-border-inner {
+  position: absolute;
+  top: 21px;
+  left: 21px;
+  right: 21px;
+  bottom: 21px;
+  border: 1px dashed #ffd700;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.gold-corner {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: 3px solid #ffd700;
+  pointer-events: none;
+  z-index: 6;
+}
+.gold-corner.top-left { top: 12px; left: 12px; border-right: none; border-bottom: none; }
+.gold-corner.top-right { top: 12px; right: 12px; border-left: none; border-bottom: none; }
+.gold-corner.bottom-left { bottom: 12px; left: 12px; border-right: none; border-top: none; }
+.gold-corner.bottom-right { bottom: 12px; right: 12px; border-left: none; border-top: none; }
+
+.banner-content {
+  position: relative;
+  z-index: 8;
+}
+
+.intro-split-images {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.intro-image-container {
+  flex: 1;
+  height: 280px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 3.5px double #d4af37;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.55);
+  position: relative;
+  background-color: #20130b;
+}
+
+.intro-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  display: block;
+}
+
+.intro-image-container:hover img {
+  transform: scale(1.06);
+}
+
+.intro-info {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.intro-symbol-halo {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 12px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.28) 0%, rgba(212, 175, 55, 0.06) 70%, transparent 100%);
+}
+
+.intro-symbol-halo::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 50%;
+  border: 2px dashed rgba(255, 215, 0, 0.65);
+  animation: spin-slow 22s linear infinite;
+}
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.intro-sacred-symbol {
+  font-size: 2.3rem;
+  color: #ffd700;
+  text-shadow: 0 0 14px rgba(255, 215, 0, 0.7);
+  animation: pulse-slow 3s infinite ease-in-out;
+  z-index: 2;
+}
+
+.intro-title.telugu-title {
+  font-family: var(--font-telugu-bold);
+  font-size: 1.7rem;
+  color: #ffd700;
+  margin-bottom: 6px;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.9), 0 0 15px rgba(255, 180, 0, 0.4);
+}
+
+.intro-title.english-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.35rem;
+  color: #faf5eb;
+  margin-bottom: 12px;
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+}
+
+.divider-gold {
+  height: 2px;
+  width: 150px;
+  background: linear-gradient(90deg, transparent, #ffd700, transparent);
+  margin: 10px auto;
+}
+
+.intro-subtitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  color: #f9e7b9;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+.intro-address {
+  font-family: 'Lora', serif;
+  font-size: 0.95rem;
+  color: #faf5eb;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
+  opacity: 0.95;
+}
+
+.intro-address i {
+  color: #ffd700;
+  margin-right: 6px;
+}
+
+.intro-footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.skip-intro-btn {
+  background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+  border: 1px solid #ffd700;
+  color: #2e1b10;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  letter-spacing: 1.5px;
+  padding: 12px 35px;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.5),
+    0 0 10px rgba(212, 175, 55, 0.3),
+    inset 0 1px 0 rgba(255,255,255,0.3);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skip-intro-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transition: none;
+}
+
+.skip-intro-btn:hover::before {
+  left: 100%;
+  transition: left 0.6s ease;
+}
+
+.skip-intro-btn:hover {
+  transform: translateY(-2.5px);
+  background: linear-gradient(135deg, #ffd700 0%, #d4af37 100%);
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.55),
+    0 0 15px rgba(255, 215, 0, 0.45);
+}
+
+.skip-intro-btn i {
+  font-size: 0.95rem;
+  transition: transform 0.3s ease;
+}
+
+.skip-intro-btn:hover i {
+  transform: scale(1.2) translateX(2px);
+}
+
+/* No animation needed for standard intro card */
+
+@keyframes pulse-slow {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+
+/* Responsive Styles for Intro Splash Screen */
+@media (max-width: 600px) {
+  .intro-splash {
+    padding: 10px;
+  }
+  
+  .intro-card {
+    padding: 25px 20px;
+  }
+  
+  .gold-border-outer { top: 8px; left: 8px; right: 8px; bottom: 8px; }
+  .gold-border-inner { top: 12px; left: 12px; right: 12px; bottom: 12px; }
+  
+  .gold-corner { width: 15px; height: 15px; border-width: 2px; }
+  .gold-corner.top-left { top: 6px; left: 6px; }
+  .gold-corner.top-right { top: 6px; right: 6px; }
+  .gold-corner.bottom-left { bottom: 6px; left: 6px; }
+  .gold-corner.bottom-right { bottom: 6px; right: 6px; }
+
+  .intro-split-images {
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .intro-image-container {
+    height: 180px;
+    border-width: 2.5px;
+  }
+  
+  .intro-sacred-symbol {
+    font-size: 1.8rem;
+    margin-bottom: 4px;
+  }
+  
+  .intro-title.telugu-title {
+    font-size: 1.25rem;
+    margin-bottom: 4px;
+  }
+  
+  .intro-title.english-title {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  
+  .intro-subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  
+  .divider-gold {
+    width: 100px;
+    margin: 6px auto;
+  }
+  
+  .intro-address {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    padding: 0 5px;
+  }
+  
+  .intro-footer {
+    margin-top: 15px;
+  }
+  
+  .skip-intro-btn {
+    padding: 10px 22px;
+    font-size: 0.8rem;
+  }
+}
+
+/* ==========================================================================
+   FIXED WATERMARK - Centre of screen, non-moving
+   ========================================================================== */
+
+.site-watermark {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  text-align: center;
+}
+
+.watermark-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.45;
+}
+
+.watermark-circle {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(212, 175, 55, 0.6);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+  flex-shrink: 0;
+}
+
+.watermark-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.watermark-name {
+  font-family: 'Noto Serif Telugu', 'Mandali', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #d4af37;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.watermark-addr {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #c0a060;
+  letter-spacing: 0.3px;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .watermark-circle {
+    width: 90px;
+    height: 90px;
+    border-width: 2px;
+  }
+
+  .watermark-name {
+    font-size: 0.78rem;
+  }
+
+  .watermark-addr {
+    font-size: 0.6rem;
+  }
 }

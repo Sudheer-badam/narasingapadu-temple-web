@@ -121,42 +121,42 @@ const translations = {
     gal12_desc: "హంస వాహనంపై వెలిగిపోతున్న స్వామివారి కల్యాణ మూర్తులు - విద్యుత్ దీపాల అలంకరణ.",
     gal13_title: "నరసింగపాడు ఆలయ రాజగోపురం",
     gal13_desc: "శోభాయమానమైన ప్రవేశ గోపురం మరియు దేదీప్యమానంగా వెలిగిపోతున్న ఆలయ ప్రాంగణం.",
-    gal14_title: "ఆలయ పుష్కరిణి మెట్లు",
-    gal14_desc: "నరసింగపాడు ఆలయంలో నిర్మించబడిన పవిత్ర పుష్కరిణి సోపానాలు మరియు శివ ప్రతిమ.",
-    gal15_title: "పవిత్ర పుష్కరిణి నీరు",
-    gal15_desc: "భక్తుల పాపాలను హరించే గంగాజల రూప పుష్కరిణి జలాల విహంగ వీక్షణం.",
-    gal16_title: "కోనేటి గట్టు మరియు పరిసరాలు",
-    gal16_desc: "ఆలయ కోనేరు మరియు దాని చుట్టూ నిర్మించిన సుందరమైన పరిసరాల దృశ్యం.",
-    gal17_title: "నిండుగా ఉన్న పుష్కరిణి",
-    gal17_desc: "జలకళతో ఉట్టిపడుతూ ప్రశాంతతను పంచే ఆలయ పవిత్ర కోనేరు.",
-    gal18_title: "ఆలయ ప్రధాన అర్చకులు",
-    gal18_desc: "కొమ్మవరపు పవన్ కుమార్ శర్మ గారు గర్భాలయంలో ప్రత్యేక పూజా కార్యక్రమం నిర్వహిస్తున్న దృశ్యం.",
-    gal19_title: "శూలధారి శివలింగ అలంకరణ",
-    gal19_desc: "ఆలయంలో త్రిశూలంతో కూడిన శివలింగ ప్రత్యేక పర్వదిన అలంకారం.",
-    gal20_title: "ఆలయ వేద ఆశీర్వచనం",
-    gal20_desc: "ప్రత్యేక పూజలు మరియు హోమాల్లో పాల్గొన్న భక్తులకు వేద పండితులు ఆశీర్వచనం ఇస్తున్న దృశ్యం.",
-    gal21_title: "గోపూజ మరియు గోమాత విశిష్టత",
-    gal21_desc: "ఆలయ గోశాలలో నిర్వహించిన గోపూజ మహోత్సవం - గోమాతకు హారతి సమర్పిస్తున్న దృశ్యం.",
-    gal22_title: "భక్తుల సామూహిక పూజలు",
-    gal22_desc: "పండుగ దినాల్లో ఆలయ ప్రాంగణంలో భక్తులు సామూహికంగా కూర్చుని పూజల్లో నిమగ్నమైన దృశ్యం.",
-    gal23_title: "అన్నప్రసాద వితరణ",
-    gal23_desc: "నిత్య అన్నదాన పథకంలో భాగంగా భక్తులకు పవిత్ర ప్రసాద వితరణ జరుగుతున్న దృశ్యం.",
-    gal24_title: "ఆలయ కళ్యాణ వేదిక",
-    gal24_desc: "కల్యాణోత్సవాలు మరియు సంస్కృతి కార్యక్రమాలకు వేదికైన ఆలయ మండపం.",
-    gal25_title: "అభిషేక మూర్తి కాశీ విశ్వేశ్వరుడు",
-    gal25_desc: "గర్భాలయంలో పంచామృతాలతో అభిషేకించబడుతున్న శివలింగ స్వరూపం.",
-    gal26_title: "ధ్వజస్తంభ ప్రతిష్ఠాపన",
-    gal26_desc: "ఆలయంలో ప్రతిష్ఠించబడిన పవిత్ర ధ్వజస్తంభం మరియు నంది విగ్రహం.",
-    gal27_title: "నిత్య దీపాల కాంతులు",
-    gal27_desc: "ప్రదోష కాలంలో ఆలయం చుట్టూ భక్తులు వెలిగించిన దీపమాలలు - దీపారాధన శోభ.",
-    gal28_title: "బిల్వదళాలతో శివలింగం",
-    gal28_desc: "బిల్వ పత్రాలు మరియు త్రిశూలంతో శాస్త్రోక్తంగా అలంకరించబడిన గర్భాలయ లింగం.",
-    gal29_title: "కనువిందు చేసే ఆలయ అలంకరణ",
-    gal29_desc: "వార్షిక బ్రహ్మోత్సవాలలో వివిధ వర్ణాల పుష్పాలతో సర్వాంగ సుందరంగా అలంకరించిన ఆలయం.",
-    gal30_title: "ఆలయ గోపూజ మహోత్సవం",
-    gal30_desc: "పండుగ దినాన గోమాతకు మరియు దూడకు పసుపు కుంకుమలతో శాస్త్రోక్తంగా పూజ జరిపిన దృశ్యం.",
-    gal31_title: "ఉత్సవాల స్వాగత తోరణం",
-    gal31_desc: "ఆలయ ప్రధాన వీధిలో భక్తులకు స్వాగతం పలుకుతున్న అలంకృత విద్యుత్ తోరణం.",
+    gal14_title: "స్వామివారి త్రిశూల ప్రవేశం",
+    gal14_desc: "ఆలయ ఉత్సవాలలో భాగంగా పవిత్ర త్రిశూలాన్ని ధరించి భక్తులు, అర్చకులు ప్రవేశిస్తున్న శోభాయమాన దృశ్యం.",
+    gal15_title: "పుష్కరిణిలో పవిత్ర త్రిశూల స్నానం",
+    gal15_desc: "కార్తీక మాస వేడుకల్లో భాగంగా కోనేటి నీటిలో స్వామివారి పవిత్ర త్రిశూలానికి అభిషేక స్నానం జరిపిస్తున్న అర్చకులు మరియు భక్తులు.",
+    gal16_title: "మంగళకర పసుపు తోర్చిన త్రిశూల పూజ",
+    gal16_desc: "పసుపు, కుంకుమలు మరియు గులాబీ దండలతో శాస్త్రోక్తంగా అలంకరించి పూజించిన స్వామివారి బంగారు త్రిశూలం మరియు కలశం.",
+    gal17_title: "పుష్కరిణి మెట్ల వద్ద భక్తుల స్నానాలు",
+    gal17_desc: "ఆలయ పుష్కరిణి రేవు వద్ద పండుగ వేళల్లో పవిత్ర స్నానాలు ఆచరించేందుకు కూడిన భక్తుల సమూహం.",
+    gal18_title: "పవిత్ర హారతి మరియు పూజా ద్రవ్యాలతో అర్చకులు",
+    gal18_desc: "ఆలయ ప్రధాన అర్చకులు పసుపు వస్త్రాలు ధరించి హారతి, పూజా ద్రవ్యాలు మరియు పూర్ణకుంభంతో గర్భాలయం వైపు వెళ్తున్న దృశ్యం.",
+    gal19_title: "శివలింగ అన్నాభిషేక మహోత్సవం",
+    gal19_desc: "కార్తీక మాస పర్వదినాన స్వామివారికి పరమ పవిత్రంగా జరిపే అన్న సమర్పణ — 'అన్నాభిషేక' విశేషాలంకరణ.",
+    gal20_title: "శ్రీ అన్నపూర్ణా దేవి దివ్య దర్శనం",
+    gal20_desc: "గర్భాలయంలో పసుపు అలంకరణ, పట్టుచీర మరియు సువర్ణ ఆభరణాలతో శోభిల్లుతున్న జగన్మాత శ్రీ అన్నపూర్ణా దేవి మూలవిరాట్ రూపం.",
+    gal21_title: "హరిద్రాలంకరణలో కాశీ విశ్వేశ్వర స్వామి",
+    gal21_desc: "పసుపు అభిషేకానంతరం సువాసనలు వెదజల్లే మల్లెపూలు, మందారాలతో సుందరంగా అలంకరించబడిన శివలింగ రూపం.",
+    gal22_title: "సింధూరారుణ కాంతితో కాశీ విశ్వేశ్వరుడు",
+    gal22_desc: "కుంకుమ మరియు గంధపు తిలకంతో వెలిగిపోతూ, భక్తులకు కనువిందు కలిగించే పవిత్ర గర్భాలయ శివలింగ జ్యోతి రూపం.",
+    gal23_title: "శ్రీ అన్నపూర్ణ సమేత కాశీ విశ్వేశ్వర స్వామి ఉత్సవ విగ్రహాలు",
+    gal23_desc: "పట్టు వస్త్రాలు మరియు స్వర్ణ కిరీటాలతో దివ్య శోభతో వెలిగిపోతున్న స్వామి, అమ్మవార్ల ఉత్సవ విగ్రహాల అర్చన రూపం.",
+    gal24_title: "ఆలయ నాగదేవత ప్రతిమ",
+    gal24_desc: "ఆలయ ప్రాంగణంలో ప్రతిష్ఠించబడి, పసుపు, కుంకుమలు మరియు పుష్పమాలలతో అర్చించబడుతున్న పవిత్ర నాగదేవతా విగ్రహం.",
+    gal25_title: "శివలింగ దివ్య పుష్పాలంకరణ",
+    gal25_desc: "రంగురంగుల పుష్పమాలలను వలయాకారంలో అమర్చి, వెండి ముఖపద్మంతో నయనమనోహరంగా అలంకరించిన విశ్వేశ్వరుని రూపం.",
+    gal26_title: "హరిద్రా-కుంకుమ అర్చన రూపం",
+    gal26_desc: "శివలింగానికి ఒకవైపు పసుపు, మరోవైపు కుంకుమతో చేసిన అర్చన — బిల్వ పత్రాలు, శంఖుపుష్పాలతో పూజించిన అపూర్వ రూపం.",
+    gal27_title: "కార్తీక మాస జ్వాలాతోరణం",
+    gal27_desc: "కార్తీక పౌర్ణమి రాత్రి ఆలయ ప్రాంగణంలో వెలిగించే సాంప్రదాయ జ్వాలాతోరణ వేడుకను భక్తిశ్రద్ధలతో వీక్షిస్తున్న భక్తులు.",
+    gal28_title: "శ్రీ అన్నపూర్ణా దేవి ఉత్సవ రూపం",
+    gal28_desc: "వార్షిక బ్రహ్మోత్సవాలలో భాగంగా సమస్త ఆభరణాలతో, పట్టువస్త్రాలతో జగన్మాతను ఊరేగింపు కోసం సిద్దం చేసిన పవిత్ర రూపం.",
+    gal29_title: "శంఖుపుష్పాలతో శివలింగ అర్చన",
+    gal29_desc: "ఈశ్వరునికి ప్రీతిపాత్రమైన నీలి శంఖుపుష్పాలు, బంతిపూలతో మనోహరంగా అలంకరించిన విశ్వేశ్వర స్వామి శివలింగం.",
+    gal30_title: "శ్రీ విఘ్నేశ్వర స్వామి అలంకరణ",
+    gal30_desc: "వెండి కవచం (ముఖము, చెవులు మరియు తొండము) మరియు గులాబీ దండలతో భక్తులకు దర్శనమిస్తున్న విఘ్న వినాయకుడు.",
+    gal31_title: "రజత కిరీటధారి కాశీ విశ్వేశ్వరుడు",
+    gal31_desc: "వెండి ముఖ పద్మం, దివ్య రజత కిరీటం మరియు నాగాభరణంతో తేజోమయంగా వెలిగిపోతున్న గర్భాలయ శివలింగ రూపం.",
     
     festivals_heading: "ప్రధాన పండుగలు & ఉత్సవాలు",
     fest1_tag: "మహా పండుగ",
@@ -223,7 +223,18 @@ const translations = {
     tab_translation: "ఆంగ్ల అనువాదం (Translation)",
     play_audio: "పద్య పఠనం (Listen)",
     pause_audio: "ఆపండి (Pause)",
-    speed: "వేగం (Speed)"
+    speed: "వేగం (Speed)",
+    role_hon_trustee: "గౌరవ ధర్మకర్త",
+    role_chairman: "చైర్మన్",
+    role_chief_priest: "ప్రధాన అర్చకులు",
+    member_anjaneyulu: "చెరుకుపల్లి ఆంజనేయులు",
+    member_krishna_reddy: "బిజ్జం కృష్ణారెడ్డి",
+    member_pavan_sharma: "కొమ్మవరపు పవన్ కుమార్ శర్మ",
+    member_kasiviswanatham: "మైలవరపు కాశీవిశ్వనాథం",
+    member_srinivasarao: "యక్కల వెంకట శ్రీనివాసరావు",
+    member_brahmareddy: "జినుగు బ్రహ్మారెడ్డి",
+    member_ramanjaneyulu: "మోదడుగు రామాంజనేయులు",
+    member_subbareddy: "సింగంరెడ్డి సుబ్బారెడ్డి"
   },
   en: {
     logo_title: "Sri Annapurna Sameyta Kasi Visweswara Swami Temple",
@@ -341,42 +352,42 @@ const translations = {
     gal12_desc: "Beautifully illuminated float carrying the deities during the holy float festival.",
     gal13_title: "Rajagopuram View",
     gal13_desc: "A beautiful and clear view of the temple's entrance tower (Rajagopuram).",
-    gal14_title: "Pushkarini Steps",
-    gal14_desc: "Steps of the sacred temple pond where devotees take a holy dip.",
-    gal15_title: "Holy Water of Pushkarini",
-    gal15_desc: "Overhead view of the sacred water body within the temple premises.",
-    gal16_title: "Koneru Bank and Compound",
-    gal16_desc: "The scenic surroundings of the temple's sacred water tank.",
-    gal17_title: "Fully Water-filled Pond",
-    gal17_desc: "The filled temple pond offering a serene and beautiful reflection.",
-    gal18_title: "Temple Chief Priest",
-    gal18_desc: "Chief Priest Kommavarapu Pavan Kumar Sharma performing holy rituals in the temple.",
-    gal19_title: "Deity with Trishula",
-    gal19_desc: "Lord Shiva decorated with his sacred trident during a festival.",
-    gal20_title: "Vedic Blessings",
-    gal20_desc: "Devotees receiving sacred blessings from the priests after the Vedic rituals.",
-    gal21_title: "Go-Puja Ceremony",
-    gal21_desc: "Worship of the sacred cow (Gomata) in the temple courtyard.",
-    gal22_title: "Mass Prayers by Devotees",
-    gal22_desc: "Large congregation of devotees sitting in rows for mass prayer recitations.",
-    gal23_title: "Annaprasadam Distribution",
-    gal23_desc: "Serving of free sanctified food (Annadanam) to visiting devotees.",
-    gal24_title: "Temple Kalyanavedika",
-    gal24_desc: "The main assembly hall utilized for marriage rituals and cultural events.",
-    gal25_title: "Abhisheka Murti",
-    gal25_desc: "The sacred Shivalingam being bathed in holy waters and milk during abhishekam.",
-    gal26_title: "Dhwajasthambham Shrine",
-    gal26_desc: "The sacred flagpole (Dhwajasthambham) and Lord Nandi facing the main deity.",
-    gal27_title: "Festival Oil Lamps",
-    gal27_desc: "Hundreds of tiny oil lamps lit by devotees around the temple corridors.",
-    gal28_title: "Bilva Leaf Decoration",
-    gal28_desc: "The holy Shiva Lingam beautifully adorned with Bilva leaves and a trident.",
-    gal29_title: "Exquisite Floral Decorations",
-    gal29_desc: "Entrance arches and pillars beautifully decorated with fresh flowers during Brahmotsavam.",
-    gal30_title: "Sacred Go-Puja Ritual",
-    gal30_desc: "Traditional worship of Mother Cow and calf representing all Vedic deities.",
-    gal31_title: "Festival Welcome Arch",
-    gal31_desc: "Glowing illuminated welcome arch erected on the main road for the temple festival.",
+    gal14_title: "Trishula Procession Entry",
+    gal14_desc: "Priests and devotees carrying the holy trident (Trishula) in a ceremonial procession through the temple gates.",
+    gal15_title: "Holy Trishula Bath in Pushkarini",
+    gal15_desc: "Devotees and priests taking a sacred dip with the holy Trishula in the temple tank (Pushkarini) during Karthika Masam.",
+    gal16_title: "Sacred Trishula and Kalasha Worship",
+    gal16_desc: "The sacred golden trident (Trishula) and holy water vessel (Kalasha) anointed with turmeric and adorned with red rose garlands.",
+    gal17_title: "Devotees at the Pushkarini Steps",
+    gal17_desc: "Devotees gathering on the stone steps (ghat) of the sacred temple pond (Pushkarini) to take their holy baths.",
+    gal18_title: "Priests with Sacred Offerings",
+    gal18_desc: "Temple priests carrying sacred offerings, coconuts, and holy water vessels in a ceremonial procession towards the sanctum.",
+    gal19_title: "Shiva Lingam Annabhishekam",
+    gal19_desc: "The grand Annabhishekam ritual where the Shivalingam is covered with cooked rice and decorated with flower garlands.",
+    gal20_title: "Divine Darshan of Sri Annapurna Devi",
+    gal20_desc: "The main deity of Goddess Sri Annapurna Devi adorned in a beautiful saree and yellow flower garlands on her silver throne.",
+    gal21_title: "Shiva Lingam in Turmeric Alankaram",
+    gal21_desc: "The sacred Shiva Lingam smeared with auspicious turmeric paste and adorned with fresh jasmine and hibiscus flowers.",
+    gal22_title: "Shiva Lingam in Sindhoor Alankaram",
+    gal22_desc: "The Shiva Lingam adorned with a sandalwood tilak and a garland of white and pink flowers in the inner shrine.",
+    gal23_title: "Processional Deities of Sri Annapurna & Kasi Visweswara",
+    gal23_desc: "The standing processional metallic deities (Utsava Vigrahas) of Sri Annapurna Devi and Lord Kasi Visweswara Swami under the golden arch.",
+    gal24_title: "Sri Naga Devatha Shrine",
+    gal24_desc: "The sacred snake deity (Naga Devatha) statue adorned with flower garlands and vermilion in the temple compound.",
+    gal25_title: "Exquisite Floral Decoration of Shiva Lingam",
+    gal25_desc: "Concentric rings of fresh marigold and rose garlands surrounding the Shiva Lingam with a silver face mask.",
+    gal26_title: "Turmeric and Kumkum Dual Alankaram",
+    gal26_desc: "Shiva Lingam adorned uniquely with turmeric paste on one half and kumkum on the other, topped with sacred Bilva leaves.",
+    gal27_title: "Karthika Masam Jwala Toranam",
+    gal27_desc: "Devotees witnessing the traditional fire-torch arch ceremony (Jwala Toranam) during the holy Karthika Pournami night.",
+    gal28_title: "Sri Annapurna Devi Utsava Vigraham",
+    gal28_desc: "The processional deity of Goddess Sri Annapurna Devi adorned in rich ornaments and seated on a golden throne.",
+    gal29_title: "Shiva Lingam Decorated with Butterfly Pea Flowers",
+    gal29_desc: "The sacred Shiva Lingam decorated with blue and white butterfly pea flowers (Shankhupushpi) and yellow marigolds.",
+    gal30_title: "Lord Sri Vighneswara Swami Darshan",
+    gal30_desc: "The statue of Lord Ganesha (Sri Vighneswara) decorated with a silver armor mask and beautiful rose garlands.",
+    gal31_title: "Shiva Lingam in Silver Crown Alankaram",
+    gal31_desc: "Lord Shiva Lingam in the sanctum sanctorum adorned with a magnificent silver crown, face mask, and serpent hood.",
     
     festivals_heading: "Principal Festivals & Celebrations",
     fest1_tag: "Maha Festival",
@@ -443,7 +454,18 @@ const translations = {
     tab_translation: "English Translation",
     play_audio: "Play Recitation",
     pause_audio: "Pause Recitation",
-    speed: "Speed"
+    speed: "Speed",
+    role_hon_trustee: "Hon. Trustee",
+    role_chairman: "Chairman",
+    role_chief_priest: "Chief Priest",
+    member_anjaneyulu: "Cherukupalli Anjaneyulu",
+    member_krishna_reddy: "Bijjam Krishna Reddy",
+    member_pavan_sharma: "Kommarapu Pavan Kumar Sharma",
+    member_kasiviswanatham: "Mylavarapu Kasiviswanatham",
+    member_srinivasarao: "Yakkala Venkata Srinivasarao",
+    member_brahmareddy: "Jinugu Brahmareddy",
+    member_ramanjaneyulu: "Modadugu Ramanjaneyulu",
+    member_subbareddy: "Singamreddy Subbareddy"
   }
 };
 
@@ -3336,6 +3358,36 @@ function setupFlowerShower() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  // 0. Setup Intro Splash Screen
+  const introSplash = document.getElementById('intro-splash');
+  const skipBtn = document.getElementById('skip-intro-btn');
+  
+  if (introSplash) {
+    document.body.style.overflow = 'hidden'; // Lock scroll
+    
+    let secondsLeft = 7;
+    const interval = setInterval(() => {
+      secondsLeft--;
+      if (secondsLeft <= 0) {
+        clearInterval(interval);
+        dismissIntro();
+      }
+    }, 1000);
+    
+    const dismissIntro = () => {
+      clearInterval(interval);
+      introSplash.classList.add('fade-out');
+      document.body.style.overflow = ''; // Restore scroll
+      setTimeout(() => {
+        introSplash.style.display = 'none';
+      }, 800); // Wait for CSS opacity fade out
+    };
+    
+    if (skipBtn) {
+      skipBtn.addEventListener('click', dismissIntro);
+    }
+  }
+
   // 1. Setup sticky navigation background toggle
   const header = document.getElementById('site-header');
   window.addEventListener('scroll', () => {
