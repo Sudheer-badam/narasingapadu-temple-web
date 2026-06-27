@@ -72,15 +72,18 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  background-color: var(--bg-cream);
+  background-color: var(--bg-deep-dark);
   color: var(--text-dark);
+  overscroll-behavior: none;
 }
 
 body {
   font-family: var(--font-english-body);
   line-height: 1.6;
   overflow-x: hidden;
+  background-color: var(--bg-deep-dark);
   background-image: radial-gradient(circle at 50% 0%, rgba(255, 215, 0, 0.05), transparent 60%);
+  overscroll-behavior-y: none;
 }
 
 /* Bilingual Language Toggles and Adjustments */
