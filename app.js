@@ -112,7 +112,7 @@ const translations = {
     gal8_title: "నరసింగపాడు ప్రకృతి సౌందర్యం",
     gal8_desc: "పచ్చని పంట పొలాలు, కొబ్బరి తోటలు మరియు నల్లమల కొండలు నేపథ్యంగా నరసింగపాడు గ్రామం.",
     gal9_title: "పుష్కరిణిలో శివ విగ్రహం",
-    gal9_desc: "వర్షాల తర్వాత నీటితో నిండిన పుష్కరిణిలో శివమూర్తి విగ్రహం — పాతాళ గంగాజల సౌందర్యం.",
+    gal9_desc: "పాతాళ గంగాజల సౌందర్యం.",
     gal10_title: "కవిసమ్రాట్ విశ్వనాథ సత్యనారాయణ",
     gal10_desc: "ఆలయాన్ని దర్శించి నెకరికల్లు శతకం రచించిన తొలి తెలుగు జ్ఞానపీఠ అవార్డు గ్రహీత విశ్వనాథ సత్యనారాయణ చిత్రపటం.",
     gal11_title: "తెప్పోత్సవ వేడుక",
@@ -125,8 +125,8 @@ const translations = {
     gal14_desc: "ఆలయ ఉత్సవాలలో భాగంగా పవిత్ర త్రిశూలాన్ని ధరించి భక్తులు, అర్చకులు ప్రవేశిస్తున్న శోభాయమాన దృశ్యం.",
     gal15_title: "పుష్కరిణిలో పవిత్ర త్రిశూల స్నానం",
     gal15_desc: "కార్తీక మాస వేడుకల్లో భాగంగా కోనేటి నీటిలో స్వామివారి పవిత్ర త్రిశూలానికి అభిషేక స్నానం జరిపిస్తున్న అర్చకులు మరియు భక్తులు.",
-    gal16_title: "మంగళకర పసుపు తోర్చిన త్రిశూల పూజ",
-    gal16_desc: "పసుపు, కుంకుమలు మరియు గులాబీ దండలతో శాస్త్రోక్తంగా అలంకరించి పూజించిన స్వామివారి బంగారు త్రిశూలం మరియు కలశం.",
+    gal16_title: "స్వామివారి పవిత్ర త్రిశూల పూజ",
+    gal16_desc: "ఆలయ మహోత్సవాల సందర్భంగా గులాబీ పూలమాలలు మరియు పసుపుతో అలంకరించిన స్వామివారి బంగారు త్రిశూలాన్ని భక్తులకు దర్శనమిస్తున్న అర్చకులు.",
     gal17_title: "పుష్కరిణి మెట్ల వద్ద భక్తుల స్నానాలు",
     gal17_desc: "ఆలయ పుష్కరిణి రేవు వద్ద పండుగ వేళల్లో పవిత్ర స్నానాలు ఆచరించేందుకు కూడిన భక్తుల సమూహం.",
     gal18_title: "పవిత్ర హారతి మరియు పూజా ద్రవ్యాలతో అర్చకులు",
@@ -155,8 +155,8 @@ const translations = {
     gal29_desc: "ఈశ్వరునికి ప్రీతిపాత్రమైన నీలి శంఖుపుష్పాలు, బంతిపూలతో మనోహరంగా అలంకరించిన విశ్వేశ్వర స్వామి శివలింగం.",
     gal30_title: "శ్రీ విఘ్నేశ్వర స్వామి అలంకరణ",
     gal30_desc: "వెండి కవచం (ముఖము, చెవులు మరియు తొండము) మరియు గులాబీ దండలతో భక్తులకు దర్శనమిస్తున్న విఘ్న వినాయకుడు.",
-    gal31_title: "రజత కిరీటధారి కాశీ విశ్వేశ్వరుడు",
-    gal31_desc: "వెండి ముఖ పద్మం, దివ్య రజత కిరీటం మరియు నాగాభరణంతో తేజోమయంగా వెలిగిపోతున్న గర్భాలయ శివలింగ రూపం.",
+    gal31_title: "రజత కవచ కాశీ విశ్వేశ్వర స్వామి",
+    gal31_desc: "వెండి ముఖపద్మం, రజత కిరీటం, నాగాభరణాలతో గర్భాలయంలో తేజోమయంగా వెలిగిపోతున్న శ్రీ కాశీ విశ్వేశ్వర స్వామి దివ్య మంగళ స్వరూపం.",
     
     festivals_heading: "ప్రధాన పండుగలు & ఉత్సవాలు",
     fest1_tag: "మహా పండుగ",
@@ -234,7 +234,31 @@ const translations = {
     member_srinivasarao: "యక్కల వెంకట శ్రీనివాసరావు",
     member_brahmareddy: "జినుగు బ్రహ్మారెడ్డి",
     member_ramanjaneyulu: "మోదడుగు రామాంజనేయులు",
-    member_subbareddy: "సింగంరెడ్డి సుబ్బారెడ్డి"
+    member_subbareddy: "సింగంరెడ్డి సుబ్బారెడ్డి",
+    member_medam_chinna: "మేడం చిన్న కోటి రెడ్డి",
+    member_bijjam_lakshmi: "బిజ్జం లక్ష్మి రెడ్డి",
+    member_rayala_kondaiah: "రాయల కొండయ్య",
+    member_avula_srinivas: "ఆవుల శ్రీనివాస్ రెడ్డి",
+    member_tiyyagura_venkata: "తియ్యగుర వెంకట రెడ్డి",
+    member_nallabollu_venkata: "నల్లబోలు వెంకట రెడ్డి",
+    member_podili_venkateswarlu: "పొదిలి వెంకటేశ్వర్లు",
+    member_veeramreddy_venkateswarlu: "వీరంరెడ్డి వెంకటేశ్వర్లు రెడ్డి",
+    member_ronda_abbul: "రోండా అబ్బుల్ రెడ్డి",
+    member_yeluri_adinarayana: "యేలూరి ఆదినారాయణ",
+    member_vallambotla_sivaprasad: "వల్లంభొట్ల శివప్రసాద్",
+    member_atmakuri_nageswar: "ఆత్మకూరి నాగేశ్వర రావు",
+    member_ronda_ashok: "రోండా అశోక్ రెడ్డి",
+    member_pabbati_lakshmi: "పబ్బాటి లక్ష్మీనారాయణ",
+    member_jinugu_vijaybhaskar: "జినుగు విజయభాస్కర్ రెడ్డి",
+    member_kypu_ramachanra: "కైపు రామచంద్ర రెడ్డి",
+    
+    advisor_garikapati_ramamurty: "గరికిపాటి రామమూర్తి",
+    advisor_badri_venkata: "బద్రి వెంకట రమణ రెడ్డి",
+    advisor_jinugu_chandrasekhara: "జినుగు చంద్రశేఖర రెడ్డి",
+    advisor_kypu_ravindra: "కైపు రవీంద్ర రెడ్డి",
+    advisor_avula_venkata: "ఆవుల వెంకట స్వామి రెడ్డి",
+    advisor_segu_ramesh: "సేగు రమేష్ బాబు",
+    advisors_title: "గౌరవ సలహాదారులు"
   },
   en: {
     logo_title: "Sri Annapurna Sameyta Kasi Visweswara Swami Temple",
@@ -356,8 +380,8 @@ const translations = {
     gal14_desc: "Priests and devotees carrying the holy trident (Trishula) in a ceremonial procession through the temple gates.",
     gal15_title: "Holy Trishula Bath in Pushkarini",
     gal15_desc: "Devotees and priests taking a sacred dip with the holy Trishula in the temple tank (Pushkarini) during Karthika Masam.",
-    gal16_title: "Sacred Trishula and Kalasha Worship",
-    gal16_desc: "The sacred golden trident (Trishula) and holy water vessel (Kalasha) anointed with turmeric and adorned with red rose garlands.",
+    gal16_title: "Sacred Trishula Worship Ceremony",
+    gal16_desc: "Priests presenting the sacred golden Trishula adorned with rose garlands and turmeric to devotees during the temple festival.",
     gal17_title: "Devotees at the Pushkarini Steps",
     gal17_desc: "Devotees gathering on the stone steps (ghat) of the sacred temple pond (Pushkarini) to take their holy baths.",
     gal18_title: "Priests with Sacred Offerings",
@@ -386,8 +410,8 @@ const translations = {
     gal29_desc: "The sacred Shiva Lingam decorated with blue and white butterfly pea flowers (Shankhupushpi) and yellow marigolds.",
     gal30_title: "Lord Sri Vighneswara Swami Darshan",
     gal30_desc: "The statue of Lord Ganesha (Sri Vighneswara) decorated with a silver armor mask and beautiful rose garlands.",
-    gal31_title: "Shiva Lingam in Silver Crown Alankaram",
-    gal31_desc: "Lord Shiva Lingam in the sanctum sanctorum adorned with a magnificent silver crown, face mask, and serpent hood.",
+    gal31_title: "Silver-Adorned Kasi Visweswara Swami",
+    gal31_desc: "The divine form of Sri Kasi Visweswara Swami in the sanctum sanctorum, adorned with a silver face mask, crown, and serpent ornaments, glowing beautifully in the light of sacred lamps.",
     
     festivals_heading: "Principal Festivals & Celebrations",
     fest1_tag: "Maha Festival",
@@ -465,2047 +489,2460 @@ const translations = {
     member_srinivasarao: "Yakkala Venkata Srinivasarao",
     member_brahmareddy: "Jinugu Brahmareddy",
     member_ramanjaneyulu: "Modadugu Ramanjaneyulu",
-    member_subbareddy: "Singamreddy Subbareddy"
+    member_subbareddy: "Singamreddy Subbareddy",
+    member_medam_chinna: "Medam Chinna Koti Reddy",
+    member_bijjam_lakshmi: "Bijjam Lakshmi Reddy",
+    member_rayala_kondaiah: "Rayala Kondaiah",
+    member_avula_srinivas: "Avula Srinivas Reddy",
+    member_tiyyagura_venkata: "Tiyyagura Venkata Reddy",
+    member_nallabollu_venkata: "Nallabollu Venkata Reddy",
+    member_podili_venkateswarlu: "Podili Venkateswarlu",
+    member_veeramreddy_venkateswarlu: "Veeramreddy Venkateswarlu Reddy",
+    member_ronda_abbul: "Ronda Abbul Reddy",
+    member_yeluri_adinarayana: "Yeluri Adinarayana",
+    member_vallambotla_sivaprasad: "Vallambotla Sivaprasad",
+    member_atmakuri_nageswar: "Atmakuri Nageswar Rao",
+    member_ronda_ashok: "Ronda Ashok Reddy",
+    member_pabbati_lakshmi: "Pabbati Lakshmi Narayana",
+    member_jinugu_vijaybhaskar: "Jinugu Vijaybhaskar Reddy",
+    member_kypu_ramachanra: "Kypu Ramachanra Reddy",
+    
+    advisor_garikapati_ramamurty: "Garikapati Ramamurty",
+    advisor_badri_venkata: "Badri Venkata Ramana Reddy",
+    advisor_jinugu_chandrasekhara: "Jinugu Chandrasekhara Reddy",
+    advisor_kypu_ravindra: "Kypu Ravindra Reddy",
+    advisor_avula_venkata: "Avula Venkata Swami Reddy",
+    advisor_segu_ramesh: "Segu Ramesh Babu",
+    advisors_title: "Respected Advisors"
   }
 };
 
 
 // --- POEMS DATABASE ---
 const poems = [
-{
+  {
     id: 1,
     category: "shiva",
-    titleTe: "శ్రీతమాల శ్యామలింగ ప్రశస్తి",
-    titleEn: "Glory of the Dark-Hued Tamala Lingam",
-    verseTe: `శ్రీతమాల శ్యామలింగ! సిద్ధ సంసేవిత లింగ!
-హేతుహీన సనాథ! అన్నపూర్ణా సహిత విశ్వనాథ
-నీతాపరా ధునిక జటాజూటా! మణి శశి కిరీట!
-శ్వేత వియన్వాణీ నెకరుకల్లు ప్రాంత సిద్ధాబ్జహేళీ!`,
-    verseEn: `O Dark-hued Shiva, beautiful like the Tamala tree! O Lingam worshipped by the Sages!
-O causeless Protector of the helpless! O Lord Viswanatha along with Mother Annapurna!
-Whose matted locks hold the pure heavenly Ganga! O Lord crowned with the moon and gems!
-Whose glory is sung by the white celestial voice, O Lord of Nekarukallu who smiles upon the Sages!`,
-    wordMeaningTe: `* శ్రీతమాల శ్యామలింగ: నల్లటి తమాల వృక్షము వలె శ్యామల వర్ణముతో శోభిల్లే లింగ స్వరూపుడా.
-* సిద్ధ సంసేవిత లింగ: సిద్ధ పురుషుల చేత నిత్యము అర్చింపబడే లింగమా.
-* హేతుహీన సనాథ: ఏ కారణము లేకుండానే దీనులను కాపాడే రక్షకుడా.
-* అన్నపూర్ణా సహిత విశ్వనాథ: జగన్మాత అన్నపూర్ణతో కూడియున్న కాశీ విశ్వేశ్వరుడా.
-* నీతాపరా ధునిక జటాజూటా: పవిత్ర గంగా నదిని జటాజూటమున ధరించినవాడా.
-* మణి శశి కిరీట: మణులు మరియు చంద్రవంక కిరీటముగా ధరించినవాడా.
-* శ్వేత వియన్వాణీ: శ్వేత వర్ణ గంగా నది ఆకాశము నుండి జాలువారుతూ నిన్ను కీర్తిస్తున్నది.
-* నెకరుకల్లు ప్రాంత సిద్ధాబ్జహేళీ: నెకరుకల్లు ప్రాంతమున సిద్ధులకు దర్శనమిస్తూ లీలలు చేసే దేవా!`,
-    wordMeaningEn: `* Sri Tamala Shyamalinga: The dark-complexioned Lingam resembling the Tamala tree.
-* Siddha Samsevita Lingam: The Lingam worshipped by the realized sages (Siddhas).
-* Hetuhina Sanatha: The ultimate refuge of the helpless, protecting without any expectation or cause.
-* Annapurna Sahita Viswanatha: Lord Viswanatha (Lord of the Universe) accompanied by Goddess Annapurna.
-* Nitapara Dhunika Jatajuta: Having the heavenly river Ganga flowing from the matted locks.
-* Mani Shashi Kirita: Crowned with the crescent moon and radiant gems.
-* Shweta Viyanvani: The pure sky-river (Ganga) that sings your glories.
-* Nekarukallu Prantha Siddhabjaheli: O Lord of Nekarukallu who resides and plays divine pastimes for the sages.`,
-    audioTe: "శ్రీతమాల శ్యామలింగ! సిద్ధ సంసేవిత లింగ! హేతుహీన సనాథ! అన్నపూర్ణా సహిత విశ్వనాథ! నీతాపరా ధునిక జటాజూటా! మణి శశి కిరీట! శ్వేత వియన్వాణీ నెకరుకల్లు ప్రాంత సిద్ధాబ్జహేళీ!",
-    audioEn: "O Dark-hued Shiva, beautiful like the Tamala tree! O Lingam worshipped by the Sages! O causeless Protector of the helpless! O Lord Viswanatha along with Mother Annapurna! Whose matted locks hold the pure heavenly Ganga! O Lord crowned with the moon and gems! Whose glory is sung by the white celestial voice, O Lord of Nekarukallu who smiles upon the Sages!"
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 1",
+    titleEn: "Nekarukallu Satakam - Poem 1",
+    verseTe: `శ్రీతమాలశ్యామలింగ! సిద్ధసంసేవిత లింగ!
+హేతుహీన సనాధ! అన్నపూర్ణా సహిత విశ్వనాథ
+నీరామరధునీక జటాజూటా! మణి శశి కిరీట!
+స్ఫీత వియన్మౌళి నెకరుకల్ ప్రాంత సిద్ధాబ్ద హేళి!`,
+    verseEn: `Shreetamaalashyaamalimga! siddhasamsevita limga!
+Hetuheena sanaadha! annapoornaa sahita vishvanaatha
+Neeraamaradhuneeka jataajootaa! mani shashi kireeta!
+Spheeta viyanmauḻi nèkarukal praamta siddhaabda heḻi!`,
+    wordMeaningTe: `శ్రితమలశ్యామలింగ!సిద్ధసంసేవిత లింగ!
+అహేతుక పరికరం!అన్నపూర్ణతో విశ్వనాథ
+నిరామదాహునిక జటాజూటా!మణి శశి కిరీట!
+స్ఫీత వియన్మౌళి నెకరుకల్ ప్రాంతం సిద్ధబ్ద హెలీ!`,
+    wordMeaningEn: `Shritamalashyamalinga!Siddhasamsevita Linga!
+Irrational device!Vishwanatha with Annapurna
+Niramadahunika Jatajuta!Mani Sashi crown!
+Sfitha Viyanmouli Nekarukal Region Siddhabda Heli!`,
+    audioTe: "శ్రీతమాలశ్యామలింగ! సిద్ధసంసేవిత లింగ! హేతుహీన సనాధ! అన్నపూర్ణా సహిత విశ్వనాథ నీరామరధునీక జటాజూటా! మణి శశి కిరీట! స్ఫీత వియన్మౌళి నెకరుకల్ ప్రాంత సిద్ధాబ్ద హేళి!",
+    audioEn: ""
   },
   {
     id: 2,
-    category: "history",
-    titleTe: "స్వామి భక్త వాత్సల్యము",
-    titleEn: "The Lord's Compassion and Rites",
-    verseTe: `స్వామి నీవు పరాకు సూక్ష్మ సూక్ష్మ విషయములంగూడ
-నామతించెదవు జాగ్రత్త, యింక మేము యధికంబులంతే
-యే మాటాడెదూ కానీ సాగనిమ్ము పోనిమ్మందు మిదియు
-నీమము నీకను మాకు నెకరుకల్లు ప్రాంత సిద్ధాబ్జహేళీ!`,
-    verseEn: `O Lord, You pay attention even to the minutest and subtlest of matters.
-You observe with care, and we can only surrender and say no more.
-Whatever You speak, let it be; let it proceed, we accept it as Your will.
-This is the agreement between You and us, O Lord of Nekarukallu!`,
-    wordMeaningTe: `* పరాకు: నిర్లక్ష్యం లేదా గమనింపు.
-* సూక్ష్మ సూక్ష్మ విషయములంగూడ: అత్యంత చిన్న విషయాలను కూడా.
-* నామతించెదవు జాగ్రత్త: జాగ్రత్తగా పరిశీలిస్తూ ఉంటావు.
-* యింక మేము యధికంబులంతే: మేము అంతకంటే ఎక్కువ ఏమీ చెప్పలేము.
-* సాగనిమ్ము పోనిమ్ము: నీ సంకల్పం ప్రకారమే జరగనిమ్ము.
-* నీమము: నియమము / ఒప్పందము.`,
-    wordMeaningEn: `* Paraku: Watchfulness or attentiveness.
-* Sukshma Sukshma: The smallest and most delicate details of life.
-* Namatichedavu: You examine and analyze carefully.
-* Nimamu: The sacred vow or agreement between devotee and Lord.`,
-    audioTe: "స్వామి నీవు పరాకు సూక్ష్మ సూక్ష్మ విషయములంగూడ నామతించెదవు జాగ్రత్త, యింక మేము యధికంబులంతే యే మాటాడెదూ కానీ సాగనిమ్ము పోనిమ్మందు మిదియు నీమము నీకను మాకు నెకరుకల్లు ప్రాంత సిద్ధాబ్జహేళీ!",
-    audioEn: "O Lord, You pay attention even to the minutest and subtlest of matters. You observe with care, and we can only surrender and say no more. Whatever You speak, let it be; let it proceed, we accept it as Your will. This is the agreement between You and us, O Lord of Nekarukallu!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 2",
+    titleEn: "Nekarukallu Satakam - Poem 2",
+    verseTe: `స్వామి నీవు పరమ సూక్ష్మ సూక్ష్మ విషయములంగూడ
+నామతించెదవు జాగ్రత్త, యిక మేమొ యధికంబులందె
+యే మాయయో కాని సాగనిమ్ము పోనిమ్మందు మిదియ
+సీమ నీకును మాకు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Svaami neevu parama sookshma sookshma vishayamulamgooda
+Naamatimchèdavu jaagratta, yika memò yadhikambulamdè
+Ye maayayo kaani saaganimmu ponimmamdu midiya
+Seema neekunu maaku nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `ప్రభూ, నీవు అత్యంత సూక్ష్మమైనవాడివి
+మీ పేరు మార్చుకోకుండా జాగ్రత్త వహించండి
+యే మాయవో కానీ సాగనిమ్ము పోనిమ్ము మిదియ
+నెకరుకల్ ప్రాంత సిద్ధబ్దహేలీ మీకూ మాకూ సీమ!`,
+    wordMeaningEn: `Lord, you are the most subtle
+Be careful not to change your name
+Ye Mayao but Saganimmu Ponimdu Midiya
+Nekarukal region Siddhabdaheli for you and us Seema!`,
+    audioTe: "స్వామి నీవు పరమ సూక్ష్మ సూక్ష్మ విషయములంగూడ నామతించెదవు జాగ్రత్త, యిక మేమొ యధికంబులందె యే మాయయో కాని సాగనిమ్ము పోనిమ్మందు మిదియ సీమ నీకును మాకు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 3,
-    category: "history",
-    titleTe: "తాప నివారణం",
-    titleEn: "Relief from Worldly Sorrows",
-    verseTe: `బెలుపైన గడబండ మొదలుగ గిరించె దంగరా దనుచు
-దెలువాన బెట్టిన పగిది నా మాట నీ మాట విని
-శలువు దహించి తాపముల నంటకుండగ జేయుదువు
-నెలగెడు దొరవావు నెకరుకల్లు ప్రాంత సిద్ధాబ్జహేళీ!`,
-    verseEn: `O Lord! Just as a boundary stone is laid, You listen to our words and yours.
-You burn away our burning miseries and protect us from being touched by distress.
-You are the lord who shines resplendently, O Lord of Nekarukallu!`,
-    wordMeaningTe: `* గడబండ: సరిహద్దు రాయి.
-* శలువు దహించి: మంటలను లేదా తాపాలను చల్లార్చి.
-* తాపముల నంటకుండగ: కష్టాలు మరియు బాధలు మనకు సోకకుండా.
-* నెలగెడు దొరవావు: ప్రకాశించే ప్రభువుగా కొలువై ఉన్నావు.`,
-    wordMeaningEn: `* Gadabanda: Boundary stone indicating protection limits.
-* Tapamula: The burning distresses and sorrows of human life.
-* Nelagedu Dora: The shining, supreme Lord of the universe.`,
-    audioTe: "బెలుపైన గడబండ మొదలుగ గిరించె దంగరా దనుచు దెలువాన బెట్టిన పగిది నా మాట నీ మాట విని శలువు దహించి తాపముల నంటకుండగ జేయుదువు నెలగెడు దొరవావు నెకరుకల్లు ప్రాంత సిద్ధాబ్జహేళీ!",
-    audioEn: "O Lord! Just as a boundary stone is laid, You listen to our words and yours. You burn away our burning miseries and protect us from being touched by distress. You are the lord who shines resplendently, O Lord of Nekarukallu!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 3",
+    titleEn: "Nekarukallu Satakam - Poem 3",
+    verseTe: `బలువైన గుదెబండ మెడకుఁ దగిలించి వంగ రా దనుచు
+నిలువాన పెట్టిన పగిది నా మాట నీ మాట వినని
+கలుష దేహంబిచ్చి పాపముల సంటఁ కట్ట నెంచెదవు
+సిలుగుల దొర వౌదు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Baluvaina gudèbamda mèdaku~ dagilimchi vamga raa danuchu
+Niluvaana pèttina pagidi naa maata nee maata vinani
+கlusha dehambichchi paapamula samta~ katta nèmchèdavu
+Silugula dòra vaudu nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `బలమైన గూడెబండ మెడపై పడి వంగ ర దనుచు
+నిలబడ్డ పగిడి నా మాట వినలేదు
+దేహంలోని కల్మషం, శరీర పాపాలు పోవు
+సిలుగుల దొర వుడు నెకరుకల్ ప్రాంతానికి చెందిన సిద్దబ్దహేళి!`,
+    wordMeaningEn: `Strong Gudebanda fell to the neck and Vanga Ra Danuchu
+Pagidi, who is standing, did not listen to me
+The taint of the flesh and the sins of the body will not go away
+Siddabdaheli of Silugula Dora Vaudu Nekarukal area!`,
+    audioTe: "బలువైన గుదెబండ మెడకుఁ దగిలించి వంగ రా దనుచు నిలువాన పెట్టిన పగిది నా మాట నీ మాట వినని கలుష దేహంబిచ్చి పాపముల సంటఁ కట్ట నెంచెదవు సిలుగుల దొర వౌదు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 4,
     category: "shiva",
-    titleTe: "సదా శివ స్మరణం",
-    titleEn: "Constant Remembrance of Shiva",
-    verseTe: `నిదుర పట్టెడువాడ రాత్రిలందున నిన్నే తలతును
-నిదుర మెలకువ వచ్చునంతలో నిన్నే తలతును
-బొదుకు భావములందు దెలిపిగో నిన్నే భావించుచుంటి
-జదరనీకుము నన్ను నెకరుకల్లు ప్రాంత సిద్ధాబ్జహేళీ!`,
-    verseEn: `When I go to sleep in the night, I think only of You.
-The moment I wake up, I think only of You.
-In all my thoughts and sentiments, I meditate only upon You.
-Do not let my mind wander or shatter, O Lord of Nekarukallu!`,
-    wordMeaningTe: `* నిదుర పట్టెడువాడ: నిద్రపోయే సమయంలో.
-* మెలకువ వచ్చునంతలో: మేల్కొనే క్షణంలో.
-* బొదుకు భావములందు: నా సకల ఆలోచనలలో.
-* జదరనీకుము నన్ను: నన్ను చలించనీయవద్దు, మనసు చెదరనీయవద్దు.`,
-    wordMeaningEn: `* Nidura: State of sleep.
-* Melakuva: State of waking up.
-* Jadaraneekumu: Please do not let my mind scatter or lose focus from You.`,
-    audioTe: "నిదుర పట్టెడువాడ రాత్రిలందున నిన్నే తలతును నిదుర మెలకువ వచ్చునంతలో నిన్నే తలతును బొదుకు భావములందు దెలిపిగో నిన్నే భావించుచుంటి జదరనీకుము నన్ను నెకరుకల్లు ప్రాంత సిద్ధాబ్జహేళీ!",
-    audioEn: "When I go to sleep in the night, I think only of You. The moment I wake up, I think only of You. In all my thoughts and sentiments, I meditate only upon You. Do not let my mind wander or shatter, O Lord of Nekarukallu!"
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 4",
+    titleEn: "Nekarukallu Satakam - Poem 4",
+    verseTe: `నిదుర పట్టెడుదాఁక రాత్రులందున నిన్నే తలఁచుచు
+నిదుర మెలుకువ వచ్చునంతలో నిన్నే తలఁచుచు
+బ్రదుకు భావనలందుఁ దెఱపిలో నిన్నె భావించుచుంటిఁ
+జెదరనీకువె నన్ను నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Nidura pattèdudaa~ka raatrulamduna ninne tala~chuchu
+Nidura mèlukuva vachchunamtalo ninne tala~chuchu
+Braduku bhaavanalamdu~ dèṟapilo ninnè bhaavimchuchumti~
+Jèdaraneekuvè nannu nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `అర్థరాత్రుల కారణంగా మీ గురించి ఆలోచించండి
+నిద్ర లేవగానే మీ గురించి ఆలోచించండి
+నా జీవిత చరమాంకంలో నీ గురించి ఆలోచిస్తాను
+జీడరానికువే నాకు నెకరుకల్ ప్రాంతం సిద్దబ్దహేలి!`,
+    wordMeaningEn: `Think of yourself because of the late nights
+Think of yourself as soon as you wake up
+I think of you in the end of my life
+Jedaranikuve me Nekarukal region Siddabdaheli!`,
+    audioTe: "నిదుర పట్టెడుదాఁక రాత్రులందున నిన్నే తలఁచుచు నిదుర మెలుకువ వచ్చునంతలో నిన్నే తలఁచుచు బ్రదుకు భావనలందుఁ దెఱపిలో నిన్నె భావించుచుంటిఁ జెదరనీకువె నన్ను నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 5,
     category: "shiva",
-    titleTe: "స్వామి నిరుపమాన రక్షణ",
-    titleEn: "Incomparable Divine Refuge",
-    verseTe: `ఉదయంబుననుండి నాకొరకై యెవడు వెదకి వచ్చినను
-గదయించుకొనుటలేదే నిన్ను నాశ్రయించగా నరుడైన
-నెది యెలాగి జనము నమ్మేదరో మరియూ నీ శేషముకొనా
-చెదరిపోవు కాదో నెకరుకల్లు ప్రాంత సిద్ధాబ్జహేళీ!`,
-    verseEn: `No matter who comes searching for me since the morning,
-I do not worry or fear, for any human who surrenders to You is protected.
-How else would people believe in Your glory? Your divine grace will never decline,
-It is eternal, O Lord of Nekarukallu!`,
-    wordMeaningTe: `* ఉదయంబుననుండి: పొద్దున్నే లేచినప్పటి నుండి.
-* నాశ్రయించగా: నిన్ను శరణు వేడగా.
-* జనము నమ్మేదరో: ప్రజలు నీ లీలలను విశ్వసిస్తారు.
-* చెదరిపోవు కాదో: నీ కరుణ ఎప్పటికీ నశించిపోదు.`,
-    wordMeaningEn: `* Ashrayinchaga: Seeking shelter or refuge in the divine.
-* Nammedaro: People believe and put their faith.
-* Chedaripovu: Will never disintegrate or fade away.`,
-    audioTe: "ఉదయంబుననుండి నాకొరకై యెవడు వెదకి వచ్చినను గదయించుకొనుటలేదే నిన్ను నాశ్రయించగా నరుడైన నెది యెలాగి జనము నమ్మేదరో మరియూ నీ శేషముకొనా చెదరిపోవు కాదో నెకరుకల్లు ప్రాంత సిద్ధాబ్జహేళీ!",
-    audioEn: "No matter who comes searching for me since the morning, I do not worry or fear, for any human who surrenders to You is protected. How else would people believe in Your glory? Your divine grace will never decline, It is eternal, O Lord of Nekarukallu!"
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 5",
+    titleEn: "Nekarukallu Satakam - Poem 5",
+    verseTe: `ఉదరంబులోనుండి పొంగులై యేడు పుబికి వచ్చెడిని
+గదియించుకొను వేళ నిన్నుఁ తీవ్రంబుగా నెదలోన
+నిది యోగి జనము నవ్వెదరొ మరియు నీ వేమనుకొనెదొ
+చిద్రుపలు కానీకు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Udarambulonumdi pòmgulai yedu pubiki vachchèdini
+Gadiyimchukònu veḻa ninnu~ teevrambugaa nèdalona
+Nidi yogi janamu navvèdarò mariyu nee vemanukònèdò
+Chidrupalu kaaneeku nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `పొంగులై ఏడు పొట్ట నుండి వచ్చింది
+మీరు గదిని తీసుకున్నప్పుడు, మీరు హృదయంలో ఉంటారు
+నిది యోగి ప్రజలు నవ్వుతారు మరియు మీరు ఏడుస్తారు
+చిద్రూపాలు కనికు నెకరుకల్ ప్రాంతం సిద్దబ్దహేలీ!`,
+    wordMeaningEn: `Pongulai Yedu came from the belly
+When you take the room, you are in the heart
+Nidi Yogi's people laugh and you cry
+Chidrupalu Kaniku Nekarukal region Siddabdaheli!`,
+    audioTe: "ఉదరంబులోనుండి పొంగులై యేడు పుబికి వచ్చెడిని గదియించుకొను వేళ నిన్నుఁ తీవ్రంబుగా నెదలోన నిది యోగి జనము నవ్వెదరొ మరియు నీ వేమనుకొనెదొ చిద్రుపలు కానీకు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 6,
-    category: "annapurna",
-    titleTe: "సృష్టి సమతుల్యత",
-    titleEn: "Harmony of Creation",
-    verseTe: `ఒక యింటి జరుగదు దాని జెరుపడి నాకే చెడ్డ జరుగు
-నాకే నష్టమున్నగదా యొకడు దిగుడుగా నున్న దీ సృష్టి
-యింకనైన సమముగా సాగవయ్యా ఓ సాలేశ్వరి స్వామి
-విధి శాస్త్రజ్ఞుడ వై నెకరుకల్లు ప్రాంత సిద్ధాబ్జహేళీ!`,
-    verseEn: `If harm is done to one house, it brings bad fortune and loss to me as well.
-This creation is interconnected; if one is down, all suffer.
-Let everything proceed in perfect balance now, O Lord of Saleshwaram!
-You who are the knower of destiny and sciences, O Lord of Nekarukallu!`,
-    wordMeaningTe: `* ఒక యింటి జరుగదు: ఒక ఇల్లు సరిగా నడవకపోతే లేదా నాశనమైతే.
-* దిగుడుగా నున్న: అసమానతలతో కూడి ఉన్న.
-* సమముగా సాగవయ్యా: అందరికీ సమానంగా, సజావుగా సాగనివ్వు.
-* విధి శాస్త్రజ్ఞుడవై: సృష్టి నియమాలను తెలిసినవాడవై.`,
-    wordMeaningEn: `* Diguduga Nunna: Unequal, imbalanced, or suffering.
-* Samamuga Sagavayya: May the life flow smoothly and equally for all.
-* Vidhi Shastrajnudavai: Being the supreme knower of destiny and cosmic laws.`,
-    audioTe: "ఒక యింటి జరుగదు దాని జెరుపడి నాకే చెడ్డ జరుగు నాకే నష్టమున్నగదా యొకడు దిగుడుగా నున్న దీ సృష్టి యింకనైన సమముగా సాగవయ్యా ఓ సాలేశ్వరి స్వామి విధి శాస్త్రజ్ఞుడ వై నెకరుకల్లు ప్రాంత సిద్ధాబ్జహేళీ!",
-    audioEn: "If harm is done to one house, it brings bad fortune and loss to me as well. This creation is interconnected; if one is down, all suffer. Let everything proceed in perfect balance now, O Lord of Saleshwaram! You who are the knower of destiny and sciences, O Lord of Nekarukallu!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 6",
+    titleEn: "Nekarukallu Satakam - Poem 6",
+    verseTe: `ఒక మంచి జరుగును దాని వెంబడి నొక చెడ్డ జరుగు
+నొక సమమ్ముగఁ బోక యెగుడు దిగుడుగా నున్న దీ సృష్టి
+యొకఁడవు సమముగా సాగువాడ నీ వొకడవే స్వామి
+చికిలి శ్రీవ్వెల్లవై నెకరుకల్ ప్రాంత సిద్ధాబ్ద హేళి!`,
+    verseEn: `Òka mamchi jarugunu daani vèmbadi nòka chèdda jarugu
+Nòka samammuga~ boka yègudu digudugaa nunna dee srushti
+Yòka~davu samamugaa saaguvaada nee vòkadave svaami
+Chikili shreevvèllavai nèkarukal praamta siddhaabda heḻi!`,
+    wordMeaningTe: `ఒక మంచి విషయానికి ఒక చెడు తర్వాత వస్తుంది
+ఇది ఇలాంటి వ్యక్తుల సమూహం యొక్క సృష్టి
+భూమిని సమానంగా పండించే వారందరికీ నీవే ప్రభువు
+చికిలి శ్రీవ్వెళ్లవై నెకరుకల్ ప్రాంతం సిద్ధబ్ద హెలీ!`,
+    wordMeaningEn: `A good thing is followed by a bad thing
+This is the creation of a similar group of people
+You are the Lord of all who cultivate the land equally
+Chikili Srivvellavai Nekarukal region Siddhabda Heli!`,
+    audioTe: "ఒక మంచి జరుగును దాని వెంబడి నొక చెడ్డ జరుగు నొక సమమ్ముగఁ బోక యెగుడు దిగుడుగా నున్న దీ సృష్టి యొకఁడవు సమముగా సాగువాడ నీ వొకడవే స్వామి చికిలి శ్రీవ్వెల్లవై నెకరుకల్ ప్రాంత సిద్ధాబ్ద హేళి!",
+    audioEn: ""
   },
   {
     id: 7,
-    category: "annapurna",
-    titleTe: "జీవన రహస్యం",
-    titleEn: "Secret of Life and Mortality",
-    verseTe: `మందు లెట్టులనో చావు రానురావాలి కంటికొంతే
-మొలకలై కరిగిన గాని ముంత చేసిన బెల్ల తేకు
-మలమునైన నటికీమాయ కడతగా జూగెడు నిధి
-మొలగనో కున్నదో నెకరుకల్లు ప్రాంత సిద్ధాబ్జహేళీ!`,
-    verseEn: `Death must eventually arrive regardless of medicines.
-Just as sprouts may dissolve, or sweetness remains in the pot.
-The illusion of worldly impurities is wiped away by Your grace,
-Which is a treasure that never fades, O Lord of Nekarukallu!`,
-    wordMeaningTe: `* చావు రానురావాలి: మరణం ఎప్పటికైనా రాక తప్పదు.
-* మలమునైన: మనస్సులోని మాలిన్యాలను లేదా కల్మషాలను.
-* కడతగా జూగెడు నిధి: చివరకు రక్షించే శాశ్వత నిధి నీవే.`,
-    wordMeaningEn: `* Chavu: Death or physical mortality.
-* Malatwa / Niki Maya: The illusions and impurities of the ego.
-* Nidhi: The eternal spiritual treasure of Shiva's grace.`,
-    audioTe: "మందు లెట్టులనో చావు రానురావాలి కంటికొంతే మొలకలై కరిగిన గాని ముంత చేసిన బెల్ల తేకు మలమునైన నటికీమాయ కడతగా జూగెడు నిధి మొలగనో కున్నదో నెకరుకల్లు ప్రాంత సిద్ధాబ్జహేళీ!",
-    audioEn: "Death must eventually arrive regardless of medicines. Just as sprouts may dissolve, or sweetness remains in the pot. The illusion of worldly impurities is wiped away by Your grace, Which is a treasure that never fades, O Lord of Nekarukallu!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 7",
+    titleEn: "Nekarukallu Satakam - Poem 7",
+    verseTe: `పలపల పుట్టుకల్ చావు లాసులో ఎలి కండెవోలె
+సిలుగులై తిరిగితిఁ గాని సుంత నేసిన బట్ట లేదు
+చలమొప్ప నేటికీమాత్ర నేఁతగా సాగెడు నిద్ది
+జిలుగవో మన్నెదో నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Palapala puttukal chaavu laasulo èli kamdèvolè
+Silugulai tirigiti~ gaani sumta nesina batta ledu
+Chalamòppa netikeemaatra ne~tagaa saagèdu niddi
+Jilugavo mannèdo nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `ఎన్నో జనన మరణాలలో ఎలి కందేవోలే
+సిలుగులై, సుంట నేసిన వస్త్రం లేదు
+చలమొప్ప నేటికీ నేత కార్మికుడిగా కొనసాగుతున్నారు
+జిలుగావో మన్నెడో నెకరుకల్ ప్రాంతం సిద్దబ్దహేలి!`,
+    wordMeaningEn: `Eli Kandevole in many births and deaths
+There is no cloth woven from Silugulai or Sunta
+Chalamoppa continues to be a weaver even today
+Jilugao Mannedo Nekarukal area Siddabdaheli!`,
+    audioTe: "పలపల పుట్టుకల్ చావు లాసులో ఎలి కండెవోలె సిలుగులై తిరిగితిఁ గాని సుంత నేసిన బట్ట లేదు చలమొప్ప నేటికీమాత్ర నేఁతగా సాగెడు నిద్ది జిలుగవో మన్నెదో నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 8,
     category: "shiva",
-    titleTe: "ఈశ్వర శక్తి అవతారం",
-    titleEn: "Incarnation of Divine Power",
-    verseTe: `కనుగవలకు నీవు బ్రతుకు బ్రతికించు తండ్రి యెంతవడుక
-నెనులుగా జూటెడుముగ కలుగనియ్యవు రెక్కలంతయునుగ
-గగనమో ముద్దివిడి గగనానికం గల జనంబును శక్తి నవతార జైరా! నెకరుకల్లు ప్రాంత సిద్ధాబ్జహేళీ!`,
-    verseEn: `O Father! You give life to our eyes and sustain us with great affection.
-You do not let us fall, supporting us under your wings of grace.
-Descending from the heights of the spiritual sky to bless the humanity,
-Victory to the incarnation of supreme power, O Lord of Nekarukallu!`,
-    wordMeaningTe: `* బ్రతుకు బ్రతికించు: జీవనాన్ని ఇచ్చి నిలబెట్టే.
-* కనుగవలకు: మన నేత్రాలకు వెలుగునిచ్చే.
-* శక్తి నవతార జైరా: పరాశక్తి అవతార స్వరూపమా, నీకు జయం!`,
-    wordMeaningEn: `* Kanugavalaku: To the eyes (bestowing spiritual vision).
-* Shakti Navatara: The incarnation of divine energy.
-* Jayara: Victory to the Lord.`,
-    audioTe: "కనుగవలకు నీవు బ్రతుకు బ్రతికించు తండ్రి యెంతవడుక నెనులుగా జూటెడుముగ కలుగనియ్యవు రెక్కలంతయునుగ గగనమో ముద్దివిడి గగనానికం గల జనంబును శక్తి నవతార జైరా! నెకరుకల్లు ప్రాంత సిద్ధాబ్జహేళీ!",
-    audioEn: "O Father! You give life to our eyes and sustain us with great affection. You do not let us fall, supporting us under your wings of grace. Descending from the heights of the spiritual sky to bless the humanity, Victory to the incarnation of supreme power, O Lord of Nekarukallu!"
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 8",
+    titleEn: "Nekarukallu Satakam - Poem 8",
+    verseTe: `రుసరుసలుగ నేమి బ్రదుకు బ్రదికింతు రూక్ష చింతనకు
+వెసులు బాటింతయుఁ గలుగనీయవు వెక్కసంబడుచుఁ
+గసరుటో ముక్తిపైని సగమాఁకలి గల జనంబును శ
+శి సహిత కైశికా! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Rusarusaluga nemi braduku bradikimtu rooksha chimtanaku
+Vèsulu baatimtayu~ galuganeeyavu vèkkasambaduchu~
+Gasaruto muktipaini sagamaa~kali gala janambunu sha
+Shi sahita kaishikaa! nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `రుసరుసలుగ నేమి బర్దుకు బరిదుక్తు రుక్ష చింతనకు
+వేసులు బటింతయుఁ గలుగనియు వక్కసంబడుచున్
+గసరుతో ముక్తి పై సగమకలి జనంబును శ
+శి!నేకరుకల్ ప్రాంతం సిద్ధబ్దహేలితో కైశిక!`,
+    wordMeaningEn: `Rusarusaluga Nemi Barduku Bariduktu Ruksha Chintanaku
+Vesulu Batintayaun Galuganiyu Vakkasambaduchun
+Gasaruto Mukti Pai Sagamakali Janambunu Sh
+Kaishika with shi!Nekarukal area Siddabdaheli!`,
+    audioTe: "రుసరుసలుగ నేమి బ్రదుకు బ్రదికింతు రూక్ష చింతనకు వెసులు బాటింతయుఁ గలుగనీయవు వెక్కసంబడుచుఁ గసరుటో ముక్తిపైని సగమాఁకలి గల జనంబును శ శి సహిత కైశికా! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 9,
-    category: "devotion",
-    titleTe: "శరణాగతి ప్రార్థన - చరణం 1",
-    titleEn: "Prayer of Surrender - Verse 1",
-    verseTe: `పాపోహం పాపకర్మాహం పాపాత్మా పాపసంభవః!
-త్రాహి మాం కృపయా దేవా శరణాగత వత్సల!`,
-    verseEn: `I am a sinner, my actions are sinful, my soul is sinful, born of sin!
-O Lord, protect me out of compassion, O savior of those who surrender!`,
-    wordMeaningTe: `* పాపోహం: నేను పాపాత్ముడను.
-* త్రాహి మాం: నన్ను రక్షించు.
-* కృపయా: దయతో.
-* శరణాగత వత్సల: శరణు కోరినవారిని ప్రేమించేవాడా.`,
-    wordMeaningEn: `* Papoham: I am full of sins.
-* Trahi Mam: Protect me.
-* Krupaya: With mercy.
-* Saranagata Vatsala: Compassionate protector of those who surrender.`,
-    audioTe: "పాపోహం పాపకర్మాహం పాపాత్మా పాపసంభవః! త్రాహి మాం కృపయా దేవా శరణాగత వత్సల!",
-    audioEn: "I am a sinner, my actions are sinful, my soul is sinful, born of sin! O Lord, protect me out of compassion, O savior of those who surrender!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 9",
+    titleEn: "Nekarukallu Satakam - Poem 9",
+    verseTe: `సుకముగాఁ జనిపోవుటన్న భయ మొకించుకయు లేదనుము
+ఆకట యే ఘోరమైనట్టి చావో యటన్న భయంబె
+నికరంబుగా నీవు గుండె లోపల నిల్చిన, వెఱపు
+సెకలివ్వి నిల్వవు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Sukamugaa~ janipovutanna bhaya mòkimchukayu ledanumu
+Aakata ye ghoramainatti chaavo yatanna bhayambè
+Nikarambugaa neevu gumdè lopala nilchina, vèṟapu
+Sèkalivvi nilvavu nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `సులువుగా పుట్టడం గురించి భయపడవద్దు
+అదో భయంకరమైన చావు భయం
+నికరంబుగా నీవు గుండెల్లో నిలుచుని, మండుతున్నావు
+సేకలివ్వి రిజర్వ్ నెకరుకల్ ప్రాంతం సిద్దబ్దహేలీ!`,
+    wordMeaningEn: `Don't be afraid of having an easy birth
+That's a terrible fear of death
+As Nikarambu you stand within the heart, burning
+Sekalivvi reserve Nekarukal region Siddabdaheli!`,
+    audioTe: "సుకముగాఁ జనిపోవుటన్న భయ మొకించుకయు లేదనుము ఆకట యే ఘోరమైనట్టి చావో యటన్న భయంబె నికరంబుగా నీవు గుండె లోపల నిల్చిన, వెఱపు సెకలివ్వి నిల్వవు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 10,
-    category: "sacred",
-    titleTe: "ఆత్మారామ ధ్యాన శ్లోకం - చరణం 1",
-    titleEn: "Atmaram Meditation Hymn - Verse 1",
-    verseTe: `ఆత్మారాం సమేత అన్నపూర్ణ మాతా హృదయ నివాసి!
-సకల జీవ సంరక్షక విశ్వనాథ జ్యోతి స్వరూప ప్రకాశి!`,
-    verseEn: `Mother Annapurna along with Lord Atmaram resides in our hearts!
-O Viswanatha, protector of all living beings, shine as the divine light!`,
-    wordMeaningTe: `* హృదయ నివాసి: హృదయములో నివసించువాడా.
-* సకల జీవ సంరక్షక: సమస్త జీవులను కాపాడేవాడా.
-* జ్యోతి స్వరూప: వెలుగు రూపములో ఉన్నవాడా.
-* ప్రకాశి: ప్రకాశించేవాడా.`,
-    wordMeaningEn: `* Hrudaya Nivasi: Dweller of the heart.
-* Sakala Jeeva Samrakshaka: Preserver of all life forms.
-* Jyoti Swarupa: In the form of holy light.
-* Prakashi: Illuminating one.`,
-    audioTe: "ఆత్మారాం సమేత అన్నపూర్ణ మాతా హృదయ నివాసి! సకల జీవ సంరక్షక విశ్వనాథ జ్యోతి స్వరూప ప్రకాశి!",
-    audioEn: "Mother Annapurna along with Lord Atmaram resides in our hearts! O Viswanatha, protector of all living beings, shine as the divine light!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 10",
+    titleEn: "Nekarukallu Satakam - Poem 10",
+    verseTe: `ఒసకఁ దానొక వంద యిచ్చి కర్జునకుద్దియౌ దాత
+ననిపించుకొన నెంచు జనుని వోల్కి నూహలు నీకు నిచ్చి
+తనర నాత్మార్పణ చేయువాని చందానఁ గనవల
+సినదని కోరెద నెకరుకల్ ప్రాంత సిద్ధాబ్ద హేళి!`,
+    verseEn: `Òsaka~ daanòka vamda yichchi karjunakuddiyau daata
+Nanipimchukòna nèmchu januni volki noohalu neeku nichchi
+Tanara naatmaarpana cheyuvaani chamdaana~ ganavala
+Sinadani korèda nèkarukal praamta siddhaabda heḻi!`,
+    wordMeaningTe: `కార్జునకుడ్డియౌ ఒసక్ దానొక దాత
+నెంచు జానుని వోల్కి నుహాలు నీకేం అనిపించిందో
+చందన గనవల తన యజ్ఞం చేస్తానన్నాడు
+సినాదాని కోరేడ నెకరుకల్ ప్రాంతం సిద్ధబ్ద హెలీ!`,
+    wordMeaningEn: `Karjunakuddiyau is the donor of Osak Danoka
+Nenchu Januni Volki Nuhalu gave you what you think
+Chandana Ganavala is the one who will do his sacrifice
+Sinadani Koreda Nekarukal area Siddhabda Heli!`,
+    audioTe: "ఒసకఁ దానొక వంద యిచ్చి కర్జునకుద్దియౌ దాత ననిపించుకొన నెంచు జనుని వోల్కి నూహలు నీకు నిచ్చి తనర నాత్మార్పణ చేయువాని చందానఁ గనవల సినదని కోరెద నెకరుకల్ ప్రాంత సిద్ధాబ్ద హేళి!",
+    audioEn: ""
   },
   {
     id: 11,
     category: "shiva",
-    titleTe: "నమః శివాయ స్తుతి - భాగం 1",
-    titleEn: "Namah Shivaya Praise - Part 1",
-    verseTe: `దేవదేవాయ త్రిలోచనాత్మకాయ నమః శివాయ!
-భక్త రక్షకాయ భవతారకాయ నమః శివాయ!`,
-    verseEn: `Salutations to Shiva, the God of Gods, the three-eyed Lord!
-Salutations to Shiva, the protector of devotees and the redeemer of life!`,
-    wordMeaningTe: `* త్రిలోచనాత్మకాయ: మూడు కన్నులు గలవాడు.
-* దేవదేవాయ: దేవతలకు దేవుడు.
-* భక్త రక్షకాయ: భక్తులను రక్షించేవాడు.
-* భవతారకాయ: సంసార సాగరాన్ని దాటించేవాడు.`,
-    wordMeaningEn: `* Trilochanatmakaya: The three-eyed Lord.
-* Devadevaya: The God of Gods.
-* Bhakta Rakshakaya: The protector of devotees.
-* Bhavatarakaya: The savior from the cycle of rebirth.`,
-    audioTe: "దేవదేవాయ త్రిలోచనాత్మకాయ నమః శివాయ! భక్త రక్షకాయ భవతారకాయ నమః శివాయ!",
-    audioEn: "Salutations to Shiva, the God of Gods, the three-eyed Lord! Salutations to Shiva, the protector of devotees and the redeemer of life!"
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 11",
+    titleEn: "Nekarukallu Satakam - Poem 11",
+    verseTe: `ఈ కోరికలు నీ భయంబులును మరి యివి యొక్కటొకటి
+వే కోయవలె నన్నఁ జాలవు వేయి జన్మములు
+నీ కంటి నిప్పు సెగ నిగిడించి మండించుమీ యెల్ల
+శ్రీకరాసారంబు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Ee korikalu nee bhayambulunu mari yivi yòkkatòkati
+Ve koyavalè nanna~ jaalavu veyi janmamulu
+Nee kamti nippu sèga nigidimchi mamdimchumee yèlla
+Shreekaraasaarambu nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `ఈ కోరికలు మీ భయాలలో ఒకటి
+వెయ్యి జన్మలు వేయి వలలాంటివి
+మీ కళ్లలో మంటలు ఆర్పి కాల్చకండి
+శ్రీకరసారంబు నెకరుకల్ ప్రాంత సిద్ధబ్దహేళి!`,
+    wordMeaningEn: `These desires are one of your fears
+A thousand births are like a thousand nets
+Do not put out the fire in your eyes and burn it
+Srikarasarambu Nekarukal area Siddhabdaheli!`,
+    audioTe: "ఈ కోరికలు నీ భయంబులును మరి యివి యొక్కటొకటి వే కోయవలె నన్నఁ జాలవు వేయి జన్మములు నీ కంటి నిప్పు సెగ నిగిడించి మండించుమీ యెల్ల శ్రీకరాసారంబు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 12,
-    category: "annapurna",
-    titleTe: "అన్నపూర్ణాష్టకము - చరణం 1",
-    titleEn: "Annapurna Ashtakam - Verse 1",
-    verseTe: `అన్నపూర్ణే సదాపూర్ణే శంకర ప్రాణవల్లభే!
-జ్ఞానవైరాగ్య సిద్ధ్యర్థం భిక్షాం దేహి చ పార్వతి!`,
-    verseEn: `O Mother Annapurna, ever full and complete, the beloved of Lord Sankara!
-Grant us alms of knowledge and dispassion, O Goddess Parvati!`,
-    wordMeaningTe: `* అన్నపూర్ణే: ధాన్య సమృద్ధిని ఇచ్చే తల్లి.
-* సదాపూర్ణే: ఎల్లప్పుడూ నిండుగా ఉండేది.
-* ప్రాణవల్లభే: ప్రాణనాథురాలు.
-* జ్ఞానవైరాగ్య: జ్ఞానము మరియు వైరాగ్యము.
-* భిక్షాం: బిక్ష లేదా ప్రసాదము.`,
-    wordMeaningEn: `* Annapurne: She who is full of nourishment.
-* Sadapurne: Ever complete and full.
-* Pranavallabhe: Beloved consort.
-* Jnana-Vairagya: Wisdom and renunciation.
-* Bhiksham Dehi: Grant us alms.`,
-    audioTe: "అన్నపూర్ణే సదాపూర్ణే శంకర ప్రాణవల్లభే! జ్ఞానవైరాగ్య సిద్ధ్యర్థం భిక్షాం దేహి చ పార్వతి!",
-    audioEn: "O Mother Annapurna, ever full and complete, the beloved of Lord Sankara! Grant us alms of knowledge and dispassion, O Goddess Parvati!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 12",
+    titleEn: "Nekarukallu Satakam - Poem 12",
+    verseTe: `నిను బిలువ వాంఛింతునాయె రక్షింపు! నెలతలు ధనము
+תనువున రోగములేమి యధికారితయు సర్వమంచు
+మనసున నెంచుచు బ్రతికినన్నాళ్ళు మనవచ్చు నట్టి
+చెసఁటిని గాదాయె నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Ninu biluva vaamchhimtunaayè rakshimpu! nèlatalu dhanamu
+תnuvuna rogamulemi yadhikaaritayu sarvamamchu
+Manasuna nèmchuchu bratikinannaaḻḻu manavachchu natti
+Chèsa~tini gaadaayè nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `మీ గౌరవాన్ని కాపాడుకోండి!నెలల కొద్దీ డబ్బు
+మీరు వ్యాధి మరియు అధికారం నుండి విముక్తి పొందారు
+మనసుతో జీవిస్తే బాగుండును
+చేసేంటిని గదయె నెకరుకల్ ప్రాంతం సిద్దబ్దహేలీ!`,
+    wordMeaningEn: `Protect your dignity!Months of money
+You are free from disease and authority
+If you live with your mind, you will be fine
+Chesantini Gadaye Nekarukal area Siddabdaheli!`,
+    audioTe: "నిను బిలువ వాంఛింతునాయె రక్షింపు! నెలతలు ధనము תనువున రోగములేమి యధికారితయు సర్వమంచు మనసున నెంచుచు బ్రతికినన్నాళ్ళు మనవచ్చు నట్టి చెసఁటిని గాదాయె నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 13,
-    category: "history",
-    titleTe: "నరసింగపాడు ఆలయ ప్రశస్తి - పద్యం 1",
-    titleEn: "Narasingapadu Temple Glory - Verse 1",
-    verseTe: `పవిత్ర క్షేత్రము నరసింగపాడున వెలసిన విశ్వనాథుడే శరణు!
-భక్త జనుల గుండెల్లో కొలువైన అన్నపూర్ణా విశ్వేశ్వరుడే శరణు!`,
-    verseEn: `Refuge in Lord Viswanatha who resides in the holy shrine of Narasingapadu!
-Refuge in Annapurna and Visweswara who dwell in the hearts of devotees!`,
-    wordMeaningTe: `* పవిత్ర క్షేత్రము: పరిశుద్ధమైన క్షేత్రము.
-* వెలసిన: అవతరించిన.
-* శరణు: ఆశ్రయము.
-* కొలువైన: నివసించిన.`,
-    wordMeaningEn: `* Pavitra Kshethramu: The holy place.
-* Velasina: Self-manifested or established.
-* Saranam: Safe haven.`,
-    audioTe: "పవిత్ర క్షేత్రము నరసింగపాడున వెలసిన విశ్వనాథుడే శరణు! భక్త జనుల గుండెల్లో కొలువైన అన్నపూర్ణా విశ్వేశ్వరుడే శరణు!",
-    audioEn: "Refuge in Lord Viswanatha who resides in the holy shrine of Narasingapadu! Refuge in Annapurna and Visweswara who dwell in the hearts of devotees!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 13",
+    titleEn: "Nekarukallu Satakam - Poem 13",
+    verseTe: `ఏలాగు సాగింతొ పరచఁ బడ్డెట్టి యీ యనంతమగు
+కాలంబు, తలఁచిన గుండెలో భీతి కల్గెడు, సంతు
+మాలిన యట్టి జన్మలును మృతులును మాలించు, కొట్టి
+సీలను నెత్తిపై నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Elaagu saagimtò paracha~ baddètti yee yanamtamagu
+Kaalambu, tala~china gumdèlo bheeti kalgèdu, samtu
+Maalina yatti janmalunu mrutulunu maalimchu, kòtti
+Seelanu nèttipai nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `ఎలా సాగింది?
+కలంబు, మనసులోని భయం, సంతు
+మలిన యట్టి జనన మరణములను మార్చుము, కొట్టుము
+ముద్రగడ నెత్తిమీద నెకరుకల్ ప్రాంత సిద్ధబ్దహేలీ!`,
+    wordMeaningEn: `How did it go?
+Kalambu, the fear in the heart of the thought, santu
+Change the births and deaths of Malina Yatti, beat
+Siddabdaheli of Nekarukal region on the scalp of seals!`,
+    audioTe: "ఏలాగు సాగింతొ పరచఁ బడ్డెట్టి యీ యనంతమగు కాలంబు, తలఁచిన గుండెలో భీతి కల్గెడు, సంతు మాలిన యట్టి జన్మలును మృతులును మాలించు, కొట్టి సీలను నెత్తిపై నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 14,
-    category: "devotion",
-    titleTe: "భక్తి సుధా తరంగిణి - భాగం 2",
-    titleEn: "Devotional Waves - Part 2",
-    verseTe: `ప్రాతఃకాలే శివనామ స్మరణం భవ హరణం సంసార తారణం!
-హర హర శంభో విశ్వనాథ మహదేవ శివాయ నమః శరణం!`,
-    verseEn: `Reciting Shiva's name in the morning destroys worldly attachment and crosses the ocean of life!
-O Shambho, Viswanatha, Mahadeva, salutations to Shiva!`,
-    wordMeaningTe: `* ప్రాతఃకాలే: ఉదయ కాలమున.
-* స్మరణం: తలచుకోవడం.
-* భవ హరణం: భవ బంధాలను పోగొట్టేది.
-* తారణం: దాటించేది.`,
-    wordMeaningEn: `* Pratahkale: In the early morning.
-* Smaranam: Remembrance.
-* Bhava Haranam: Destruction of worldly attachments.
-* Taranam: Delivering across the ocean of births.`,
-    audioTe: "ప్రాతఃకాలే శివనామ స్మరణం భవ హరణం సంసార తారణం! హర హర శంభో విశ్వనాథ మహదేవ శివాయ నమః శరణం!",
-    audioEn: "Reciting Shiva's name in the morning destroys worldly attachment and crosses the ocean of life! O Shambho, Viswanatha, Mahadeva, salutations to Shiva!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 14",
+    titleEn: "Nekarukallu Satakam - Poem 14",
+    verseTe: `నిన్నెంచుచు జపంబుమీఁద నున్నళ్ళు నిశ్చింతముగనె
+యున్నది గాని జరుగుట యెట్టు లట్లున్నచో నెపుడు
+అన్నలా! మేనునఁ తేళ్ళు ప్రాకుచున్నట్లుండు జగము
+చిన్నెలు చూచిన నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Ninnèmchuchu japambumee~da nunnaḻḻu nishchimtamuganè
+Yunnadi gaani jaruguta yèttu latlunnacho nèpudu
+Annalaa! menuna~ teḻḻu praakuchunnatlumdu jagamu
+Chinnèlu choochina nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `జపాన్‌లో మీకు మనశ్శాంతి లేదు
+ఏది జరుగుతున్నా అది జరగనివ్వండి
+అలా!ప్రపంచం తేళ్లతో నిండిపోయింది
+చిన్నారులను చూసిన నెకరుకల్‌ ప్రాంతానికి చెందిన సిద్ధబ్దహేళి!`,
+    wordMeaningEn: `You have no peace of mind in Japan
+Whatever is happening, let it happen
+Like that!The world is full of scorpions
+Siddabdaheli of Nekarukal region that saw the little ones!`,
+    audioTe: "నిన్నెంచుచు జపంబుమీఁద నున్నళ్ళు నిశ్చింతముగనె యున్నది గాని జరుగుట యెట్టు లట్లున్నచో నెపుడు అన్నలా! మేనునఁ తేళ్ళు ప్రాకుచున్నట్లుండు జగము చిన్నెలు చూచిన నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 15,
-    category: "sacred",
-    titleTe: "మహాదేవ కరవలంబ స్తోత్రం - భాగం 2",
-    titleEn: "Mahadeva Karavalamba Stotram - Part 2",
-    verseTe: `సంసార ఘోర గహనే చరతో మమ హే దేవా!
-విశ్వేశ్వర కరుణానిధే దేహి కరవలంబమ్!`,
-    verseEn: `I am wandering in the terrifying jungle of this worldly life, O Lord!
-O Visweswara, ocean of compassion, extend Your hand of support!`,
-    wordMeaningTe: `* ఘోర గహనే: భయంకరమైన అడవిలో.
-* మమ: నా యొక్క.
-* కరుణానిధే: దయకు సముద్రుడైనవాడా.
-* కరవలంబమ్: చేతిని అందించి రక్షించడం.`,
-    wordMeaningEn: `* Ghora Gahane: In the dangerous forest.
-* Karunānidhe: O treasure of mercy.
-* Karavalambam: Hand of protection.`,
-    audioTe: "సంసార ఘోర గహనే చరతో మమ హే దేవా! విశ్వేశ్వర కరుణానిధే దేహి కరవలంబమ్!",
-    audioEn: "I am wandering in the terrifying jungle of this worldly life, O Lord! O Visweswara, ocean of compassion, extend Your hand of support!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 15",
+    titleEn: "Nekarukallu Satakam - Poem 15",
+    verseTe: `అంతయును నశించిపోవునని రూఢియైనట్టి దాని
+వింతలుచూచి రమించు సంత యోపిక లేదు నాకు
+వింతలో వింత బ్రదుకుట తప్పని విధియు నీ వలె గ్ర
+సింతు చేదును నేను నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Amtayunu nashimchipovunani roodhiyainatti daani
+Vimtaluchoochi ramimchu samta yopika ledu naaku
+Vimtalo vimta bradukuta tappani vidhiyu nee valè gra
+Simtu chedunu nenu nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `అది నశించిపోతుందని నిశ్చయించుకున్న వాడు
+వింతలను చూసి ఆనందించాలని నాకు క్రిస్మస్ కల లేదు
+ఒక వింత ప్రదేశంలో నివసించడం మీలాగే ఒక వింత విధి
+సింటు చేడును నేను నెకరుకల్ ప్రాంతం సిద్దబ్దహేళి!`,
+    wordMeaningEn: `It is the one who is convinced that it will perish
+I don't have a Christmas dream to enjoy seeing strange things
+Living in a strange place is a strange destiny, just like you
+Sintu Chedunu I Nekarukal region Siddabdaheli!`,
+    audioTe: "అంతయును నశించిపోవునని రూఢియైనట్టి దాని వింతలుచూచి రమించు సంత యోపిక లేదు నాకు వింతలో వింత బ్రదుకుట తప్పని విధియు నీ వలె గ్ర సింతు చేదును నేను నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 16,
     category: "shiva",
-    titleTe: "కాశీ విశ్వేశ్వర స్తోత్రము - చరణం 2",
-    titleEn: "Kasi Visweswara Stotram - Verse 2",
-    verseTe: `మంగళరూపాయ నమః శివాయ! మణిశేఖరాయ నమః శివాయ!
-గంగాధరాయ గౌరీనాథాయ దేవాయ! శంభో విశ్వేశ్వరాయ శరణం శరణం!`,
-    verseEn: `Salutations to Shiva, the form of auspiciousness! Salutations to Shiva, who wears gems on His head!
-Salutations to the holder of Ganga, the Lord of Gauri! O Shambho Visweswara, I seek refuge in You!`,
-    wordMeaningTe: `* మంగళరూపాయ: శుభప్రదమైన రూపము కలవాడు.
-* మణిశేఖరాయ: తలపై మణిని ధరించినవాడు.
-* గంగాధరాయ: గంగను ధరించినవాడు.
-* గౌరీనాథాయ: పార్వతీదేవి భర్త.
-* శరణం: ఆశ్రయము.`,
-    wordMeaningEn: `* Mangalarupaya: The embodiment of auspiciousness.
-* Manishekharaya: Having a gem on His crown.
-* Gangadharaya: The one who holds the river Ganga.
-* Gaurinathaya: The consort of Gauri.
-* Saranam: Refuge.`,
-    audioTe: "మంగళరూపాయ నమః శివాయ! మణిశేఖరాయ నమః శివాయ! గంగాధరాయ గౌరీనాథాయ దేవాయ! శంభో విశ్వేశ్వరాయ శరణం శరణం!",
-    audioEn: "Salutations to Shiva, the form of auspiciousness! Salutations to Shiva, who wears gems on His head! Salutations to the holder of Ganga, the Lord of Gauri! O Shambho Visweswara, I seek refuge in You!"
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 16",
+    titleEn: "Nekarukallu Satakam - Poem 16",
+    verseTe: `అలవాటుగా దేహమన్న కట్టె యాడుచునుండె
+మిలమిలై బందుగుల్ దీనియందు రమించుచున్నారు.
+తెలిసియు మృత్యువు గూర్చి తలచకు, తెలివి యశుద్ధము
+చిలుకవల్కుల జాతి నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Alavaatugaa dehamanna kattè yaaduchunumdè
+Milamilai bamdugul deeniyamdu ramimchuchunnaaru.
+Tèlisiyu mrutyuvu goorchi talachaku, tèlivi yashuddhamu
+Chilukavalkula jaati nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `అలవాటుగా దేహమన్న కట్టెలు కొట్టేవాడు
+మిలమిలై బందుంగుల్ దీనిని ఆనందిస్తున్నారు.
+తెలిసి చావు గురించి ఆలోచించవద్దు, మనస్సు స్వచ్ఛమైనది
+చిలుకావల్కుల జాతి నెకరుకల్ ప్రాంతం సిద్దబ్దహేలీ!`,
+    wordMeaningEn: `As a habit, Dehamanna used to cut firewood
+Milamilai Bandungul are enjoying this.
+Don't think about death knowingly, the mind is pure
+Chilukavalkula race Nekarukal region Siddabdaheli!`,
+    audioTe: "అలవాటుగా దేహమన్న కట్టె యాడుచునుండె మిలమిలై బందుగుల్ దీనియందు రమించుచున్నారు. తెలిసియు మృత్యువు గూర్చి తలచకు, తెలివి యశుద్ధము చిలుకవల్కుల జాతి నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 17,
-    category: "annapurna",
-    titleTe: "జగన్మాత అన్నపూర్ణ కీర్తన - భాగం 2",
-    titleEn: "Mother Annapurna Chant - Part 2",
-    verseTe: `సర్వమంగళ మాంగల్యే శివే సర్వార్థ సాధికే!
-శరణ్యే త్ర్యంబకే గౌరి నారాయణి నమోస్తుతే!`,
-    verseEn: `O Mother, who is the auspiciousness of all auspiciousness! O source of all achievements!
-We seek refuge in You, the three-eyed Gauri, Salutations to You, Narayani!`,
-    wordMeaningTe: `* సర్వమంగళ మాంగల్యే: సర్వ శుభములలో అత్యంత శుభప్రదమైనదానา.
-* శివే: కళ్యాణకారిణి.
-* సర్వార్థ సాధికే: సర్వ పురుషార్థాలను సాధించేదానా.
-* శరణ్యే: శరణు కోరదగిన తల్లి.`,
-    wordMeaningEn: `* Sarvamangala Mangalye: Most auspicious among all auspicious things.
-* Shive: Bestower of welfare.
-* Sarvartha Sadhike: Fulfiller of all desires.
-* Saranye: Worthy of taking refuge in.`,
-    audioTe: "సర్వమంగళ మాంగల్యే శివే సర్వార్థ సాధికే! శరణ్యే త్ర్యంబకే గౌరి నారాయణి నమోస్తుతే!",
-    audioEn: "O Mother, who is the auspiciousness of all auspiciousness! O source of all achievements! We seek refuge in You, the three-eyed Gauri, Salutations to You, Narayani!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 17",
+    titleEn: "Nekarukallu Satakam - Poem 17",
+    verseTe: `చచ్చెడువారికిఁ తప్ప ముసలులై చచ్చెదరేని
+క్రచ్చర మిగిలిన వారి కభ్యంతరమ్ము లేదిచటఁ
+జచ్చెడువాఁడు నీకోసమై తాను చావంగవలయు
+చిచ్చఱకను వేల్ప! నెకరుకల్ ప్రాంత సిద్ధాబ్ద హేళి!`,
+    verseEn: `Chachchèduvaariki~ tappa musalulai chachchèdareni
+Krachchara migilina vaari kabhyamtarammu ledichata~
+Jachchèduvaa~du neekosamai taanu chaavamgavalayu
+Chichchaṟakanu velpa! nèkarukal praamta siddhaabda heḻi!`,
+    wordMeaningTe: `చనిపోయే వారు తప్ప, వారు వృద్ధాప్యం మరియు మరణిస్తారు
+మిగిలిన వారి అభిప్రాయాన్ని క్రాచర ఎత్తలేదు
+నీకు జచ్చెడువాఁడు చచ్చిపోవును
+చింతించకండి!నెకరుకల్ ప్రాంతం సిద్ధబ్ద హెలీ!`,
+    wordMeaningEn: `Except for those who die, they die old and die
+Krachara did not raise the opinion of the rest of them
+Jachcheduvandu will die for you
+Don't worry!Nekarukal area Siddhabda Heli!`,
+    audioTe: "చచ్చెడువారికిఁ తప్ప ముసలులై చచ్చెదరేని క్రచ్చర మిగిలిన వారి కభ్యంతరమ్ము లేదిచటఁ జచ్చెడువాఁడు నీకోసమై తాను చావంగవలయు చిచ్చఱకను వేల్ప! నెకరుకల్ ప్రాంత సిద్ధాబ్ద హేళి!",
+    audioEn: ""
   },
   {
     id: 18,
-    category: "history",
-    titleTe: "చారిత్రక శాసన గీతం - పద్యం 2",
-    titleEn: "Historical Inscription Hymn - Verse 2",
-    verseTe: `శిలా శాసనములందు నిలిచిన క్షేత్ర చరిత్ర చదువుదాం!
-తరతరాల పుణ్యఫలమైన విశ్వేశ్వర లీలలు కీర్తిద్దాం!`,
-    verseEn: `Let us read the history of this shrine recorded in the stone inscriptions!
-Let us praise the divine plays of Visweswara, the merit of generations!`,
-    wordMeaningTe: `* శిలా శాసనము: రాతిపై చెక్కబడిన శాసనము.
-* క్షేత్ర చరిత్ర: ఆలయం యొక్క చరిత్ర.
-* లీలలు: దైవ లీలలు.
-* కీర్తిద్దాం: కొనిాడుదాం.`,
-    wordMeaningEn: `* Shila Sasanamu: Inscription carved on stone.
-* Kshethra Charitra: History of the sacred place.
-* Leelalu: Divine activities.`,
-    audioTe: "శిలా శాసనములందు నిలిచిన క్షేత్ర చరిత్ర చదువుదాం! తరతరాల పుణ్యఫలమైన విశ్వేశ్వర లీలలు కీర్తిద్దాం!",
-    audioEn: "Let us read the history of this shrine recorded in the stone inscriptions! Let us praise the divine plays of Visweswara, the merit of generations!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 18",
+    titleEn: "Nekarukallu Satakam - Poem 18",
+    verseTe: `కన్నులు మూసిన నెఱుపు కన్పించుఁ కన్పించు నలుపు
+వెన్నెల కన్పించు దోర వెలుగు కన్పించుఁ కన్పించు
+సన్నని బిందువు దూరదూరమ్ము చనును గన్పడవు
+చిన్నారి లింగంబ! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Kannulu moosina nèṟupu kanpimchu~ kanpimchu nalupu
+Vènnèla kanpimchu dora vèlugu kanpimchu~ kanpimchu
+Sannani bimduvu dooradoorammu chanunu ganpadavu
+Chinnaari limgamba! nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `కళ్ళు మూసుకున్న నలుపు
+చంద్రుడు ప్రకాశిస్తాడు, కాంతి ప్రకాశిస్తుంది
+ఒక సన్నని చుక్క ఎక్కువ దూరం పాలను పిచికారీ చేయదు
+చిన్న లింగాంబ!నెకరుకల్ ప్రాంతం సిద్దబ్దహేలీ!`,
+    wordMeaningEn: `Black with eyes closed
+The moon shines, the light shines
+A thin droplet can't spray milk over a long distance
+Little Lingamba!Nekarukal area Siddabdaheli!`,
+    audioTe: "కన్నులు మూసిన నెఱుపు కన్పించుఁ కన్పించు నలుపు వెన్నెల కన్పించు దోర వెలుగు కన్పించుఁ కన్పించు సన్నని బిందువు దూరదూరమ్ము చనును గన్పడవు చిన్నారి లింగంబ! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 19,
-    category: "devotion",
-    titleTe: "శరణాగతి ప్రార్థన - చరణం 3",
-    titleEn: "Prayer of Surrender - Verse 3",
-    verseTe: `పాపోహం పాపకర్మాహం పాపాత్మా పాపసంభవః!
-త్రాహి మాం కృపయా దేవా శరణాగత వత్సల!`,
-    verseEn: `I am a sinner, my actions are sinful, my soul is sinful, born of sin!
-O Lord, protect me out of compassion, O savior of those who surrender!`,
-    wordMeaningTe: `* పాపోహం: నేను పాపాత్ముడను.
-* త్రాహి మాం: నన్ను రక్షించు.
-* కృపయా: దయతో.
-* శరణాగత వత్సల: శరణు కోరినవారిని ప్రేమించేవాడా.`,
-    wordMeaningEn: `* Papoham: I am full of sins.
-* Trahi Mam: Protect me.
-* Krupaya: With mercy.
-* Saranagata Vatsala: Compassionate protector of those who surrender.`,
-    audioTe: "పాపోహం పాపకర్మాహం పాపాత్మా పాపసంభవః! త్రాహి మాం కృపయా దేవా శరణాగత వత్సల!",
-    audioEn: "I am a sinner, my actions are sinful, my soul is sinful, born of sin! O Lord, protect me out of compassion, O savior of those who surrender!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 19",
+    titleEn: "Nekarukallu Satakam - Poem 19",
+    verseTe: `నొగలుపైఁ చర్మంబు బొమిక లోపల నొక్కిన చోట
+ముసరుచు నున్నట్టి చూపు పరమార్థముగ నైచోట
+మసలుట మానిన యూహ సర్వము మన్నించుచో, వ
+శి! సవదరింతువో నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Nògalupai~ charmambu bòmika lopala nòkkina chota
+Musaruchu nunnatti choopu paramaarthamuga naichota
+Masaluta maanina yooha sarvamu mannimchucho, va
+Shi! savadarimtuvo nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `పొత్తికడుపు లోపలి భాగంలో చర్మం నొక్కినప్పుడు నొప్పి
+ముసరుచు నున్నట్టి చూడు పరమార్థముగ నైచోట
+మసలుత మన యూహ సర్వమును మన్నించును, వి
+శి!సావదారింతువో నెకరుకల్ ప్రాంతం సిద్ధబ్దహేళి!`,
+    wordMeaningEn: `Pain where the skin presses against the inside of the abdomen
+Musaruchu Nunnatti look Paramarthamuga naichota
+Masaluta Mana Yuha forgives everything, v
+Shi!Savadarinthuo Nekarukal region Siddabdaheli!`,
+    audioTe: "నొగలుపైఁ చర్మంబు బొమిక లోపల నొక్కిన చోట ముసరుచు నున్నట్టి చూపు పరమార్థముగ నైచోట మసలుట మానిన యూహ సర్వము మన్నించుచో, వ శి! సవదరింతువో నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 20,
-    category: "sacred",
-    titleTe: "ఆత్మారామ ధ్యాన శ్లోకం - చరణం 3",
-    titleEn: "Atmaram Meditation Hymn - Verse 3",
-    verseTe: `ఆత్మారాం సమేత అన్నపూర్ణ మాతా హృదయ నివాసి!
-సకల జీవ సంరక్షక విశ్వనాథ జ్యోతి స్వరూప ప్రకాశి!`,
-    verseEn: `Mother Annapurna along with Lord Atmaram resides in our hearts!
-O Viswanatha, protector of all living beings, shine as the divine light!`,
-    wordMeaningTe: `* హృదయ నివాసి: హృదయములో నివసించువాడా.
-* సకల జీవ సంరక్షక: సమస్త జీవులను కాపాడేవాడా.
-* జ్యోతి స్వరూప: వెలుగు రూపములో ఉన్నవాడా.
-* ప్రకాశి: ప్రకాశించేవాడా.`,
-    wordMeaningEn: `* Hrudaya Nivasi: Dweller of the heart.
-* Sakala Jeeva Samrakshaka: Preserver of all life forms.
-* Jyoti Swarupa: In the form of holy light.
-* Prakashi: Illuminating one.`,
-    audioTe: "ఆత్మారాం సమేత అన్నపూర్ణ మాతా హృదయ నివాసి! సకల జీవ సంరక్షక విశ్వనాథ జ్యోతి స్వరూప ప్రకాశి!",
-    audioEn: "Mother Annapurna along with Lord Atmaram resides in our hearts! O Viswanatha, protector of all living beings, shine as the divine light!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 20",
+    titleEn: "Nekarukallu Satakam - Poem 20",
+    verseTe: `అలమాయ తనయంద మంతయు సమరించుకొంచు
+సలయించలేక జగతియందు రవ్వంత రవ్వంత
+వెలఁదులందున నుంచి నీదు సంశల వెత పెట్టుఁ తేజు
+చెలమ లెండించును నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Alamaaya tanayamda mamtayu samarimchukòmchu
+Salayimchaleka jagatiyamdu ravvamta ravvamta
+Vèla~dulamduna numchi needu samshala vèta pèttu~ teju
+Chèlama lèmdimchunu nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `అలమయ కోసం మిమ్మల్ని మీరు సిద్ధం చేసుకోండి
+ప్రపంచంలో ఇంత అందంగా ఉండకుండా ఉండలేను
+ప్రచురణ సమయం నుండి, మీరు సమస్యల కోసం వెతుకుతున్నారు
+చెలమ లెండించును నెకరుకల్ ప్రాంత సిద్ధబ్దహేలి!`,
+    wordMeaningEn: `Prepare yourself for Alamaya
+I can't help but be so beautiful in the world
+From the time of publication, you have been searching for problems
+Chelama Lendinchunu Nekarukal region Siddabdaheli!`,
+    audioTe: "అలమాయ తనయంద మంతయు సమరించుకొంచు సలయించలేక జగతియందు రవ్వంత రవ్వంత వెలఁదులందున నుంచి నీదు సంశల వెత పెట్టుఁ తేజు చెలమ లెండించును నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 21,
     category: "shiva",
-    titleTe: "శివ పంచాక్షరి - చరణం 3",
-    titleEn: "Shiva Panchakshari - Verse 3",
-    verseTe: `నమః శివాయ నమః శివాయ నమః శివాయ నమః శివాయ!
-హర హర శంభో మహదేవాయ విశ్వేశ్వరాయ నమః శివాయ!`,
-    verseEn: `Salutations to Shiva! Salutations to Shiva!
-O Hara, Shambho, Mahadeva, Visweswara! Salutations to Shiva!`,
-    wordMeaningTe: `* నమః శివాయ: శివునికి నమస్కారములు.
-* హర హర: పాపములను హరించేవాడు.
-* శంభో: సుఖములను కలిగించేవాడు.
-* విశ్వేశ్వరాయ: విశ్వానికి అధిపతి.`,
-    wordMeaningEn: `* Namah Shivaya: Salutations to Lord Shiva.
-* Hara: The destroyer of sins.
-* Shambho: The bestower of happiness.
-* Visweswaraya: The Lord of the Universe.`,
-    audioTe: "నమః శివాయ నమః శివాయ నమః శివాయ నమః శివాయ! హర హర శంభో మహదేవాయ విశ్వేశ్వరాయ నమః శివాయ!",
-    audioEn: "Salutations to Shiva! Salutations to Shiva! O Hara, Shambho, Mahadeva, Visweswara! Salutations to Shiva!"
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 21",
+    titleEn: "Nekarukallu Satakam - Poem 21",
+    verseTe: `పనివడి అందంపుజిలుగు తెలివిచే వాడియా బుద్ధి
+నినుదిస్స మొలవాని మనసులోపల నిలుపగా లేదు
+కనికని నిలిపిన నైన నింగువ కట్టిన గుడ్డ
+చినుగులై యేమాయె నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Panivadi amdampujilugu tèliviche vaadiyaa buddhi
+Ninudissa mòlavaani manasulopala nilupagaa ledu
+Kanikani nilipina naina nimguva kattina gudda
+Chinugulai yemaayè nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `పనివాడి అందం తెలివైనది మరియు తెలివైనది
+నినుదిస్సా మొలవాని మనసులో నిలవలేదు
+సన్నని నారతో చేసిన వస్త్రం
+చినుగులై యేమయె నెకరుకల్ ప్రాంతం సిద్ధబ్దహేళి!`,
+    wordMeaningEn: `Workman's beauty is clever and intelligent
+Ninudissa Molawani did not remain in his mind
+A cloth made of fine linen
+Chinugulai Yemaye Nekarukal area Siddhabdaheli!`,
+    audioTe: "పనివడి అందంపుజిలుగు తెలివిచే వాడియా బుద్ధి నినుదిస్స మొలవాని మనసులోపల నిలుపగా లేదు కనికని నిలిపిన నైన నింగువ కట్టిన గుడ్డ చినుగులై యేమాయె నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 22,
-    category: "annapurna",
-    titleTe: "అన్నపూర్ణాష్టకము - చరణం 3",
-    titleEn: "Annapurna Ashtakam - Verse 3",
-    verseTe: `అన్నపూర్ణే సదాపూర్ణే శంకర ప్రాణవల్లభే!
-జ్ఞానవైరాగ్య సిద్ధ్యర్థం భిక్షాం దేహి చ పార్వతి!`,
-    verseEn: `O Mother Annapurna, ever full and complete, the beloved of Lord Sankara!
-Grant us alms of knowledge and dispassion, O Goddess Parvati!`,
-    wordMeaningTe: `* అన్నపూర్ణే: ధాన్య సమృద్ధిని ఇచ్చే తల్లి.
-* సదాపూర్ణే: ఎల్లప్పుడూ నిండుగా ఉండేది.
-* ప్రాణవల్లభే: ప్రాణనాథురాలు.
-* జ్ఞానవైరాగ్య: జ్ఞానము మరియు వైరాగ్యము.
-* భిక్షాం: బిక్ష లేదా ప్రసాదము.`,
-    wordMeaningEn: `* Annapurne: She who is full of nourishment.
-* Sadapurne: Ever complete and full.
-* Pranavallabhe: Beloved consort.
-* Jnana-Vairagya: Wisdom and renunciation.
-* Bhiksham Dehi: Grant us alms.`,
-    audioTe: "అన్నపూర్ణే సదాపూర్ణే శంకర ప్రాణవల్లభే! జ్ఞానవైరాగ్య సిద్ధ్యర్థం భిక్షాం దేహి చ పార్వతి!",
-    audioEn: "O Mother Annapurna, ever full and complete, the beloved of Lord Sankara! Grant us alms of knowledge and dispassion, O Goddess Parvati!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 22",
+    titleEn: "Nekarukallu Satakam - Poem 22",
+    verseTe: `సీలమండల లోతు వాగు నిన్నెంచు చిత్తంబు నాది
+వాలు కామమ్ముగా నుండియుండి తాఁ బడబోసి నెడు
+తోలిన వరదలై యొచటి దచ్చటఁ తుడిచి పెట్టెడిని
+చేలు మట్టము చేసి నెకరుకల్ ప్రాంత సిద్ధాబహేళి!`,
+    verseEn: `Seelamamdala lotu vaagu ninnèmchu chittambu naadi
+Vaalu kaamammugaa numdiyumdi taa~ badabosi nèdu
+Tolina varadalai yòchati dachchata~ tudichi pèttèdini
+Chelu mattamu chesi nèkarukal praamta siddhaabaheḻi!`,
+    wordMeaningTe: `శీలమండల లోతైన వాగు నాది
+వాలు నిండా కామం
+తోలు ప్రవహించింది మరియు నేను దానిని తుడిచిపెట్టాను
+నెకరుకల్ ప్రాంతాన్ని సమం చేయడం ద్వారా సిద్ధబహేలీ!`,
+    wordMeaningEn: `Seelamandala's deep brook is mine
+The slope is full of lust
+The leather was flooded and I wiped it off
+Nekarukal region Siddhabaheli by leveling up!`,
+    audioTe: "సీలమండల లోతు వాగు నిన్నెంచు చిత్తంబు నాది వాలు కామమ్ముగా నుండియుండి తాఁ బడబోసి నెడు తోలిన వరదలై యొచటి దచ్చటఁ తుడిచి పెట్టెడిని చేలు మట్టము చేసి నెకరుకల్ ప్రాంత సిద్ధాబహేళి!",
+    audioEn: ""
   },
   {
     id: 23,
-    category: "history",
-    titleTe: "నరసింగపాడు ఆలయ ప్రశస్తి - పద్యం 3",
-    titleEn: "Narasingapadu Temple Glory - Verse 3",
-    verseTe: `పవిత్ర క్షేత్రము నరసింగపాడున వెలసిన విశ్వనాథుడే శరణు!
-భక్త జనుల గుండెల్లో కొలువైన అన్నపూర్ణా విశ్వేశ్వరుడే శరణు!`,
-    verseEn: `Refuge in Lord Viswanatha who resides in the holy shrine of Narasingapadu!
-Refuge in Annapurna and Visweswara who dwell in the hearts of devotees!`,
-    wordMeaningTe: `* పవిత్ర క్షేత్రము: పరిశుద్ధమైన క్షేత్రము.
-* వెలసిన: అవతరించిన.
-* శరణు: ఆశ్రయము.
-* కొలువైన: నివసించిన.`,
-    wordMeaningEn: `* Pavitra Kshethramu: The holy place.
-* Velasina: Self-manifested or established.
-* Saranam: Safe haven.`,
-    audioTe: "పవిత్ర క్షేత్రము నరసింగపాడున వెలసిన విశ్వనాథుడే శరణు! భక్త జనుల గుండెల్లో కొలువైన అన్నపూర్ణా విశ్వేశ్వరుడే శరణు!",
-    audioEn: "Refuge in Lord Viswanatha who resides in the holy shrine of Narasingapadu! Refuge in Annapurna and Visweswara who dwell in the hearts of devotees!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 23",
+    titleEn: "Nekarukallu Satakam - Poem 23",
+    verseTe: `ఏ నెఱుంగుదుఁ కథ లెన్ని యో కల వెందుకుం బనికి
+రానట్టి వారల మునిఁగి చన్నట్లు రక్షించిన యవి
+ప్రాణముల్ సుడిగొని నిన్ను బతిమాలి బామాలుకొలఁది
+జేనెడై మూరెడై నెకరుకల్ ప్రాంత సిద్ధాబ్ద హేళి!`,
+    verseEn: `E nèṟumgudu~ katha lènni yo kala vèmdukum baniki
+Raanatti vaarala muni~gi channatlu rakshimchina yavi
+Praanamul sudigòni ninnu batimaali baamaalukòla~di
+Jenèdai moorèdai nèkarukal praamta siddhaabda heḻi!`,
+    wordMeaningTe: `ఏ నెఱుంగుదున్ కథ లెన్ని యో కల్ వెందుఁ బనికి
+రణట్టి వారల మునింగి చాన్నాటు యవిని రక్షించెను
+ప్రాణముల్ సుడిగాని నిన్ను ఆదుకున్నాడు
+జానెదై మూరెడై నెకరుకల్ ప్రాంతం సిద్ధబ్ద హెలీ!`,
+    wordMeaningEn: `Ae Nerungudun Katha Lenny Yo Kal Vendum Baniki
+Ranatti Varala Muningi Channatu saved Yavi
+Pranamul Sudigoni took care of you
+Janedai Mooredai Nekarukal area Siddhabda Heli!`,
+    audioTe: "ఏ నెఱుంగుదుఁ కథ లెన్ని యో కల వెందుకుం బనికి రానట్టి వారల మునిఁగి చన్నట్లు రక్షించిన యవి ప్రాణముల్ సుడిగొని నిన్ను బతిమాలి బామాలుకొలఁది జేనెడై మూరెడై నెకరుకల్ ప్రాంత సిద్ధాబ్ద హేళి!",
+    audioEn: ""
   },
   {
     id: 24,
-    category: "devotion",
-    titleTe: "భక్తి సుధా తరంగిణి - భాగం 4",
-    titleEn: "Devotional Waves - Part 4",
-    verseTe: `ప్రాతఃకాలే శివనామ స్మరణం భవ హరణం సంసార తారణం!
-హర హర శంభో విశ్వనాథ మహదేవ శివాయ నమః శరణం!`,
-    verseEn: `Reciting Shiva's name in the morning destroys worldly attachment and crosses the ocean of life!
-O Shambho, Viswanatha, Mahadeva, salutations to Shiva!`,
-    wordMeaningTe: `* ప్రాతఃకాలే: ఉదయ కాలమున.
-* స్మరణం: తలచుకోవడం.
-* భవ హరణం: భవ బంధాలను పోగొట్టేది.
-* తారణం: దాటించేది.`,
-    wordMeaningEn: `* Pratahkale: In the early morning.
-* Smaranam: Remembrance.
-* Bhava Haranam: Destruction of worldly attachments.
-* Taranam: Delivering across the ocean of births.`,
-    audioTe: "ప్రాతఃకాలే శివనామ స్మరణం భవ హరణం సంసార తారణం! హర హర శంభో విశ్వనాథ మహదేవ శివాయ నమః శరణం!",
-    audioEn: "Reciting Shiva's name in the morning destroys worldly attachment and crosses the ocean of life! O Shambho, Viswanatha, Mahadeva, salutations to Shiva!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 24",
+    titleEn: "Nekarukallu Satakam - Poem 24",
+    verseTe: `తినుటకున్నది యింతేచాలు నెక్కువ తెచ్చి పెట్టనను
+పనివడి తెచ్చెదు, దానికై కష్టపడునట్లు, నేమి
+పని యిద్ది, నమ్మగానిట్లు చేయగా వలయునె, యిద్ది
+చినచూపొ పొదచూపొ నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Tinutakunnadi yimtechaalu nèkkuva tèchchi pèttananu
+Panivadi tèchchèdu, daanikai kashtapadunatlu, nemi
+Pani yiddi, nammagaanitlu cheyagaa valayunè, yiddi
+Chinachoopò pòdachoopò nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `నేను తినడానికి చాలా వస్తువులు తీసుకురాను
+తెచ్చిన పని, దానికోసం నేమి కష్టపడాలి అన్నట్టు
+పని చేయండి మరియు మీరు నమ్మాలనుకున్నది చేయండి
+చినచూపో పొడచూపో నెకరుకల్ ప్రాంత సిద్ధబ్దహేలి!`,
+    wordMeaningEn: `I will not bring so many things to eat
+The work brought, as if I had to work hard for it, Nemi
+Do the work and do what you want to believe
+Siddabdaheli of Chinachupo Podachupo Nekarukal area!`,
+    audioTe: "తినుటకున్నది యింతేచాలు నెక్కువ తెచ్చి పెట్టనను పనివడి తెచ్చెదు, దానికై కష్టపడునట్లు, నేమి పని యిద్ది, నమ్మగానిట్లు చేయగా వలయునె, యిద్ది చినచూపొ పొదచూపొ నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 25,
-    category: "sacred",
-    titleTe: "మహాదేవ కరవలంబ స్తోత్రం - భాగం 4",
-    titleEn: "Mahadeva Karavalamba Stotram - Part 4",
-    verseTe: `సంసార ఘోర గహనే చరతో మమ హే దేవా!
-విశ్వేశ్వర కరుణానిధే దేహి కరవలంబమ్!`,
-    verseEn: `I am wandering in the terrifying jungle of this worldly life, O Lord!
-O Visweswara, ocean of compassion, extend Your hand of support!`,
-    wordMeaningTe: `* ఘోర గహనే: భయంకరమైన అడవిలో.
-* మమ: నా యొక్క.
-* కరుణానిధే: దయకు సముద్రుడైనవాడా.
-* కరవలంబమ్: చేతిని అందించి రక్షించడం.`,
-    wordMeaningEn: `* Ghora Gahane: In the dangerous forest.
-* Karunānidhe: O treasure of mercy.
-* Karavalambam: Hand of protection.`,
-    audioTe: "సంసార ఘోర గహనే చరతో మమ హే దేవా! విశ్వేశ్వర కరుణానిధే దేహి కరవలంబమ్!",
-    audioEn: "I am wandering in the terrifying jungle of this worldly life, O Lord! O Visweswara, ocean of compassion, extend Your hand of support!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 25",
+    titleEn: "Nekarukallu Satakam - Poem 25",
+    verseTe: `చచ్చెద నన్నచోఁ గాదు బ్రదుకుము, సరియట్ల నీదు
+నిచ్చయన గాదు చావుమనెద వట్లే యన్నఁ గాదు
+చచ్చుచు బ్రతుకుమంచనెదు దానికి సరియ, దూఁకెదన
+చిచ్చు దూఁకుమసంగ నెకరుకలాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Chachchèda nannacho~ gaadu bradukumu, sariyatla needu
+Nichchayana gaadu chaavumanèda vatle yanna~ gaadu
+Chachchuchu bratukumamchanèdu daaniki sariya, doo~kèdana
+Chichchu doo~kumasamga nèkarukalaamta siddhaabdaheḻi!`,
+    wordMeaningTe: `చనిపోయిన తల్లిలా బ్రతకకండి, మీరు చెప్పింది నిజమే
+నీచాయన గాడు చావులాంటివాడు
+దానికి చచ్చు బ్రతుకుమంచనెడు దుంకెదన
+చిచ్చు డుంకుమసంగ నెకరుకలంత సిద్ధబ్దహేలీ!`,
+    wordMeaningEn: `Don't live like a dead mother, you are right
+Nichayana Gadu is like death
+Chachuchu bratukumanchanedu is right for that, dunkedana
+Chichu Dunkumasanga Nekarukalantha Siddhabdaheli!`,
+    audioTe: "చచ్చెద నన్నచోఁ గాదు బ్రదుకుము, సరియట్ల నీదు నిచ్చయన గాదు చావుమనెద వట్లే యన్నఁ గాదు చచ్చుచు బ్రతుకుమంచనెదు దానికి సరియ, దూఁకెదన చిచ్చు దూఁకుమసంగ నెకరుకలాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 26,
     category: "shiva",
-    titleTe: "నమః శివాయ స్తుతి - భాగం 4",
-    titleEn: "Namah Shivaya Praise - Part 4",
-    verseTe: `దేవదేవాయ త్రిలోచనాత్మకాయ నమః శివాయ!
-భక్త రక్షకాయ భవతారకాయ నమః శివాయ!`,
-    verseEn: `Salutations to Shiva, the God of Gods, the three-eyed Lord!
-Salutations to Shiva, the protector of devotees and the redeemer of life!`,
-    wordMeaningTe: `* త్రిలోచనాత్మకాయ: మూడు కన్నులు గలవాడు.
-* దేవదేవాయ: దేవతలకు దేవుడు.
-* భక్త రక్షకాయ: భక్తులను రక్షించేవాడు.
-* భవతారకాయ: సంసార సాగరాన్ని దాటించేవాడు.`,
-    wordMeaningEn: `* Trilochanatmakaya: The three-eyed Lord.
-* Devadevaya: The God of Gods.
-* Bhakta Rakshakaya: The protector of devotees.
-* Bhavatarakaya: The savior from the cycle of rebirth.`,
-    audioTe: "దేవదేవాయ త్రిలోచనాత్మకాయ నమః శివాయ! భక్త రక్షకాయ భవతారకాయ నమః శివాయ!",
-    audioEn: "Salutations to Shiva, the God of Gods, the three-eyed Lord! Salutations to Shiva, the protector of devotees and the redeemer of life!"
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 26",
+    titleEn: "Nekarukallu Satakam - Poem 26",
+    verseTe: `నిన్నన్నఁ పనియేమి స్వామి వనియందు నీ తోడఁ జేసి
+కొన్న వారికి మహాదేవ! అది చేసికొన్నంత తెలియు
+మున్నిట్లు చేసిన స్వామి दर्शनము ఘటిల్లు నన్న
+చిన్నెలే యెఱుగనో నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Ninnanna~ paniyemi svaami vaniyamdu nee toda~ jesi
+Kònna vaariki mahaadeva! adi chesikònnamta tèliyu
+Munnitlu chesina svaami दर्शनmu ghatillu nanna
+Chinnèle yèṟugano nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `నిన్న మీరు స్వామి వానియేమితో ఉన్నారు
+కొన్న వారికి మహాదేవా!ఎలా చేయాలో తెలియడం లేదు
+అంతకుముందు జరిగిన స్వామివారి దర్శనం ఘటిల్లు నాన్న
+చిన్నేలె యెరుగనో నెకరుకల్ ప్రాంతం సిద్ధబ్దహేళి!`,
+    wordMeaningEn: `Yesterday, you were with Swami Vaniyemi
+Mahadeva to those who bought!Don't know how to do it
+Swami's darshan which was done earlier was Ghatillu Nanna
+Chinnele Yerugano Nekarukal area Siddhabdaheli!`,
+    audioTe: "నిన్నన్నఁ పనియేమి స్వామి వనియందు నీ తోడఁ జేసి కొన్న వారికి మహాదేవ! అది చేసికొన్నంత తెలియు మున్నిట్లు చేసిన స్వామి दर्शनము ఘటిల్లు నన్న చిన్నెలే యెఱుగనో నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 27,
-    category: "annapurna",
-    titleTe: "జగన్మాత అన్నపూర్ణ కీర్తన - భాగం 4",
-    titleEn: "Mother Annapurna Chant - Part 4",
-    verseTe: `సర్వమంగళ మాంగల్యే శివే సర్వార్థ సాధికే!
-శరణ్యే త్ర్యంబకే గౌరి నారాయణి నమోస్తుతే!`,
-    verseEn: `O Mother, who is the auspiciousness of all auspiciousness! O source of all achievements!
-We seek refuge in You, the three-eyed Gauri, Salutations to You, Narayani!`,
-    wordMeaningTe: `* సర్వమంగళ మాంగల్యే: సర్వ శుభములలో అత్యంత శుభప్రదమైనదానา.
-* శివే: కళ్యాణకారిణి.
-* సర్వార్థ సాధికే: సర్వ పురుషార్థాలను సాధించేదానా.
-* శరణ్యే: శరణు కోరదగిన తల్లి.`,
-    wordMeaningEn: `* Sarvamangala Mangalye: Most auspicious among all auspicious things.
-* Shive: Bestower of welfare.
-* Sarvartha Sadhike: Fulfiller of all desires.
-* Saranye: Worthy of taking refuge in.`,
-    audioTe: "సర్వమంగళ మాంగల్యే శివే సర్వార్థ సాధికే! శరణ్యే త్ర్యంబకే గౌరి నారాయణి నమోస్తుతే!",
-    audioEn: "O Mother, who is the auspiciousness of all auspiciousness! O source of all achievements! We seek refuge in You, the three-eyed Gauri, Salutations to You, Narayani!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 27",
+    titleEn: "Nekarukallu Satakam - Poem 27",
+    verseTe: `వడీ నా యొడల్ మరినాకుఁ తెలియని పనులు చేసితిని
+చెడి, నా యొడల్ నాకుఁ తెలియకుండెడి స్థితికి, నుమేశ
+ఒడలు నాయది నేటికైన నా దగ్గరుండని యట్టి
+చెడుత్రోవ పోనీకు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Vadee naa yòdal marinaaku~ tèliyani panulu chesitini
+Chèdi, naa yòdal naaku~ tèliyakumdèdi sthitiki, numesha
+Òdalu naayadi netikaina naa daggarumdani yatti
+Chèdutrova poneeku nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `వాడి నా యోడెల్ నాకు తెలియని పనులు చేసాడు
+చెడీ, నా యెడల కూడా తెలియనంతగా నుమేషా
+ఒడలు నయాది ఈనాటికీ నాతో ఉంది
+చెడ్డ త్రోవ పోనీ కోసం నెకరుకల్ ప్రాంతం సిద్ధబ్దహేలి!`,
+    wordMeaningEn: `Vadi Na Yodel did things that I didn't even know about
+Chedi, to the point where I don't even know my yodel, Numesha
+Odalu Nayadi is still with me today
+Nekarukal area Siddhabdaheli for bad trova pony!`,
+    audioTe: "వడీ నా యొడల్ మరినాకుఁ తెలియని పనులు చేసితిని చెడి, నా యొడల్ నాకుఁ తెలియకుండెడి స్థితికి, నుమేశ ఒడలు నాయది నేటికైన నా దగ్గరుండని యట్టి చెడుత్రోవ పోనీకు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 28,
-    category: "history",
-    titleTe: "చారిత్రక శాసన గీతం - పద్యం 4",
-    titleEn: "Historical Inscription Hymn - Verse 4",
-    verseTe: `శిలా శాసనములందు నిలిచిన క్షేత్ర చరిత్ర చదువుదాం!
-తరతరాల పుణ్యఫలమైన విశ్వేశ్వర లీలలు కీర్తిద్దాం!`,
-    verseEn: `Let us read the history of this shrine recorded in the stone inscriptions!
-Let us praise the divine plays of Visweswara, the merit of generations!`,
-    wordMeaningTe: `* శిలా శాసనము: రాతిపై చెక్కబడిన శాసనము.
-* క్షేత్ర చరిత్ర: ఆలయం యొక్క చరిత్ర.
-* లీలలు: దైవ లీలలు.
-* కీర్తిద్దాం: కొనిాడుదాం.`,
-    wordMeaningEn: `* Shila Sasanamu: Inscription carved on stone.
-* Kshethra Charitra: History of the sacred place.
-* Leelalu: Divine activities.`,
-    audioTe: "శిలా శాసనములందు నిలిచిన క్షేత్ర చరిత్ర చదువుదాం! తరతరాల పుణ్యఫలమైన విశ్వేశ్వర లీలలు కీర్తిద్దాం!",
-    audioEn: "Let us read the history of this shrine recorded in the stone inscriptions! Let us praise the divine plays of Visweswara, the merit of generations!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 28",
+    titleEn: "Nekarukallu Satakam - Poem 28",
+    verseTe: `నిజముగా లేనిచో నాల్గు వ్రేళ్ళు లోనికిఁ పోవుటకును
+ప్రజ వారివారివౌ కాళ్లు కడుపులు పట్టుకోవచ్చు
+అజ! అప్పుడే లేద యిప్పుడేటికి నది నాకును మన
+సిజ దహనా! శివా! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Nijamugaa lenicho naalgu vreḻḻu loniki~ povutakunu
+Praja vaarivaarivau kaaḻlu kadupulu pattukovachchu
+Aja! appude leda yippudetiki nadi naakunu mana
+Sija dahanaa! shivaa! nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `అది నిజం కాకపోతే నాలుగు వేలు అందులోకి వెళ్తాయి
+ప్రజల కాళ్లు మరియు కడుపులు పట్టుకోగలవు
+ఆహా!అప్పుడూ ఇప్పుడూ కాదు, నది నాది
+సిజ దహన!శివా!నెకరుకల్ ప్రాంతం సిద్దబ్దహేలీ!`,
+    wordMeaningEn: `If it is not true, four fingers will go into it
+People's legs and stomachs can hold
+Aha!Not then or now, the river is mine
+Sija Dahana!Shiva!Nekarukal area Siddabdaheli!`,
+    audioTe: "నిజముగా లేనిచో నాల్గు వ్రేళ్ళు లోనికిఁ పోవుటకును ప్రజ వారివారివౌ కాళ్లు కడుపులు పట్టుకోవచ్చు అజ! అప్పుడే లేద యిప్పుడేటికి నది నాకును మన సిజ దహనా! శివా! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 29,
-    category: "devotion",
-    titleTe: "శరణాగతి ప్రార్థన - చరణం 5",
-    titleEn: "Prayer of Surrender - Verse 5",
-    verseTe: `పాపోహం పాపకర్మాహం పాపాత్మా పాపసంభవః!
-త్రాహి మాం కృపయా దేవా శరణాగత వత్సల!`,
-    verseEn: `I am a sinner, my actions are sinful, my soul is sinful, born of sin!
-O Lord, protect me out of compassion, O savior of those who surrender!`,
-    wordMeaningTe: `* పాపోహం: నేను పాపాత్ముడను.
-* త్రాహి మాం: నన్ను రక్షించు.
-* కృపయా: దయతో.
-* శరణాగత వత్సల: శరణు కోరినవారిని ప్రేమించేవాడా.`,
-    wordMeaningEn: `* Papoham: I am full of sins.
-* Trahi Mam: Protect me.
-* Krupaya: With mercy.
-* Saranagata Vatsala: Compassionate protector of those who surrender.`,
-    audioTe: "పాపోహం పాపకర్మాహం పాపాత్మా పాపసంభవః! త్రాహి మాం కృపయా దేవా శరణాగత వత్సల!",
-    audioEn: "I am a sinner, my actions are sinful, my soul is sinful, born of sin! O Lord, protect me out of compassion, O savior of those who surrender!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 29",
+    titleEn: "Nekarukallu Satakam - Poem 29",
+    verseTe: `వైరాగ్య భావంబు కలిగి బ్రదికిన బ్రదుకు తేలికయు
+వైరాగ్య లేశంబులేక బ్రదికెడు బదుకు దుర్భరము
+వైరాగ్య మననేమి నిన్నుఁ పండించు వ్యవసాయ మందు
+జేరదీయు హలీమ! నెకరుకల్ ప్రాంత సిద్ధాబ్ద హేళి!`,
+    verseEn: `Vairaagya bhaavambu kaligi bradikina braduku telikayu
+Vairaagya leshambuleka bradikèdu baduku durbharamu
+Vairaagya mananemi ninnu~ pamdimchu vyavasaaya mamdu
+Jeradeeyu haleema! nèkarukal praamta siddhaabda heḻi!`,
+    wordMeaningTe: `నిరాసక్తతతో జీవించే జీవితం సులభం
+వైరాగ్యుడు జీవించలేడు, కానీ అది దయనీయమైనది
+వైరాగ్య మననేమి నిన్ను పండించే వ్యవసాయ మందు
+జెరడియు హలీమా!నెకరుకల్ ప్రాంతం సిద్ధబ్ద హెలీ!`,
+    wordMeaningEn: `A life lived with dispassion is easy
+Vairagya is not able to live, but it is miserable
+Vairagya Mananemi is an agricultural drug that cultivates you
+Jeradiu Halima!Nekarukal area Siddhabda Heli!`,
+    audioTe: "వైరాగ్య భావంబు కలిగి బ్రదికిన బ్రదుకు తేలికయు వైరాగ్య లేశంబులేక బ్రదికెడు బదుకు దుర్భరము వైరాగ్య మననేమి నిన్నుఁ పండించు వ్యవసాయ మందు జేరదీయు హలీమ! నెకరుకల్ ప్రాంత సిద్ధాబ్ద హేళి!",
+    audioEn: ""
   },
   {
     id: 30,
-    category: "sacred",
-    titleTe: "ఆత్మారామ ధ్యాన శ్లోకం - చరణం 5",
-    titleEn: "Atmaram Meditation Hymn - Verse 5",
-    verseTe: `ఆత్మారాం సమేత అన్నపూర్ణ మాతా హృదయ నివాసి!
-సకల జీవ సంరక్షక విశ్వనాథ జ్యోతి స్వరూప ప్రకాశి!`,
-    verseEn: `Mother Annapurna along with Lord Atmaram resides in our hearts!
-O Viswanatha, protector of all living beings, shine as the divine light!`,
-    wordMeaningTe: `* హృదయ నివాసి: హృదయములో నివసించువాడా.
-* సకల జీవ సంరక్షక: సమస్త జీవులను కాపాడేవాడా.
-* జ్యోతి స్వరూప: వెలుగు రూపములో ఉన్నవాడా.
-* ప్రకాశి: ప్రకాశించేవాడా.`,
-    wordMeaningEn: `* Hrudaya Nivasi: Dweller of the heart.
-* Sakala Jeeva Samrakshaka: Preserver of all life forms.
-* Jyoti Swarupa: In the form of holy light.
-* Prakashi: Illuminating one.`,
-    audioTe: "ఆత్మారాం సమేత అన్నపూర్ణ మాతా హృదయ నివాసి! సకల జీవ సంరక్షక విశ్వనాథ జ్యోతి స్వరూప ప్రకాశి!",
-    audioEn: "Mother Annapurna along with Lord Atmaram resides in our hearts! O Viswanatha, protector of all living beings, shine as the divine light!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 30",
+    titleEn: "Nekarukallu Satakam - Poem 30",
+    verseTe: `అది యట్లు జరుగుచునుండె సాగెడు నంత కాలమ్ము
+నది నిత్యమన్నట్లు తలఁచు లోకంబు, నది అనిత్యమని
+మదిలో నెచటనో యెఱుంగమియులేదు, మనసు వంచించుఁ
+జెదరిస తత్త్వమై నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Adi yatlu jaruguchunumdè saagèdu namta kaalammu
+Nadi nityamannatlu tala~chu lokambu, nadi anityamani
+Madilo nèchatano yèṟumgamiyuledu, manasu vamchimchu~
+Jèdarisa tattvamai nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `చాలా సేపు ఇలాగే సాగింది
+నది శాశ్వతం, నది శాశ్వతం అని ఆలోచించండి
+మనసు వంగలేదు, మనసు వంగిపోతుంది
+జేదరిస తత్త్వమై నెకరుకల్ ప్రాంత సిద్ధబ్దహేళి!`,
+    wordMeaningEn: `It went on like this for a long time
+Think that the river is eternal, the river is eternal
+The mind is not bent, the mind bends
+Jedarisa Tattvamai Nekarukal area Siddhabdaheli!`,
+    audioTe: "అది యట్లు జరుగుచునుండె సాగెడు నంత కాలమ్ము నది నిత్యమన్నట్లు తలఁచు లోకంబు, నది అనిత్యమని మదిలో నెచటనో యెఱుంగమియులేదు, మనసు వంచించుఁ జెదరిస తత్త్వమై నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 31,
     category: "shiva",
-    titleTe: "కాశీ విశ్వేశ్వర స్తోత్రము - చరణం 5",
-    titleEn: "Kasi Visweswara Stotram - Verse 5",
-    verseTe: `మంగళరూపాయ నమః శివాయ! మణిశేఖరాయ నమః శివాయ!
-గంగాధరాయ గౌరీనాథాయ దేవాయ! శంభో విశ్వేశ్వరాయ శరణం శరణం!`,
-    verseEn: `Salutations to Shiva, the form of auspiciousness! Salutations to Shiva, who wears gems on His head!
-Salutations to the holder of Ganga, the Lord of Gauri! O Shambho Visweswara, I seek refuge in You!`,
-    wordMeaningTe: `* మంగళరూపాయ: శుభప్రదమైన రూపము కలవాడు.
-* మణిశేఖరాయ: తలపై మణిని ధరించినవాడు.
-* గంగాధరాయ: గంగను ధరించినవాడు.
-* గౌరీనాథాయ: పార్వతీదేవి భర్త.
-* శరణం: ఆశ్రయము.`,
-    wordMeaningEn: `* Mangalarupaya: The embodiment of auspiciousness.
-* Manishekharaya: Having a gem on His crown.
-* Gangadharaya: The one who holds the river Ganga.
-* Gaurinathaya: The consort of Gauri.
-* Saranam: Refuge.`,
-    audioTe: "మంగళరూపాయ నమః శివాయ! మణిశేఖరాయ నమః శివాయ! గంగాధరాయ గౌరీనాథాయ దేవాయ! శంభో విశ్వేశ్వరాయ శరణం శరణం!",
-    audioEn: "Salutations to Shiva, the form of auspiciousness! Salutations to Shiva, who wears gems on His head! Salutations to the holder of Ganga, the Lord of Gauri! O Shambho Visweswara, I seek refuge in You!"
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 31",
+    titleEn: "Nekarukallu Satakam - Poem 31",
+    verseTe: `మనసిది యొక పాఱుబోతు గొడ్డు శ్రీ మహిత! సహజము
+గనె, కదలక యుంటెఱుఁగదు పట్టుకోగా నెంతువేని
+మొనసి డొంకలు బీళ్ళు కోళ్ళు తోపులు మోరెత్తిపఱచు
+చెనటి ముండ్లకు నీడ్చు నెకరుకలాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Manasidi yòka paaṟubotu gòddu shree mahita! sahajamu
+Ganè, kadalaka yumtèṟu~gadu pattukogaa nèmtuveni
+Mònasi dòmkalu beeḻḻu koḻḻu topulu morèttipaṟachu
+Chènati mumdlaku needchu nèkarukalaamta siddhaabdaheḻi!`,
+    wordMeaningTe: `మనసిది ఒక అడవి ఆవు శ్రీ మహిత!సహజమైనది
+గానే, ఉంటెరుంగడు పట్టుకొని కదలకు
+మొనాసి డొంకలు తేనెటీగలు, కోళ్లు, చెట్లు, కాకులు
+సిద్ధబ్దహేళి ముదిగొండ వరంలా!`,
+    wordMeaningEn: `Manasidi is a wild cow Sri Mahita!natural
+Gane, don't move while holding the unterungadu
+Monasi Donkalu Bees, chickens, trees, crowing
+Siddabdaheli is like a blessing to the forehead!`,
+    audioTe: "మనసిది యొక పాఱుబోతు గొడ్డు శ్రీ మహిత! సహజము గనె, కదలక యుంటెఱుఁగదు పట్టుకోగా నెంతువేని మొనసి డొంకలు బీళ్ళు కోళ్ళు తోపులు మోరెత్తిపఱచు చెనటి ముండ్లకు నీడ్చు నెకరుకలాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 32,
-    category: "annapurna",
-    titleTe: "అన్నపూర్ణాష్టకము - చరణం 5",
-    titleEn: "Annapurna Ashtakam - Verse 5",
-    verseTe: `అన్నపూర్ణే సదాపూర్ణే శంకర ప్రాణవల్లభే!
-జ్ఞానవైరాగ్య సిద్ధ్యర్థం భిక్షాం దేహి చ పార్వతి!`,
-    verseEn: `O Mother Annapurna, ever full and complete, the beloved of Lord Sankara!
-Grant us alms of knowledge and dispassion, O Goddess Parvati!`,
-    wordMeaningTe: `* అన్నపూర్ణే: ధాన్య సమృద్ధిని ఇచ్చే తల్లి.
-* సదాపూర్ణే: ఎల్లప్పుడూ నిండుగా ఉండేది.
-* ప్రాణవల్లభే: ప్రాణనాథురాలు.
-* జ్ఞానవైరాగ్య: జ్ఞానము మరియు వైరాగ్యము.
-* భిక్షాం: బిక్ష లేదా ప్రసాదము.`,
-    wordMeaningEn: `* Annapurne: She who is full of nourishment.
-* Sadapurne: Ever complete and full.
-* Pranavallabhe: Beloved consort.
-* Jnana-Vairagya: Wisdom and renunciation.
-* Bhiksham Dehi: Grant us alms.`,
-    audioTe: "అన్నపూర్ణే సదాపూర్ణే శంకర ప్రాణవల్లభే! జ్ఞానవైరాగ్య సిద్ధ్యర్థం భిక్షాం దేహి చ పార్వతి!",
-    audioEn: "O Mother Annapurna, ever full and complete, the beloved of Lord Sankara! Grant us alms of knowledge and dispassion, O Goddess Parvati!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 32",
+    titleEn: "Nekarukallu Satakam - Poem 32",
+    verseTe: `నా కొడల్ వంగదు పట్టుకొని యిద్ది నన్ను వేధించు
+నాకంటె సోమరి యుండబోడు పినాకి! యిదెల్ల
+నా కేల యొకచోటఁ కూరుచుండి ధ్యాసము సేతు నిన్ను
+చీకాకు పెట్టకు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Naa kòdal vamgadu pattukòni yiddi nannu vedhimchu
+Naakamtè somari yumdabodu pinaaki! yidèlla
+Naa kela yòkachota~ kooruchumdi dhyaasamu setu ninnu
+Cheekaaku pèttaku nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `నా కోడల్ బెండ్ పట్టుకుని నన్ను ఆటపట్టించండి
+పినాకి నాకంటే బద్ధకంగా ఉంటుంది!అంతే
+నేను ఎక్కడో కూర్చుని నిన్ను ధ్యానిస్తున్నాను
+నెకరుకల్ ప్రాంతం సిద్దబ్దహేలి సిగ్గుపడకు!`,
+    wordMeaningEn: `Hold my codal bend and tease me
+Pinaki will be lazier than me!That's it
+I sit somewhere and meditate on you
+Nekarukal region Siddabdaheli do not be shy!`,
+    audioTe: "నా కొడల్ వంగదు పట్టుకొని యిద్ది నన్ను వేధించు నాకంటె సోమరి యుండబోడు పినాకి! యిదెల్ల నా కేల యొకచోటఁ కూరుచుండి ధ్యాసము సేతు నిన్ను చీకాకు పెట్టకు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 33,
-    category: "history",
-    titleTe: "నరసింగపాడు ఆలయ ప్రశస్తి - పద్యం 5",
-    titleEn: "Narasingapadu Temple Glory - Verse 5",
-    verseTe: `పవిత్ర క్షేత్రము నరసింగపాడున వెలసిన విశ్వనాథుడే శరణు!
-భక్త జనుల గుండెల్లో కొలువైన అన్నపూర్ణా విశ్వేశ్వరుడే శరణు!`,
-    verseEn: `Refuge in Lord Viswanatha who resides in the holy shrine of Narasingapadu!
-Refuge in Annapurna and Visweswara who dwell in the hearts of devotees!`,
-    wordMeaningTe: `* పవిత్ర క్షేత్రము: పరిశుద్ధమైన క్షేత్రము.
-* వెలసిన: అవతరించిన.
-* శరణు: ఆశ్రయము.
-* కొలువైన: నివసించిన.`,
-    wordMeaningEn: `* Pavitra Kshethramu: The holy place.
-* Velasina: Self-manifested or established.
-* Saranam: Safe haven.`,
-    audioTe: "పవిత్ర క్షేత్రము నరసింగపాడున వెలసిన విశ్వనాథుడే శరణు! భక్త జనుల గుండెల్లో కొలువైన అన్నపూర్ణా విశ్వేశ్వరుడే శరణు!",
-    audioEn: "Refuge in Lord Viswanatha who resides in the holy shrine of Narasingapadu! Refuge in Annapurna and Visweswara who dwell in the hearts of devotees!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 33",
+    titleEn: "Nekarukallu Satakam - Poem 33",
+    verseTe: `తక్కిన నాలుగన్న మయకోశ మాధారమై కలవు
+లేదన్న మాత్మ కున్ననా కన్నంబు నిడదు
+బక్క దేహమునకై భ్రాంతి యీ మహాభ్రాంతి మాన్పించు
+చిక్కని దైవమై నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Takkina naaluganna mayakosha maadhaaramai kalavu
+Ledanna maatma kunnanaa kannambu nidadu
+Bakka dehamunakai bhraamti yee mahaabhraamti maanpimchu
+Chikkani daivamai nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `నాలుగు సంబంధిత మాయకోశాలు మధారగా ఉపయోగించబడతాయి
+Otherwise Matma Kunnana Kannambu will not sleep
+Get rid of the illusion of the body of the goat
+దట్టమైన దివ్యమైన నెకరుకల్ ప్రాంత సిద్ధబ్దహేలీ!`,
+    wordMeaningEn: `The four corresponding Mayakoshas are used as Madhara
+Otherwise Matma Kunnana Kannambu will not sleep
+Get rid of the illusion of the body of the goat
+Siddhabdaheli of Nekarukal area, which is thick and divine!`,
+    audioTe: "తక్కిన నాలుగన్న మయకోశ మాధారమై కలవు లేదన్న మాత్మ కున్ననా కన్నంబు నిడదు బక్క దేహమునకై భ్రాంతి యీ మహాభ్రాంతి మాన్పించు చిక్కని దైవమై నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 34,
-    category: "devotion",
-    titleTe: "భక్తి సుధా తరంగిణి - భాగం 6",
-    titleEn: "Devotional Waves - Part 6",
-    verseTe: `ప్రాతఃకాలే శివనామ స్మరణం భవ హరణం సంసార తారణం!
-హర హర శంభో విశ్వనాథ మహదేవ శివాయ నమః శరణం!`,
-    verseEn: `Reciting Shiva's name in the morning destroys worldly attachment and crosses the ocean of life!
-O Shambho, Viswanatha, Mahadeva, salutations to Shiva!`,
-    wordMeaningTe: `* ప్రాతఃకాలే: ఉదయ కాలమున.
-* స్మరణం: తలచుకోవడం.
-* భవ హరణం: భవ బంధాలను పోగొట్టేది.
-* తారణం: దాటించేది.`,
-    wordMeaningEn: `* Pratahkale: In the early morning.
-* Smaranam: Remembrance.
-* Bhava Haranam: Destruction of worldly attachments.
-* Taranam: Delivering across the ocean of births.`,
-    audioTe: "ప్రాతఃకాలే శివనామ స్మరణం భవ హరణం సంసార తారణం! హర హర శంభో విశ్వనాథ మహదేవ శివాయ నమః శరణం!",
-    audioEn: "Reciting Shiva's name in the morning destroys worldly attachment and crosses the ocean of life! O Shambho, Viswanatha, Mahadeva, salutations to Shiva!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 34",
+    titleEn: "Nekarukallu Satakam - Poem 34",
+    verseTe: `ఇది నాది యని కూడఁగాదు నాస్వామి యిది నే యనుట
+ఇది యహంకృతికిని మొదటి రూపమ యిది మాయలోఁత్రు
+కదలించి పెట్టు పునాది పడఁద్రోతుఁ కట్టిన మేడ
+చెదరని నేనుగా నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Idi naadi yani kooda~gaadu naasvaami yidi ne yanuta
+Idi yahamkrutikini mòdati roopama yidi maayalo~tru
+Kadalimchi pèttu punaadi pada~drotu~ kattina meda
+Chèdarani nenugaa nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `ఇది నా పేరు
+ఇది యహంకృతి యొక్క మొదటి రూపము ఇది మాయలోంత్రు
+పదండ్రోతు పునాదిని తరలించి ఉంచండి
+నెకరుకల్ ప్రాంతం సిద్ధబ్దహేలీ!`,
+    wordMeaningEn: `This is my name
+This is the first form of Yahankriti which is Mayalontru
+Move and place the foundation of Padandrothu
+Nekarukal area Siddhabdaheli!`,
+    audioTe: "ఇది నాది యని కూడఁగాదు నాస్వామి యిది నే యనుట ఇది యహంకృతికిని మొదటి రూపమ యిది మాయలోఁత్రు కదలించి పెట్టు పునాది పడఁద్రోతుఁ కట్టిన మేడ చెదరని నేనుగా నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 35,
-    category: "sacred",
-    titleTe: "మహాదేవ కరవలంబ స్తోత్రం - భాగం 6",
-    titleEn: "Mahadeva Karavalamba Stotram - Part 6",
-    verseTe: `సంసార ఘోర గహనే చరతో మమ హే దేవా!
-విశ్వేశ్వర కరుణానిధే దేహి కరవలంబమ్!`,
-    verseEn: `I am wandering in the terrifying jungle of this worldly life, O Lord!
-O Visweswara, ocean of compassion, extend Your hand of support!`,
-    wordMeaningTe: `* ఘోర గహనే: భయంకరమైన అడవిలో.
-* మమ: నా యొక్క.
-* కరుణానిధే: దయకు సముద్రుడైనవాడా.
-* కరవలంబమ్: చేతిని అందించి రక్షించడం.`,
-    wordMeaningEn: `* Ghora Gahane: In the dangerous forest.
-* Karunānidhe: O treasure of mercy.
-* Karavalambam: Hand of protection.`,
-    audioTe: "సంసార ఘోర గహనే చరతో మమ హే దేవా! విశ్వేశ్వర కరుణానిధే దేహి కరవలంబమ్!",
-    audioEn: "I am wandering in the terrifying jungle of this worldly life, O Lord! O Visweswara, ocean of compassion, extend Your hand of support!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 35",
+    titleEn: "Nekarukallu Satakam - Poem 35",
+    verseTe: `ఊహచే సిద్ధాంతపరచితిఁ తదాశయుఁ త్యజించినాడ
+యూహించు దానినిగూర్చి మరల నీ యూహించు టేలొ
+ఈహ వదలి పెట్టి, కూడ నూహించుటేటికో మరి యి
+సీ !హరిద్వాససా! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Oohache siddhaamtaparachiti~ tadaashayu~ tyajimchinaada
+Yoohimchu daaninigoorchi marala nee yoohimchu telò
+Eeha vadali pètti, kooda noohimchutetiko mari yi
+See !haridvaasasaa! nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `అతను ఊహ సిద్ధాంతాన్ని త్యజించాడు
+దాని గురించి మరోసారి ఆలోచించండి
+దాన్ని వదిలేసి దాని గురించి ఆలోచించండి
+చూడండి !హరిద్వాసస!నెకరుకల్ ప్రాంతం సిద్ధబ్దహేలీ!`,
+    wordMeaningEn: `He renounced the theory of imagination
+Think again about that
+Leave it and think about it
+See !Haridwasasa!Nekarukal area Siddabdaheli!`,
+    audioTe: "ఊహచే సిద్ధాంతపరచితిఁ తదాశయుఁ త్యజించినాడ యూహించు దానినిగూర్చి మరల నీ యూహించు టేలొ ఈహ వదలి పెట్టి, కూడ నూహించుటేటికో మరి యి సీ !హరిద్వాససా! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 36,
     category: "shiva",
-    titleTe: "శివ పంచాక్షరి - చరణం 6",
-    titleEn: "Shiva Panchakshari - Verse 6",
-    verseTe: `నమః శివాయ నమః శివాయ నమః శివాయ నమః శివాయ!
-హర హర శంభో మహదేవాయ విశ్వేశ్వరాయ నమః శివాయ!`,
-    verseEn: `Salutations to Shiva! Salutations to Shiva!
-O Hara, Shambho, Mahadeva, Visweswara! Salutations to Shiva!`,
-    wordMeaningTe: `* నమః శివాయ: శివునికి నమస్కారములు.
-* హర హర: పాపములను హరించేవాడు.
-* శంభో: సుఖములను కలిగించేవాడు.
-* విశ్వేశ్వరాయ: విశ్వానికి అధిపతి.`,
-    wordMeaningEn: `* Namah Shivaya: Salutations to Lord Shiva.
-* Hara: The destroyer of sins.
-* Shambho: The bestower of happiness.
-* Visweswaraya: The Lord of the Universe.`,
-    audioTe: "నమః శివాయ నమః శివాయ నమః శివాయ నమః శివాయ! హర హర శంభో మహదేవాయ విశ్వేశ్వరాయ నమః శివాయ!",
-    audioEn: "Salutations to Shiva! Salutations to Shiva! O Hara, Shambho, Mahadeva, Visweswara! Salutations to Shiva!"
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 36",
+    titleEn: "Nekarukallu Satakam - Poem 36",
+    verseTe: `కట్టెలలో నన్నుఁ బెట్టినపుడైనఁ గాని కామమ్ము
+కట్టుబడుట యున్నదా యనేకముల్ కడగి కోసితిని
+అట్టడుగున నున్న దేమొ యీ వాంఛ యా వేరు త్రుంపు
+చెట్టిది చచ్చును నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Kattèlalo nannu~ bèttinapudaina~ gaani kaamammu
+Kattubaduta yunnadaa yanekamul kadagi kositini
+Attaduguna nunna demò yee vaamchha yaa veru trumpu
+Chèttidi chachchunu nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `నన్ను కట్టెల్లో వేస్తే గాని
+ఇది కట్టుబడి ఉందా?
+దిగువన ఉన్న డెమో ఒక ప్రత్యేక సమూహం
+చెట్టిది చచ్చును నెకరుకల్ ప్రాంతం సిద్దబ్దహేలీ!`,
+    wordMeaningEn: `If you put me in the firewood, you will either
+Is it binding?
+Demo at the bottom is a separate group
+Chettidi Chachunu Nekarukal area Siddabdaheli!`,
+    audioTe: "కట్టెలలో నన్నుఁ బెట్టినపుడైనఁ గాని కామమ్ము కట్టుబడుట యున్నదా యనేకముల్ కడగి కోసితిని అట్టడుగున నున్న దేమొ యీ వాంఛ యా వేరు త్రుంపు చెట్టిది చచ్చును నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 37,
-    category: "annapurna",
-    titleTe: "జగన్మాత అన్నపూర్ణ కీర్తన - భాగం 6",
-    titleEn: "Mother Annapurna Chant - Part 6",
-    verseTe: `సర్వమంగళ మాంగల్యే శివే సర్వార్థ సాధికే!
-శరణ్యే త్ర్యంబకే గౌరి నారాయణి నమోస్తుతే!`,
-    verseEn: `O Mother, who is the auspiciousness of all auspiciousness! O source of all achievements!
-We seek refuge in You, the three-eyed Gauri, Salutations to You, Narayani!`,
-    wordMeaningTe: `* సర్వమంగళ మాంగల్యే: సర్వ శుభములలో అత్యంత శుభప్రదమైనదానา.
-* శివే: కళ్యాణకారిణి.
-* సర్వార్థ సాధికే: సర్వ పురుషార్థాలను సాధించేదానా.
-* శరణ్యే: శరణు కోరదగిన తల్లి.`,
-    wordMeaningEn: `* Sarvamangala Mangalye: Most auspicious among all auspicious things.
-* Shive: Bestower of welfare.
-* Sarvartha Sadhike: Fulfiller of all desires.
-* Saranye: Worthy of taking refuge in.`,
-    audioTe: "సర్వమంగళ మాంగల్యే శివే సర్వార్థ సాధికే! శరణ్యే త్ర్యంబకే గౌరి నారాయణి నమోస్తుతే!",
-    audioEn: "O Mother, who is the auspiciousness of all auspiciousness! O source of all achievements! We seek refuge in You, the three-eyed Gauri, Salutations to You, Narayani!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 37",
+    titleEn: "Nekarukallu Satakam - Poem 37",
+    verseTe: `నాయందు దయలేదు నీకు ననఁ కృతజ్ఞపు మాట యవున
+నాయందు దయయుండె నీకు ననుచు నన మనసొప్ప
+దోయయ్య దయయున్నఁ కన్నుగవ మధ్య నూగాడు వచ్చి
+చేయెత్తి మొక్కెద నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Naayamdu dayaledu neeku nana~ krutajnyapu maata yavuna
+Naayamdu dayayumdè neeku nanuchu nana manasòppa
+Doyayya dayayunna~ kannugava madhya noogaadu vachchi
+Cheyètti mòkkèda nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `నాకు దయ లేదు, మీకు నా కృతజ్ఞతా పదాలు
+నా హృదయం, నీ పట్ల నాకు జాలి ఉంది
+కానుగవ మధ్యలో దోయయ్య దయున్న
+చేయెత్తి మొక్కెడ నెకరుకల్ ప్రాంతం సిద్ధబ్దహేలీ!`,
+    wordMeaningEn: `I have no mercy, my words of gratitude to you
+I have compassion for you, my heart
+Doyayya Dayunna came in the middle of Kanugava
+Cheyetti Mokkeda Nekarukal area Siddabdaheli!`,
+    audioTe: "నాయందు దయలేదు నీకు ననఁ కృతజ్ఞపు మాట యవున నాయందు దయయుండె నీకు ననుచు నన మనసొప్ప దోయయ్య దయయున్నఁ కన్నుగవ మధ్య నూగాడు వచ్చి చేయెత్తి మొక్కెద నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 38,
-    category: "history",
-    titleTe: "చారిత్రక శాసన గీతం - పద్యం 6",
-    titleEn: "Historical Inscription Hymn - Verse 6",
-    verseTe: `శిలా శాసనములందు నిలిచిన క్షేత్ర చరిత్ర చదువుదాం!
-తరతరాల పుణ్యఫలమైన విశ్వేశ్వర లీలలు కీర్తిద్దాం!`,
-    verseEn: `Let us read the history of this shrine recorded in the stone inscriptions!
-Let us praise the divine plays of Visweswara, the merit of generations!`,
-    wordMeaningTe: `* శిలా శాసనము: రాతిపై చెక్కబడిన శాసనము.
-* క్షేత్ర చరిత్ర: ఆలయం యొక్క చరిత్ర.
-* లీలలు: దైవ లీలలు.
-* కీర్తిద్దాం: కొనిాడుదాం.`,
-    wordMeaningEn: `* Shila Sasanamu: Inscription carved on stone.
-* Kshethra Charitra: History of the sacred place.
-* Leelalu: Divine activities.`,
-    audioTe: "శిలా శాసనములందు నిలిచిన క్షేత్ర చరిత్ర చదువుదాం! తరతరాల పుణ్యఫలమైన విశ్వేశ్వర లీలలు కీర్తిద్దాం!",
-    audioEn: "Let us read the history of this shrine recorded in the stone inscriptions! Let us praise the divine plays of Visweswara, the merit of generations!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 38",
+    titleEn: "Nekarukallu Satakam - Poem 38",
+    verseTe: `ఆరయ స్వప్న కథాళి చూడఁ కోపమే యధిక మన్పించు
+మరియు జాగ్రద్వేళ కామ భావమే యధిక మన్పించు
+వెరసి కామక్రోధములివి తక్కువై వెలయవ నుతులఁ
+జెరిగిపోయుదు నిన్ను నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Aaraya svapna kathaaḻi chooda~ kopame yadhika manpimchu
+Mariyu jaagradveḻa kaama bhaavame yadhika manpimchu
+Vèrasi kaamakrodhamulivi takkuvai vèlayava nutula~
+Jèrigipoyudu ninnu nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `అరయ స్వప్న కథలి చూడ కోపమే యధిక మాన్పించు
+ఇక జాగ్రద్వేలా కామ భవ యాధిక మాన్పింకు
+వెరసి కామక్రోధములివి తక్కువ మరియు ఖరీదైనవి
+నెకరుకల్ ప్రాంతం సిద్ధబ్దహేలీ!`,
+    wordMeaningEn: `Araya swapna kathali chuda kopame yadhika manpinchu
+And Jagradvela Kama Bhava is Yadhika Manpinku
+Verasi Kamakrodhamulivi low and expensive
+Nekarukal region Siddabdaheli!`,
+    audioTe: "ఆరయ స్వప్న కథాళి చూడఁ కోపమే యధిక మన్పించు మరియు జాగ్రద్వేళ కామ భావమే యధిక మన్పించు వెరసి కామక్రోధములివి తక్కువై వెలయవ నుతులఁ జెరిగిపోయుదు నిన్ను నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 39,
-    category: "devotion",
-    titleTe: "శరణాగతి ప్రార్థన - చరణం 7",
-    titleEn: "Prayer of Surrender - Verse 7",
-    verseTe: `పాపోహం పాపకర్మాహం పాపాత్మా పాపసంభవః!
-త్రాహి మాం కృపయా దేవా శరణాగత వత్సల!`,
-    verseEn: `I am a sinner, my actions are sinful, my soul is sinful, born of sin!
-O Lord, protect me out of compassion, O savior of those who surrender!`,
-    wordMeaningTe: `* పాపోహం: నేను పాపాత్ముడను.
-* త్రాహి మాం: నన్ను రక్షించు.
-* కృపయా: దయతో.
-* శరణాగత వత్సల: శరణు కోరినవారిని ప్రేమించేవాడా.`,
-    wordMeaningEn: `* Papoham: I am full of sins.
-* Trahi Mam: Protect me.
-* Krupaya: With mercy.
-* Saranagata Vatsala: Compassionate protector of those who surrender.`,
-    audioTe: "పాపోహం పాపకర్మాహం పాపాత్మా పాపసంభవః! త్రాహి మాం కృపయా దేవా శరణాగత వత్సల!",
-    audioEn: "I am a sinner, my actions are sinful, my soul is sinful, born of sin! O Lord, protect me out of compassion, O savior of those who surrender!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 39",
+    titleEn: "Nekarukallu Satakam - Poem 39",
+    verseTe: `నిక్కమ్ము నాయందు నీకు దయలేదని వచింపవలయు
+నొక్కయెదో లౌకికంపు మేలు నా కొనగూర్చి నాకు
+చిక్కని మనసును దాని నూహింపఁ జేసెను నీకుఁ
+జిక్కి మనసును నెకరుకల్ ప్రాంత సిద్ధాష్టహేళి!`,
+    verseEn: `Nikkammu naayamdu neeku dayaledani vachimpavalayu
+Nòkkayèdo laukikampu melu naa kònagoorchi naaku
+Chikkani manasunu daani noohimpa~ jesènu neeku~
+Jikki manasunu nèkarukal praamta siddhaashtaheḻi!`,
+    wordMeaningTe: `నాలో నీకు దయ లేదని దాచాలి
+మీరు నొక్కితే, లోకహితం నాకు
+నీకు దట్టమైన మనసు చూపిస్తాను
+జిక్కి మనాను నెకరుకల్ ప్రాంతం సిద్దాష్ట హెలీ!`,
+    wordMeaningEn: `You must hide that you have no mercy in me
+If you press on, the worldly good is for me
+I will show you the dense mind
+Zikki Mananu Nekarukal Region Siddashta Heli!`,
+    audioTe: "నిక్కమ్ము నాయందు నీకు దయలేదని వచింపవలయు నొక్కయెదో లౌకికంపు మేలు నా కొనగూర్చి నాకు చిక్కని మనసును దాని నూహింపఁ జేసెను నీకుఁ జిక్కి మనసును నెకరుకల్ ప్రాంత సిద్ధాష్టహేళి!",
+    audioEn: ""
   },
   {
     id: 40,
-    category: "sacred",
-    titleTe: "ఆత్మారామ ధ్యాన శ్లోకం - చరణం 7",
-    titleEn: "Atmaram Meditation Hymn - Verse 7",
-    verseTe: `ఆత్మారాం సమేత అన్నపూర్ణ మాతా హృదయ నివాసి!
-సకల జీవ సంరక్షక విశ్వనాథ జ్యోతి స్వరూప ప్రకాశి!`,
-    verseEn: `Mother Annapurna along with Lord Atmaram resides in our hearts!
-O Viswanatha, protector of all living beings, shine as the divine light!`,
-    wordMeaningTe: `* హృదయ నివాసి: హృదయములో నివసించువాడా.
-* సకల జీవ సంరక్షక: సమస్త జీవులను కాపాడేవాడా.
-* జ్యోతి స్వరూప: వెలుగు రూపములో ఉన్నవాడా.
-* ప్రకాశి: ప్రకాశించేవాడా.`,
-    wordMeaningEn: `* Hrudaya Nivasi: Dweller of the heart.
-* Sakala Jeeva Samrakshaka: Preserver of all life forms.
-* Jyoti Swarupa: In the form of holy light.
-* Prakashi: Illuminating one.`,
-    audioTe: "ఆత్మారాం సమేత అన్నపూర్ణ మాతా హృదయ నివాసి! సకల జీవ సంరక్షక విశ్వనాథ జ్యోతి స్వరూప ప్రకాశి!",
-    audioEn: "Mother Annapurna along with Lord Atmaram resides in our hearts! O Viswanatha, protector of all living beings, shine as the divine light!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 40",
+    titleEn: "Nekarukallu Satakam - Poem 40",
+    verseTe: `కన్నది అనుభూతి సగము పచ్చి సగము దోరగాగ
+నున్నది భోగ వేళ సయితమ్ము నా యుల్లంబునందు
+నున్నది నీవును, నురక కదలుచు నున్నది మేను
+చెన్ను మాసిన మేను నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Kannadi anubhooti sagamu pachchi sagamu doragaaga
+Nunnadi bhoga veḻa sayitammu naa yullambunamdu
+Nunnadi neevunu, nuraka kadaluchu nunnadi menu
+Chènnu maasina menu nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `కన్నయ్ సగం పచ్చిగా మరియు సగం మురికిగా అనిపిస్తుంది
+సయితమ్ము భోగ సమయమున నా యులుంబునందు
+కదులుతున్నది నువ్వే, నురుగు నేనే
+చెన్ను మాసిన మేను నెకరుకల్ ప్రాంతం సిద్దబ్దహేలీ!`,
+    wordMeaningEn: `Kannai feels half raw and half dirty
+Saitammu is in my Yullumbun during the time of indulgence
+You are the one who is moving and the foam is me
+Chennu Masina Menu Nekarukal area Siddabdaheli!`,
+    audioTe: "కన్నది అనుభూతి సగము పచ్చి సగము దోరగాగ నున్నది భోగ వేళ సయితమ్ము నా యుల్లంబునందు నున్నది నీవును, నురక కదలుచు నున్నది మేను చెన్ను మాసిన మేను నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 41,
     category: "shiva",
-    titleTe: "నమః శివాయ స్తుతి - భాగం 7",
-    titleEn: "Namah Shivaya Praise - Part 7",
-    verseTe: `దేవదేవాయ త్రిలోచనాత్మకాయ నమః శివాయ!
-భక్త రక్షకాయ భవతారకాయ నమః శివాయ!`,
-    verseEn: `Salutations to Shiva, the God of Gods, the three-eyed Lord!
-Salutations to Shiva, the protector of devotees and the redeemer of life!`,
-    wordMeaningTe: `* త్రిలోచనాత్మకాయ: మూడు కన్నులు గలవాడు.
-* దేవదేవాయ: దేవతలకు దేవుడు.
-* భక్త రక్షకాయ: భక్తులను రక్షించేవాడు.
-* భవతారకాయ: సంసార సాగరాన్ని దాటించేవాడు.`,
-    wordMeaningEn: `* Trilochanatmakaya: The three-eyed Lord.
-* Devadevaya: The God of Gods.
-* Bhakta Rakshakaya: The protector of devotees.
-* Bhavatarakaya: The savior from the cycle of rebirth.`,
-    audioTe: "దేవదేవాయ త్రిలోచనాత్మకాయ నమః శివాయ! భక్త రక్షకాయ భవతారకాయ నమః శివాయ!",
-    audioEn: "Salutations to Shiva, the God of Gods, the three-eyed Lord! Salutations to Shiva, the protector of devotees and the redeemer of life!"
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 41",
+    titleEn: "Nekarukallu Satakam - Poem 41",
+    verseTe: `కీర్తి మర్యాదలయందు మనసు లగించి యున్నానొ
+కీర్తి మర్యాదలయందు నీవు బిగించుచున్నావు
+కీర్తి మర్యాదలు వలదులే స్వామి కృతముల నెన్ని
+చేర్తు నన్నింటను నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Keerti maryaadalayamdu manasu lagimchi yunnaanò
+Keerti maryaadalayamdu neevu bigimchuchunnaavu
+Keerti maryaadalu valadule svaami krutamula nènni
+Chertu nannimtanu nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `కీర్తి మర్యాదలపై మనసు పెట్టింది
+నీవు కీర్తి మర్యాదలలో బిగుసుకుపోతున్నావు
+కీర్తి మర్యాదలు స్వామివారి యోగ్యత అంత ఎక్కువ
+చేరు నన్నింతను నెకరుకల్ ప్రాంత సిద్ధబ్దహేళి!`,
+    wordMeaningEn: `Keerti has set his mind on the manners
+You are tightening in the manners of glory
+The manners of fame are as many as the merits of Swami
+Cherthu Nannintanu Nekarukal region Siddabdaheli!`,
+    audioTe: "కీర్తి మర్యాదలయందు మనసు లగించి యున్నానొ కీర్తి మర్యాదలయందు నీవు బిగించుచున్నావు కీర్తి మర్యాదలు వలదులే స్వామి కృతముల నెన్ని చేర్తు నన్నింటను నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 42,
-    category: "annapurna",
-    titleTe: "అన్నపూర్ణాష్టకము - చరణం 7",
-    titleEn: "Annapurna Ashtakam - Verse 7",
-    verseTe: `అన్నపూర్ణే సదాపూర్ణే శంకర ప్రాణవల్లభే!
-జ్ఞానవైరాగ్య సిద్ధ్యర్థం భిక్షాం దేహి చ పార్వతి!`,
-    verseEn: `O Mother Annapurna, ever full and complete, the beloved of Lord Sankara!
-Grant us alms of knowledge and dispassion, O Goddess Parvati!`,
-    wordMeaningTe: `* అన్నపూర్ణే: ధాన్య సమృద్ధిని ఇచ్చే తల్లి.
-* సదాపూర్ణే: ఎల్లప్పుడూ నిండుగా ఉండేది.
-* ప్రాణవల్లభే: ప్రాణనాథురాలు.
-* జ్ఞానవైరాగ్య: జ్ఞానము మరియు వైరాగ్యము.
-* భిక్షాం: బిక్ష లేదా ప్రసాదము.`,
-    wordMeaningEn: `* Annapurne: She who is full of nourishment.
-* Sadapurne: Ever complete and full.
-* Pranavallabhe: Beloved consort.
-* Jnana-Vairagya: Wisdom and renunciation.
-* Bhiksham Dehi: Grant us alms.`,
-    audioTe: "అన్నపూర్ణే సదాపూర్ణే శంకర ప్రాణవల్లభే! జ్ఞానవైరాగ్య సిద్ధ్యర్థం భిక్షాం దేహి చ పార్వతి!",
-    audioEn: "O Mother Annapurna, ever full and complete, the beloved of Lord Sankara! Grant us alms of knowledge and dispassion, O Goddess Parvati!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 42",
+    titleEn: "Nekarukallu Satakam - Poem 42",
+    verseTe: `యా యా భావనాయ సిద్ధిస్సమంజసా భవతి
+తా దృశీ యన్నట్లు నన్ను వట్టి చైతన్యాకృతిఁ ప్రతి
+వాదించుటకు నేమొ విర లెవ్వరు పలుకరు లేవు
+సీదరింపులు కూడ నెకరుకల్ ప్రాంత సిద్ధాబహేళి!`,
+    verseEn: `Yaa yaa bhaavanaaya siddhissamamjasaa bhavati
+Taa drushee yannatlu nannu vatti chaitanyaakruti~ prati
+Vaadimchutaku nemò vira lèvvaru palukaru levu
+Seedarimpulu kooda nèkarukal praamta siddhaabaheḻi!`,
+    wordMeaningTe: `యా యా భవనాయ సిద్ధిస్సమఞ్జసా భవతి
+ఇది నన్ను చూసేలా చేసే చైతన్య రూపం
+మాకు వాదించడానికి మాటలు లేవు
+నేకరుకల్ ప్రాంతానికి చెందిన సిద్దాబహేలి కూడా అభినందనీయం!`,
+    wordMeaningEn: `Ya ya bhavanaya siddissamanjasa bhavati
+It is a form of consciousness that makes me look at it
+We have no words to argue
+Siddabaheli of Nekarukal area is also appreciated!`,
+    audioTe: "యా యా భావనాయ సిద్ధిస్సమంజసా భవతి తా దృశీ యన్నట్లు నన్ను వట్టి చైతన్యాకృతిఁ ప్రతి వాదించుటకు నేమొ విర లెవ్వరు పలుకరు లేవు సీదరింపులు కూడ నెకరుకల్ ప్రాంత సిద్ధాబహేళి!",
+    audioEn: ""
   },
   {
     id: 43,
-    category: "history",
-    titleTe: "నరసింగపాడు ఆలయ ప్రశస్తి - పద్యం 7",
-    titleEn: "Narasingapadu Temple Glory - Verse 7",
-    verseTe: `పవిత్ర క్షేత్రము నరసింగపాడున వెలసిన విశ్వనాథుడే శరణు!
-భక్త జనుల గుండెల్లో కొలువైన అన్నపూర్ణా విశ్వేశ్వరుడే శరణు!`,
-    verseEn: `Refuge in Lord Viswanatha who resides in the holy shrine of Narasingapadu!
-Refuge in Annapurna and Visweswara who dwell in the hearts of devotees!`,
-    wordMeaningTe: `* పవిత్ర క్షేత్రము: పరిశుద్ధమైన క్షేత్రము.
-* వెలసిన: అవతరించిన.
-* శరణు: ఆశ్రయము.
-* కొలువైన: నివసించిన.`,
-    wordMeaningEn: `* Pavitra Kshethramu: The holy place.
-* Velasina: Self-manifested or established.
-* Saranam: Safe haven.`,
-    audioTe: "పవిత్ర క్షేత్రము నరసింగపాడున వెలసిన విశ్వనాథుడే శరణు! భక్త జనుల గుండెల్లో కొలువైన అన్నపూర్ణా విశ్వేశ్వరుడే శరణు!",
-    audioEn: "Refuge in Lord Viswanatha who resides in the holy shrine of Narasingapadu! Refuge in Annapurna and Visweswara who dwell in the hearts of devotees!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 43",
+    titleEn: "Nekarukallu Satakam - Poem 43",
+    verseTe: `నేనన్న దే లేని యపుడు పాపముల్ నేనేమి సేతు
+నేనేమి సేతుఁ పాపములు చేసితి నీ వనె దేని
+నే నన్న భ్రాంతి మాయించు నీవును నేను నదొక్క
+చేనిలో పంటగా నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Nenanna de leni yapudu paapamul nenemi setu
+Nenemi setu~ paapamulu chesiti nee vanè deni
+Ne nanna bhraamti maayimchu neevunu nenu nadòkka
+Chenilo pamtagaa nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `నేనేమి సేతు నాతో సంబంధం లేని పాపం
+నేను పాపాలు చేసాను, మీరు ఏమి చేస్తున్నారు?
+నేను నాది మరియు మీరు నావారు
+చేతికి పంటగా నెకరుకల్ ప్రాంతం సిద్ధబ్దహేలీ!`,
+    wordMeaningEn: `Nenemi Setu is a sinner who has nothing to do with me
+I have committed sins, what are you doing?
+I am mine and you are mine
+Nekarukal area Siddhabdaheli as a crop in hand!`,
+    audioTe: "నేనన్న దే లేని యపుడు పాపముల్ నేనేమి సేతు నేనేమి సేతుఁ పాపములు చేసితి నీ వనె దేని నే నన్న భ్రాంతి మాయించు నీవును నేను నదొక్క చేనిలో పంటగా నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 44,
-    category: "devotion",
-    titleTe: "భక్తి సుధా తరంగిణి - భాగం 8",
-    titleEn: "Devotional Waves - Part 8",
-    verseTe: `ప్రాతఃకాలే శివనామ స్మరణం భవ హరణం సంసార తారణం!
-హర హర శంభో విశ్వనాథ మహదేవ శివాయ నమః శరణం!`,
-    verseEn: `Reciting Shiva's name in the morning destroys worldly attachment and crosses the ocean of life!
-O Shambho, Viswanatha, Mahadeva, salutations to Shiva!`,
-    wordMeaningTe: `* ప్రాతఃకాలే: ఉదయ కాలమున.
-* స్మరణం: తలచుకోవడం.
-* భవ హరణం: భవ బంధాలను పోగొట్టేది.
-* తారణం: దాటించేది.`,
-    wordMeaningEn: `* Pratahkale: In the early morning.
-* Smaranam: Remembrance.
-* Bhava Haranam: Destruction of worldly attachments.
-* Taranam: Delivering across the ocean of births.`,
-    audioTe: "ప్రాతఃకాలే శివనామ స్మరణం భవ హరణం సంసార తారణం! హర హర శంభో విశ్వనాథ మహదేవ శివాయ నమః శరణం!",
-    audioEn: "Reciting Shiva's name in the morning destroys worldly attachment and crosses the ocean of life! O Shambho, Viswanatha, Mahadeva, salutations to Shiva!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 44",
+    titleEn: "Nekarukallu Satakam - Poem 44",
+    verseTe: `అంతయు శూన్యంぶగాగఁ కన్పించినప్పుడు చాల
+వింత, శూన్యము గాగఁ జూచిన యతండు వీఁడుం కెఁగా దె
+భ్రాంతి నేదో చిత్రపటము చూడఁ కావలేనని రూప
+చింతనాహత బుద్ధి నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Amtayu shoonyamぶgaaga~ kanpimchinappudu chaala
+Vimta, shoonyamu gaaga~ joochina yatamdu vee~dum kè~gaa dè
+Bhraamti nedo chitrapatamu chooda~ kaavalenani roopa
+Chimtanaahata buddhi nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `శూన్యం కనిపించినప్పుడు సరిపోతుంది
+విచిత్రం, శూన్యం పాతదే
+భ్రమ అనేది చిత్రాన్ని చూసినట్లే
+చింతనహత బుద్ధిలోని నెకరుకల్ ప్రాంత సిద్ధబ్దహేళి!`,
+    wordMeaningEn: `That's enough when the void appears
+The strange, the void is the same as the old one
+Illusion is like seeing a picture
+Siddabdaheli of the Nekarukal region of Chintanahata Buddhi!`,
+    audioTe: "అంతయు శూన్యంぶగాగఁ కన్పించినప్పుడు చాల వింత, శూన్యము గాగఁ జూచిన యతండు వీఁడుం కెఁగా దె భ్రాంతి నేదో చిత్రపటము చూడఁ కావలేనని రూప చింతనాహత బుద్ధి నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 45,
-    category: "sacred",
-    titleTe: "మహాదేవ కరవలంబ స్తోత్రం - భాగం 8",
-    titleEn: "Mahadeva Karavalamba Stotram - Part 8",
-    verseTe: `సంసార ఘోర గహనే చరతో మమ హే దేవా!
-విశ్వేశ్వర కరుణానిధే దేహి కరవలంబమ్!`,
-    verseEn: `I am wandering in the terrifying jungle of this worldly life, O Lord!
-O Visweswara, ocean of compassion, extend Your hand of support!`,
-    wordMeaningTe: `* ఘోర గహనే: భయంకరమైన అడవిలో.
-* మమ: నా యొక్క.
-* కరుణానిధే: దయకు సముద్రుడైనవాడా.
-* కరవలంబమ్: చేతిని అందించి రక్షించడం.`,
-    wordMeaningEn: `* Ghora Gahane: In the dangerous forest.
-* Karunānidhe: O treasure of mercy.
-* Karavalambam: Hand of protection.`,
-    audioTe: "సంసార ఘోర గహనే చరతో మమ హే దేవా! విశ్వేశ్వర కరుణానిధే దేహి కరవలంబమ్!",
-    audioEn: "I am wandering in the terrifying jungle of this worldly life, O Lord! O Visweswara, ocean of compassion, extend Your hand of support!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 45",
+    titleEn: "Nekarukallu Satakam - Poem 45",
+    verseTe: `మన్నిత్య భావనాధార! నేను కుమ్మరి పుర్వువోలె
+నున్నాను తాఁబేలువోలెఁ చేతగాకున్నది యున్కి
+యున్న యున్కి యితరులకు నసహ్యమై యొగి బావి నీటి
+చిన్న తీపెక్కక నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Mannitya bhaavanaadhaara! nenu kummari purvuvolè
+Nunnaanu taa~beluvolè~ chetagaakunnadi yunki
+Yunna yunki yitarulaku nasahyamai yògi baavi neeti
+Chinna teepèkkaka nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `ప్రశంసల భావన!నేను కుమ్మరిలా ఉన్నాను
+నున్న తంబేలువోలెం చేయునది యుంకి
+యోగి బావి నీరు ఇతరులకు నచ్చదు
+చిన్న తీపక్కక నెకరుకల్ ప్రాంతం సిద్దబ్దహేలీ!`,
+    wordMeaningEn: `Appreciation concept!I am like a potter
+What is done by Nunna Tambeluvolem is Yunki
+Yogi's well water is disliked by others
+Little Thiepakkaka Nekarukal area Siddabdaheli!`,
+    audioTe: "మన్నిత్య భావనాధార! నేను కుమ్మరి పుర్వువోలె నున్నాను తాఁబేలువోలెఁ చేతగాకున్నది యున్కి యున్న యున్కి యితరులకు నసహ్యమై యొగి బావి నీటి చిన్న తీపెక్కక నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 46,
     category: "shiva",
-    titleTe: "కాశీ విశ్వేశ్వర స్తోత్రము - చరణం 8",
-    titleEn: "Kasi Visweswara Stotram - Verse 8",
-    verseTe: `మంగళరూపాయ నమః శివాయ! మణిశేఖరాయ నమః శివాయ!
-గంగాధరాయ గౌరీనాథాయ దేవాయ! శంభో విశ్వేశ్వరాయ శరణం శరణం!`,
-    verseEn: `Salutations to Shiva, the form of auspiciousness! Salutations to Shiva, who wears gems on His head!
-Salutations to the holder of Ganga, the Lord of Gauri! O Shambho Visweswara, I seek refuge in You!`,
-    wordMeaningTe: `* మంగళరూపాయ: శుభప్రదమైన రూపము కలవాడు.
-* మణిశేఖరాయ: తలపై మణిని ధరించినవాడు.
-* గంగాధరాయ: గంగను ధరించినవాడు.
-* గౌరీనాథాయ: పార్వతీదేవి భర్త.
-* శరణం: ఆశ్రయము.`,
-    wordMeaningEn: `* Mangalarupaya: The embodiment of auspiciousness.
-* Manishekharaya: Having a gem on His crown.
-* Gangadharaya: The one who holds the river Ganga.
-* Gaurinathaya: The consort of Gauri.
-* Saranam: Refuge.`,
-    audioTe: "మంగళరూపాయ నమః శివాయ! మణిశేఖరాయ నమః శివాయ! గంగాధరాయ గౌరీనాథాయ దేవాయ! శంభో విశ్వేశ్వరాయ శరణం శరణం!",
-    audioEn: "Salutations to Shiva, the form of auspiciousness! Salutations to Shiva, who wears gems on His head! Salutations to the holder of Ganga, the Lord of Gauri! O Shambho Visweswara, I seek refuge in You!"
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 46",
+    titleEn: "Nekarukallu Satakam - Poem 46",
+    verseTe: `నిగుడు, లోకము పైకి మనసు నిన్ను ధ్యానించెడు వేళ
+నిగుడు, లోక వ్యవహార వేళల నీయందె నిలుచు
+తగముందు కళ్లెము వెనుక వైపునఁ తగిలించినట్లు
+సిగపట్ల మారిది నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Nigudu, lokamu paiki manasu ninnu dhyaanimchèdu veḻa
+Nigudu, loka vyavahaara veḻala neeyamdè niluchu
+Tagamumdu kaḻlèmu vènuka vaipuna~ tagilimchinatlu
+Sigapatla maaridi nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `నిగుడు, లోకము పైన మనస్సు నిన్ను ధ్యానించునప్పుడు
+నిగుడు, నీవు లోకవ్యవహార సమయములో నిలుచు
+మునుపటిలా, ఎముక వెనుకకు జోడించబడింది
+సిగపట్ల మరిది నెకరుకల్ ప్రాంతం సిద్దబ్దహేలీ!`,
+    wordMeaningEn: `Nigudu, when the mind meditates on you above the world
+Nigudu, you stand in the time of world affairs
+As before, the bone was attached to the back
+Sigapatla Maridi Nekarukal region Siddabdaheli!`,
+    audioTe: "నిగుడు, లోకము పైకి మనసు నిన్ను ధ్యానించెడు వేళ నిగుడు, లోక వ్యవహార వేళల నీయందె నిలుచు తగముందు కళ్లెము వెనుక వైపునఁ తగిలించినట్లు సిగపట్ల మారిది నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 47,
-    category: "annapurna",
-    titleTe: "జగన్మాత అన్నపూర్ణ కీర్తన - భాగం 8",
-    titleEn: "Mother Annapurna Chant - Part 8",
-    verseTe: `సర్వమంగళ మాంగల్యే శివే సర్వార్థ సాధికే!
-శరణ్యే త్ర్యంబకే గౌరి నారాయణి నమోస్తుతే!`,
-    verseEn: `O Mother, who is the auspiciousness of all auspiciousness! O source of all achievements!
-We seek refuge in You, the three-eyed Gauri, Salutations to You, Narayani!`,
-    wordMeaningTe: `* సర్వమంగళ మాంగల్యే: సర్వ శుభములలో అత్యంత శుభప్రదమైనదానา.
-* శివే: కళ్యాణకారిణి.
-* సర్వార్థ సాధికే: సర్వ పురుషార్థాలను సాధించేదానా.
-* శరణ్యే: శరణు కోరదగిన తల్లి.`,
-    wordMeaningEn: `* Sarvamangala Mangalye: Most auspicious among all auspicious things.
-* Shive: Bestower of welfare.
-* Sarvartha Sadhike: Fulfiller of all desires.
-* Saranye: Worthy of taking refuge in.`,
-    audioTe: "సర్వమంగళ మాంగల్యే శివే సర్వార్థ సాధికే! శరణ్యే త్ర్యంబకే గౌరి నారాయణి నమోస్తుతే!",
-    audioEn: "O Mother, who is the auspiciousness of all auspiciousness! O source of all achievements! We seek refuge in You, the three-eyed Gauri, Salutations to You, Narayani!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 47",
+    titleEn: "Nekarukallu Satakam - Poem 47",
+    verseTe: `ఈ మేనితోఁగూడి యిచట నున్నవి ఎన్ని యో కలవు
+ఈ మేను ప్రారబ్ధ మొకఁడు బిట్టుగా నేచి యేర్పడియె
+సామి నీ వీ రెంటి నిచట నిచ్చటే సమయింపు! సామి
+సీమంతినీమూర్తి.! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Ee menito~goodi yichata nunnavi ènni yo kalavu
+Ee menu praarabdha mòka~du bittugaa nechi yerpadiyè
+Saami nee vee rèmti nichata nichchate samayimpu! saami
+Seemamtineemoorti.! nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `ఈ గనిలో ఎన్ని సంవత్సరాలు ఉన్నాయి?
+ఈ మెనూ ప్రారబ్ధ మొకందు ముక్కగా అల్లినది
+ఇది సామీ మరియు మీరు ఒకరికొకరు నిజాయితీగా ఉండాల్సిన సమయం!సామీ
+సీమంతిని మూర్తి.నెకరుకల్ ప్రాంతం సిద్దబ్దహేళి!`,
+    wordMeaningEn: `How many years are there in this mine?
+This menu Prarabdha Mokandu is woven into a piece
+It's time for Sami and you to be honest with each other!Sami
+Seemanthini Murthy.Nekarukal area Siddabdaheli!`,
+    audioTe: "ఈ మేనితోఁగూడి యిచట నున్నవి ఎన్ని యో కలవు ఈ మేను ప్రారబ్ధ మొకఁడు బిట్టుగా నేచి యేర్పడియె సామి నీ వీ రెంటి నిచట నిచ్చటే సమయింపు! సామి సీమంతినీమూర్తి.! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 48,
-    category: "history",
-    titleTe: "చారిత్రక శాసన గీతం - పద్యం 8",
-    titleEn: "Historical Inscription Hymn - Verse 8",
-    verseTe: `శిలా శాసనములందు నిలిచిన క్షేత్ర చరిత్ర చదువుదాం!
-తరతరాల పుణ్యఫలమైన విశ్వేశ్వర లీలలు కీర్తిద్దాం!`,
-    verseEn: `Let us read the history of this shrine recorded in the stone inscriptions!
-Let us praise the divine plays of Visweswara, the merit of generations!`,
-    wordMeaningTe: `* శిలా శాసనము: రాతిపై చెక్కబడిన శాసనము.
-* క్షేత్ర చరిత్ర: ఆలయం యొక్క చరిత్ర.
-* లీలలు: దైవ లీలలు.
-* కీర్తిద్దాం: కొనిాడుదాం.`,
-    wordMeaningEn: `* Shila Sasanamu: Inscription carved on stone.
-* Kshethra Charitra: History of the sacred place.
-* Leelalu: Divine activities.`,
-    audioTe: "శిలా శాసనములందు నిలిచిన క్షేత్ర చరిత్ర చదువుదాం! తరతరాల పుణ్యఫలమైన విశ్వేశ్వర లీలలు కీర్తిద్దాం!",
-    audioEn: "Let us read the history of this shrine recorded in the stone inscriptions! Let us praise the divine plays of Visweswara, the merit of generations!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 48",
+    titleEn: "Nekarukallu Satakam - Poem 48",
+    verseTe: `మును నిరర్థకమైన దాని సార్థకంబుగ నెంచుచుండి
+కని నిరర్థక మైనదానిని నిరర్థకంబుగ నేడు
+తనర నెల్లించియును గోయ మాత్రము తప్పుటలే ద
+సినిశిత సుమహస్క! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Munu nirarthakamaina daani saarthakambuga nèmchuchumdi
+Kani nirarthaka mainadaanini nirarthakambuga nedu
+Tanara nèllimchiyunu goya maatramu tapputale da
+Sinishita sumahaska! nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `ఇంతకు ముందు అర్థం లేనిది అర్థం చేసుకోండి
+ఈరోజు పనికిరాని వాటిని చేయండి
+తానారా నెల్లించియు పోవుట తప్పుకాదు
+సినీశిత సుమహాస్కా!నేకరుకల్ ప్రాంతం సిద్ధబ్దహేలీ!`,
+    wordMeaningEn: `Make sense of what was previously meaningless
+Make what is useless today
+It is not wrong to go to Tanara Nellinchiu
+Sinishita Sumahaska!Nekarukal area Siddabdaheli!`,
+    audioTe: "మును నిరర్థకమైన దాని సార్థకంబుగ నెంచుచుండి కని నిరర్థక మైనదానిని నిరర్థకంబుగ నేడు తనర నెల్లించియును గోయ మాత్రము తప్పుటలే ద సినిశిత సుమహస్క! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 49,
-    category: "devotion",
-    titleTe: "శరణాగతి ప్రార్థన - చరణం 9",
-    titleEn: "Prayer of Surrender - Verse 9",
-    verseTe: `పాపోహం పాపకర్మాహం పాపాత్మా పాపసంభవః!
-త్రాహి మాం కృపయా దేవా శరణాగత వత్సల!`,
-    verseEn: `I am a sinner, my actions are sinful, my soul is sinful, born of sin!
-O Lord, protect me out of compassion, O savior of those who surrender!`,
-    wordMeaningTe: `* పాపోహం: నేను పాపాత్ముడను.
-* త్రాహి మాం: నన్ను రక్షించు.
-* కృపయా: దయతో.
-* శరణాగత వత్సల: శరణు కోరినవారిని ప్రేమించేవాడా.`,
-    wordMeaningEn: `* Papoham: I am full of sins.
-* Trahi Mam: Protect me.
-* Krupaya: With mercy.
-* Saranagata Vatsala: Compassionate protector of those who surrender.`,
-    audioTe: "పాపోహం పాపకర్మాహం పాపాత్మా పాపసంభవః! త్రాహి మాం కృపయా దేవా శరణాగత వత్సల!",
-    audioEn: "I am a sinner, my actions are sinful, my soul is sinful, born of sin! O Lord, protect me out of compassion, O savior of those who surrender!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 49",
+    titleEn: "Nekarukallu Satakam - Poem 49",
+    verseTe: `ప్రశమిత తీవ్ర భావమగు వేళల భార్యయు బిడ్డ
+లశసంబు వీనినిగూర్చి యూహలాహతములై పొల్చు
+నిశితంబుగా సర్వవేళలందున నిన్నెంచు పట్టి
+శిశిర దృష్టులఁజూడు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Prashamita teevra bhaavamagu veḻala bhaaryayu bidda
+Lashasambu veeninigoorchi yoohalaahatamulai pòlchu
+Nishitambugaa sarvaveḻalamduna ninnèmchu patti
+Shishira drushtula~joodu nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `ప్రశమిత తీవ్రమైన భావోద్వేగాల భార్య మరియు బిడ్డ
+లాషా సాంబు ఒక చెడ్డవాడు
+నిశితంబు నీకు సదా సన్నిధి
+శరదృతువులో నెకరుకల్ ప్రాంతం సిద్ధబ్దహేలీ!`,
+    wordMeaningEn: `Prashamita is a wife and child of intense emotions
+Lasha Sambu is a scumbag
+Nishitambu is always close to you
+Nekarukal area Siddhabdaheli in autumn!`,
+    audioTe: "ప్రశమిత తీవ్ర భావమగు వేళల భార్యయు బిడ్డ లశసంబు వీనినిగూర్చి యూహలాహతములై పొల్చు నిశితంబుగా సర్వవేళలందున నిన్నెంచు పట్టి శిశిర దృష్టులఁజూడు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 50,
-    category: "sacred",
-    titleTe: "ఆత్మారామ ధ్యాన శ్లోకం - చరణం 9",
-    titleEn: "Atmaram Meditation Hymn - Verse 9",
-    verseTe: `ఆత్మారాం సమేత అన్నపూర్ణ మాతా హృదయ నివాసి!
-సకల జీవ సంరక్షక విశ్వనాథ జ్యోతి స్వరూప ప్రకాశి!`,
-    verseEn: `Mother Annapurna along with Lord Atmaram resides in our hearts!
-O Viswanatha, protector of all living beings, shine as the divine light!`,
-    wordMeaningTe: `* హృదయ నివాసి: హృదయములో నివసించువాడా.
-* సకల జీవ సంరక్షక: సమస్త జీవులను కాపాడేవాడా.
-* జ్యోతి స్వరూప: వెలుగు రూపములో ఉన్నవాడా.
-* ప్రకాశి: ప్రకాశించేవాడా.`,
-    wordMeaningEn: `* Hrudaya Nivasi: Dweller of the heart.
-* Sakala Jeeva Samrakshaka: Preserver of all life forms.
-* Jyoti Swarupa: In the form of holy light.
-* Prakashi: Illuminating one.`,
-    audioTe: "ఆత్మారాం సమేత అన్నపూర్ణ మాతా హృదయ నివాసి! సకల జీవ సంరక్షక విశ్వనాథ జ్యోతి స్వరూప ప్రకాశి!",
-    audioEn: "Mother Annapurna along with Lord Atmaram resides in our hearts! O Viswanatha, protector of all living beings, shine as the divine light!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 50",
+    titleEn: "Nekarukallu Satakam - Poem 50",
+    verseTe: `ఇవి హిరణ్యాక్ష వరములు కావుగదే మదేభాజి
+న వసన! దానిచే దీనిచేఁ చావు నాకు వద్దనుచు
+శివ! చావు కానట్టి చావు నాశింతు శివ! జగతికి న
+శివకారి కాదిద్ది! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Ivi hiranyaaksha varamulu kaavugade madebhaaji
+Na vasana! daaniche deeniche~ chaavu naaku vaddanuchu
+Shiva! chaavu kaanatti chaavu naashimtu shiva! jagatiki na
+Shivakaari kaadiddi! nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `ఇవి హిరణ్యాక్షుని వరములు, గాదె మదేభాజీ
+రాగానే!దీని వల్ల నాకు చావాలని లేదు
+శివా!నీవు చావకపోతే చచ్చిపోతావు!ప్రపంచం మీద
+శివకారి కాడిది!నెకరుకల్ ప్రాంతం సిద్దబ్దహేలీ!`,
+    wordMeaningEn: `These are Hiranyaksha's bounties, Gade Madebhaji
+On arrival!I don't want to die because of this
+Shiva!If you don't die, you will die!On the world
+Shivkari Kadidi!Nekarukal area Siddabdaheli!`,
+    audioTe: "ఇవి హిరణ్యాక్ష వరములు కావుగదే మదేభాజి న వసన! దానిచే దీనిచేఁ చావు నాకు వద్దనుచు శివ! చావు కానట్టి చావు నాశింతు శివ! జగతికి న శివకారి కాదిద్ది! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 51,
     category: "shiva",
-    titleTe: "శివ పంచాక్షరి - చరణం 9",
-    titleEn: "Shiva Panchakshari - Verse 9",
-    verseTe: `నమః శివాయ నమః శివాయ నమః శివాయ నమః శివాయ!
-హర హర శంభో మహదేవాయ విశ్వేశ్వరాయ నమః శివాయ!`,
-    verseEn: `Salutations to Shiva! Salutations to Shiva!
-O Hara, Shambho, Mahadeva, Visweswara! Salutations to Shiva!`,
-    wordMeaningTe: `* నమః శివాయ: శివునికి నమస్కారములు.
-* హర హర: పాపములను హరించేవాడు.
-* శంభో: సుఖములను కలిగించేవాడు.
-* విశ్వేశ్వరాయ: విశ్వానికి అధిపతి.`,
-    wordMeaningEn: `* Namah Shivaya: Salutations to Lord Shiva.
-* Hara: The destroyer of sins.
-* Shambho: The bestower of happiness.
-* Visweswaraya: The Lord of the Universe.`,
-    audioTe: "నమః శివాయ నమః శివాయ నమః శివాయ నమః శివాయ! హర హర శంభో మహదేవాయ విశ్వేశ్వరాయ నమః శివాయ!",
-    audioEn: "Salutations to Shiva! Salutations to Shiva! O Hara, Shambho, Mahadeva, Visweswara! Salutations to Shiva!"
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 51",
+    titleEn: "Nekarukallu Satakam - Poem 51",
+    verseTe: `నీముక్కు మొగము నే నెఱుగ శాస్త్రముల్ నినుఁగూర్చి చెప్పె
+నీ మాదిరిగ నాశయించి న౯ ఫలియింతు వీవనుచు
+సోమ కిరీట! నాదింతె మీర్మీరు చూచికోవలయు
+సీమాంతములదాఁక నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Neemukku mògamu ne nèṟuga shaastramul ninu~goorchi chèppè
+Nee maadiriga naashayimchi na9 phaliyimtu veevanuchu
+Soma kireeta! naadimtè meermeeru choochikovalayu
+Seemaamtamuladaa~ka nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `నిన్ను గూర్చి నీకు మొగము నే నెరుగ శాస్త్రముల్ చెప్పెను
+మీ ఉదాహరణను అనుసరించండి మరియు ఫలితాలను చూడండి
+సోమ కిరీటం!నాది నువ్వు చూడాలి
+సీమంత్ములదంకర నెకరుకల్ ప్రాంతం సిద్దబ్దహేలీ!`,
+    wordMeaningEn: `Nimukku Mogamu Ne Neruga Shastramul told about you
+Follow your example and see the results
+Soma crown!You have to see mine
+Seemantmuladankara Nekarukal region Siddabdaheli!`,
+    audioTe: "నీముక్కు మొగము నే నెఱుగ శాస్త్రముల్ నినుఁగూర్చి చెప్పె నీ మాదిరిగ నాశయించి న౯ ఫలియింతు వీవనుచు సోమ కిరీట! నాదింతె మీర్మీరు చూచికోవలయు సీమాంతములదాఁక నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 52,
-    category: "annapurna",
-    titleTe: "అన్నపూర్ణాష్టకము - చరణం 9",
-    titleEn: "Annapurna Ashtakam - Verse 9",
-    verseTe: `అన్నపూర్ణే సదాపూర్ణే శంకర ప్రాణవల్లభే!
-జ్ఞానవైరాగ్య సిద్ధ్యర్థం భిక్షాం దేహి చ పార్వతి!`,
-    verseEn: `O Mother Annapurna, ever full and complete, the beloved of Lord Sankara!
-Grant us alms of knowledge and dispassion, O Goddess Parvati!`,
-    wordMeaningTe: `* అన్నపూర్ణే: ధాన్య సమృద్ధిని ఇచ్చే తల్లి.
-* సదాపూర్ణే: ఎల్లప్పుడూ నిండుగా ఉండేది.
-* ప్రాణవల్లభే: ప్రాణనాథురాలు.
-* జ్ఞానవైరాగ్య: జ్ఞానము మరియు వైరాగ్యము.
-* భిక్షాం: బిక్ష లేదా ప్రసాదము.`,
-    wordMeaningEn: `* Annapurne: She who is full of nourishment.
-* Sadapurne: Ever complete and full.
-* Pranavallabhe: Beloved consort.
-* Jnana-Vairagya: Wisdom and renunciation.
-* Bhiksham Dehi: Grant us alms.`,
-    audioTe: "అన్నపూర్ణే సదాపూర్ణే శంకర ప్రాణవల్లభే! జ్ఞానవైరాగ్య సిద్ధ్యర్థం భిక్షాం దేహి చ పార్వతి!",
-    audioEn: "O Mother Annapurna, ever full and complete, the beloved of Lord Sankara! Grant us alms of knowledge and dispassion, O Goddess Parvati!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 52",
+    titleEn: "Nekarukallu Satakam - Poem 52",
+    verseTe: `నను నమ్మెదేల యనంగ శాస్త్రముల్ ననుఁ కూర్చి చెప్పె
+ననుగూర్చి చెప్పినదెల్ల నిజమయ్యె నా యనుభవము
+నను నిను గూర్చియు నిజమైనఁ కావలె నన్నిం దన వల
+సిన దేమియును లేద! నెకరుకల్ ప్రాంత సిద్ధాహేళి!`,
+    verseEn: `Nanu nammèdela yanamga shaastramul nanu~ koorchi chèppè
+Nanugoorchi chèppinadèlla nijamayyè naa yanubhavamu
+Nanu ninu goorchiyu nijamaina~ kaavalè nannim dana vala
+Sina demiyunu leda! nèkarukal praamta siddhaaheḻi!`,
+    wordMeaningTe: `ననుమేడల యనంగ శాస్త్రముల్ నన్ను కూర్చోబెట్టి చెప్పెను
+నా గురించి చెప్పినవన్నీ నిజమే, నా యవ్వనం
+నేను మీ గురించి నిజం చెప్పాలనుకుంటున్నాను
+సిన దేమియును లేదు!నెకరుకల్ ప్రాంతం సిద్దహేలీ!`,
+    wordMeaningEn: `Nanumedela Yananga Shastramul sat me down and told me
+Everything said about me is true, my youth
+I want to be true about you
+Sina Demiunu no!Nekarukal area Siddaheli!`,
+    audioTe: "నను నమ్మెదేల యనంగ శాస్త్రముల్ ననుఁ కూర్చి చెప్పె ననుగూర్చి చెప్పినదెల్ల నిజమయ్యె నా యనుభవము నను నిను గూర్చియు నిజమైనఁ కావలె నన్నిం దన వల సిన దేమియును లేద! నెకరుకల్ ప్రాంత సిద్ధాహేళి!",
+    audioEn: ""
   },
   {
     id: 53,
-    category: "history",
-    titleTe: "నరసింగపాడు ఆలయ ప్రశస్తి - పద్యం 9",
-    titleEn: "Narasingapadu Temple Glory - Verse 9",
-    verseTe: `పవిత్ర క్షేత్రము నరసింగపాడున వెలసిన విశ్వనాథుడే శరణు!
-భక్త జనుల గుండెల్లో కొలువైన అన్నపూర్ణా విశ్వేశ్వరుడే శరణు!`,
-    verseEn: `Refuge in Lord Viswanatha who resides in the holy shrine of Narasingapadu!
-Refuge in Annapurna and Visweswara who dwell in the hearts of devotees!`,
-    wordMeaningTe: `* పవిత్ర క్షేత్రము: పరిశుద్ధమైన క్షేత్రము.
-* వెలసిన: అవతరించిన.
-* శరణు: ఆశ్రయము.
-* కొలువైన: నివసించిన.`,
-    wordMeaningEn: `* Pavitra Kshethramu: The holy place.
-* Velasina: Self-manifested or established.
-* Saranam: Safe haven.`,
-    audioTe: "పవిత్ర క్షేత్రము నరసింగపాడున వెలసిన విశ్వనాథుడే శరణు! భక్త జనుల గుండెల్లో కొలువైన అన్నపూర్ణా విశ్వేశ్వరుడే శరణు!",
-    audioEn: "Refuge in Lord Viswanatha who resides in the holy shrine of Narasingapadu! Refuge in Annapurna and Visweswara who dwell in the hearts of devotees!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 53",
+    titleEn: "Nekarukallu Satakam - Poem 53",
+    verseTe: `ఎవ్వడో వీని నిందించెనని విని యెచటనో గాని
+రవ్వంతయగు బాధ కలుగు చున్నదో రజత గిరీశ!
+యెవ్వడో యెవనినో నింద చేసిన నీ నాకు నేల
+చివ్వ రేపకు కేళి నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Èvvado veeni nimdimchènani vini yèchatano gaani
+Ravvamtayagu baadha kalugu chunnado rajata gireesha!
+Yèvvado yèvanino nimda chesina nee naaku nela
+Chivva repaku keḻi nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `తనని ఎవరో నిందించారని విన్నాడు
+రవ్వంతయగు వేదన రజత గిరీశా!
+మీరు ఎవరినైనా నిందించటానికి నేల
+రేపు నెకరుకల్ ఏరియా సిద్ధబ్దహేలీ సరదా!`,
+    wordMeaningEn: `He heard that someone blamed him
+Ravvantayagu's pain is so great that Rajata Girisha!
+You are the ground for blaming anyone
+Nekarukal area Siddhabdaheli fun tomorrow!`,
+    audioTe: "ఎవ్వడో వీని నిందించెనని విని యెచటనో గాని రవ్వంతయగు బాధ కలుగు చున్నదో రజత గిరీశ! యెవ్వడో యెవనినో నింద చేసిన నీ నాకు నేల చివ్వ రేపకు కేళి నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 54,
-    category: "devotion",
-    titleTe: "భక్తి సుధా తరంగిణి - భాగం 10",
-    titleEn: "Devotional Waves - Part 10",
-    verseTe: `ప్రాతఃకాలే శివనామ స్మరణం భవ హరణం సంసార తారణం!
-హర హర శంభో విశ్వనాథ మహదేవ శివాయ నమః శరణం!`,
-    verseEn: `Reciting Shiva's name in the morning destroys worldly attachment and crosses the ocean of life!
-O Shambho, Viswanatha, Mahadeva, salutations to Shiva!`,
-    wordMeaningTe: `* ప్రాతఃకాలే: ఉదయ కాలమున.
-* స్మరణం: తలచుకోవడం.
-* భవ హరణం: భవ బంధాలను పోగొట్టేది.
-* తారణం: దాటించేది.`,
-    wordMeaningEn: `* Pratahkale: In the early morning.
-* Smaranam: Remembrance.
-* Bhava Haranam: Destruction of worldly attachments.
-* Taranam: Delivering across the ocean of births.`,
-    audioTe: "ప్రాతఃకాలే శివనామ స్మరణం భవ హరణం సంసార తారణం! హర హర శంభో విశ్వనాథ మహదేవ శివాయ నమః శరణం!",
-    audioEn: "Reciting Shiva's name in the morning destroys worldly attachment and crosses the ocean of life! O Shambho, Viswanatha, Mahadeva, salutations to Shiva!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 54",
+    titleEn: "Nekarukallu Satakam - Poem 54",
+    verseTe: `నట్టు గవసంబునకును నా శవినాభావమైన
+యట్టి సంబంధంబు పెట్టికొని చెడి నట్టివాఁడేను
+పుట్టి మునింగి పోయినదొ యెందలు పుట్టరు కవులు
+చెట్టనైతిని గాని నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Nattu gavasambunakunu naa shavinaabhaavamaina
+Yatti sambamdhambu pèttikòni chèdi nattivaa~denu
+Putti munimgi poyinadò yèmdalu puttaru kavulu
+Chèttanaitini gaani nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `నట్టు గవశంబునకును నా శవినాభవ
+నేను ఈ సంబంధంతో చెడు పనులు చేస్తున్నాను
+కవులు పుట్టి మునిగినప్పుడు పుట్టరు
+చెట్టనైతిని లేక నెకరుకల్ ఏరియా సిద్దబ్దహేలీ!`,
+    wordMeaningEn: `Nattu Gavasambunakunu my Shavinabhava
+I am doing bad things with this relationship
+Poets are not born when they are born and drowned
+Chettanaithini or Nekarukal area Siddabdaheli!`,
+    audioTe: "నట్టు గవసంబునకును నా శవినాభావమైన యట్టి సంబంధంబు పెట్టికొని చెడి నట్టివాఁడేను పుట్టి మునింగి పోయినదొ యెందలు పుట్టరు కవులు చెట్టనైతిని గాని నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 55,
-    category: "sacred",
-    titleTe: "మహాదేవ కరవలంబ స్తోత్రం - భాగం 10",
-    titleEn: "Mahadeva Karavalamba Stotram - Part 10",
-    verseTe: `సంసార ఘోర గహనే చరతో మమ హే దేవా!
-విశ్వేశ్వర కరుణానిధే దేహి కరవలంబమ్!`,
-    verseEn: `I am wandering in the terrifying jungle of this worldly life, O Lord!
-O Visweswara, ocean of compassion, extend Your hand of support!`,
-    wordMeaningTe: `* ఘోర గహనే: భయంకరమైన అడవిలో.
-* మమ: నా యొక్క.
-* కరుణానిధే: దయకు సముద్రుడైనవాడా.
-* కరవలంబమ్: చేతిని అందించి రక్షించడం.`,
-    wordMeaningEn: `* Ghora Gahane: In the dangerous forest.
-* Karunānidhe: O treasure of mercy.
-* Karavalambam: Hand of protection.`,
-    audioTe: "సంసార ఘోర గహనే చరతో మమ హే దేవా! విశ్వేశ్వర కరుణానిధే దేహి కరవలంబమ్!",
-    audioEn: "I am wandering in the terrifying jungle of this worldly life, O Lord! O Visweswara, ocean of compassion, extend Your hand of support!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 55",
+    titleEn: "Nekarukallu Satakam - Poem 55",
+    verseTe: `మనిసితోడి యహంక్రియానుగతి కాక మనుజుల౦ దెవడు
+తనయందుఁగల విద్యకోసమై పుట్టె దా నొక్కరుండె
+యనయము 'లచ్చోపలచ్చ' లున్నా రహంకార పడగఁ
+జెనటులు ననుఁబోలె నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Manisitodi yahamkriyaanugati kaaka manujula0 dèvadu
+Tanayamdu~gala vidyakosamai puttè daa nòkkarumdè
+Yanayamu 'lachchopalachcha' lunnaa rahamkaara padaga~
+Jènatulu nanu~bolè nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `మనిషి దెయ్యం, మనిషి కాదు
+కొడుకు చదువు కోసం పుట్టె ద ని ఒత్తిడి చేస్తున్నాడు
+యనయము 'లచ్చోపలచ్చ' లున్న రహమాంకర పదగ్
+గెనెతులు ననుంబోలె నెకరుకల్ ప్రాంతం సిద్ధబ్దహేళి!`,
+    wordMeaningEn: `Man is a devil, not a man
+He was pressing Putte da for his son's education
+Yanayamu 'Lachchopalachcha' Lunna Rahmankara Padag
+Genetulu Nanumbole Nekarukal area Siddhabdaheli!`,
+    audioTe: "మనిసితోడి యహంక్రియానుగతి కాక మనుజుల౦ దెవడు తనయందుఁగల విద్యకోసమై పుట్టె దా నొక్కరుండె యనయము 'లచ్చోపలచ్చ' లున్నా రహంకార పడగఁ జెనటులు ననుఁబోలె నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 56,
     category: "shiva",
-    titleTe: "నమః శివాయ స్తుతి - భాగం 10",
-    titleEn: "Namah Shivaya Praise - Part 10",
-    verseTe: `దేవదేవాయ త్రిలోచనాత్మకాయ నమః శివాయ!
-భక్త రక్షకాయ భవతారకాయ నమః శివాయ!`,
-    verseEn: `Salutations to Shiva, the God of Gods, the three-eyed Lord!
-Salutations to Shiva, the protector of devotees and the redeemer of life!`,
-    wordMeaningTe: `* త్రిలోచనాత్మకాయ: మూడు కన్నులు గలవాడు.
-* దేవదేవాయ: దేవతలకు దేవుడు.
-* భక్త రక్షకాయ: భక్తులను రక్షించేవాడు.
-* భవతారకాయ: సంసార సాగరాన్ని దాటించేవాడు.`,
-    wordMeaningEn: `* Trilochanatmakaya: The three-eyed Lord.
-* Devadevaya: The God of Gods.
-* Bhakta Rakshakaya: The protector of devotees.
-* Bhavatarakaya: The savior from the cycle of rebirth.`,
-    audioTe: "దేవదేవాయ త్రిలోచనాత్మకాయ నమః శివాయ! భక్త రక్షకాయ భవతారకాయ నమః శివాయ!",
-    audioEn: "Salutations to Shiva, the God of Gods, the three-eyed Lord! Salutations to Shiva, the protector of devotees and the redeemer of life!"
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 56",
+    titleEn: "Nekarukallu Satakam - Poem 56",
+    verseTe: `ఇన్నాళ్ళకైనను గన్ను తెఱపించి తీ మాత్రపుఁ కృప
+మన్నునై తుదమన్ను లోనఁగలియని మహితమౌ వేళఁ
+బన్ని నిక్ గెల్చుట వేరు నీ పీడ వదలుట వేరు
+చెన్ను మాలిన పీడ నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Innaaḻḻakainanu gannu tèṟapimchi tee maatrapu~ krupa
+Mannunai tudamannu lona~galiyani mahitamau veḻa~
+Banni nik gèlchuta veru nee peeda vadaluta veru
+Chènnu maalina peeda nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `చాలా సేపు కూడా తుపాకీని తెరిచినందుకు ధన్యవాదాలు
+మన్నునై తుదమన్ను లోనగలియని మహితమౌ వెలన్
+బన్నీ నిక్ గెలవడం అనేది మీ బరువు తగ్గడం వేరు
+చెన్ను మలిన పీడ నెకరుకల్ ప్రాంతం సిద్ధబ్దహేళి!`,
+    wordMeaningEn: `Thank you for opening the gun even for a long time
+Mannunai tudamannu lonagaliani mahitamau velan
+Winning a bunny nick is different from losing your weight
+Chennu Malina Peeda Nekarukal region Siddhabdaheli!`,
+    audioTe: "ఇన్నాళ్ళకైనను గన్ను తెఱపించి తీ మాత్రపుఁ కృప మన్నునై తుదమన్ను లోనఁగలియని మహితమౌ వేళఁ బన్ని నిక్ గెల్చుట వేరు నీ పీడ వదలుట వేరు చెన్ను మాలిన పీడ నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 57,
-    category: "annapurna",
-    titleTe: "జగన్మాత అన్నపూర్ణ కీర్తన - భాగం 10",
-    titleEn: "Mother Annapurna Chant - Part 10",
-    verseTe: `సర్వమంగళ మాంగల్యే శివే సర్వార్థ సాధికే!
-శరణ్యే త్ర్యంబకే గౌరి నారాయణి నమోస్తుతే!`,
-    verseEn: `O Mother, who is the auspiciousness of all auspiciousness! O source of all achievements!
-We seek refuge in You, the three-eyed Gauri, Salutations to You, Narayani!`,
-    wordMeaningTe: `* సర్వమంగళ మాంగల్యే: సర్వ శుభములలో అత్యంత శుభప్రదమైనదానา.
-* శివే: కళ్యాణకారిణి.
-* సర్వార్థ సాధికే: సర్వ పురుషార్థాలను సాధించేదానా.
-* శరణ్యే: శరణు కోరదగిన తల్లి.`,
-    wordMeaningEn: `* Sarvamangala Mangalye: Most auspicious among all auspicious things.
-* Shive: Bestower of welfare.
-* Sarvartha Sadhike: Fulfiller of all desires.
-* Saranye: Worthy of taking refuge in.`,
-    audioTe: "సర్వమంగళ మాంగల్యే శివే సర్వార్థ సాధికే! శరణ్యే త్ర్యంబకే గౌరి నారాయణి నమోస్తుతే!",
-    audioEn: "O Mother, who is the auspiciousness of all auspiciousness! O source of all achievements! We seek refuge in You, the three-eyed Gauri, Salutations to You, Narayani!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 57",
+    titleEn: "Nekarukallu Satakam - Poem 57",
+    verseTe: `నిరుపాయుడై యదేపనిగ రాచుచుండిన రాయియైన
+నరుగు సన్నట్లుగా నరుగుచున్నానయా విశ్వనాథ!
+అరిగియరిగి చిట్టచివరకీ లేని యట్లుగాఁ జేయు
+సిరము గాలికిఁబోవ నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Nirupaayudai yadepaniga raachuchumdina raayiyaina
+Narugu sannatlugaa naruguchunnaanayaa vishvanaatha!
+Arigiyarigi chittachivarakee leni yatlugaa~ jeyu
+Siramu gaaliki~bova nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `నిర్మానుష్య స్థితిలో వ్రాసిన రాయి అది
+సన్నగా విరిగిపోతున్నావా విశ్వనాథా?
+అలసిపోకండి మరియు అంతం కాదు
+సిరాము గాలిక్బోవ నెకరుకల్ ప్రాంతం సిద్దబ్దహేలీ!`,
+    wordMeaningEn: `It is a stone that is written in a desolate state
+Viswanatha, are you breaking thin?
+Get tired and never ending
+Siramu Galikbowa Nekarukal Region Siddabdaheli!`,
+    audioTe: "నిరుపాయుడై యదేపనిగ రాచుచుండిన రాయియైన నరుగు సన్నట్లుగా నరుగుచున్నానయా విశ్వనాథ! అరిగియరిగి చిట్టచివరకీ లేని యట్లుగాఁ జేయు సిరము గాలికిఁబోవ నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 58,
-    category: "history",
-    titleTe: "చారిత్రక శాసన గీతం - పద్యం 10",
-    titleEn: "Historical Inscription Hymn - Verse 10",
-    verseTe: `శిలా శాసనములందు నిలిచిన క్షేత్ర చరిత్ర చదువుదాం!
-తరతరాల పుణ్యఫలమైన విశ్వేశ్వర లీలలు కీర్తిద్దాం!`,
-    verseEn: `Let us read the history of this shrine recorded in the stone inscriptions!
-Let us praise the divine plays of Visweswara, the merit of generations!`,
-    wordMeaningTe: `* శిలా శాసనము: రాతిపై చెక్కబడిన శాసనము.
-* క్షేత్ర చరిత్ర: ఆలయం యొక్క చరిత్ర.
-* లీలలు: దైవ లీలలు.
-* కీర్తిద్దాం: కొనిాడుదాం.`,
-    wordMeaningEn: `* Shila Sasanamu: Inscription carved on stone.
-* Kshethra Charitra: History of the sacred place.
-* Leelalu: Divine activities.`,
-    audioTe: "శిలా శాసనములందు నిలిచిన క్షేత్ర చరిత్ర చదువుదాం! తరతరాల పుణ్యఫలమైన విశ్వేశ్వర లీలలు కీర్తిద్దాం!",
-    audioEn: "Let us read the history of this shrine recorded in the stone inscriptions! Let us praise the divine plays of Visweswara, the merit of generations!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 58",
+    titleEn: "Nekarukallu Satakam - Poem 58",
+    verseTe: `వసరి యధార్థ వాక్కు సకు వశుడనై వాశ్చమత్కార
+మునకును గొని తెచ్చికొంటిఁ కద దారిఁపోవు తద్దినము
+లను వందలును వేలు నీదు కృప, నవే లాభించెడిని, వ
+శిని జేయుటకు నన్ను నెకరుకల్ ప్రాంత సిద్ధాబహేళి!`,
+    verseEn: `Vasari yadhaartha vaakku saku vashudanai vaashchamatkaara
+Munakunu gòni tèchchikòmti~ kada daari~povu taddinamu
+Lanu vamdalunu velu needu krupa, nave laabhimchèdini, va
+Shini jeyutaku nannu nèkarukal praamta siddhaabaheḻi!`,
+    wordMeaningTe: `వసరి యధార్థ వాక్కు సకు వసుదనై వశ్చమత్కార
+మునను గోని తీసికొని తెచ్చాము
+లను వందలు వేలు నీదు కృపా, నావే లాభదాయక, వి
+షినిని ఓడించడానికి నెకరుకల్ ప్రాంతం సిద్దబాహేలీ నాకు!`,
+    wordMeaningEn: `Vasari Yadhartha Vakku Saku Vasudanai Vashchamatkara
+We took Munanu Goni and brought it
+Lanu hundredslu velu needu kripa, nave profiteer, v
+Nekarukal region Siddabaheli me to defeat Shini!`,
+    audioTe: "వసరి యధార్థ వాక్కు సకు వశుడనై వాశ్చమత్కార మునకును గొని తెచ్చికొంటిఁ కద దారిఁపోవు తద్దినము లను వందలును వేలు నీదు కృప, నవే లాభించెడిని, వ శిని జేయుటకు నన్ను నెకరుకల్ ప్రాంత సిద్ధాబహేళి!",
+    audioEn: ""
   },
   {
     id: 59,
-    category: "devotion",
-    titleTe: "శరణాగతి ప్రార్థన - చరణం 11",
-    titleEn: "Prayer of Surrender - Verse 11",
-    verseTe: `పాపోహం పాపకర్మాహం పాపాత్మా పాపసంభవః!
-త్రాహి మాం కృపయా దేవా శరణాగత వత్సల!`,
-    verseEn: `I am a sinner, my actions are sinful, my soul is sinful, born of sin!
-O Lord, protect me out of compassion, O savior of those who surrender!`,
-    wordMeaningTe: `* పాపోహం: నేను పాపాత్ముడను.
-* త్రాహి మాం: నన్ను రక్షించు.
-* కృపయా: దయతో.
-* శరణాగత వత్సల: శరణు కోరినవారిని ప్రేమించేవాడా.`,
-    wordMeaningEn: `* Papoham: I am full of sins.
-* Trahi Mam: Protect me.
-* Krupaya: With mercy.
-* Saranagata Vatsala: Compassionate protector of those who surrender.`,
-    audioTe: "పాపోహం పాపకర్మాహం పాపాత్మా పాపసంభవః! త్రాహి మాం కృపయా దేవా శరణాగత వత్సల!",
-    audioEn: "I am a sinner, my actions are sinful, my soul is sinful, born of sin! O Lord, protect me out of compassion, O savior of those who surrender!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 59",
+    titleEn: "Nekarukallu Satakam - Poem 59",
+    verseTe: `నా మనస్సే ప్రమాణమని యిన్నాళ్లు నా కేలొ పొగరు
+స్వామి యానో కాదొ యెల్ల బాలింపవలసిన డే మొ
+తాము, మీకేలేదు నాకు నేలకందకు లేని దురద
+చేమ కేటికి స్వామి! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Naa manasse pramaanamani yinnaaḻlu naa kelò pògaru
+Svaami yaano kaadò yèlla baalimpavalasina de mò
+Taamu, meekeledu naaku nelakamdaku leni durada
+Chema ketiki svaami! nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `నా హృదయమే నా హృదయానికి ప్రమాణం
+స్వామి యానో కాకపోతే రోజు ఎత్తాలి
+వారు, మీరు కాదు, నాకు లోతైన దురద ఉంది
+చేమ కేతికి స్వామీ!నెకరుకల్ ప్రాంతం సిద్దబ్దహేలీ!`,
+    wordMeaningEn: `My heart is the standard of my heart
+If it is not Swami Yano, then the day should be raised
+They, not you, I have a deep itch
+Chema Ketiki Swami!Nekarukal area Siddabdaheli!`,
+    audioTe: "నా మనస్సే ప్రమాణమని యిన్నాళ్లు నా కేలొ పొగరు స్వామి యానో కాదొ యెల్ల బాలింపవలసిన డే మొ తాము, మీకేలేదు నాకు నేలకందకు లేని దురద చేమ కేటికి స్వామి! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 60,
-    category: "sacred",
-    titleTe: "ఆత్మారామ ధ్యాన శ్లోకం - చరణం 11",
-    titleEn: "Atmaram Meditation Hymn - Verse 11",
-    verseTe: `ఆత్మారాం సమేత అన్నపూర్ణ మాతా హృదయ నివాసి!
-సకల జీవ సంరక్షక విశ్వనాథ జ్యోతి స్వరూప ప్రకాశి!`,
-    verseEn: `Mother Annapurna along with Lord Atmaram resides in our hearts!
-O Viswanatha, protector of all living beings, shine as the divine light!`,
-    wordMeaningTe: `* హృదయ నివాసి: హృదయములో నివసించువాడా.
-* సకల జీవ సంరక్షక: సమస్త జీవులను కాపాడేవాడా.
-* జ్యోతి స్వరూప: వెలుగు రూపములో ఉన్నవాడా.
-* ప్రకాశి: ప్రకాశించేవాడా.`,
-    wordMeaningEn: `* Hrudaya Nivasi: Dweller of the heart.
-* Sakala Jeeva Samrakshaka: Preserver of all life forms.
-* Jyoti Swarupa: In the form of holy light.
-* Prakashi: Illuminating one.`,
-    audioTe: "ఆత్మారాం సమేత అన్నపూర్ణ మాతా హృదయ నివాసి! సకల జీవ సంరక్షక విశ్వనాథ జ్యోతి స్వరూప ప్రకాశి!",
-    audioEn: "Mother Annapurna along with Lord Atmaram resides in our hearts! O Viswanatha, protector of all living beings, shine as the divine light!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 60",
+    titleEn: "Nekarukallu Satakam - Poem 60",
+    verseTe: `తెరచిన యెడఁద వెన్క హరహర మహాదేవ యనొంచు
+నిరతంబు గాదీ యెడంద, మూయవే, నీలకంఠ! శివ
+పరమ మానులవోలె నీదు నెడదలోఁ బాలింపు కన్ను
+శిరము వాల్చగఁ చేసి నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Tèrachina yèda~da vènka harahara mahaadeva yanòmchu
+Niratambu gaadee yèdamda, mooyave, neelakamtha! shiva
+Parama maanulavolè needu nèdadalo~ baalimpu kannu
+Shiramu vaalchaga~ chesi nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `తెరిచినది వేంక హరహర మహాదేవ యనొంచు
+నిరతంబు గాడి యెదండ, మోయవే, నీలకంఠ!శివా
+మహోన్నతమైన మానవునివలె నీవు పిల్లల కన్ను
+శిరము వాల్చగన్ మరియు నెకరుకల్ ప్రాంతం సిద్ధబ్దహేళి!`,
+    wordMeaningEn: `The one that opened was Venka Harahara Mahadeva Yanonchu
+Niratambu Gadi Yedanda, Moyave, Nilakanta!Shiva
+Like the supreme human being, you are the child's eye
+Shiramu Valchagan and Nekarukal region Siddhabdaheli!`,
+    audioTe: "తెరచిన యెడఁద వెన్క హరహర మహాదేవ యనొంచు నిరతంబు గాదీ యెడంద, మూయవే, నీలకంఠ! శివ పరమ మానులవోలె నీదు నెడదలోఁ బాలింపు కన్ను శిరము వాల్చగఁ చేసి నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 61,
     category: "shiva",
-    titleTe: "కాశీ విశ్వేశ్వర స్తోత్రము - చరణం 11",
-    titleEn: "Kasi Visweswara Stotram - Verse 11",
-    verseTe: `మంగళరూపాయ నమః శివాయ! మణిశేఖరాయ నమః శివాయ!
-గంగాధరాయ గౌరీనాథాయ దేవాయ! శంభో విశ్వేశ్వరాయ శరణం శరణం!`,
-    verseEn: `Salutations to Shiva, the form of auspiciousness! Salutations to Shiva, who wears gems on His head!
-Salutations to the holder of Ganga, the Lord of Gauri! O Shambho Visweswara, I seek refuge in You!`,
-    wordMeaningTe: `* మంగళరూపాయ: శుభప్రదమైన రూపము కలవాడు.
-* మణిశేఖరాయ: తలపై మణిని ధరించినవాడు.
-* గంగాధరాయ: గంగను ధరించినవాడు.
-* గౌరీనాథాయ: పార్వతీదేవి భర్త.
-* శరణం: ఆశ్రయము.`,
-    wordMeaningEn: `* Mangalarupaya: The embodiment of auspiciousness.
-* Manishekharaya: Having a gem on His crown.
-* Gangadharaya: The one who holds the river Ganga.
-* Gaurinathaya: The consort of Gauri.
-* Saranam: Refuge.`,
-    audioTe: "మంగళరూపాయ నమః శివాయ! మణిశేఖరాయ నమః శివాయ! గంగాధరాయ గౌరీనాథాయ దేవాయ! శంభో విశ్వేశ్వరాయ శరణం శరణం!",
-    audioEn: "Salutations to Shiva, the form of auspiciousness! Salutations to Shiva, who wears gems on His head! Salutations to the holder of Ganga, the Lord of Gauri! O Shambho Visweswara, I seek refuge in You!"
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 61",
+    titleEn: "Nekarukallu Satakam - Poem 61",
+    verseTe: `మిలనము తొలికర్మఫలము కలిగి మీ మీ సన్నిధాన
+ములకును వచ్చి కూర్చుండి మీ జపమ్ములు చేసి చేసి
+తొలఁచగాఁపాపముల్ తలతు, నది యున్నదో లేదొ నాకు
+చిలువ సగల సామి! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Milanamu tòlikarmaphalamu kaligi mee mee sannidhaana
+Mulakunu vachchi koorchumdi mee japammulu chesi chesi
+Tòla~chagaa~paapamul talatu, nadi yunnado ledò naaku
+Chiluva sagala saami! nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `మీ సాన్నిహిత్యం కలయిక యొక్క మొదటి ఫలాన్ని కలిగి ఉంది
+ములకును వచ్చి కూర్చొని ప్రార్థనలు చేయండి
+నది ఉందో లేదో నాకు తెలియదు
+చిలువ సాగాల సామీ!నెకరుకల్ ప్రాంతం సిద్దబ్దహేలీ!`,
+    wordMeaningEn: `Your closeness has the first fruit of union
+Mulakunu come and sit and do your prayers
+I don't know if there is a river or not
+Chiluva Sagala Sami!Nekarukal area Siddabdaheli!`,
+    audioTe: "మిలనము తొలికర్మఫలము కలిగి మీ మీ సన్నిధాన ములకును వచ్చి కూర్చుండి మీ జపమ్ములు చేసి చేసి తొలఁచగాఁపాపముల్ తలతు, నది యున్నదో లేదొ నాకు చిలువ సగల సామి! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 62,
-    category: "annapurna",
-    titleTe: "అన్నపూర్ణాష్టకము - చరణం 11",
-    titleEn: "Annapurna Ashtakam - Verse 11",
-    verseTe: `అన్నపూర్ణే సదాపూర్ణే శంకర ప్రాణవల్లభే!
-జ్ఞానవైరాగ్య సిద్ధ్యర్థం భిక్షాం దేహి చ పార్వతి!`,
-    verseEn: `O Mother Annapurna, ever full and complete, the beloved of Lord Sankara!
-Grant us alms of knowledge and dispassion, O Goddess Parvati!`,
-    wordMeaningTe: `* అన్నపూర్ణే: ధాన్య సమృద్ధిని ఇచ్చే తల్లి.
-* సదాపూర్ణే: ఎల్లప్పుడూ నిండుగా ఉండేది.
-* ప్రాణవల్లభే: ప్రాణనాథురాలు.
-* జ్ఞానవైరాగ్య: జ్ఞానము మరియు వైరాగ్యము.
-* భిక్షాం: బిక్ష లేదా ప్రసాదము.`,
-    wordMeaningEn: `* Annapurne: She who is full of nourishment.
-* Sadapurne: Ever complete and full.
-* Pranavallabhe: Beloved consort.
-* Jnana-Vairagya: Wisdom and renunciation.
-* Bhiksham Dehi: Grant us alms.`,
-    audioTe: "అన్నపూర్ణే సదాపూర్ణే శంకర ప్రాణవల్లభే! జ్ఞానవైరాగ్య సిద్ధ్యర్థం భిక్షాం దేహి చ పార్వతి!",
-    audioEn: "O Mother Annapurna, ever full and complete, the beloved of Lord Sankara! Grant us alms of knowledge and dispassion, O Goddess Parvati!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 62",
+    titleEn: "Nekarukallu Satakam - Poem 62",
+    verseTe: `నా కీ జగతి సధికారములనఁ తృణప్రాయము లగుఁ
+గాక, పిల్లల కేమియైన మిగులునో కాదననేల
+నీ కృపావశమున మనసు నీ వైన నిలుచుచునుం డె
+శ్రీకంఠ! దయచూడు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Naa kee jagati sadhikaaramulana~ trunapraayamu lagu~
+Gaaka, pillala kemiyaina miguluno kaadananela
+Nee krupaavashamuna manasu nee vaina niluchuchunum dè
+Shreekamtha! dayachoodu nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `నా కి జగతి స్ధికారములనన్ తృణప్రాయము లగున్
+ఇది పిల్లల కెమిస్ట్రీ యొక్క మిగిలిపోయిన అంశాలు కాదు
+నీ దయతో నా హృదయం నీకు అండగా నిలుస్తుంది
+శ్రీకాంత్!మెర్సీ నెకరుకల్ ప్రాంతం సిద్దబ్దహేలీ!`,
+    wordMeaningEn: `Na ki jagati sdhikaramulanan trinprayamu lagun
+It is not the leftovers of children's chemistry
+By your grace, my heart will stand by you
+Srikanth!Mercy Nekarukal region Siddabdaheli!`,
+    audioTe: "నా కీ జగతి సధికారములనఁ తృణప్రాయము లగుఁ గాక, పిల్లల కేమియైన మిగులునో కాదననేల నీ కృపావశమున మనసు నీ వైన నిలుచుచునుం డె శ్రీకంఠ! దయచూడు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 63,
-    category: "history",
-    titleTe: "నరసింగపాడు ఆలయ ప్రశస్తి - పద్యం 11",
-    titleEn: "Narasingapadu Temple Glory - Verse 11",
-    verseTe: `పవిత్ర క్షేత్రము నరసింగపాడున వెలసిన విశ్వనాథుడే శరణు!
-భక్త జనుల గుండెల్లో కొలువైన అన్నపూర్ణా విశ్వేశ్వరుడే శరణు!`,
-    verseEn: `Refuge in Lord Viswanatha who resides in the holy shrine of Narasingapadu!
-Refuge in Annapurna and Visweswara who dwell in the hearts of devotees!`,
-    wordMeaningTe: `* పవిత్ర క్షేత్రము: పరిశుద్ధమైన క్షేత్రము.
-* వెలసిన: అవతరించిన.
-* శరణు: ఆశ్రయము.
-* కొలువైన: నివసించిన.`,
-    wordMeaningEn: `* Pavitra Kshethramu: The holy place.
-* Velasina: Self-manifested or established.
-* Saranam: Safe haven.`,
-    audioTe: "పవిత్ర క్షేత్రము నరసింగపాడున వెలసిన విశ్వనాథుడే శరణు! భక్త జనుల గుండెల్లో కొలువైన అన్నపూర్ణా విశ్వేశ్వరుడే శరణు!",
-    audioEn: "Refuge in Lord Viswanatha who resides in the holy shrine of Narasingapadu! Refuge in Annapurna and Visweswara who dwell in the hearts of devotees!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 63",
+    titleEn: "Nekarukallu Satakam - Poem 63",
+    verseTe: `దినముల తరబడి నొక్కొకప్పుడు తీరని బ్రదుకు
+పనులపై నుండి ని౯ దలచుటకు వీలుపడకుండ నుండు
+మనసులో దిగులగుచుండు నీ ధ్యాన మహిత వస్త్రమునఁ
+జినుగుపట్టినయట్లు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Dinamula tarabadi nòkkòkappudu teerani braduku
+Panulapai numdi ni9 dalachutaku veelupadakumda numdu
+Manasulo digulaguchumdu nee dhyaana mahita vastramuna~
+Jinugupattinayatlu nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `రోజుల తరబడి ఆశ లేకుండా జీవించండి
+మిమ్మల్ని మీరు పని నుండి తప్పించుకోవడానికి అనుమతించవద్దు
+మనస్సులో మీరు మీ ధ్యాన వస్త్రంలో విచారంగా ఉన్నారు
+జినుగుపట్టినట్లు నెకరుకల్ ప్రాంతం సిద్దబ్దహేళి!`,
+    wordMeaningEn: `Live without hope for days
+Don't allow yourself to be swayed from the work
+In the mind you are sad in your meditation robe
+Jinugupattinatlu Nekarukal region Siddabdaheli!`,
+    audioTe: "దినముల తరబడి నొక్కొకప్పుడు తీరని బ్రదుకు పనులపై నుండి ని౯ దలచుటకు వీలుపడకుండ నుండు మనసులో దిగులగుచుండు నీ ధ్యాన మహిత వస్త్రమునఁ జినుగుపట్టినయట్లు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 64,
-    category: "devotion",
-    titleTe: "భక్తి సుధా తరంగిణి - భాగం 12",
-    titleEn: "Devotional Waves - Part 12",
-    verseTe: `ప్రాతఃకాలే శివనామ స్మరణం భవ హరణం సంసార తారణం!
-హర హర శంభో విశ్వనాథ మహదేవ శివాయ నమః శరణం!`,
-    verseEn: `Reciting Shiva's name in the morning destroys worldly attachment and crosses the ocean of life!
-O Shambho, Viswanatha, Mahadeva, salutations to Shiva!`,
-    wordMeaningTe: `* ప్రాతఃకాలే: ఉదయ కాలమున.
-* స్మరణం: తలచుకోవడం.
-* భవ హరణం: భవ బంధాలను పోగొట్టేది.
-* తారణం: దాటించేది.`,
-    wordMeaningEn: `* Pratahkale: In the early morning.
-* Smaranam: Remembrance.
-* Bhava Haranam: Destruction of worldly attachments.
-* Taranam: Delivering across the ocean of births.`,
-    audioTe: "ప్రాతఃకాలే శివనామ స్మరణం భవ హరణం సంసార తారణం! హర హర శంభో విశ్వనాథ మహదేవ శివాయ నమః శరణం!",
-    audioEn: "Reciting Shiva's name in the morning destroys worldly attachment and crosses the ocean of life! O Shambho, Viswanatha, Mahadeva, salutations to Shiva!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 64",
+    titleEn: "Nekarukallu Satakam - Poem 64",
+    verseTe: `అవుకార! యేదొ నాకుఁ పెద్ద యొరిగించినట్లుగాఁ చూపి
+చివరకుఁ టెంకాయ పిచ్చికొండ చేసెద వుమానాథ
+వివరించి నీ మీదఁబెట్టు కొన్నాశ విషయంబునందు
+చెవులు పిండకు తండ్రి నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Avukaara! yedò naaku~ pèdda yòrigimchinatlugaa~ choopi
+Chivaraku~ tèmkaaya pichchikòmda chesèda vumaanaatha
+Vivarimchi nee meeda~bèttu kònnaasha vishayambunamdu
+Chèvulu pimdaku tamdri nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `అంతే!అది నాకు పెద్ద విషయం
+చివరకు టెంకాయ పిచ్చికొండ చేసేదా వుమనత
+ఇది వివరించి మీ మీద పెట్టే విషయం
+నేకరుకల్ ప్రాంత సిద్ధబ్దహేలి పాప చెవుల తండ్రి!`,
+    wordMeaningEn: `That's it!That's a big deal for me
+Finally Tenkaya Pichikonda Cheseda Vumanatha
+It is a matter of explaining and putting it on you
+Nekarukal region's Siddhabdaheli is the father of the baby's ears!`,
+    audioTe: "అవుకార! యేదొ నాకుఁ పెద్ద యొరిగించినట్లుగాఁ చూపి చివరకుఁ టెంకాయ పిచ్చికొండ చేసెద వుమానాథ వివరించి నీ మీదఁబెట్టు కొన్నాశ విషయంబునందు చెవులు పిండకు తండ్రి నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 65,
-    category: "sacred",
-    titleTe: "మహాదేవ కరవలంబ స్తోత్రం - భాగం 12",
-    titleEn: "Mahadeva Karavalamba Stotram - Part 12",
-    verseTe: `సంసార ఘోర గహనే చరతో మమ హే దేవా!
-విశ్వేశ్వర కరుణానిధే దేహి కరవలంబమ్!`,
-    verseEn: `I am wandering in the terrifying jungle of this worldly life, O Lord!
-O Visweswara, ocean of compassion, extend Your hand of support!`,
-    wordMeaningTe: `* ఘోర గహనే: భయంకరమైన అడవిలో.
-* మమ: నా యొక్క.
-* కరుణానిధే: దయకు సముద్రుడైనవాడా.
-* కరవలంబమ్: చేతిని అందించి రక్షించడం.`,
-    wordMeaningEn: `* Ghora Gahane: In the dangerous forest.
-* Karunānidhe: O treasure of mercy.
-* Karavalambam: Hand of protection.`,
-    audioTe: "సంసార ఘోర గహనే చరతో మమ హే దేవా! విశ్వేశ్వర కరుణానిధే దేహి కరవలంబమ్!",
-    audioEn: "I am wandering in the terrifying jungle of this worldly life, O Lord! O Visweswara, ocean of compassion, extend Your hand of support!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 65",
+    titleEn: "Nekarukallu Satakam - Poem 65",
+    verseTe: `ఒకటి మేలనుకొందు నేను మరియు నీవొక డనుకొందు
+నకట! మేలేదొ కాదేదొ యెఱిగిన యంత లేనాయె
+ముకురంబులో నున్న నేను నేనుప్రభూ! ద్రష్టనేనొ
+సెశతూలి మఱచితి నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Òkati melanukòmdu nenu mariyu neevòka danukòmdu
+Nakata! meledò kaadedò yèṟigina yamta lenaayè
+Mukurambulo nunna nenu nenuprabhoo! drashtanenò
+Sèshatooli maṟachiti nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `నాకు ఒకటి కావాలి మరియు నాకు మీరు కావాలి
+తమాషా!యిరిగినంత మేలేదో కాదేదో కాదు
+నేను ముకురంబులో ప్రభువును!నేను చూస్తున్నాను
+శేషతులి మరచితి నెకరుకల్ ప్రాంతం సిద్ధబ్దహేళి!`,
+    wordMeaningEn: `I want one and I want you
+Funny!Meledo Kadedo is not as much as Yirigi
+I am the Lord in Mukurambu!I see
+Sesathuli Marachithi Nekarukal area Siddhabdaheli!`,
+    audioTe: "ఒకటి మేలనుకొందు నేను మరియు నీవొక డనుకొందు నకట! మేలేదొ కాదేదొ యెఱిగిన యంత లేనాయె ముకురంబులో నున్న నేను నేనుప్రభూ! ద్రష్టనేనొ సెశతూలి మఱచితి నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 66,
     category: "shiva",
-    titleTe: "శివ పంచాక్షరి - చరణం 12",
-    titleEn: "Shiva Panchakshari - Verse 12",
-    verseTe: `నమః శివాయ నమః శివాయ నమః శివాయ నమః శివాయ!
-హర హర శంభో మహదేవాయ విశ్వేశ్వరాయ నమః శివాయ!`,
-    verseEn: `Salutations to Shiva! Salutations to Shiva!
-O Hara, Shambho, Mahadeva, Visweswara! Salutations to Shiva!`,
-    wordMeaningTe: `* నమః శివాయ: శివునికి నమస్కారములు.
-* హర హర: పాపములను హరించేవాడు.
-* శంభో: సుఖములను కలిగించేవాడు.
-* విశ్వేశ్వరాయ: విశ్వానికి అధిపతి.`,
-    wordMeaningEn: `* Namah Shivaya: Salutations to Lord Shiva.
-* Hara: The destroyer of sins.
-* Shambho: The bestower of happiness.
-* Visweswaraya: The Lord of the Universe.`,
-    audioTe: "నమః శివాయ నమః శివాయ నమః శివాయ నమః శివాయ! హర హర శంభో మహదేవాయ విశ్వేశ్వరాయ నమః శివాయ!",
-    audioEn: "Salutations to Shiva! Salutations to Shiva! O Hara, Shambho, Mahadeva, Visweswara! Salutations to Shiva!"
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 66",
+    titleEn: "Nekarukallu Satakam - Poem 66",
+    verseTe: `నీవేమి చేయఁగా వలయునో యది నీవు చేసితివి
+మహాదేవ ! యింక నేను చేయగా వలయుట మిగిలె
+జీవితమ్మునయందు నింక నెంత శేషించి యున్నదియొ
+జీవిత పతి! చెప్పు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Neevemi cheya~gaa valayuno yadi neevu chesitivi
+Mahaadeva ! yimka nenu cheyagaa valayuta migilè
+Jeevitammunayamdu nimka nèmta sheshimchi yunnadiyò
+Jeevita pati! chèppu nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `మీరు చేయాలనుకున్నది చేసారు
+మహాదేవా!మరియు నేను చేసినప్పుడు, సర్కిల్ మిగిలిపోయింది
+జీవితంలో మిగిలేది ఎంత
+జీవిత భాగస్వామి!నెకరుకల్ ప్రాంతం సిద్ధబ్దహేలి అని చెప్పండి!`,
+    wordMeaningEn: `You did what you wanted to do
+Mahadeva!And when I did it, the circle remained
+How much is left in life
+Life partner!Say Nekarukal area Siddhabdaheli!`,
+    audioTe: "నీవేమి చేయఁగా వలయునో యది నీవు చేసితివి మహాదేవ ! యింక నేను చేయగా వలయుట మిగిలె జీవితమ్మునయందు నింక నెంత శేషించి యున్నదియొ జీవిత పతి! చెప్పు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 67,
-    category: "annapurna",
-    titleTe: "జగన్మాత అన్నపూర్ణ కీర్తన - భాగం 12",
-    titleEn: "Mother Annapurna Chant - Part 12",
-    verseTe: `సర్వమంగళ మాంగల్యే శివే సర్వార్థ సాధికే!
-శరణ్యే త్ర్యంబకే గౌరి నారాయణి నమోస్తుతే!`,
-    verseEn: `O Mother, who is the auspiciousness of all auspiciousness! O source of all achievements!
-We seek refuge in You, the three-eyed Gauri, Salutations to You, Narayani!`,
-    wordMeaningTe: `* సర్వమంగళ మాంగల్యే: సర్వ శుభములలో అత్యంత శుభప్రదమైనదానา.
-* శివే: కళ్యాణకారిణి.
-* సర్వార్థ సాధికే: సర్వ పురుషార్థాలను సాధించేదానా.
-* శరణ్యే: శరణు కోరదగిన తల్లి.`,
-    wordMeaningEn: `* Sarvamangala Mangalye: Most auspicious among all auspicious things.
-* Shive: Bestower of welfare.
-* Sarvartha Sadhike: Fulfiller of all desires.
-* Saranye: Worthy of taking refuge in.`,
-    audioTe: "సర్వమంగళ మాంగల్యే శివే సర్వార్థ సాధికే! శరణ్యే త్ర్యంబకే గౌరి నారాయణి నమోస్తుతే!",
-    audioEn: "O Mother, who is the auspiciousness of all auspiciousness! O source of all achievements! We seek refuge in You, the three-eyed Gauri, Salutations to You, Narayani!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 67",
+    titleEn: "Nekarukallu Satakam - Poem 67",
+    verseTe: `లక్ష చెప్పుము వేయిచెప్పు మొక యింత లాభంబు లేదు
+భిక్షుకుడంచు సన్యాసి యంచును బెట్టకు నాకు
+దీక్షతో నిన్ను నాలోనఁ పరినిబంధితునిఁ చేయునటు
+శిక్షింపు నన్నును నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Laksha chèppumu veyichèppu mòka yimta laabhambu ledu
+Bhikshukudamchu sanyaasi yamchunu bèttaku naaku
+Deekshato ninnu naalona~ parinibamdhituni~ cheyunatu
+Shikshimpu nannunu nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `100,000 బూట్లకు లాభం లేదు
+నాకు భిక్షాటన చేసే సన్యాసిని ఇవ్వకు
+దీక్షతో నిన్ను నాలో పరినిబంధిని చేస్తాను
+నేకరుకల్ ప్రాంతం సిద్ధబ్దహేలి నన్ను శిక్షించండి!`,
+    wordMeaningEn: `There is no profit as much as 100,000 shoes
+Don't give me a begging monk
+I will make you a Parinibandhi in me with initiation
+Punish me Nekarukal region Siddabdaheli!`,
+    audioTe: "లక్ష చెప్పుము వేయిచెప్పు మొక యింత లాభంబు లేదు భిక్షుకుడంచు సన్యాసి యంచును బెట్టకు నాకు దీక్షతో నిన్ను నాలోనఁ పరినిబంధితునిఁ చేయునటు శిక్షింపు నన్నును నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 68,
-    category: "history",
-    titleTe: "చారిత్రక శాసన గీతం - పద్యం 12",
-    titleEn: "Historical Inscription Hymn - Verse 12",
-    verseTe: `శిలా శాసనములందు నిలిచిన క్షేత్ర చరిత్ర చదువుదాం!
-తరతరాల పుణ్యఫలమైన విశ్వేశ్వర లీలలు కీర్తిద్దాం!`,
-    verseEn: `Let us read the history of this shrine recorded in the stone inscriptions!
-Let us praise the divine plays of Visweswara, the merit of generations!`,
-    wordMeaningTe: `* శిలా శాసనము: రాతిపై చెక్కబడిన శాసనము.
-* క్షేత్ర చరిత్ర: ఆలయం యొక్క చరిత్ర.
-* లీలలు: దైవ లీలలు.
-* కీర్తిద్దాం: కొనిాడుదాం.`,
-    wordMeaningEn: `* Shila Sasanamu: Inscription carved on stone.
-* Kshethra Charitra: History of the sacred place.
-* Leelalu: Divine activities.`,
-    audioTe: "శిలా శాసనములందు నిలిచిన క్షేత్ర చరిత్ర చదువుదాం! తరతరాల పుణ్యఫలమైన విశ్వేశ్వర లీలలు కీర్తిద్దాం!",
-    audioEn: "Let us read the history of this shrine recorded in the stone inscriptions! Let us praise the divine plays of Visweswara, the merit of generations!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 68",
+    titleEn: "Nekarukallu Satakam - Poem 68",
+    verseTe: `పదునాల్గు భువనముల్ నీవు కుక్షిలోపలఁ బెట్టికొంటి
+విది యెంతవాఁడవో నీవు, నిన్ను నా యెడఁద నిముర్తు
+నది యెంతవాడనో నేను, నద్ది నా కనుభూతి తెమ్ము
+చిదతీత సంస్థితీ! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Padunaalgu bhuvanamul neevu kukshilopala~ bèttikòmti
+Vidi yèmtavaa~davo neevu, ninnu naa yèda~da nimurtu
+Nadi yèmtavaadano nenu, naddi naa kanubhooti tèmmu
+Chidateeta samsthitee! nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `పద్నాలుగు భువనముల్ నీవు కుక్షిలో పడుకో
+నువ్వే నా విధి
+నేను నదిలా ఉన్నాను, నా సానుభూతి నదిపై ఉంది
+చిదతీత సంస్థ!నెకరుకల్ ప్రాంతం సిద్ధబ్దహేలీ!`,
+    wordMeaningEn: `Fourteen Bhuvanamul you lay down in Kukshi
+You are my destiny
+I am like a river, my sympathy is with the river
+Chidathita institution!Nekarukal area Siddabdaheli!`,
+    audioTe: "పదునాల్గు భువనముల్ నీవు కుక్షిలోపలఁ బెట్టికొంటి విది యెంతవాఁడవో నీవు, నిన్ను నా యెడఁద నిముర్తు నది యెంతవాడనో నేను, నద్ది నా కనుభూతి తెమ్ము చిదతీత సంస్థితీ! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 69,
-    category: "devotion",
-    titleTe: "శరణాగతి ప్రార్థన - చరణం 13",
-    titleEn: "Prayer of Surrender - Verse 13",
-    verseTe: `పాపోహం పాపకర్మాహం పాపాత్మా పాపసంభవః!
-త్రాహి మాం కృపయా దేవా శరణాగత వత్సల!`,
-    verseEn: `I am a sinner, my actions are sinful, my soul is sinful, born of sin!
-O Lord, protect me out of compassion, O savior of those who surrender!`,
-    wordMeaningTe: `* పాపోహం: నేను పాపాత్ముడను.
-* త్రాహి మాం: నన్ను రక్షించు.
-* కృపయా: దయతో.
-* శరణాగత వత్సల: శరణు కోరినవారిని ప్రేమించేవాడా.`,
-    wordMeaningEn: `* Papoham: I am full of sins.
-* Trahi Mam: Protect me.
-* Krupaya: With mercy.
-* Saranagata Vatsala: Compassionate protector of those who surrender.`,
-    audioTe: "పాపోహం పాపకర్మాహం పాపాత్మా పాపసంభవః! త్రాహి మాం కృపయా దేవా శరణాగత వత్సల!",
-    audioEn: "I am a sinner, my actions are sinful, my soul is sinful, born of sin! O Lord, protect me out of compassion, O savior of those who surrender!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 69",
+    titleEn: "Nekarukallu Satakam - Poem 69",
+    verseTe: `నన్ను నేనే మోసగించుకొంచుంటి నాటక మాడు
+చున్నట్టులున్నది ప్రేమ యన్నది యొరులపైఁ జచ్చె,
+నున్నట్లు మాట్లాడుచుంటిఁ చరియించుచుంటి నీ వైని
+చెన్నారు కోర్కిగా నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Nannu nene mosagimchukòmchumti naataka maadu
+Chunnattulunnadi prema yannadi yòrulapai~ jachchè,
+Nunnatlu maatlaaduchumti~ chariyimchuchumti nee vaini
+Chènnaaru korkigaa nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `ఇది నన్ను మోసం చేసే డ్రామా
+నీపై ప్రకాశించేది ప్రేమ,
+ఏం జరుగుతుందో మీరు మాట్లాడుతున్నారు
+చెన్రెన్ కోర్కిగ నెకరుకల్ ప్రాంత సిద్ధబ్దహేళి!`,
+    wordMeaningEn: `It is a drama that deceives me
+It is love that shines on you,
+You are talking about what is going on
+Siddabdaheli of Chenren Korkiga Nekarukal region!`,
+    audioTe: "నన్ను నేనే మోసగించుకొంచుంటి నాటక మాడు చున్నట్టులున్నది ప్రేమ యన్నది యొరులపైఁ జచ్చె, నున్నట్లు మాట్లాడుచుంటిఁ చరియించుచుంటి నీ వైని చెన్నారు కోర్కిగా నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 70,
-    category: "sacred",
-    titleTe: "ఆత్మారామ ధ్యాన శ్లోకం - చరణం 13",
-    titleEn: "Atmaram Meditation Hymn - Verse 13",
-    verseTe: `ఆత్మారాం సమేత అన్నపూర్ణ మాతా హృదయ నివాసి!
-సకల జీవ సంరక్షక విశ్వనాథ జ్యోతి స్వరూప ప్రకాశి!`,
-    verseEn: `Mother Annapurna along with Lord Atmaram resides in our hearts!
-O Viswanatha, protector of all living beings, shine as the divine light!`,
-    wordMeaningTe: `* హృదయ నివాసి: హృదయములో నివసించువాడా.
-* సకల జీవ సంరక్షక: సమస్త జీవులను కాపాడేవాడా.
-* జ్యోతి స్వరూప: వెలుగు రూపములో ఉన్నవాడా.
-* ప్రకాశి: ప్రకాశించేవాడా.`,
-    wordMeaningEn: `* Hrudaya Nivasi: Dweller of the heart.
-* Sakala Jeeva Samrakshaka: Preserver of all life forms.
-* Jyoti Swarupa: In the form of holy light.
-* Prakashi: Illuminating one.`,
-    audioTe: "ఆత్మారాం సమేత అన్నపూర్ణ మాతా హృదయ నివాసి! సకల జీవ సంరక్షక విశ్వనాథ జ్యోతి స్వరూప ప్రకాశి!",
-    audioEn: "Mother Annapurna along with Lord Atmaram resides in our hearts! O Viswanatha, protector of all living beings, shine as the divine light!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 70",
+    titleEn: "Nekarukallu Satakam - Poem 70",
+    verseTe: `ప్రతి నిమేషమ్ము వాంఛయుఁ ప్రతి నిమేష పరిహరణము
+మతిలేని బ్రదుక్య్యె నొక్క యత్నము మాలిన యూహ
+శితికంఠ! నీమీఁదఁదక్కఁ దక్కిన చేతంబు లోక
+శితి వృత్తమెగఁప్రాకు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Prati nimeshammu vaamchhayu~ prati nimesha pariharanamu
+Matileni bradukyyè nòkka yatnamu maalina yooha
+Shitikamtha! neemee~da~dakka~ dakkina chetambu loka
+Shiti vruttamèga~praaku nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `ప్రతి క్షణం ఒక కోరిక మరియు ప్రతి క్షణం ఒక త్యాగం
+బుద్ధిలేని జీవితాన్ని గడపడానికి ప్రయత్నించడం సిగ్గుచేటు
+శితికంతా!నీమిందక్కన్ పొందిన చేతంబు లోకం
+వింటర్ సర్కిల్ కోసం నెకరుకల్ ప్రాంతం సిద్ధబ్దహేలీ!`,
+    wordMeaningEn: `Every moment is a desire and every moment is a sacrifice
+Trying to live a mindless life is a shame
+Shitikanta!The world of Chetambu that got Neemindakkan
+Nekarukal area Siddhabdaheli for winter circle!`,
+    audioTe: "ప్రతి నిమేషమ్ము వాంఛయుఁ ప్రతి నిమేష పరిహరణము మతిలేని బ్రదుక్య్యె నొక్క యత్నము మాలిన యూహ శితికంఠ! నీమీఁదఁదక్కఁ దక్కిన చేతంబు లోక శితి వృత్తమెగఁప్రాకు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 71,
     category: "shiva",
-    titleTe: "నమః శివాయ స్తుతి - భాగం 13",
-    titleEn: "Namah Shivaya Praise - Part 13",
-    verseTe: `దేవదేవాయ త్రిలోచనాత్మకాయ నమః శివాయ!
-భక్త రక్షకాయ భవతారకాయ నమః శివాయ!`,
-    verseEn: `Salutations to Shiva, the God of Gods, the three-eyed Lord!
-Salutations to Shiva, the protector of devotees and the redeemer of life!`,
-    wordMeaningTe: `* త్రిలోచనాత్మకాయ: మూడు కన్నులు గలవాడు.
-* దేవదేవాయ: దేవతలకు దేవుడు.
-* భక్త రక్షకాయ: భక్తులను రక్షించేవాడు.
-* భవతారకాయ: సంసార సాగరాన్ని దాటించేవాడు.`,
-    wordMeaningEn: `* Trilochanatmakaya: The three-eyed Lord.
-* Devadevaya: The God of Gods.
-* Bhakta Rakshakaya: The protector of devotees.
-* Bhavatarakaya: The savior from the cycle of rebirth.`,
-    audioTe: "దేవదేవాయ త్రిలోచనాత్మకాయ నమః శివాయ! భక్త రక్షకాయ భవతారకాయ నమః శివాయ!",
-    audioEn: "Salutations to Shiva, the God of Gods, the three-eyed Lord! Salutations to Shiva, the protector of devotees and the redeemer of life!"
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 71",
+    titleEn: "Nekarukallu Satakam - Poem 71",
+    verseTe: `బతికి నన్నాళ్ళును తిండి కేమొ లోపమ్ము రాదు
+మతిలోన నీవేమొ వచ్చి నిత్యంబు మన్నింపవలయు
+వ్రతముగా, నవ్వ, కావలయు బువ్వ కావలయు నన్నట్లు
+సిత మహాశిత లింగ! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Batiki nannaaḻḻunu timdi kemò lopammu raadu
+Matilona neevemò vachchi nityambu mannimpavalayu
+Vratamugaa, navva, kaavalayu buvva kaavalayu nannatlu
+Sita mahaashita limga! nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `బ్రతికితే తిని తాగుతా
+నీ మనసులోకి వచ్చి ఎప్పటికీ క్షమించు
+వ్రతముగ, నవ్వు, కావలెను
+సీతా మహాసిత లింగ!నేకరుకల్ ప్రాంతం సిద్ధబ్దహేలీ!`,
+    wordMeaningEn: `If you live, you will eat and drink
+Come to your mind and forgive forever
+Vratamuga, laugh, want to be wanted
+Sita Mahasita Linga!Nekarukal area Siddabdaheli!`,
+    audioTe: "బతికి నన్నాళ్ళును తిండి కేమొ లోపమ్ము రాదు మతిలోన నీవేమొ వచ్చి నిత్యంబు మన్నింపవలయు వ్రతముగా, నవ్వ, కావలయు బువ్వ కావలయు నన్నట్లు సిత మహాశిత లింగ! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 72,
-    category: "annapurna",
-    titleTe: "అన్నపూర్ణాష్టకము - చరణం 13",
-    titleEn: "Annapurna Ashtakam - Verse 13",
-    verseTe: `అన్నపూర్ణే సదాపూర్ణే శంకర ప్రాణవల్లభే!
-జ్ఞానవైరాగ్య సిద్ధ్యర్థం భిక్షాం దేహి చ పార్వతి!`,
-    verseEn: `O Mother Annapurna, ever full and complete, the beloved of Lord Sankara!
-Grant us alms of knowledge and dispassion, O Goddess Parvati!`,
-    wordMeaningTe: `* అన్నపూర్ణే: ధాన్య సమృద్ధిని ఇచ్చే తల్లి.
-* సదాపూర్ణే: ఎల్లప్పుడూ నిండుగా ఉండేది.
-* ప్రాణవల్లభే: ప్రాణనాథురాలు.
-* జ్ఞానవైరాగ్య: జ్ఞానము మరియు వైరాగ్యము.
-* భిక్షాం: బిక్ష లేదా ప్రసాదము.`,
-    wordMeaningEn: `* Annapurne: She who is full of nourishment.
-* Sadapurne: Ever complete and full.
-* Pranavallabhe: Beloved consort.
-* Jnana-Vairagya: Wisdom and renunciation.
-* Bhiksham Dehi: Grant us alms.`,
-    audioTe: "అన్నపూర్ణే సదాపూర్ణే శంకర ప్రాణవల్లభే! జ్ఞానవైరాగ్య సిద్ధ్యర్థం భిక్షాం దేహి చ పార్వతి!",
-    audioEn: "O Mother Annapurna, ever full and complete, the beloved of Lord Sankara! Grant us alms of knowledge and dispassion, O Goddess Parvati!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 72",
+    titleEn: "Nekarukallu Satakam - Poem 72",
+    verseTe: `ఇది మనుష్యున కాయువల్పముగ నిచ్చి యెప్పటప్పటికి
+బదుకుట యెట్లన్న ప్రశ్న యిందులోపల వచ్చి చచ్చె
+డిదిలేదు వైసవా శేరులోన బోడి పదాచికముగ
+చెదరిన బ్రదుకునై నెకరుకల్ ప్రాంత సిద్ధాబ్ద హేళి!`,
+    verseEn: `Idi manushyuna kaayuvalpamuga nichchi yèppatappatiki
+Badukuta yètlanna prashna yimdulopala vachchi chachchè
+Didiledu vaisavaa sherulona bodi padaachikamuga
+Chèdarina bradukunai nèkarukal praamta siddhaabda heḻi!`,
+    wordMeaningTe: `ఇది మానవ జీవితానికి ముగింపు అయినప్పటికీ
+బదులుగా ఏం చేయాలనే ప్రశ్న వచ్చి చచ్చిపోతుంది
+దీదియుల వైశవ సేరులో బోడి పడచికముగ
+నెకరుకల్ ఏరియా సిద్ధబ్ద హెలీకి చెదిరిన ప్రాణాలు!`,
+    wordMeaningEn: `Even though this is the end of human life
+The question of what to do instead comes in and dies
+Bodi Padachikamuga in Didiula Vaisava Seru
+Disturbed survivors of Nekarukal area Siddhabda Heli!`,
+    audioTe: "ఇది మనుష్యున కాయువల్పముగ నిచ్చి యెప్పటప్పటికి బదుకుట యెట్లన్న ప్రశ్న యిందులోపల వచ్చి చచ్చె డిదిలేదు వైసవా శేరులోన బోడి పదాచికముగ చెదరిన బ్రదుకునై నెకరుకల్ ప్రాంత సిద్ధాబ్ద హేళి!",
+    audioEn: ""
   },
   {
     id: 73,
-    category: "history",
-    titleTe: "నరసింగపాడు ఆలయ ప్రశస్తి - పద్యం 13",
-    titleEn: "Narasingapadu Temple Glory - Verse 13",
-    verseTe: `పవిత్ర క్షేత్రము నరసింగపాడున వెలసిన విశ్వనాథుడే శరణు!
-భక్త జనుల గుండెల్లో కొలువైన అన్నపూర్ణా విశ్వేశ్వరుడే శరణు!`,
-    verseEn: `Refuge in Lord Viswanatha who resides in the holy shrine of Narasingapadu!
-Refuge in Annapurna and Visweswara who dwell in the hearts of devotees!`,
-    wordMeaningTe: `* పవిత్ర క్షేత్రము: పరిశుద్ధమైన క్షేత్రము.
-* వెలసిన: అవతరించిన.
-* శరణు: ఆశ్రయము.
-* కొలువైన: నివసించిన.`,
-    wordMeaningEn: `* Pavitra Kshethramu: The holy place.
-* Velasina: Self-manifested or established.
-* Saranam: Safe haven.`,
-    audioTe: "పవిత్ర క్షేత్రము నరసింగపాడున వెలసిన విశ్వనాథుడే శరణు! భక్త జనుల గుండెల్లో కొలువైన అన్నపూర్ణా విశ్వేశ్వరుడే శరణు!",
-    audioEn: "Refuge in Lord Viswanatha who resides in the holy shrine of Narasingapadu! Refuge in Annapurna and Visweswara who dwell in the hearts of devotees!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 73",
+    titleEn: "Nekarukallu Satakam - Poem 73",
+    verseTe: `నిన్నీ బ్రదుకు తుదివాళ్ళఁ కైత పండింతుఁ ప్రాసంగు
+పొన్ను ధాన్యపురాశి గాగ నా స్వామి పొడిపించి పెట్టు
+నెన్నొసంటను నాకు గంగ తొణుకు నీ నెత్తిపై నున్న
+చిన్ని చందురు రేశ నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Ninnee braduku tudivaaḻḻa~ kaita pamdimtu~ praasamgu
+Pònnu dhaanyapuraashi gaaga naa svaami pòdipimchi pèttu
+Nènnòsamtanu naaku gamga tònuku nee nèttipai nunna
+Chinni chamduru resha nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `నిన్ని బ్రదుకు అనేది కైట పండింటు చివరి మాట
+పొన్న ధాన్యపురాశి గాగ నా స్వామి దానిని ఆరబెట్టండి
+ఇప్పుడు నీ నెత్తిమీద గంగానది ఉంది
+చిన్ని చండూరు రేష నేకరుకల్ ప్రాంతం సిద్ధబ్దహేళి!`,
+    wordMeaningEn: `Ninny Braduku is the last word of Kaita Pandintu
+Ponna Dhanyapurashi Gaga na Swami dry it
+Now I have the Ganges on your scalp
+Chinni Chanduru Resha Nekarukal Region Siddhabdaheli!`,
+    audioTe: "నిన్నీ బ్రదుకు తుదివాళ్ళఁ కైత పండింతుఁ ప్రాసంగు పొన్ను ధాన్యపురాశి గాగ నా స్వామి పొడిపించి పెట్టు నెన్నొసంటను నాకు గంగ తొణుకు నీ నెత్తిపై నున్న చిన్ని చందురు రేశ నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 74,
-    category: "devotion",
-    titleTe: "భక్తి సుధా తరంగిణి - భాగం 14",
-    titleEn: "Devotional Waves - Part 14",
-    verseTe: `ప్రాతఃకాలే శివనామ స్మరణం భవ హరణం సంసార తారణం!
-హర హర శంభో విశ్వనాథ మహదేవ శివాయ నమః శరణం!`,
-    verseEn: `Reciting Shiva's name in the morning destroys worldly attachment and crosses the ocean of life!
-O Shambho, Viswanatha, Mahadeva, salutations to Shiva!`,
-    wordMeaningTe: `* ప్రాతఃకాలే: ఉదయ కాలమున.
-* స్మరణం: తలచుకోవడం.
-* భవ హరణం: భవ బంధాలను పోగొట్టేది.
-* తారణం: దాటించేది.`,
-    wordMeaningEn: `* Pratahkale: In the early morning.
-* Smaranam: Remembrance.
-* Bhava Haranam: Destruction of worldly attachments.
-* Taranam: Delivering across the ocean of births.`,
-    audioTe: "ప్రాతఃకాలే శివనామ స్మరణం భవ హరణం సంసార తారణం! హర హర శంభో విశ్వనాథ మహదేవ శివాయ నమః శరణం!",
-    audioEn: "Reciting Shiva's name in the morning destroys worldly attachment and crosses the ocean of life! O Shambho, Viswanatha, Mahadeva, salutations to Shiva!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 74",
+    titleEn: "Nekarukallu Satakam - Poem 74",
+    verseTe: `భావమ్ము భావమ్ముగాగ నున్నచో భయమేమి కలదు
+భావమ్ము విశృతిని బడసినంతనే భయమెల్లఁగలుగు
+భావమ్ము తన స్థితిఁ బొందునట్లుగాఁ బాలింపు కరుణ
+సేవధి! శ్రీకంఠ! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Bhaavammu bhaavammugaaga nunnacho bhayamemi kaladu
+Bhaavammu vishrutini badasinamtane bhayamèlla~galugu
+Bhaavammu tana sthiti~ bòmdunatlugaa~ baalimpu karuna
+Sevadhi! shreekamtha! nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `ప్రేమ ఉన్నప్పుడు భయం ఉండదు
+భావమ్ము విశృతిని చూడగానే భయమెల్లగుగు భయమేసింది
+అతని స్థితిలో భావమ్ము కరుణిస్తుంది
+సేవాధి!శ్రీకాంత్!నెకరుకల్ ఏరియా సిద్దబ్దహేలీ!`,
+    wordMeaningEn: `There is no fear when there is love
+As soon as Bhavammu saw Vishruti, Bhayamellagugu was afraid
+Bhavammu is compassionate in his condition
+Sevadhi!Srikanth!Nekarukal area Siddabdaheli!`,
+    audioTe: "భావమ్ము భావమ్ముగాగ నున్నచో భయమేమి కలదు భావమ్ము విశృతిని బడసినంతనే భయమెల్లఁగలుగు భావమ్ము తన స్థితిఁ బొందునట్లుగాఁ బాలింపు కరుణ సేవధి! శ్రీకంఠ! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 75,
-    category: "sacred",
-    titleTe: "మహాదేవ కరవలంబ స్తోత్రం - భాగం 14",
-    titleEn: "Mahadeva Karavalamba Stotram - Part 14",
-    verseTe: `సంసార ఘోర గహనే చరతో మమ హే దేవా!
-విశ్వేశ్వర కరుణానిధే దేహి కరవలంబమ్!`,
-    verseEn: `I am wandering in the terrifying jungle of this worldly life, O Lord!
-O Visweswara, ocean of compassion, extend Your hand of support!`,
-    wordMeaningTe: `* ఘోర గహనే: భయంకరమైన అడవిలో.
-* మమ: నా యొక్క.
-* కరుణానిధే: దయకు సముద్రుడైనవాడా.
-* కరవలంబమ్: చేతిని అందించి రక్షించడం.`,
-    wordMeaningEn: `* Ghora Gahane: In the dangerous forest.
-* Karunānidhe: O treasure of mercy.
-* Karavalambam: Hand of protection.`,
-    audioTe: "సంసార ఘోర గహనే చరతో మమ హే దేవా! విశ్వేశ్వర కరుణానిధే దేహి కరవలంబమ్!",
-    audioEn: "I am wandering in the terrifying jungle of this worldly life, O Lord! O Visweswara, ocean of compassion, extend Your hand of support!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 75",
+    titleEn: "Nekarukallu Satakam - Poem 75",
+    verseTe: `దంతురమగు నూహ సేయుకొలదిఁ పద్మవ్యూహమయినఁ
+గొంత నయమ్ము మానవుల భావనా కుటిలతి కంటె
+వింతలై బందుగుల్ సఖుల యూహలే విప్పలేమాయె
+చింత జేసియుఁకూడ నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Damturamagu nooha seyukòladi~ padmavyoohamayina~
+Gòmta nayammu maanavula bhaavanaa kutilati kamtè
+Vimtalai bamdugul sakhula yoohale vippalemaayè
+Chimta jesiyu~kooda nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `దంతురమగు నుహ సేుకోలదిన్ పద్మవ్యూహమయిన్
+మనుష్యుల వక్రబుద్ధి కంటె గొంత నాయమ్ము
+బంధుంగుల మిత్రులు చిక్కుముడులు విప్పకపోవడమే విచిత్రం
+చింత జేస్యుంకుడు నెకరుకల్ ప్రాంతం సిద్ధబ్దహేళి!`,
+    wordMeaningEn: `Danturamagu Nuha Seukoladin Padmavyuhamayain
+Gonta Nayammu is more than the perversity of human beings
+It is strange that the friends of Bandungul can't untie the knots
+Chinta Jesyunkuda Nekarukal area Siddhabdaheli!`,
+    audioTe: "దంతురమగు నూహ సేయుకొలదిఁ పద్మవ్యూహమయినఁ గొంత నయమ్ము మానవుల భావనా కుటిలతి కంటె వింతలై బందుగుల్ సఖుల యూహలే విప్పలేమాయె చింత జేసియుఁకూడ నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 76,
     category: "shiva",
-    titleTe: "కాశీ విశ్వేశ్వర స్తోత్రము - చరణం 14",
-    titleEn: "Kasi Visweswara Stotram - Verse 14",
-    verseTe: `మంగళరూపాయ నమః శివాయ! మణిశేఖరాయ నమః శివాయ!
-గంగాధరాయ గౌరీనాథాయ దేవాయ! శంభో విశ్వేశ్వరాయ శరణం శరణం!`,
-    verseEn: `Salutations to Shiva, the form of auspiciousness! Salutations to Shiva, who wears gems on His head!
-Salutations to the holder of Ganga, the Lord of Gauri! O Shambho Visweswara, I seek refuge in You!`,
-    wordMeaningTe: `* మంగళరూపాయ: శుభప్రదమైన రూపము కలవాడు.
-* మణిశేఖరాయ: తలపై మణిని ధరించినవాడు.
-* గంగాధరాయ: గంగను ధరించినవాడు.
-* గౌరీనాథాయ: పార్వతీదేవి భర్త.
-* శరణం: ఆశ్రయము.`,
-    wordMeaningEn: `* Mangalarupaya: The embodiment of auspiciousness.
-* Manishekharaya: Having a gem on His crown.
-* Gangadharaya: The one who holds the river Ganga.
-* Gaurinathaya: The consort of Gauri.
-* Saranam: Refuge.`,
-    audioTe: "మంగళరూపాయ నమః శివాయ! మణిశేఖరాయ నమః శివాయ! గంగాధరాయ గౌరీనాథాయ దేవాయ! శంభో విశ్వేశ్వరాయ శరణం శరణం!",
-    audioEn: "Salutations to Shiva, the form of auspiciousness! Salutations to Shiva, who wears gems on His head! Salutations to the holder of Ganga, the Lord of Gauri! O Shambho Visweswara, I seek refuge in You!"
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 76",
+    titleEn: "Nekarukallu Satakam - Poem 76",
+    verseTe: `ఎంతటి యిరుకటం బవుచునున్నది యిందైన బ్రదుకు
+సంతాప మొక్కటి విఱుగడై నను జాలును నాకు
+ఎంత నాయంపడ నెంతు వంత నేనెందుకుఁ కాను
+చింత యిడేటికో నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Èmtati yirukatam bavuchununnadi yimdaina braduku
+Samtaapa mòkkati viṟugadai nanu jaalunu naaku
+Èmta naayampada nèmtu vamta nenèmduku~ kaanu
+Chimta yidetiko nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `ఇది ఎంత చిన్న జీవితం
+నా మీద నాకే జాలి వేస్తుంది
+నా జుట్టును ఎలా నయం చేయాలో నాకు తెలియదు
+చింత యిదేటికో నెకరుకల్ ఏరియా సిద్దబ్దహేలీ!`,
+    wordMeaningEn: `What a short life it is
+I feel sorry for myself
+I don't know how to heal my hair
+Chinta Yidetico Nekarukal area Siddabdaheli!`,
+    audioTe: "ఎంతటి యిరుకటం బవుచునున్నది యిందైన బ్రదుకు సంతాప మొక్కటి విఱుగడై నను జాలును నాకు ఎంత నాయంపడ నెంతు వంత నేనెందుకుఁ కాను చింత యిడేటికో నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 77,
-    category: "annapurna",
-    titleTe: "జగన్మాత అన్నపూర్ణ కీర్తన - భాగం 14",
-    titleEn: "Mother Annapurna Chant - Part 14",
-    verseTe: `సర్వమంగళ మాంగల్యే శివే సర్వార్థ సాధికే!
-శరణ్యే త్ర్యంబకే గౌరి నారాయణి నమోస్తుతే!`,
-    verseEn: `O Mother, who is the auspiciousness of all auspiciousness! O source of all achievements!
-We seek refuge in You, the three-eyed Gauri, Salutations to You, Narayani!`,
-    wordMeaningTe: `* సర్వమంగళ మాంగల్యే: సర్వ శుభములలో అత్యంత శుభప్రదమైనదానา.
-* శివే: కళ్యాణకారిణి.
-* సర్వార్థ సాధికే: సర్వ పురుషార్థాలను సాధించేదానా.
-* శరణ్యే: శరణు కోరదగిన తల్లి.`,
-    wordMeaningEn: `* Sarvamangala Mangalye: Most auspicious among all auspicious things.
-* Shive: Bestower of welfare.
-* Sarvartha Sadhike: Fulfiller of all desires.
-* Saranye: Worthy of taking refuge in.`,
-    audioTe: "సర్వమంగళ మాంగల్యే శివే సర్వార్థ సాధికే! శరణ్యే త్ర్యంబకే గౌరి నారాయణి నమోస్తుతే!",
-    audioEn: "O Mother, who is the auspiciousness of all auspiciousness! O source of all achievements! We seek refuge in You, the three-eyed Gauri, Salutations to You, Narayani!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 77",
+    titleEn: "Nekarukallu Satakam - Poem 77",
+    verseTe: `అయ్యొ యీ మేనున్న డెట్లు తప్పనియట్లుగా నుండె
+ముయ్యేరు తలమీఁదగల్గు సామి! యీ మొండి దేహంబు
+వయ్యలై వ్యర్థ సంస్కృతిని మరి శరీరమ్ము కట్టకుము
+బియ్య పట్టను నేను నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Ayyò yee menunna dètlu tappaniyatlugaa numdè
+Muyyeru talamee~dagalgu saami! yee mòmdi dehambu
+Vayyalai vyartha samskrutini mari shareerammu kattakumu
+Biyya pattanu nenu nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `అయ్యో, నా అప్పులు మాయమైనట్లు ఉన్నాయి
+ముయ్యెరు తలమిందగల్గు సామీ!యీ మొండి దేహంబు
+వ్యర్థ సంస్కృతిలో కూరుకుపోకండి
+వరి పట్టాన్ నేను నెకరుకల్ ప్రాంతం సిద్దబ్దహేలీ!`,
+    wordMeaningEn: `Alas, my debts seem to have disappeared
+Muyieru Talamindagalgu Sami!Yee stubborn dehambu
+Don't get stuck in a wasteful culture
+Rice Pattan I Nekarukal region Siddabdaheli!`,
+    audioTe: "అయ్యొ యీ మేనున్న డెట్లు తప్పనియట్లుగా నుండె ముయ్యేరు తలమీఁదగల్గు సామి! యీ మొండి దేహంబు వయ్యలై వ్యర్థ సంస్కృతిని మరి శరీరమ్ము కట్టకుము బియ్య పట్టను నేను నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 78,
-    category: "history",
-    titleTe: "చారిత్రక శాసన గీతం - పద్యం 14",
-    titleEn: "Historical Inscription Hymn - Verse 14",
-    verseTe: `శిలా శాసనములందు నిలిచిన క్షేత్ర చరిత్ర చదువుదాం!
-తరతరాల పుణ్యఫలమైన విశ్వేశ్వర లీలలు కీర్తిద్దాం!`,
-    verseEn: `Let us read the history of this shrine recorded in the stone inscriptions!
-Let us praise the divine plays of Visweswara, the merit of generations!`,
-    wordMeaningTe: `* శిలా శాసనము: రాతిపై చెక్కబడిన శాసనము.
-* క్షేత్ర చరిత్ర: ఆలయం యొక్క చరిత్ర.
-* లీలలు: దైవ లీలలు.
-* కీర్తిద్దాం: కొనిాడుదాం.`,
-    wordMeaningEn: `* Shila Sasanamu: Inscription carved on stone.
-* Kshethra Charitra: History of the sacred place.
-* Leelalu: Divine activities.`,
-    audioTe: "శిలా శాసనములందు నిలిచిన క్షేత్ర చరిత్ర చదువుదాం! తరతరాల పుణ్యఫలమైన విశ్వేశ్వర లీలలు కీర్తిద్దాం!",
-    audioEn: "Let us read the history of this shrine recorded in the stone inscriptions! Let us praise the divine plays of Visweswara, the merit of generations!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 78",
+    titleEn: "Nekarukallu Satakam - Poem 78",
+    verseTe: `ఈ మేను నిజముగా నాది యైనచో నిది దాని యిష్ట
+మేమొ దానిదిగాని, స్వామి, నా మాట యేమియు వినదె
+కామమ్ము నాదియా యెవరిదేమి యీ కశ్మలమెల్ల
+శ్రీమద్వియన్మౌళి నెకరుకల్ ప్రాంత సిద్ధాబ్ద హేళి!`,
+    verseEn: `Ee menu nijamugaa naadi yainacho nidi daani yishta
+Memò daanidigaani, svaami, naa maata yemiyu vinadè
+Kaamammu naadiyaa yèvaridemi yee kashmalamèlla
+Shreemadviyanmauḻi nèkarukal praamta siddhaabda heḻi!`,
+    wordMeaningTe: `ఈ మెనూ నిజంగా నాది అయితే, ఇది దాని ఇష్టమైనది
+స్వామి, నా మాట ఏమిటి?
+కమమ్ము నదియా యెవరిదేమి యీ కశ్మలమెల్ల
+శ్రీమద్వియన్మౌళి నెకరుకల్ ప్రాంతం సిద్ధబ్ద హెలీ!`,
+    wordMeaningEn: `If this menu is truly mine, it is its favorite
+Swami, what is my word?
+Kamammu Nadia Yevaridemi Yee Kashmalamella
+Srimadvianmouli Nekarukal region Siddhabda Heli!`,
+    audioTe: "ఈ మేను నిజముగా నాది యైనచో నిది దాని యిష్ట మేమొ దానిదిగాని, స్వామి, నా మాట యేమియు వినదె కామమ్ము నాదియా యెవరిదేమి యీ కశ్మలమెల్ల శ్రీమద్వియన్మౌళి నెకరుకల్ ప్రాంత సిద్ధాబ్ద హేళి!",
+    audioEn: ""
   },
   {
     id: 79,
-    category: "devotion",
-    titleTe: "శరణాగతి ప్రార్థన - చరణం 15",
-    titleEn: "Prayer of Surrender - Verse 15",
-    verseTe: `పాపోహం పాపకర్మాహం పాపాత్మా పాపసంభవః!
-త్రాహి మాం కృపయా దేవా శరణాగత వత్సల!`,
-    verseEn: `I am a sinner, my actions are sinful, my soul is sinful, born of sin!
-O Lord, protect me out of compassion, O savior of those who surrender!`,
-    wordMeaningTe: `* పాపోహం: నేను పాపాత్ముడను.
-* త్రాహి మాం: నన్ను రక్షించు.
-* కృపయా: దయతో.
-* శరణాగత వత్సల: శరణు కోరినవారిని ప్రేమించేవాడా.`,
-    wordMeaningEn: `* Papoham: I am full of sins.
-* Trahi Mam: Protect me.
-* Krupaya: With mercy.
-* Saranagata Vatsala: Compassionate protector of those who surrender.`,
-    audioTe: "పాపోహం పాపకర్మాహం పాపాత్మా పాపసంభవః! త్రాహి మాం కృపయా దేవా శరణాగత వత్సల!",
-    audioEn: "I am a sinner, my actions are sinful, my soul is sinful, born of sin! O Lord, protect me out of compassion, O savior of those who surrender!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 79",
+    titleEn: "Nekarukallu Satakam - Poem 79",
+    verseTe: `ఒక వేళఁ కానిమ్ము దీని భావింతు నొక వేళ నేమి
+ఒక వేయివేళల నిన్ను భావించుచుంటిఁ కదయ్య
+నికరమ్ము కట్టి చూడఁగ లెక్కకు నీవాడ నగుదుఁ
+చికురార్పిత శశాంక! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Òka veḻa~ kaanimmu deeni bhaavimtu nòka veḻa nemi
+Òka veyiveḻala ninnu bhaavimchuchumti~ kadayya
+Nikarammu katti chooda~ga lèkkaku neevaada nagudu~
+Chikuraarpita shashaamka! nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `ఒక్కోసారి కానిమ్ము అనేది ఒక్కోసారి ఆలోచన
+నేను నీ గురించి వెయ్యి సార్లు ఆలోచిస్తున్నాను
+నికరమ్ము కట్టి చూడఁగా ధనమునకు విలువలేదు
+చికురార్పిత శశాంక!నెకరుకల్ ప్రాంతం సిద్ధబ్దహేలీ!`,
+    wordMeaningEn: `At one time Kanimmu is the thought of one time
+I think of you for a thousand times
+Nikarammu Katti Chudanga is not worth the money
+Chikurarpita Sashanka!Nekarukal area Siddabdaheli!`,
+    audioTe: "ఒక వేళఁ కానిమ్ము దీని భావింతు నొక వేళ నేమి ఒక వేయివేళల నిన్ను భావించుచుంటిఁ కదయ్య నికరమ్ము కట్టి చూడఁగ లెక్కకు నీవాడ నగుదుఁ చికురార్పిత శశాంక! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 80,
-    category: "sacred",
-    titleTe: "ఆత్మారామ ధ్యాన శ్లోకం - చరణం 15",
-    titleEn: "Atmaram Meditation Hymn - Verse 15",
-    verseTe: `ఆత్మారాం సమేత అన్నపూర్ణ మాతా హృదయ నివాసి!
-సకల జీవ సంరక్షక విశ్వనాథ జ్యోతి స్వరూప ప్రకాశి!`,
-    verseEn: `Mother Annapurna along with Lord Atmaram resides in our hearts!
-O Viswanatha, protector of all living beings, shine as the divine light!`,
-    wordMeaningTe: `* హృదయ నివాసి: హృదయములో నివసించువాడా.
-* సకల జీవ సంరక్షక: సమస్త జీవులను కాపాడేవాడా.
-* జ్యోతి స్వరూప: వెలుగు రూపములో ఉన్నవాడా.
-* ప్రకాశి: ప్రకాశించేవాడా.`,
-    wordMeaningEn: `* Hrudaya Nivasi: Dweller of the heart.
-* Sakala Jeeva Samrakshaka: Preserver of all life forms.
-* Jyoti Swarupa: In the form of holy light.
-* Prakashi: Illuminating one.`,
-    audioTe: "ఆత్మారాం సమేత అన్నపూర్ణ మాతా హృదయ నివాసి! సకల జీవ సంరక్షక విశ్వనాథ జ్యోతి స్వరూప ప్రకాశి!",
-    audioEn: "Mother Annapurna along with Lord Atmaram resides in our hearts! O Viswanatha, protector of all living beings, shine as the divine light!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 80",
+    titleEn: "Nekarukallu Satakam - Poem 80",
+    verseTe: `మనసుతో నిర్ణయించితిని గాని మది మది నిల్వనీవు
+మనసునకును నిర్ణయంబునకును సంబంధంబు లేదొ
+మనసుతోనైన దోషంబు గెలుచుట మనసుతో నెట్లు
+చినచూపు చూడకు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Manasuto nirnayimchitini gaani madi madi nilvaneevu
+Manasunakunu nirnayambunakunu sambamdhambu ledò
+Manasutonaina doshambu gèluchuta manasuto nètlu
+Chinachoopu choodaku nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `నేను నా మనస్సుతో నిర్ణయించుకున్నాను, కానీ నా మనస్సు రిజర్వ్ చేయబడింది
+మనసుకు నిర్ణయానికి సంబంధం లేదు
+బుద్ధితో దోషంబు బుద్ధితో వలలను గెలుస్తుంది
+నెకరుకల్ ప్రాంత సిద్ధబ్దహేళిని చూడకు!`,
+    wordMeaningEn: `I have decided with my mind, but my mind is reserved
+The mind has nothing to do with the decision
+Doshambu with a mind wins nets with a mind
+Don't look at the Nekarukal region's Siddhabdaheli!`,
+    audioTe: "మనసుతో నిర్ణయించితిని గాని మది మది నిల్వనీవు మనసునకును నిర్ణయంబునకును సంబంధంబు లేదొ మనసుతోనైన దోషంబు గెలుచుట మనసుతో నెట్లు చినచూపు చూడకు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 81,
     category: "shiva",
-    titleTe: "శివ పంచాక్షరి - చరణం 15",
-    titleEn: "Shiva Panchakshari - Verse 15",
-    verseTe: `నమః శివాయ నమః శివాయ నమః శివాయ నమః శివాయ!
-హర హర శంభో మహదేవాయ విశ్వేశ్వరాయ నమః శివాయ!`,
-    verseEn: `Salutations to Shiva! Salutations to Shiva!
-O Hara, Shambho, Mahadeva, Visweswara! Salutations to Shiva!`,
-    wordMeaningTe: `* నమః శివాయ: శివునికి నమస్కారములు.
-* హర హర: పాపములను హరించేవాడు.
-* శంభో: సుఖములను కలిగించేవాడు.
-* విశ్వేశ్వరాయ: విశ్వానికి అధిపతి.`,
-    wordMeaningEn: `* Namah Shivaya: Salutations to Lord Shiva.
-* Hara: The destroyer of sins.
-* Shambho: The bestower of happiness.
-* Visweswaraya: The Lord of the Universe.`,
-    audioTe: "నమః శివాయ నమః శివాయ నమః శివాయ నమః శివాయ! హర హర శంభో మహదేవాయ విశ్వేశ్వరాయ నమః శివాయ!",
-    audioEn: "Salutations to Shiva! Salutations to Shiva! O Hara, Shambho, Mahadeva, Visweswara! Salutations to Shiva!"
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 81",
+    titleEn: "Nekarukallu Satakam - Poem 81",
+    verseTe: `మృతియనఁ ప్రాణముల్ నిలచిపోవుట, మృతివేళ జీవ
+గతి యెట్టులుండునో తెలియఁ ప్రాణ సంఘమ్ము బిగించి
+మతిఁచూడ నీవు నే నిద్దఱము చిత్సమాఖ్య నున్నాము
+శితికంఠ! యిది నిల్పు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Mrutiyana~ praanamul nilachipovuta, mrutiveḻa jeeva
+Gati yèttulumduno tèliya~ praana samghammu bigimchi
+Mati~chooda neevu ne niddaṟamu chitsamaakhya nunnaamu
+Shitikamtha! yidi nilpu nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `మరణం జీవితం యొక్క విరమణ, మరణం జీవితం
+విధి వస్తుందో లేదో తెలియదు, మీ జీవితాన్ని కలిసి ఉంచండి
+మటించుడా, నువ్వూ నేనూ కలిసి నిద్రపోతున్నాం
+శితికంత!ఇది నిల్పు నెకరుకల్ ప్రాంత సిద్ధబ్దహేళి!`,
+    wordMeaningEn: `Death is the cessation of life, death is life
+Don't know if fate is coming, keep your life together
+Matinchuda, you and I are sleeping together
+Shitikanta!This is Nilpu Nekarukal region's Siddabdaheli!`,
+    audioTe: "మృతియనఁ ప్రాణముల్ నిలచిపోవుట, మృతివేళ జీవ గతి యెట్టులుండునో తెలియఁ ప్రాణ సంఘమ్ము బిగించి మతిఁచూడ నీవు నే నిద్దఱము చిత్సమాఖ్య నున్నాము శితికంఠ! యిది నిల్పు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 82,
-    category: "annapurna",
-    titleTe: "అన్నపూర్ణాష్టకము - చరణం 15",
-    titleEn: "Annapurna Ashtakam - Verse 15",
-    verseTe: `అన్నపూర్ణే సదాపూర్ణే శంకర ప్రాణవల్లభే!
-జ్ఞానవైరాగ్య సిద్ధ్యర్థం భిక్షాం దేహి చ పార్వతి!`,
-    verseEn: `O Mother Annapurna, ever full and complete, the beloved of Lord Sankara!
-Grant us alms of knowledge and dispassion, O Goddess Parvati!`,
-    wordMeaningTe: `* అన్నపూర్ణే: ధాన్య సమృద్ధిని ఇచ్చే తల్లి.
-* సదాపూర్ణే: ఎల్లప్పుడూ నిండుగా ఉండేది.
-* ప్రాణవల్లభే: ప్రాణనాథురాలు.
-* జ్ఞానవైరాగ్య: జ్ఞానము మరియు వైరాగ్యము.
-* భిక్షాం: బిక్ష లేదా ప్రసాదము.`,
-    wordMeaningEn: `* Annapurne: She who is full of nourishment.
-* Sadapurne: Ever complete and full.
-* Pranavallabhe: Beloved consort.
-* Jnana-Vairagya: Wisdom and renunciation.
-* Bhiksham Dehi: Grant us alms.`,
-    audioTe: "అన్నపూర్ణే సదాపూర్ణే శంకర ప్రాణవల్లభే! జ్ఞానవైరాగ్య సిద్ధ్యర్థం భిక్షాం దేహి చ పార్వతి!",
-    audioEn: "O Mother Annapurna, ever full and complete, the beloved of Lord Sankara! Grant us alms of knowledge and dispassion, O Goddess Parvati!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 82",
+    titleEn: "Nekarukallu Satakam - Poem 82",
+    verseTe: `నిన్ను మఱచిపోయి యొక్క గంట యుంటిన యేని, జగతి
+నున్నటి మోహాన, మోహమది త్రవ్వునురగ లోకములు
+పన్ని నిన్నెందుకో మరల నెగఁప్రాకవలయు నా యెత్తు
+స్విన్న మానసుడనై నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Ninnu maṟachipoyi yòkka gamta yumtina yeni, jagati
+Nunnati mohaana, mohamadi travvunuraga lokamulu
+Panni ninnèmduko marala nèga~praakavalayu naa yèttu
+Svinna maanasudanai nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `ఇది నిన్ను, ప్రపంచాన్ని మరచిపోయే గంట
+నున్నటి మోహన మరియు మహమ్మది త్రవునురాగ లోకములు
+మీరు మళ్లీ పని చేయాలనుకుంటే, నేను మీ వద్దకు తిరిగి వెళ్తాను
+స్విన్న మనసుదానై నెకరుకల్ ప్రాంతం సిద్ధబ్దహేళి!`,
+    wordMeaningEn: `It is the hour of forgetting you, the world
+Nunnati Mohana and Mohammadi Travunuraga worlds
+If you want to work again, I will go back to you
+Swinna Manasudanai Nekarukal area Siddhabdaheli!`,
+    audioTe: "నిన్ను మఱచిపోయి యొక్క గంట యుంటిన యేని, జగతి నున్నటి మోహాన, మోహమది త్రవ్వునురగ లోకములు పన్ని నిన్నెందుకో మరల నెగఁప్రాకవలయు నా యెత్తు స్విన్న మానసుడనై నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 83,
-    category: "history",
-    titleTe: "నరసింగపాడు ఆలయ ప్రశస్తి - పద్యం 15",
-    titleEn: "Narasingapadu Temple Glory - Verse 15",
-    verseTe: `పవిత్ర క్షేత్రము నరసింగపాడున వెలసిన విశ్వనాథుడే శరణు!
-భక్త జనుల గుండెల్లో కొలువైన అన్నపూర్ణా విశ్వేశ్వరుడే శరణు!`,
-    verseEn: `Refuge in Lord Viswanatha who resides in the holy shrine of Narasingapadu!
-Refuge in Annapurna and Visweswara who dwell in the hearts of devotees!`,
-    wordMeaningTe: `* పవిత్ర క్షేత్రము: పరిశుద్ధమైన క్షేత్రము.
-* వెలసిన: అవతరించిన.
-* శరణు: ఆశ్రయము.
-* కొలువైన: నివసించిన.`,
-    wordMeaningEn: `* Pavitra Kshethramu: The holy place.
-* Velasina: Self-manifested or established.
-* Saranam: Safe haven.`,
-    audioTe: "పవిత్ర క్షేత్రము నరసింగపాడున వెలసిన విశ్వనాథుడే శరణు! భక్త జనుల గుండెల్లో కొలువైన అన్నపూర్ణా విశ్వేశ్వరుడే శరణు!",
-    audioEn: "Refuge in Lord Viswanatha who resides in the holy shrine of Narasingapadu! Refuge in Annapurna and Visweswara who dwell in the hearts of devotees!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 83",
+    titleEn: "Nekarukallu Satakam - Poem 83",
+    verseTe: `ఆనందమును విస్మృతిం గనుట జీవిదైన లక్షణము
+ఆనందమూలమ్ము మఱవ డెట్లు సల్పాల్ప భోగావ
+సానములందలి తృప్తి మఱచును క్షణములో జనుడు
+శ్రీ నిరంతర తేజ! నెకరుకల్ ప్రాంత సిద్ధాబ్ద హేళి!`,
+    verseEn: `Aanamdamunu vismrutim ganuta jeevidaina lakshanamu
+Aanamdamoolammu maṟava dètlu salpaalpa bhogaava
+Saanamulamdali trupti maṟachunu kshanamulo janudu
+Shree niramtara teja! nèkarukal praamta siddhaabda heḻi!`,
+    wordMeaningTe: `ఆనందాన్ని, మతిమరుపును మరచిపోవడం జీవితంలోని లక్షణం
+ఆనందములమ్ము మరవ అప్పులు సల్పల్ప భోగవా
+మనిషి సుఖాల తృప్తిని క్షణంలో మరిచిపోతాడు
+శ్రీ నిరంతర తేజ!నెకరుకల్ ప్రాంతం సిద్ధబ్ద హెలీ!`,
+    wordMeaningEn: `It is a characteristic of life to forget pleasure and forgetfulness
+Anandamulammu Marava Debtlu Salpalpa Bhogava
+A man forgets the satisfaction of comforts in a moment
+Shree continuous Teja!Nekarukal area Siddhabda Heli!`,
+    audioTe: "ఆనందమును విస్మృతిం గనుట జీవిదైన లక్షణము ఆనందమూలమ్ము మఱవ డెట్లు సల్పాల్ప భోగావ సానములందలి తృప్తి మఱచును క్షణములో జనుడు శ్రీ నిరంతర తేజ! నెకరుకల్ ప్రాంత సిద్ధాబ్ద హేళి!",
+    audioEn: ""
   },
   {
     id: 84,
-    category: "devotion",
-    titleTe: "భక్తి సుధా తరంగిణి - భాగం 16",
-    titleEn: "Devotional Waves - Part 16",
-    verseTe: `ప్రాతఃకాలే శివనామ స్మరణం భవ హరణం సంసార తారణం!
-హర హర శంభో విశ్వనాథ మహదేవ శివాయ నమః శరణం!`,
-    verseEn: `Reciting Shiva's name in the morning destroys worldly attachment and crosses the ocean of life!
-O Shambho, Viswanatha, Mahadeva, salutations to Shiva!`,
-    wordMeaningTe: `* ప్రాతఃకాలే: ఉదయ కాలమున.
-* స్మరణం: తలచుకోవడం.
-* భవ హరణం: భవ బంధాలను పోగొట్టేది.
-* తారణం: దాటించేది.`,
-    wordMeaningEn: `* Pratahkale: In the early morning.
-* Smaranam: Remembrance.
-* Bhava Haranam: Destruction of worldly attachments.
-* Taranam: Delivering across the ocean of births.`,
-    audioTe: "ప్రాతఃకాలే శివనామ స్మరణం భవ హరణం సంసార తారణం! హర హర శంభో విశ్వనాథ మహదేవ శివాయ నమః శరణం!",
-    audioEn: "Reciting Shiva's name in the morning destroys worldly attachment and crosses the ocean of life! O Shambho, Viswanatha, Mahadeva, salutations to Shiva!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 84",
+    titleEn: "Nekarukallu Satakam - Poem 84",
+    verseTe: `విమల మహోదూరమగు ప్రతిక్షణ విస్మృతి నేను
+శ్రమ యెఱుంగని యట్టిదగు ప్రతిక్షణ జాగ్రత్త నీవు
+ఉమతో సగము వేఱు నీవు మే మొకడె యిద్దజము
+చిమిడిన యాత్మలై నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Vimala mahodooramagu pratikshana vismruti nenu
+Shrama yèṟumgani yattidagu pratikshana jaagratta neevu
+Umato sagamu veṟu neevu me mòkadè yiddajamu
+Chimidina yaatmalai nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `విమల మహోదురమగు ప్రతిక్షణ విస్మృతి నేను
+మీరు బాధపడకుండా జాగ్రత్త వహించండి
+నువ్వు నాకు సగం భిన్నంగా ఉన్నావు
+యత్మలై నెకరుకల్ ప్రాంతం సిద్ధబ్దహేలీ!`,
+    wordMeaningEn: `Vimala Mahoduramagu Pratiksana Vismriti I am
+Be careful that you do not suffer
+You are half different from me
+Yatmalai Nekarukal region Siddhabdaheli!`,
+    audioTe: "విమల మహోదూరమగు ప్రతిక్షణ విస్మృతి నేను శ్రమ యెఱుంగని యట్టిదగు ప్రతిక్షణ జాగ్రత్త నీవు ఉమతో సగము వేఱు నీవు మే మొకడె యిద్దజము చిమిడిన యాత్మలై నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 85,
-    category: "sacred",
-    titleTe: "మహాదేవ కరవలంబ స్తోత్రం - భాగం 16",
-    titleEn: "Mahadeva Karavalamba Stotram - Part 16",
-    verseTe: `సంసార ఘోర గహనే చరతో మమ హే దేవా!
-విశ్వేశ్వర కరుణానిధే దేహి కరవలంబమ్!`,
-    verseEn: `I am wandering in the terrifying jungle of this worldly life, O Lord!
-O Visweswara, ocean of compassion, extend Your hand of support!`,
-    wordMeaningTe: `* ఘోర గహనే: భయంకరమైన అడవిలో.
-* మమ: నా యొక్క.
-* కరుణానిధే: దయకు సముద్రుడైనవాడా.
-* కరవలంబమ్: చేతిని అందించి రక్షించడం.`,
-    wordMeaningEn: `* Ghora Gahane: In the dangerous forest.
-* Karunānidhe: O treasure of mercy.
-* Karavalambam: Hand of protection.`,
-    audioTe: "సంసార ఘోర గహనే చరతో మమ హే దేవా! విశ్వేశ్వర కరుణానిధే దేహి కరవలంబమ్!",
-    audioEn: "I am wandering in the terrifying jungle of this worldly life, O Lord! O Visweswara, ocean of compassion, extend Your hand of support!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 85",
+    titleEn: "Nekarukallu Satakam - Poem 85",
+    verseTe: `నాకు నీకు నభేదముగఁ తలంచుచున్నా నందుచేత
+నా కంటి తుదలందు నీవు వచ్చి కన్పడవనుకొందు
+నా- కీ యభేదము నీవు చేయుచున్నది సుమీ నేను
+శ్రీకంఠ నినుగొల్తు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Naaku neeku nabhedamuga~ talamchuchunnaa namducheta
+Naa kamti tudalamdu neevu vachchi kanpadavanukòmdu
+Naa- kee yabhedamu neevu cheyuchunnadi sumee nenu
+Shreekamtha ninugòltu nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `నా వల్ల నీ గురించే ఆలోచిస్తున్నాను
+నేను నిన్ను నా కంటి మూలలో చూడాలనుకుంటున్నాను
+నా- నువ్వు చేస్తున్న తేడా ఏమిటి సుమీ
+శ్రీకాంత నినుగొల్తు నెకరుకల్ ప్రాంత సిద్ధబ్దహేళి!`,
+    wordMeaningEn: `I am thinking about you because of me
+I want to see you in the corner of my eye
+Na- What is the difference you are making, I am Sumi
+Srikantha Ninugoltu Nekarukal region Siddhabdaheli!`,
+    audioTe: "నాకు నీకు నభేదముగఁ తలంచుచున్నా నందుచేత నా కంటి తుదలందు నీవు వచ్చి కన్పడవనుకొందు నా- కీ యభేదము నీవు చేయుచున్నది సుమీ నేను శ్రీకంఠ నినుగొల్తు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 86,
     category: "shiva",
-    titleTe: "నమః శివాయ స్తుతి - భాగం 16",
-    titleEn: "Namah Shivaya Praise - Part 16",
-    verseTe: `దేవదేవాయ త్రిలోచనాత్మకాయ నమః శివాయ!
-భక్త రక్షకాయ భవతారకాయ నమః శివాయ!`,
-    verseEn: `Salutations to Shiva, the God of Gods, the three-eyed Lord!
-Salutations to Shiva, the protector of devotees and the redeemer of life!`,
-    wordMeaningTe: `* త్రిలోచనాత్మకాయ: మూడు కన్నులు గలవాడు.
-* దేవదేవాయ: దేవతలకు దేవుడు.
-* భక్త రక్షకాయ: భక్తులను రక్షించేవాడు.
-* భవతారకాయ: సంసార సాగరాన్ని దాటించేవాడు.`,
-    wordMeaningEn: `* Trilochanatmakaya: The three-eyed Lord.
-* Devadevaya: The God of Gods.
-* Bhakta Rakshakaya: The protector of devotees.
-* Bhavatarakaya: The savior from the cycle of rebirth.`,
-    audioTe: "దేవదేవాయ త్రిలోచనాత్మకాయ నమః శివాయ! భక్త రక్షకాయ భవతారకాయ నమః శివాయ!",
-    audioEn: "Salutations to Shiva, the God of Gods, the three-eyed Lord! Salutations to Shiva, the protector of devotees and the redeemer of life!"
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 86",
+    titleEn: "Nekarukallu Satakam - Poem 86",
+    verseTe: `ననుఁ బైకిఁ కొంచురావలయు నంచు నున్నది నీకు, నేను
+కనులు మూసి మరింతలోని లోనికి గమియింప నెంచ
+నను వచ్చి వెన్నానుకొంచు నిల్చెదు నా కన్ను లందు
+సెనగ బద్ధంతయై నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Nanu~ baiki~ kòmchuraavalayu namchu nunnadi neeku, nenu
+Kanulu moosi marimtaloni loniki gamiyimpa nèmcha
+Nanu vachchi vènnaanukòmchu nilchèdu naa kannu lamdu
+Sènaga baddhamtayai nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `ననున్ బికినీ కొంచిరవిలా నంచు నంచు నీకు, నాకు
+మీ కళ్ళు మూసుకుని లోపలికి వెళ్లండి
+అతను వచ్చి నా వీపు మీద నిలబడ్డాడు, నా కళ్ళు మూసుకున్నాయి
+సెనగ బదనేకై నెకరుకల్ ప్రాంతం సిద్ధబ్దహేళి!`,
+    wordMeaningEn: `Nanun bikin konchuravalayu nanchu nanchu to you, me
+Close your eyes and go deep inside
+He came and stood on my back, and my eyes were closed
+Senaga Badantayai Nekarukal Region Siddhabdaheli!`,
+    audioTe: "ననుఁ బైకిఁ కొంచురావలయు నంచు నున్నది నీకు, నేను కనులు మూసి మరింతలోని లోనికి గమియింప నెంచ నను వచ్చి వెన్నానుకొంచు నిల్చెదు నా కన్ను లందు సెనగ బద్ధంతయై నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 87,
-    category: "annapurna",
-    titleTe: "జగన్మాత అన్నపూర్ణ కీర్తన - భాగం 16",
-    titleEn: "Mother Annapurna Chant - Part 16",
-    verseTe: `సర్వమంగళ మాంగల్యే శివే సర్వార్థ సాధికే!
-శరణ్యే త్ర్యంబకే గౌరి నారాయణి నమోస్తుతే!`,
-    verseEn: `O Mother, who is the auspiciousness of all auspiciousness! O source of all achievements!
-We seek refuge in You, the three-eyed Gauri, Salutations to You, Narayani!`,
-    wordMeaningTe: `* సర్వమంగళ మాంగల్యే: సర్వ శుభములలో అత్యంత శుభప్రదమైనదానา.
-* శివే: కళ్యాణకారిణి.
-* సర్వార్థ సాధికే: సర్వ పురుషార్థాలను సాధించేదానా.
-* శరణ్యే: శరణు కోరదగిన తల్లి.`,
-    wordMeaningEn: `* Sarvamangala Mangalye: Most auspicious among all auspicious things.
-* Shive: Bestower of welfare.
-* Sarvartha Sadhike: Fulfiller of all desires.
-* Saranye: Worthy of taking refuge in.`,
-    audioTe: "సర్వమంగళ మాంగల్యే శివే సర్వార్థ సాధికే! శరణ్యే త్ర్యంబకే గౌరి నారాయణి నమోస్తుతే!",
-    audioEn: "O Mother, who is the auspiciousness of all auspiciousness! O source of all achievements! We seek refuge in You, the three-eyed Gauri, Salutations to You, Narayani!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 87",
+    titleEn: "Nekarukallu Satakam - Poem 87",
+    verseTe: `అవి యేమి వెల్దులో కంటియెదుట సమావిర్భవించు
+శివములై పట్టరానంత యానంద సేవధులగుచు
+శివ! బాధపడుచున్న మేనొకండు విస్మృతికిని రాదు
+శివ! చంపు మిదికూడ నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Avi yemi vèldulo kamtiyèduta samaavirbhavimchu
+Shivamulai pattaraanamta yaanamda sevadhulaguchu
+Shiva! baadhapaduchunna menòkamdu vismrutikini raadu
+Shiva! champu midikooda nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `భవిష్యత్తులో కళ్ల ముందు కనిపిస్తారు
+యానంద శివములై పట్టరానంత సేవకుడయ్యాడు
+శివా!బాధ పడుతున్న మనం మరచిపోలేము
+శివ!చంపు మీదికూ నెకరుకల్ ప్రాంతం సిద్దబ్దహేలీ!`,
+    wordMeaningEn: `They appear in front of the eyes in the future
+Yananda became the servant of Shivamulai Pattarananta
+Shiva!We who are suffering cannot forget
+Shiva!Champu Midikoo Nekarukal area Siddabdaheli!`,
+    audioTe: "అవి యేమి వెల్దులో కంటియెదుట సమావిర్భవించు శివములై పట్టరానంత యానంద సేవధులగుచు శివ! బాధపడుచున్న మేనొకండు విస్మృతికిని రాదు శివ! చంపు మిదికూడ నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 88,
-    category: "history",
-    titleTe: "చారిత్రక శాసన గీతం - పద్యం 16",
-    titleEn: "Historical Inscription Hymn - Verse 16",
-    verseTe: `శిలా శాసనములందు నిలిచిన క్షేత్ర చరిత్ర చదువుదాం!
-తరతరాల పుణ్యఫలమైన విశ్వేశ్వర లీలలు కీర్తిద్దాం!`,
-    verseEn: `Let us read the history of this shrine recorded in the stone inscriptions!
-Let us praise the divine plays of Visweswara, the merit of generations!`,
-    wordMeaningTe: `* శిలా శాసనము: రాతిపై చెక్కబడిన శాసనము.
-* క్షేత్ర చరిత్ర: ఆలయం యొక్క చరిత్ర.
-* లీలలు: దైవ లీలలు.
-* కీర్తిద్దాం: కొనిాడుదాం.`,
-    wordMeaningEn: `* Shila Sasanamu: Inscription carved on stone.
-* Kshethra Charitra: History of the sacred place.
-* Leelalu: Divine activities.`,
-    audioTe: "శిలా శాసనములందు నిలిచిన క్షేత్ర చరిత్ర చదువుదాం! తరతరాల పుణ్యఫలమైన విశ్వేశ్వర లీలలు కీర్తిద్దాం!",
-    audioEn: "Let us read the history of this shrine recorded in the stone inscriptions! Let us praise the divine plays of Visweswara, the merit of generations!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 88",
+    titleEn: "Nekarukallu Satakam - Poem 88",
+    verseTe: `తన నొసంట నిషణ్ణుడై పినాకహస్తకమును వంచి
+కొని సహస్రారమ్ము లక్ష్యముం చేసి కొట్టుచున్నావొ
+నినుఁ కూరుచున్న వానిని వృషాకపీ నే నెరుంగుదును
+సృణికల్పనారాచ! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Tana nòsamta nishannudai pinaakahastakamunu vamchi
+Kòni sahasraarammu lakshyamum chesi kòttuchunnaavò
+Ninu~ kooruchunna vaanini vrushaakapee ne nèrumgudunu
+Srunikalpanaaraacha! nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `పినాకహస్తకం ముక్కు వంచింది
+కొని సహస్రారమ్ము గురిపెట్టి కొడుతోంది
+నీ నుండి పారిపోతున్న వాడిని చంపేస్తాను
+ఫాంటసీ ఫిక్షన్!నెకరుకల్ ప్రాంతం సిద్దబ్దహేలి!`,
+    wordMeaningEn: `Pinakahastakam bent his nose
+Koni Sahasrarammu is aiming and hitting
+I will kill the one who is running away from you
+Fantasy fiction!Nekarukal area Siddabdaheli!`,
+    audioTe: "తన నొసంట నిషణ్ణుడై పినాకహస్తకమును వంచి కొని సహస్రారమ్ము లక్ష్యముం చేసి కొట్టుచున్నావొ నినుఁ కూరుచున్న వానిని వృషాకపీ నే నెరుంగుదును సృణికల్పనారాచ! నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 89,
-    category: "devotion",
-    titleTe: "శరణాగతి ప్రార్థన - చరణం 17",
-    titleEn: "Prayer of Surrender - Verse 17",
-    verseTe: `పాపోహం పాపకర్మాహం పాపాత్మా పాపసంభవః!
-త్రాహి మాం కృపయా దేవా శరణాగత వత్సల!`,
-    verseEn: `I am a sinner, my actions are sinful, my soul is sinful, born of sin!
-O Lord, protect me out of compassion, O savior of those who surrender!`,
-    wordMeaningTe: `* పాపోహం: నేను పాపాత్ముడను.
-* త్రాహి మాం: నన్ను రక్షించు.
-* కృపయా: దయతో.
-* శరణాగత వత్సల: శరణు కోరినవారిని ప్రేమించేవాడా.`,
-    wordMeaningEn: `* Papoham: I am full of sins.
-* Trahi Mam: Protect me.
-* Krupaya: With mercy.
-* Saranagata Vatsala: Compassionate protector of those who surrender.`,
-    audioTe: "పాపోహం పాపకర్మాహం పాపాత్మా పాపసంభవః! త్రాహి మాం కృపయా దేవా శరణాగత వత్సల!",
-    audioEn: "I am a sinner, my actions are sinful, my soul is sinful, born of sin! O Lord, protect me out of compassion, O savior of those who surrender!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 89",
+    titleEn: "Nekarukallu Satakam - Poem 89",
+    verseTe: `నావంటి మానిసుల్ బ్రదుకుచుండుట నాతియు సుతులు
+దైవంబు నెంచుచుండుటయుఁ చచ్చుట తక్క నేమౌదు
+రీవు కృపాదృష్టిఁ చూడనెంచవ యేని యేమౌదు
+సేవాగతి ప్రీతి నెకరుకల్ ప్రాంత సిద్ధాబ్ద హేళి!`,
+    verseEn: `Naavamti maanisul bradukuchumduta naatiyu sutulu
+Daivambu nèmchuchumdutayu~ chachchuta takka nemaudu
+Reevu krupaadrushti~ choodanèmchava yeni yemaudu
+Sevaagati preeti nèkarukal praamta siddhaabda heḻi!`,
+    wordMeaningTe: `నాలాంటి మనిసూల్ బతికే ఉన్నాడు
+దేవుడిని చంపితే సరిపోదు
+భగవంతుని దయ ఏమిటి?
+సేవాగతి ప్రీతి నెకరుకల్ ప్రాంతం సిద్ధబ్ద హెలీ!`,
+    wordMeaningEn: `Manisul like me is alive
+It is not enough to kill God
+What is the grace of God?
+Sevagati Preeti Nekarukal Region Siddhabda Heli!`,
+    audioTe: "నావంటి మానిసుల్ బ్రదుకుచుండుట నాతియు సుతులు దైవంబు నెంచుచుండుటయుఁ చచ్చుట తక్క నేమౌదు రీవు కృపాదృష్టిఁ చూడనెంచవ యేని యేమౌదు సేవాగతి ప్రీతి నెకరుకల్ ప్రాంత సిద్ధాబ్ద హేళి!",
+    audioEn: ""
   },
   {
     id: 90,
-    category: "sacred",
-    titleTe: "ఆత్మారామ ధ్యాన శ్లోకం - చరణం 17",
-    titleEn: "Atmaram Meditation Hymn - Verse 17",
-    verseTe: `ఆత్మారాం సమేత అన్నపూర్ణ మాతా హృదయ నివాసి!
-సకల జీవ సంరక్షక విశ్వనాథ జ్యోతి స్వరూప ప్రకాశి!`,
-    verseEn: `Mother Annapurna along with Lord Atmaram resides in our hearts!
-O Viswanatha, protector of all living beings, shine as the divine light!`,
-    wordMeaningTe: `* హృదయ నివాసి: హృదయములో నివసించువాడా.
-* సకల జీవ సంరక్షక: సమస్త జీవులను కాపాడేవాడా.
-* జ్యోతి స్వరూప: వెలుగు రూపములో ఉన్నవాడా.
-* ప్రకాశి: ప్రకాశించేవాడా.`,
-    wordMeaningEn: `* Hrudaya Nivasi: Dweller of the heart.
-* Sakala Jeeva Samrakshaka: Preserver of all life forms.
-* Jyoti Swarupa: In the form of holy light.
-* Prakashi: Illuminating one.`,
-    audioTe: "ఆత్మారాం సమేత అన్నపూర్ణ మాతా హృదయ నివాసి! సకల జీవ సంరక్షక విశ్వనాథ జ్యోతి స్వరూప ప్రకాశి!",
-    audioEn: "Mother Annapurna along with Lord Atmaram resides in our hearts! O Viswanatha, protector of all living beings, shine as the divine light!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 90",
+    titleEn: "Nekarukallu Satakam - Poem 90",
+    verseTe: `పొగడుచునుందురు మిత్రు లొక్క వైపుననుండి జనునిఁ
+తెగడుచు నుందురు శత్రు లింకొక దెసనుండి జనుని
+జగతి వానికి నెంత నీవు వ్రాసితో సాగెడు నంతే
+సిగమీఱి చన డెందు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Pògaduchunumduru mitru lòkka vaipunanumdi januni~
+Tègaduchu numduru shatru limkòka dèsanumdi januni
+Jagati vaaniki nèmta neevu vraasito saagèdu namte
+Sigameeṟi chana dèmdu nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `ప్రజలను ప్రశంసించే స్నేహితుడి వైపు నుండి
+తెరడుచు నుందురు శత్రు అవతల నుండి పుట్టాడు
+మీరు ప్రపంచానికి ఎంత వ్రాస్తారు?
+సిగమిరి చన డెందు నెకరుకల్ ప్రాంత సిద్ధబ్దహేళి!`,
+    wordMeaningEn: `From the side of a friend who praises people
+Teraduchu Nunduru Sathru is born from the other side
+How much do you write to the world?
+Sigamiri Chana Dendu Nekarukal region Siddhabdaheli!`,
+    audioTe: "పొగడుచునుందురు మిత్రు లొక్క వైపుననుండి జనునిఁ తెగడుచు నుందురు శత్రు లింకొక దెసనుండి జనుని జగతి వానికి నెంత నీవు వ్రాసితో సాగెడు నంతే సిగమీఱి చన డెందు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 91,
     category: "shiva",
-    titleTe: "కాశీ విశ్వేశ్వర స్తోత్రము - చరణం 17",
-    titleEn: "Kasi Visweswara Stotram - Verse 17",
-    verseTe: `మంగళరూపాయ నమః శివాయ! మణిశేఖరాయ నమః శివాయ!
-గంగాధరాయ గౌరీనాథాయ దేవాయ! శంభో విశ్వేశ్వరాయ శరణం శరణం!`,
-    verseEn: `Salutations to Shiva, the form of auspiciousness! Salutations to Shiva, who wears gems on His head!
-Salutations to the holder of Ganga, the Lord of Gauri! O Shambho Visweswara, I seek refuge in You!`,
-    wordMeaningTe: `* మంగళరూపాయ: శుభప్రదమైన రూపము కలవాడు.
-* మణిశేఖరాయ: తలపై మణిని ధరించినవాడు.
-* గంగాధరాయ: గంగను ధరించినవాడు.
-* గౌరీనాథాయ: పార్వతీదేవి భర్త.
-* శరణం: ఆశ్రయము.`,
-    wordMeaningEn: `* Mangalarupaya: The embodiment of auspiciousness.
-* Manishekharaya: Having a gem on His crown.
-* Gangadharaya: The one who holds the river Ganga.
-* Gaurinathaya: The consort of Gauri.
-* Saranam: Refuge.`,
-    audioTe: "మంగళరూపాయ నమః శివాయ! మణిశేఖరాయ నమః శివాయ! గంగాధరాయ గౌరీనాథాయ దేవాయ! శంభో విశ్వేశ్వరాయ శరణం శరణం!",
-    audioEn: "Salutations to Shiva, the form of auspiciousness! Salutations to Shiva, who wears gems on His head! Salutations to the holder of Ganga, the Lord of Gauri! O Shambho Visweswara, I seek refuge in You!"
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 91",
+    titleEn: "Nekarukallu Satakam - Poem 91",
+    verseTe: `ఒక్కప్పుడు నిజంబు నన్ను రక్షింతు వొగి జన్మ వితతి
+చిక్కు తీరిన దనిపించు నొక్కపు చివరి కేమగునొ
+యక్కటా యనిపించు జీవితపుఁ పరమార్థమ్ము తెలియు
+చిక్కు తీరదటంచు నెకరుకల్ ప్రాంత సిద్ధాబ్ద హేళి!`,
+    verseEn: `Òkkappudu nijambu nannu rakshimtu vògi janma vitati
+Chikku teerina danipimchu nòkkapu chivari kemagunò
+Yakkataa yanipimchu jeevitapu~ paramaarthammu tèliyu
+Chikku teeradatamchu nèkarukal praamta siddhaabda heḻi!`,
+    wordMeaningTe: `ఒకానొక సమయంలో సత్యం నన్ను రక్షించి నాకు జన్మనిచ్చింది
+చివరి ట్రిక్ చిక్కుబడ్డ నొప్పిని నొక్కడం
+నీకు ఒక్కడికే జీవిత పరమార్థం తెలియదు
+నెకరుకల్ ప్రాంతం సిద్ధబ్ద హెలీ!`,
+    wordMeaningEn: `At one time the truth saved me and gave birth to me
+The final trick is to press the tangled pain
+You don't know the meaning of life alone
+Nekarukal area Siddhabda Heli!`,
+    audioTe: "ఒక్కప్పుడు నిజంబు నన్ను రక్షింతు వొగి జన్మ వితతి చిక్కు తీరిన దనిపించు నొక్కపు చివరి కేమగునొ యక్కటా యనిపించు జీవితపుఁ పరమార్థమ్ము తెలియు చిక్కు తీరదటంచు నెకరుకల్ ప్రాంత సిద్ధాబ్ద హేళి!",
+    audioEn: ""
   },
   {
     id: 92,
-    category: "annapurna",
-    titleTe: "అన్నపూర్ణాష్టకము - చరణం 17",
-    titleEn: "Annapurna Ashtakam - Verse 17",
-    verseTe: `అన్నపూర్ణే సదాపూర్ణే శంకర ప్రాణవల్లభే!
-జ్ఞానవైరాగ్య సిద్ధ్యర్థం భిక్షాం దేహి చ పార్వతి!`,
-    verseEn: `O Mother Annapurna, ever full and complete, the beloved of Lord Sankara!
-Grant us alms of knowledge and dispassion, O Goddess Parvati!`,
-    wordMeaningTe: `* అన్నపూర్ణే: ధాన్య సమృద్ధిని ఇచ్చే తల్లి.
-* సదాపూర్ణే: ఎల్లప్పుడూ నిండుగా ఉండేది.
-* ప్రాణవల్లభే: ప్రాణనాథురాలు.
-* జ్ఞానవైరాగ్య: జ్ఞానము మరియు వైరాగ్యము.
-* భిక్షాం: బిక్ష లేదా ప్రసాదము.`,
-    wordMeaningEn: `* Annapurne: She who is full of nourishment.
-* Sadapurne: Ever complete and full.
-* Pranavallabhe: Beloved consort.
-* Jnana-Vairagya: Wisdom and renunciation.
-* Bhiksham Dehi: Grant us alms.`,
-    audioTe: "అన్నపూర్ణే సదాపూర్ణే శంకర ప్రాణవల్లభే! జ్ఞానవైరాగ్య సిద్ధ్యర్థం భిక్షాం దేహి చ పార్వతి!",
-    audioEn: "O Mother Annapurna, ever full and complete, the beloved of Lord Sankara! Grant us alms of knowledge and dispassion, O Goddess Parvati!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 92",
+    titleEn: "Nekarukallu Satakam - Poem 92",
+    verseTe: `ఎప్పటికప్పుడు నధికమా ధన మేమొ వచ్చునని
+ఎప్పటికప్పుడు పెద్ద ఉద్యోగ మేదొ వచ్చునని
+రొప్పుచున్నది యాస సన్వసింపించు రోగమ్ము కుదురు
+చిప్ప చేతికివచ్చు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Èppatikappudu nadhikamaa dhana memò vachchunani
+Èppatikappudu pèdda udyoga medò vachchunani
+Ròppuchunnadi yaasa sanvasimpimchu rogammu kuduru
+Chippa chetikivachchu nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `కాలానుగుణంగా మాకు ఎక్కువ డబ్బు వస్తుంది
+ఎప్పటికప్పుడు పెద్ద ఉద్యోగావకాశాలు వస్తాయి
+రోగగ్రస్తులకు ఊరటనిచ్చేది యాస
+నేకరుకల్ ప్రాంతం సిద్ధబ్దహేళి పొందొచ్చు!`,
+    wordMeaningEn: `From time to time we will get more money
+A big job opportunity will come from time to time
+It is the slang that soothes the sick
+Nekarukal region Siddabdaheli can be obtained!`,
+    audioTe: "ఎప్పటికప్పుడు నధికమా ధన మేమొ వచ్చునని ఎప్పటికప్పుడు పెద్ద ఉద్యోగ మేదొ వచ్చునని రొప్పుచున్నది యాస సన్వసింపించు రోగమ్ము కుదురు చిప్ప చేతికివచ్చు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 93,
-    category: "history",
-    titleTe: "నరసింగపాడు ఆలయ ప్రశస్తి - పద్యం 17",
-    titleEn: "Narasingapadu Temple Glory - Verse 17",
-    verseTe: `పవిత్ర క్షేత్రము నరసింగపాడున వెలసిన విశ్వనాథుడే శరణు!
-భక్త జనుల గుండెల్లో కొలువైన అన్నపూర్ణా విశ్వేశ్వరుడే శరణు!`,
-    verseEn: `Refuge in Lord Viswanatha who resides in the holy shrine of Narasingapadu!
-Refuge in Annapurna and Visweswara who dwell in the hearts of devotees!`,
-    wordMeaningTe: `* పవిత్ర క్షేత్రము: పరిశుద్ధమైన క్షేత్రము.
-* వెలసిన: అవతరించిన.
-* శరణు: ఆశ్రయము.
-* కొలువైన: నివసించిన.`,
-    wordMeaningEn: `* Pavitra Kshethramu: The holy place.
-* Velasina: Self-manifested or established.
-* Saranam: Safe haven.`,
-    audioTe: "పవిత్ర క్షేత్రము నరసింగపాడున వెలసిన విశ్వనాథుడే శరణు! భక్త జనుల గుండెల్లో కొలువైన అన్నపూర్ణా విశ్వేశ్వరుడే శరణు!",
-    audioEn: "Refuge in Lord Viswanatha who resides in the holy shrine of Narasingapadu! Refuge in Annapurna and Visweswara who dwell in the hearts of devotees!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 93",
+    titleEn: "Nekarukallu Satakam - Poem 93",
+    verseTe: `ఇది యేమియును లేదటంచుఁ తెలిసియు నీ తనువచేత
+బ్రదుకుట తప్పక మరల నిందులో పలఁ ప్రవేశించి
+యుదయించు జ్ఞానంబు మరుగుండి పోవుచున్నది నన్ను
+జెదలు పట్టగ నీకు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Idi yemiyunu ledatamchu~ tèlisiyu nee tanuvacheta
+Bradukuta tappaka marala nimdulo pala~ praveshimchi
+Yudayimchu jnyaanambu marugumdi povuchunnadi nannu
+Jèdalu pattaga neeku nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `ఇది మీ వల్ల, మీరు ఎవరో తెలుసుకోవడం
+జీవించాలంటే మళ్లీ మళ్లీ ప్రవేశించాలి
+యుద్ధ జ్ఞానము నాకు దూరమైపోతోంది
+జెడలు పట్టగ మీరు నెకరుకల్ ప్రాంతం సిద్దబ్దహేలీ!`,
+    wordMeaningEn: `This is because of you, knowing who you are
+To live must enter again and again
+The wisdom of war is fading away from me
+Jedalu Pattaga you Nekarukal region Siddabdaheli!`,
+    audioTe: "ఇది యేమియును లేదటంచుఁ తెలిసియు నీ తనువచేత బ్రదుకుట తప్పక మరల నిందులో పలఁ ప్రవేశించి యుదయించు జ్ఞానంబు మరుగుండి పోవుచున్నది నన్ను జెదలు పట్టగ నీకు నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 94,
-    category: "devotion",
-    titleTe: "భక్తి సుధా తరంగిణి - భాగం 18",
-    titleEn: "Devotional Waves - Part 18",
-    verseTe: `ప్రాతఃకాలే శివనామ స్మరణం భవ హరణం సంసార తారణం!
-హర హర శంభో విశ్వనాథ మహదేవ శివాయ నమః శరణం!`,
-    verseEn: `Reciting Shiva's name in the morning destroys worldly attachment and crosses the ocean of life!
-O Shambho, Viswanatha, Mahadeva, salutations to Shiva!`,
-    wordMeaningTe: `* ప్రాతఃకాలే: ఉదయ కాలమున.
-* స్మరణం: తలచుకోవడం.
-* భవ హరణం: భవ బంధాలను పోగొట్టేది.
-* తారణం: దాటించేది.`,
-    wordMeaningEn: `* Pratahkale: In the early morning.
-* Smaranam: Remembrance.
-* Bhava Haranam: Destruction of worldly attachments.
-* Taranam: Delivering across the ocean of births.`,
-    audioTe: "ప్రాతఃకాలే శివనామ స్మరణం భవ హరణం సంసార తారణం! హర హర శంభో విశ్వనాథ మహదేవ శివాయ నమః శరణం!",
-    audioEn: "Reciting Shiva's name in the morning destroys worldly attachment and crosses the ocean of life! O Shambho, Viswanatha, Mahadeva, salutations to Shiva!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 94",
+    titleEn: "Nekarukallu Satakam - Poem 94",
+    verseTe: `భ్రూయుగంబునకును నడుమగా నిన్నుఁ ప్రోవు చేయంగఁ
+చేయు యత్నము లెల్ల సన్న మెఱుములై చిదిసిపోయెడిని
+నా యెడందను బందిమైన నిన్ను నీ నాల్గు మెట్లెక్కఁ
+చేయఁజాలకపోదు నెకరుకల్ ప్రాంత సిద్ధాబ్ద హేళి!`,
+    verseEn: `Bhrooyugambunakunu nadumagaa ninnu~ provu cheyamga~
+Cheyu yatnamu lèlla sanna mèṟumulai chidisipoyèdini
+Naa yèdamdanu bamdimaina ninnu nee naalgu mètlèkka~
+Cheya~jaalakapodu nèkarukal praamta siddhaabda heḻi!`,
+    wordMeaningTe: `నుదురు ఎముకలాగా నీకు నమస్కరిస్తాను
+నేను దీన్ని చేయడానికి ప్రయత్నించాను, కానీ నేను పగిలిపోయాను
+నా ఒక్క బందీ అయిన నువ్వు, నీ నాలుగు అడుగులు
+నెకరుకల్ ప్రాంతం సిద్ధబ్ద హెలీ!`,
+    wordMeaningEn: `Let me bow down to you as a brow bone
+I tried to do it, but I was shattered
+You who are my one captive, your four steps
+Nekarukal area Siddhabda Heli!`,
+    audioTe: "భ్రూయుగంబునకును నడుమగా నిన్నుఁ ప్రోవు చేయంగఁ చేయు యత్నము లెల్ల సన్న మెఱుములై చిదిసిపోయెడిని నా యెడందను బందిమైన నిన్ను నీ నాల్గు మెట్లెక్కఁ చేయఁజాలకపోదు నెకరుకల్ ప్రాంత సిద్ధాబ్ద హేళి!",
+    audioEn: ""
   },
   {
     id: 95,
-    category: "sacred",
-    titleTe: "మహాదేవ కరవలంబ స్తోత్రం - భాగం 18",
-    titleEn: "Mahadeva Karavalamba Stotram - Part 18",
-    verseTe: `సంసార ఘోర గహనే చరతో మమ హే దేవా!
-విశ్వేశ్వర కరుణానిధే దేహి కరవలంబమ్!`,
-    verseEn: `I am wandering in the terrifying jungle of this worldly life, O Lord!
-O Visweswara, ocean of compassion, extend Your hand of support!`,
-    wordMeaningTe: `* ఘోర గహనే: భయంకరమైన అడవిలో.
-* మమ: నా యొక్క.
-* కరుణానిధే: దయకు సముద్రుడైనవాడా.
-* కరవలంబమ్: చేతిని అందించి రక్షించడం.`,
-    wordMeaningEn: `* Ghora Gahane: In the dangerous forest.
-* Karunānidhe: O treasure of mercy.
-* Karavalambam: Hand of protection.`,
-    audioTe: "సంసార ఘోర గహనే చరతో మమ హే దేవా! విశ్వేశ్వర కరుణానిధే దేహి కరవలంబమ్!",
-    audioEn: "I am wandering in the terrifying jungle of this worldly life, O Lord! O Visweswara, ocean of compassion, extend Your hand of support!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 95",
+    titleEn: "Nekarukallu Satakam - Poem 95",
+    verseTe: `బిడ్డను సరిదిద్ది మంచి త్రోవను బెట్టుకోవలయు
+చెడ్డమానిసినైన యోగమార్గాలఁ చేదుకోవలయు
+సడ్డగా ఁ గలిలోన స్మరణమాత్రము చాలుసన్నారు
+జిడ్డయ్యె నీస్మృతి నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Biddanu sarididdi mamchi trovanu bèttukovalayu
+Chèddamaanisinaina yogamaargaala~ chedukovalayu
+Saddagaa ~ galilona smaranamaatramu chaalusannaaru
+Jiddayyè neesmruti nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `పిల్లవాడిని సరిదిద్దండి మరియు మంచి భంగిమను నిర్వహించండి
+చెడు మాన్సిని యోగమార్గాలు చేయవచ్చు
+సద్దగ మళ్లాలా
+జిద్దాయే నిస్మృతి నెకరుకల్ ప్రాంతం సిద్ధబ్దహేలీ!`,
+    wordMeaningEn: `Correct the child and maintain a good posture
+Bad mansini Yogamargalu can be done
+Saddaga মাল্লাল্য়ালা
+Ziddaye Nismriti Nekarukal Region Siddhabdaheli!`,
+    audioTe: "బిడ్డను సరిదిద్ది మంచి త్రోవను బెట్టుకోవలయు చెడ్డమానిసినైన యోగమార్గాలఁ చేదుకోవలయు సడ్డగా ఁ గలిలోన స్మరణమాత్రము చాలుసన్నారు జిడ్డయ్యె నీస్మృతి నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 96,
     category: "shiva",
-    titleTe: "శివ పంచాక్షరి - చరణం 18",
-    titleEn: "Shiva Panchakshari - Verse 18",
-    verseTe: `నమః శివాయ నమః శివాయ నమః శివాయ నమః శివాయ!
-హర హర శంభో మహదేవాయ విశ్వేశ్వరాయ నమః శివాయ!`,
-    verseEn: `Salutations to Shiva! Salutations to Shiva!
-O Hara, Shambho, Mahadeva, Visweswara! Salutations to Shiva!`,
-    wordMeaningTe: `* నమః శివాయ: శివునికి నమస్కారములు.
-* హర హర: పాపములను హరించేవాడు.
-* శంభో: సుఖములను కలిగించేవాడు.
-* విశ్వేశ్వరాయ: విశ్వానికి అధిపతి.`,
-    wordMeaningEn: `* Namah Shivaya: Salutations to Lord Shiva.
-* Hara: The destroyer of sins.
-* Shambho: The bestower of happiness.
-* Visweswaraya: The Lord of the Universe.`,
-    audioTe: "నమః శివాయ నమః శివాయ నమః శివాయ నమః శివాయ! హర హర శంభో మహదేవాయ విశ్వేశ్వరాయ నమః శివాయ!",
-    audioEn: "Salutations to Shiva! Salutations to Shiva! O Hara, Shambho, Mahadeva, Visweswara! Salutations to Shiva!"
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 96",
+    titleEn: "Nekarukallu Satakam - Poem 96",
+    verseTe: `భార్యపై బిడ్డలపైన మమత తప్ప మరొక్కడకు న
+మర్యాద లేదడ్డ మివ్వి చాలవా మరియన్నచో న
+మర్యాద లీ ధాత్రి లక్షలున్నవి మది నిలఁబెట్టు
+జీర్ణదాశాజ్యోతి నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Bhaaryapai biddalapaina mamata tappa maròkkadaku na
+Maryaada ledadda mivvi chaalavaa mariyannacho na
+Maryaada lee dhaatri lakshalunnavi madi nila~bèttu
+Jeernadaashaajyoti nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `భార్యా పిల్లలపై ప్రేమ తప్ప మరొకటి లేదు
+మర్యాద ఇస్తే చాలు
+సౌజన్య లీ ధాత్రి లక్షలు మనసు నిలబెట్టు
+నేకరుకల్ మండలానికి చెందిన సిద్దబ్దహేలి`,
+    wordMeaningEn: `No other than love for wife and children
+It's enough to give politeness
+Courtesy Lee Dhatri Lakhs are mind nilabettu
+Siddabdaheli of Nekarukal Region`,
+    audioTe: "భార్యపై బిడ్డలపైన మమత తప్ప మరొక్కడకు న మర్యాద లేదడ్డ మివ్వి చాలవా మరియన్నచో న మర్యాద లీ ధాత్రి లక్షలున్నవి మది నిలఁబెట్టు జీర్ణదాశాజ్యోతి నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 97,
-    category: "annapurna",
-    titleTe: "జగన్మాత అన్నపూర్ణ కీర్తన - భాగం 18",
-    titleEn: "Mother Annapurna Chant - Part 18",
-    verseTe: `సర్వమంగళ మాంగల్యే శివే సర్వార్థ సాధికే!
-శరణ్యే త్ర్యంబకే గౌరి నారాయణి నమోస్తుతే!`,
-    verseEn: `O Mother, who is the auspiciousness of all auspiciousness! O source of all achievements!
-We seek refuge in You, the three-eyed Gauri, Salutations to You, Narayani!`,
-    wordMeaningTe: `* సర్వమంగళ మాంగల్యే: సర్వ శుభములలో అత్యంత శుభప్రదమైనదానา.
-* శివే: కళ్యాణకారిణి.
-* సర్వార్థ సాధికే: సర్వ పురుషార్థాలను సాధించేదానా.
-* శరణ్యే: శరణు కోరదగిన తల్లి.`,
-    wordMeaningEn: `* Sarvamangala Mangalye: Most auspicious among all auspicious things.
-* Shive: Bestower of welfare.
-* Sarvartha Sadhike: Fulfiller of all desires.
-* Saranye: Worthy of taking refuge in.`,
-    audioTe: "సర్వమంగళ మాంగల్యే శివే సర్వార్థ సాధికే! శరణ్యే త్ర్యంబకే గౌరి నారాయణి నమోస్తుతే!",
-    audioEn: "O Mother, who is the auspiciousness of all auspiciousness! O source of all achievements! We seek refuge in You, the three-eyed Gauri, Salutations to You, Narayani!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 97",
+    titleEn: "Nekarukallu Satakam - Poem 97",
+    verseTe: `వేతును వేతున యెవరికై నను విను వెత్తుఁ తుదకు
+బ్రాఁతిగ నేనేమొ యతినిగాక పోవచ్చు నైన జల
+పాతమ్ము లున్నవి చిన్న వాగులే వలదు నీ మౌళి
+శీతాద్రిసుత లేదొ నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Vetunu vetuna yèvarikai nanu vinu vèttu~ tudaku
+Braa~tiga nenemò yatinigaaka povachchu naina jala
+Paatammu lunnavi chinna vaagule valadu nee mauḻi
+Sheetaadrisuta ledò nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `నా మాట వినమని ఎవరినీ అడగవద్దు
+బ్రంటిగా నేనేమో పోగొట్టుకోగల నీరు
+పాతవి చిన్న ధారలు కావు నీ సంపద
+సీతాద్రిసుత లేదో నెకరుకల్ ప్రాంతం సిద్ధబ్దహేళి!`,
+    wordMeaningEn: `Don't ask anyone to listen to me
+Brantiga Nenemo is the water that can be lost
+The old ones are not small streams but your treasure
+Sitadrisuta Ledo Nekarukal area Siddhabdaheli!`,
+    audioTe: "వేతును వేతున యెవరికై నను విను వెత్తుఁ తుదకు బ్రాఁతిగ నేనేమొ యతినిగాక పోవచ్చు నైన జల పాతమ్ము లున్నవి చిన్న వాగులే వలదు నీ మౌళి శీతాద్రిసుత లేదొ నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 98,
-    category: "history",
-    titleTe: "చారిత్రక శాసన గీతం - పద్యం 18",
-    titleEn: "Historical Inscription Hymn - Verse 18",
-    verseTe: `శిలా శాసనములందు నిలిచిన క్షేత్ర చరిత్ర చదువుదాం!
-తరతరాల పుణ్యఫలమైన విశ్వేశ్వర లీలలు కీర్తిద్దాం!`,
-    verseEn: `Let us read the history of this shrine recorded in the stone inscriptions!
-Let us praise the divine plays of Visweswara, the merit of generations!`,
-    wordMeaningTe: `* శిలా శాసనము: రాతిపై చెక్కబడిన శాసనము.
-* క్షేత్ర చరిత్ర: ఆలయం యొక్క చరిత్ర.
-* లీలలు: దైవ లీలలు.
-* కీర్తిద్దాం: కొనిాడుదాం.`,
-    wordMeaningEn: `* Shila Sasanamu: Inscription carved on stone.
-* Kshethra Charitra: History of the sacred place.
-* Leelalu: Divine activities.`,
-    audioTe: "శిలా శాసనములందు నిలిచిన క్షేత్ర చరిత్ర చదువుదాం! తరతరాల పుణ్యఫలమైన విశ్వేశ్వర లీలలు కీర్తిద్దాం!",
-    audioEn: "Let us read the history of this shrine recorded in the stone inscriptions! Let us praise the divine plays of Visweswara, the merit of generations!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 98",
+    titleEn: "Nekarukallu Satakam - Poem 98",
+    verseTe: `తన తీరెఱుఁగు మప్పు పుచ్చుకొందును తలఁచికొన్నంత
+వనితా సుతుల మీఁద మమత చెప్పిన భ్రాంతి పొందకుము
+క్షణము పట్టదుసుమీ నాశనము చేయగా నెంత తూలి
+చిన మోహమైనను నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Tana teerèṟu~gu mappu puchchukòmdunu tala~chikònnamta
+Vanitaa sutula mee~da mamata chèppina bhraamti pòmdakumu
+Kshanamu pattadusumee naashanamu cheyagaa nèmta tooli
+China mohamainanu nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `తప్పు చేస్తానని అనుకున్నంత
+వనితా సుతుల గురించి మమత చెప్పినట్టు భ్రమ పడకండి
+క్షణాల్లో నాశనం చేయడానికి ఎంత ఖర్చవుతుంది?
+చిన్న మొహమైనను నెకరుకల్ ప్రాంతం సిద్దబ్దహేలీ!`,
+    wordMeaningEn: `As much as he thought that he was going to make a mistake
+Don't get the illusion of what Mamata said about Vanita Sutula
+How much does it cost to destroy in a matter of seconds?
+Chinna Mohamainu Nekarukal area Siddabdaheli!`,
+    audioTe: "తన తీరెఱుఁగు మప్పు పుచ్చుకొందును తలఁచికొన్నంత వనితా సుతుల మీఁద మమత చెప్పిన భ్రాంతి పొందకుము క్షణము పట్టదుసుమీ నాశనము చేయగా నెంత తూలి చిన మోహమైనను నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 99,
-    category: "devotion",
-    titleTe: "శరణాగతి ప్రార్థన - చరణం 19",
-    titleEn: "Prayer of Surrender - Verse 19",
-    verseTe: `పాపోహం పాపకర్మాహం పాపాత్మా పాపసంభవః!
-త్రాహి మాం కృపయా దేవా శరణాగత వత్సల!`,
-    verseEn: `I am a sinner, my actions are sinful, my soul is sinful, born of sin!
-O Lord, protect me out of compassion, O savior of those who surrender!`,
-    wordMeaningTe: `* పాపోహం: నేను పాపాత్ముడను.
-* త్రాహి మాం: నన్ను రక్షించు.
-* కృపయా: దయతో.
-* శరణాగత వత్సల: శరణు కోరినవారిని ప్రేమించేవాడా.`,
-    wordMeaningEn: `* Papoham: I am full of sins.
-* Trahi Mam: Protect me.
-* Krupaya: With mercy.
-* Saranagata Vatsala: Compassionate protector of those who surrender.`,
-    audioTe: "పాపోహం పాపకర్మాహం పాపాత్మా పాపసంభవః! త్రాహి మాం కృపయా దేవా శరణాగత వత్సల!",
-    audioEn: "I am a sinner, my actions are sinful, my soul is sinful, born of sin! O Lord, protect me out of compassion, O savior of those who surrender!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 99",
+    titleEn: "Nekarukallu Satakam - Poem 99",
+    verseTe: `నా కేమి యభ్యంతరమ్ము లేదయ్య నాథ! ప్రారబ్ధ
+మీ కేళీగా సాగునేని నీవు నా యెదనుండి పోకు
+తేఁకువ దొంగ వేషమ్ములను వేసితివ యేని చాల
+చీకాకు సేసెద నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Naa kemi yabhyamtarammu ledayya naatha! praarabdha
+Mee keḻeegaa saaguneni neevu naa yèdanumdi poku
+Te~kuva dòmga veshammulanu vesitiva yeni chaala
+Cheekaaku sesèda nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `నా కేమి యాభ్యాంతరమ్ము లేదయ్యా నాథ!ప్రరబ్ధ
+మీరు మీ సరదాకి వెళుతున్నప్పుడు మీరు నా నుండి దూరంగా వెళ్లవద్దు
+కొబ్బరికాయ దొంగ వేషం వేస్తే చాలు
+చీకాకు సేసేద నెకరుకల్ ప్రాంతం సిద్ధబ్దహేళి!`,
+    wordMeaningEn: `Na Kemi Yabhyantharammu Ledayya Natha!Prarabdha
+Don't you go away from me as you go about your fun
+It is enough to dress up as a coconut thief
+Cheekaku Seseda Nekarukal area Siddhabdaheli!`,
+    audioTe: "నా కేమి యభ్యంతరమ్ము లేదయ్య నాథ! ప్రారబ్ధ మీ కేళీగా సాగునేని నీవు నా యెదనుండి పోకు తేఁకువ దొంగ వేషమ్ములను వేసితివ యేని చాల చీకాకు సేసెద నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
   },
   {
     id: 100,
-    category: "sacred",
-    titleTe: "ఆత్మారామ ధ్యాన శ్లోకం - చరణం 19",
-    titleEn: "Atmaram Meditation Hymn - Verse 19",
-    verseTe: `ఆత్మారాం సమేత అన్నపూర్ణ మాతా హృదయ నివాసి!
-సకల జీవ సంరక్షక విశ్వనాథ జ్యోతి స్వరూప ప్రకాశి!`,
-    verseEn: `Mother Annapurna along with Lord Atmaram resides in our hearts!
-O Viswanatha, protector of all living beings, shine as the divine light!`,
-    wordMeaningTe: `* హృదయ నివాసి: హృదయములో నివసించువాడా.
-* సకల జీవ సంరక్షక: సమస్త జీవులను కాపాడేవాడా.
-* జ్యోతి స్వరూప: వెలుగు రూపములో ఉన్నవాడా.
-* ప్రకాశి: ప్రకాశించేవాడా.`,
-    wordMeaningEn: `* Hrudaya Nivasi: Dweller of the heart.
-* Sakala Jeeva Samrakshaka: Preserver of all life forms.
-* Jyoti Swarupa: In the form of holy light.
-* Prakashi: Illuminating one.`,
-    audioTe: "ఆత్మారాం సమేత అన్నపూర్ణ మాతా హృదయ నివాసి! సకల జీవ సంరక్షక విశ్వనాథ జ్యోతి స్వరూప ప్రకాశి!",
-    audioEn: "Mother Annapurna along with Lord Atmaram resides in our hearts! O Viswanatha, protector of all living beings, shine as the divine light!"
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 100",
+    titleEn: "Nekarukallu Satakam - Poem 100",
+    verseTe: `తల మధించుట యేల గుండెపై నెక్కి దంచుట యేల
+యెలయక కడుపులో సుళ్ళు తిరుగుటయేల యెందుకివి
+సులభమ్ముగా వచ్చి యాత్మలోన గూర్చుండక యెట్లు
+శిలవైతి కదలక నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!`,
+    verseEn: `Tala madhimchuta yela gumdèpai nèkki damchuta yela
+Yèlayaka kadupulo suḻḻu tirugutayela yèmdukivi
+Sulabhammugaa vachchi yaatmalona goorchumdaka yètlu
+Shilavaiti kadalaka nèkarukal praamta siddhaabdaheḻi!`,
+    wordMeaningTe: `తల కొట్టుకోవడం, గుండె కొరికేసుకోవడం లాంటిది
+ఎందుకంటే యేలయ్యకు కడుపులో మెలికలు తిరుగుతాయి
+తద్వారా అది సులువుగా రాదు మరియు యాత్మలో లీనమవుతుంది
+శిలావైతి కదలక నెకరుకల్ ప్రాంతం సిద్ధబ్దహేళి!`,
+    wordMeaningEn: `It is like beating the head and biting the heart
+Because of the twists in the belly of Yelayaka
+So that it does not come easily and is absorbed in Yatma
+Shilavaithi Kadalaka Nekarukal area Siddhabdaheli!`,
+    audioTe: "తల మధించుట యేల గుండెపై నెక్కి దంచుట యేల యెలయక కడుపులో సుళ్ళు తిరుగుటయేల యెందుకివి సులభమ్ముగా వచ్చి యాత్మలోన గూర్చుండక యెట్లు శిలవైతి కదలక నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి!",
+    audioEn: ""
+  },
+  {
+    id: 101,
+    category: "shiva",
+    titleTe: "నెకరుకల్లు శతకము - పద్యం 101",
+    titleEn: "Nekarukallu Satakam - Poem 101",
+    verseTe: `శ్రీతమాలశ్యామలింగ! సిద్ధసంసేవిత లింగ!
+హేతుహీన సనాధ! అన్నపూర్ణా సహిత విశ్వనాథ
+నీ తామరధునీశ జటాజూటా! మణి శశి కిరీట!
+స్ఫీత వియన్మౌళి నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి! (101)`,
+    verseEn: `Shreetamaalashyaamalimga! siddhasamsevita limga!
+Hetuheena sanaadha! annapoornaa sahita vishvanaatha
+Nee taamaradhuneesha jataajootaa! mani shashi kireeta!
+Spheeta viyanmauḻi nèkarukal praamta siddhaabdaheḻi! (101)`,
+    wordMeaningTe: `శ్రితమలశ్యామలింగ!సిద్ధసంసేవిత లింగ!
+అహేతుక పరికరం!అన్నపూర్ణతో విశ్వనాథ
+నీ తామరధునిశ జటాజూటా!మణి శశి కిరీటమా!
+స్ఫిత వియన్మౌళి నెకరుకల్ ప్రాంతం సిద్ధబ్దహేలి!(101)`,
+    wordMeaningEn: `Shritamalashyamalinga!Siddhasamsevita Linga!
+Irrational device!Vishwanatha with Annapurna
+Thy tamaradhunisha jatajuta!Mani Sashi crown!
+Sfitha Viyanmouli Nekarukal region Siddhabdaheli!(101)`,
+    audioTe: "శ్రీతమాలశ్యామలింగ! సిద్ధసంసేవిత లింగ! హేతుహీన సనాధ! అన్నపూర్ణా సహిత విశ్వనాథ నీ తామరధునీశ జటాజూటా! మణి శశి కిరీట! స్ఫీత వియన్మౌళి నెకరుకల్ ప్రాంత సిద్ధాబ్దహేళి! (101)",
+    audioEn: ""
   }
 ];
 
@@ -2885,6 +3322,7 @@ function applyLanguage(lang) {
   
   // Re-render poems list to match the new language
   renderPoems();
+  initPoetBioTabs();
 }
 
 
@@ -3135,10 +3573,10 @@ const galleryImages = [
   },
   {
     src: "koneru3.jpg",
-    titleTe: "కోనేటి గట్టు మరియు పరిసరాలు",
-    titleEn: "Koneru Bank and Compound",
-    descTe: "ఆలయ కోనేరు మరియు దాని చుట్టూ నిర్మించిన సుందరమైన పరిసరాల దృశ్యం.",
-    descEn: "The scenic surroundings of the temple's sacred water tank."
+    titleTe: "స్వామివారి పవిత్ర త్రిశూల పూజ",
+    titleEn: "Sacred Trishula Worship Ceremony",
+    descTe: "ఆలయ మహోత్సవాల సందర్భంగా గులాబీ పూలమాలలు మరియు పసుపుతో అలంకరించిన స్వామివారి బంగారు త్రిశూలాన్ని భక్తులకు దర్శనమిస్తున్న అర్చకులు.",
+    descEn: "Priests presenting the sacred golden Trishula adorned with rose garlands and turmeric to devotees during the temple festival."
   },
   {
     src: "KONERU4.jpg",
@@ -3240,10 +3678,10 @@ const galleryImages = [
   },
   {
     src: "484794801_2729538933914293_877479801758957658_n.jpg",
-    titleTe: "ఉత్సవాల స్వాగత తోరణం",
-    titleEn: "Festival Welcome Arch",
-    descTe: "ఆలయ ప్రధాన వీధిలో భక్తులకు స్వాగతం పలుకుతున్న అలంకృత విద్యుత్ తోరణం.",
-    descEn: "Glowing illuminated welcome arch erected on the main road for the temple festival."
+    titleTe: "రజత కవచ కాశీ విశ్వేశ్వర స్వామి",
+    titleEn: "Silver-Adorned Kasi Visweswara Swami",
+    descTe: "వెండి ముఖపద్మం, రజత కిరీటం, నాగాభరణాలతో గర్భాలయంలో తేజోమయంగా వెలిగిపోతున్న శ్రీ కాశీ విశ్వేశ్వర స్వామి దివ్య మంగళ స్వరూపం — వెనుక దీపాల వెలుతురులో.",
+    descEn: "The divine form of Sri Kasi Visweswara Swami in the sanctum sanctorum, adorned with a silver face mask, crown, and serpent ornaments, glowing beautifully in the light of sacred lamps."
   },
 ];
 
@@ -3355,6 +3793,28 @@ function setupFlowerShower() {
       }
     });
   }
+}
+
+
+// ─── POET BIOGRAPHY TABS ──────────────────────────────────────────────────────
+function initPoetBioTabs() {
+  const tabs = document.querySelectorAll('.poet-bio-tab');
+  const panels = document.querySelectorAll('.poet-bio-panel');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetTab = tab.getAttribute('data-bio-tab');
+
+      // Update active tab
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      // Update active panel
+      panels.forEach(p => p.classList.remove('active'));
+      const targetPanel = document.getElementById('bio-panel-' + targetTab);
+      if (targetPanel) targetPanel.classList.add('active');
+    });
+  });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -3549,4 +4009,36 @@ window.switchRitualTab = function(tabName, btn) {
   if (target) target.classList.add('active');
   if (btn) btn.classList.add('active');
 };
+
+// --- WATERMARK VISIBILITY LOGIC ---
+document.addEventListener('DOMContentLoaded', () => {
+  const watermark = document.querySelector('.site-watermark');
+  if (!watermark) return;
+  
+  // Select images that should hide the watermark when they scroll into view
+  const imagesToObserve = document.querySelectorAll('img:not(.watermark-circle img):not(.logo-photo):not(.footer-logo img)');
+  
+  let intersectingImagesCount = 0;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        intersectingImagesCount++;
+      } else {
+        intersectingImagesCount = Math.max(0, intersectingImagesCount - 1);
+      }
+    });
+
+    // Hide watermark if any image is currently in the viewport
+    if (intersectingImagesCount > 0) {
+      watermark.classList.add('hidden');
+    } else {
+      watermark.classList.remove('hidden');
+    }
+  }, {
+    rootMargin: '-10% 0px -10% 0px', 
+    threshold: 0.05
+  });
+
+  imagesToObserve.forEach(img => observer.observe(img));
+});
 

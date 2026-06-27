@@ -3,7 +3,7 @@
   Unified Style Sheet
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Mandali&family=Ramabhadra&family=Noto+Sans+Telugu:wght@400;500;600;700&family=Tiro+Telugu&family=Outfit:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Sree+Krushnadevaraya&family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Mandali&family=Ramabhadra&family=Noto+Sans+Telugu:wght@400;500;600;700&family=Tiro+Telugu&family=Outfit:wght@300;400;600;700&display=swap');
 
 /* CSS Variables */
 :root {
@@ -26,9 +26,40 @@
   --font-english-title: 'Cinzel', serif;
   --font-english-fancy: 'Cinzel Decorative', serif;
   --font-english-body: 'Lora', serif;
+  --font-english-handwriting: 'Dancing Script', cursive;
+  --font-telugu-handwriting: 'Sree Krushnadevaraya', serif;
   --font-interface: 'Outfit', sans-serif;
   
   --transition-smooth: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Intro Loading Line */
+.intro-loading-line {
+  width: 250px;
+  height: 4px;
+  background-color: rgba(230, 81, 0, 0.2);
+  border-radius: 4px;
+  margin: 0 auto 1.8rem auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-loading-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-saffron);
+  border-radius: 4px;
+  animation: loadingSlide 1.5s ease-in-out infinite;
+}
+
+@keyframes loadingSlide {
+  0% { left: -100%; }
+  50% { left: 0%; }
+  100% { left: 100%; }
 }
 
 /* Reset and Base Styles */
@@ -1016,6 +1047,12 @@ body.lang-te .intro-text p:first-of-type::first-letter {
   letter-spacing: 0.5px;
 }
 
+.poem-verse.en {
+  font-family: var(--font-english-handwriting);
+  font-size: 1.8rem;
+  color: var(--primary-saffron);
+}
+
 .poem-details-tabs {
   display: flex;
   border-bottom: 2px solid var(--bg-parchment);
@@ -1057,12 +1094,18 @@ body.lang-te .intro-text p:first-of-type::first-letter {
 }
 
 .meaning-telugu {
-  font-family: var(--font-telugu);
+  font-family: var(--font-telugu-handwriting);
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: var(--text-dark);
 }
 
 .meaning-english {
-  font-family: var(--font-english-body);
-  font-style: italic;
+  font-family: var(--font-english-handwriting);
+  font-size: 1.55rem;
+  font-style: normal;
+  line-height: 1.6;
+  color: var(--primary-saffron);
 }
 
 /* Custom Audio recitation Player Inside Cards */
@@ -3720,6 +3763,11 @@ body:not(.map-marker-container) @keyframes bounce {
   pointer-events: none;
   user-select: none;
   text-align: center;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.site-watermark.hidden {
+  opacity: 0;
 }
 
 .watermark-inner {
@@ -3781,5 +3829,244 @@ body:not(.map-marker-container) @keyframes bounce {
 
   .watermark-addr {
     font-size: 0.6rem;
+  }
+}
+
+
+/* =====================================================
+   POET BIOGRAPHY CARD
+   ===================================================== */
+.poet-biography-card {
+  background: linear-gradient(135deg, rgba(30,20,10,0.92) 0%, rgba(60,35,10,0.88) 100%);
+  border: 1px solid var(--gold-metallic);
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin: 2rem 0 2.5rem;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,200,80,0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.poet-biography-card::before {
+  content: '🪷';
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 4rem;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+/* Header: portrait + intro side by side */
+.poet-bio-header {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+/* Portrait column */
+.poet-portrait-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.poet-portrait-ring {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 3px solid var(--gold-metallic);
+  box-shadow: 0 0 20px rgba(212,175,55,0.4), 0 0 0 6px rgba(212,175,55,0.1);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(60,40,10,0.9);
+}
+
+.poet-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.poet-portrait-initials {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--gold-metallic);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.poet-awards-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.poet-badge {
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.poet-badge.gold {
+  background: linear-gradient(135deg, #b8860b, #ffd700);
+  color: #1a0a00;
+}
+
+.poet-badge.silver {
+  background: linear-gradient(135deg, #6e7577, #c0c0c0);
+  color: #1a0a00;
+}
+
+/* Intro text column */
+.poet-bio-intro-text {
+  flex: 1;
+}
+
+.poet-heading {
+  font-size: 1.6rem;
+  color: var(--gold-metallic);
+  margin-bottom: 0.3rem;
+  line-height: 1.3;
+}
+
+.poet-name-dates {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 0.2rem;
+}
+
+.poet-title-tag {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary-saffron);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.2rem;
+}
+
+.poet-award-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.poet-award-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(212,175,55,0.07);
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+}
+
+.poet-award-item i {
+  font-size: 1.3rem;
+  color: var(--gold-metallic);
+  flex-shrink: 0;
+}
+
+.poet-award-item div {
+  display: flex;
+  flex-direction: column;
+}
+
+.poet-award-item strong {
+  font-size: 0.85rem;
+  color: var(--gold-metallic);
+  line-height: 1.2;
+}
+
+.poet-award-item span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Bio Tab Nav */
+.poet-bio-tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(212,175,55,0.25);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.poet-bio-tab {
+  background: transparent;
+  border: 1px solid rgba(212,175,55,0.3);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: var(--font-interface);
+}
+
+.poet-bio-tab:hover {
+  border-color: var(--gold-metallic);
+  color: var(--gold-metallic);
+}
+
+.poet-bio-tab.active {
+  background: linear-gradient(135deg, #b8860b, #ffd700);
+  border-color: transparent;
+  color: #1a0a00;
+  font-weight: 700;
+}
+
+/* Bio Panels */
+.poet-bio-panels {
+  min-height: 80px;
+}
+
+.poet-bio-panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.poet-bio-panel.active {
+  display: block;
+}
+
+.poet-bio-panel p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin-bottom: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .poet-bio-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .poet-award-details {
+    align-items: stretch;
+  }
+  .poet-bio-tabs {
+    justify-content: center;
+  }
+  .poet-heading {
+    font-size: 1.3rem;
   }
 }

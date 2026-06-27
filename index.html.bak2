@@ -6,7 +6,7 @@
   <meta name="referrer" content="no-referrer">
   
   <!-- Primary SEO Metadata -->
-  <title>Narasingapadu Sivalayam Temple</title>
+  <title>శ్రీ అన్నపూర్ణా సమేత కాశీ విశ్వేశ్వర స్వామి దేవస్థానం - నరసింగపాడు</title>
   <meta name="description" content="Official website of the historical Sri Annapurna Sameyta Kasi Visweswara Swami Temple in Narasingapadu, Palnadu. Discover temple history, timings, rituals, and the digital archive of the Sahitya Akademi award-winning 1960 Telugu poems by Kavi Samrat Viswanatha Satyanarayana.">
   <meta name="keywords" content="Annapurna Sameyta Kasi Visweswara Swami Temple, Narasingapadu Sivalayam, Palnati Kasi, Viswanatha Satyanarayana, Madhyakkaralu Nekarikallu, Palnadu Shiva Temple, Telugu devotional poems, 1960 Telugu poetry, Visweswara Satakamu">
   <meta name="author" content="Devasthanam Trust">
@@ -25,7 +25,7 @@
   <meta property="twitter:image" content="assets/images/hero_bg.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/images/favicon_circle.png" onerror="this.href='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕉️</text></svg>'">
+  <link rel="icon" type="image/png" href="assets/images/logo_icon.png" onerror="this.href='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕉️</text></svg>'">
 
   <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -125,7 +125,6 @@
 
         <!-- Footer button without visible countdown text -->
         <div class="intro-footer">
-          <div class="intro-loading-line"></div>
           <button id="skip-intro-btn" class="skip-intro-btn">
             <span>Enter Temple</span>
             <i class="fa-solid fa-circle-play"></i>
@@ -572,11 +571,131 @@
         </div>
       </div>
 
+      <div class="gallery-item" data-index="17">
+        <img src="koneru3.jpg" alt="Koneru Bank and Compound">
+        <div class="gallery-overlay">
+          <h4 data-translate="gal16_title">కోనేటి గట్టు మరియు పరిసరాలు</h4>
+          <p data-translate="gal16_desc">ఆలయ కోనేరు మరియు దాని చుట్టూ నిర్మించిన సుందరమైన పరిసరాల దృశ్యం.</p>
+        </div>
+      </div>
+
       <div class="gallery-item" data-index="18">
         <img src="KONERU4.jpg" alt="Fully Water-filled Pond">
         <div class="gallery-overlay">
           <h4 data-translate="gal17_title">నిండుగా ఉన్న పుష్కరిణి</h4>
           <p data-translate="gal17_desc">జలకళతో ఉట్టిపడుతూ ప్రశాంతతను పంచే ఆలయ పవిత్ర కోనేరు.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-index="19">
+        <img src="ayaagaru.jpg" alt="Temple Chief Priest">
+        <div class="gallery-overlay">
+          <h4 data-translate="gal18_title">ఆలయ ప్రధాన అర్చకులు</h4>
+          <p data-translate="gal18_desc">కొమ్మవరపు పవన్ కుమార్ శర్మ గారు గర్భాలయంలో ప్రత్యేక పూజా కార్యక్రమం నిర్వహిస్తున్న దృశ్యం.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-index="20">
+        <img src="584040273_2980930055441845_3872573188393959859_n.jpg" alt="Deity with Trishula">
+        <div class="gallery-overlay">
+          <h4 data-translate="gal19_title">శూలధారి శివలింగ అలంకరణ</h4>
+          <p data-translate="gal19_desc">ఆలయంలో త్రిశూలంతో కూడిన శివలింగ ప్రత్యేక పర్వదిన అలంకారం.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-index="21">
+        <img src="506134140_2817888845079301_942981617837414528_n.jpg" alt="Vedic Blessings">
+        <div class="gallery-overlay">
+          <h4 data-translate="gal20_title">ఆలయ వేద ఆశీర్వచనం</h4>
+          <p data-translate="gal20_desc">ప్రత్యేక పూజలు మరియు హోమాల్లో పాల్గొన్న భక్తులకు వేద పండితులు ఆశీర్వచనం ఇస్తున్న దృశ్యం.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-index="22">
+        <img src="503621600_2811534949048024_3441603826954840512_n.jpg" alt="Go-Puja Ceremony">
+        <div class="gallery-overlay">
+          <h4 data-translate="gal21_title">గోపూజ మరియు గోమాత విశిష్టత</h4>
+          <p data-translate="gal21_desc">ఆలయ గోశాలలో నిర్వహించిన గోపూజ మహోత్సవం - గోమాతకు హారతి సమర్పిస్తున్న దృశ్యం.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-index="23">
+        <img src="503402317_2811535035714682_659316703820665744_n.jpg" alt="Mass Prayers by Devotees">
+        <div class="gallery-overlay">
+          <h4 data-translate="gal22_title">భక్తుల సామూహిక పూజలు</h4>
+          <p data-translate="gal22_desc">పండుగ దినాల్లో ఆలయ ప్రాంగణంలో భక్తులు సామూహికంగా కూర్చుని పూజల్లో నిమగ్నమైన దృశ్యం.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-index="24">
+        <img src="497543860_2788267061374813_5569776460651914481_n.jpg" alt="Annaprasadam Distribution">
+        <div class="gallery-overlay">
+          <h4 data-translate="gal23_title">అన్నప్రసాద వితరణ</h4>
+          <p data-translate="gal23_desc">నిత్య అన్నదాన పథకంలో భాగంగా భక్తులకు పవిత్ర ప్రసాద వితరణ జరుగుతున్న దృశ్యం.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-index="25">
+        <img src="497446320_2788266908041495_8109925532219446433_n.jpg" alt="Temple Kalyanavedika">
+        <div class="gallery-overlay">
+          <h4 data-translate="gal24_title">ఆలయ కళ్యాణ వేదిక</h4>
+          <p data-translate="gal24_desc">కల్యాణోత్సవాలు మరియు సంస్కృతి కార్యక్రమాలకు వేదికైన ఆలయ మండపం.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-index="26">
+        <img src="487114226_2740285739506279_3352002442628797878_n.jpg" alt="Abhisheka Murti">
+        <div class="gallery-overlay">
+          <h4 data-translate="gal25_title">అభిషేక మూర్తి కాశీ విశ్వేశ్వరుడు</h4>
+          <p data-translate="gal25_desc">గర్భాలయంలో పంచామృతాలతో అభిషేకించబడుతున్న శివలింగ స్వరూపం.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-index="27">
+        <img src="486783430_2738827269652126_1449065531526879479_n.jpg" alt="Dhwajasthambham Shrine">
+        <div class="gallery-overlay">
+          <h4 data-translate="gal26_title">ధ్వజస్తంభ ప్రతిష్ఠాపన</h4>
+          <p data-translate="gal26_desc">ఆలయంలో ప్రతిష్ఠించబడిన పవిత్ర ధ్వజస్తంభం మరియు నంది విగ్రహం.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-index="28">
+        <img src="486605343_2737713173096869_6461884784616467264_n.jpg" alt="Festival Oil Lamps">
+        <div class="gallery-overlay">
+          <h4 data-translate="gal27_title">నిత్య దీపాల కాంతులు</h4>
+          <p data-translate="gal27_desc">ప్రదోష కాలంలో ఆలయం చుట్టూ భక్తులు వెలిగించిన దీపమాలలు - దీపారాధన శోభ.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-index="29">
+        <img src="486457216_2738287389706114_1649016170593422592_n.jpg" alt="Bilva Leaf Decoration">
+        <div class="gallery-overlay">
+          <h4 data-translate="gal28_title">బిల్వదళాలతో శివలింగం</h4>
+          <p data-translate="gal28_desc">బిల్వ పత్రాలు మరియు త్రిశూలంతో శాస్త్రోక్తంగా అలంకరించబడిన గర్భాలయ లింగం.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-index="30">
+        <img src="486149347_2736464436555076_3174052681622745570_n.jpg" alt="Exquisite Floral Decorations">
+        <div class="gallery-overlay">
+          <h4 data-translate="gal29_title">కనువిందు చేసే ఆలయ అలంకరణ</h4>
+          <p data-translate="gal29_desc">వార్షిక బ్రహ్మోత్సవాలలో వివిధ వర్ణాల పుష్పాలతో సర్వాంగ సుందరంగా అలంకరించిన ఆలయం.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-index="31">
+        <img src="485306360_2732940010240852_8863961340903751486_n.jpg" alt="Sacred Go-Puja Ritual">
+        <div class="gallery-overlay">
+          <h4 data-translate="gal30_title">ఆలయ గోపూజ మహోత్సవం</h4>
+          <p data-translate="gal30_desc">పండుగ దినాన గోమాతకు మరియు దూడకు పసుపు కుంకుమలతో శాస్త్రోక్తంగా పూజ జరిపిన దృశ్యం.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-index="32">
+        <img src="484794801_2729538933914293_877479801758957658_n.jpg" alt="Festival Welcome Arch">
+        <div class="gallery-overlay">
+          <h4 data-translate="gal31_title">ఉత్సవాల స్వాగత తోరణం</h4>
+          <p data-translate="gal31_desc">ఆలయ ప్రధాన వీధిలో భక్తులకు స్వాగతం పలుకుతున్న అలంకృత విద్యుత్ తోరణం.</p>
         </div>
       </div>
 
@@ -830,157 +949,6 @@
             <a href="tel:7981203629"><i class="fa-solid fa-phone"></i> 79812 03629</a>
           </div>
         </div>
-        <div class="committee-member-card">
-          <div class="cmc-avatar"><i class="fa-solid fa-user-tie"></i></div>
-          <div class="cmc-info">
-            <strong data-translate="member_medam_chinna">మేడం చిన్న కోటి రెడ్డి</strong>
-            <a href="tel:9966411851"><i class="fa-solid fa-phone"></i> 99664 11851</a>
-          </div>
-        </div>
-        <div class="committee-member-card">
-          <div class="cmc-avatar"><i class="fa-solid fa-user-tie"></i></div>
-          <div class="cmc-info">
-            <strong data-translate="member_bijjam_lakshmi">బిజ్జం లక్ష్మి రెడ్డి</strong>
-            <a href="tel:9866017966"><i class="fa-solid fa-phone"></i> 98660 17966</a>
-          </div>
-        </div>
-        <div class="committee-member-card">
-          <div class="cmc-avatar"><i class="fa-solid fa-user-tie"></i></div>
-          <div class="cmc-info">
-            <strong data-translate="member_rayala_kondaiah">రాయల కొండయ్య</strong>
-            <a href="tel:7989297970"><i class="fa-solid fa-phone"></i> 79892 97970</a>
-          </div>
-        </div>
-        <div class="committee-member-card">
-          <div class="cmc-avatar"><i class="fa-solid fa-user-tie"></i></div>
-          <div class="cmc-info">
-            <strong data-translate="member_avula_srinivas">ఆవుల శ్రీనివాస్ రెడ్డి</strong>
-          </div>
-        </div>
-        <div class="committee-member-card">
-          <div class="cmc-avatar"><i class="fa-solid fa-user-tie"></i></div>
-          <div class="cmc-info">
-            <strong data-translate="member_tiyyagura_venkata">తియ్యగుర వెంకట రెడ్డి</strong>
-            <a href="tel:9949285997"><i class="fa-solid fa-phone"></i> 99492 85997</a>
-          </div>
-        </div>
-        <div class="committee-member-card">
-          <div class="cmc-avatar"><i class="fa-solid fa-user-tie"></i></div>
-          <div class="cmc-info">
-            <strong data-translate="member_nallabollu_venkata">నల్లబోలు వెంకట రెడ్డి</strong>
-            <a href="tel:9381733496"><i class="fa-solid fa-phone"></i> 93817 33496</a>
-          </div>
-        </div>
-        <div class="committee-member-card">
-          <div class="cmc-avatar"><i class="fa-solid fa-user-tie"></i></div>
-          <div class="cmc-info">
-            <strong data-translate="member_podili_venkateswarlu">పొదిలి వెంకటేశ్వర్లు</strong>
-            <a href="tel:9381733496"><i class="fa-solid fa-phone"></i> 93817 33496</a>
-          </div>
-        </div>
-        <div class="committee-member-card">
-          <div class="cmc-avatar"><i class="fa-solid fa-user-tie"></i></div>
-          <div class="cmc-info">
-            <strong data-translate="member_veeramreddy_venkateswarlu">వీరంరెడ్డి వెంకటేశ్వర్లు రెడ్డి</strong>
-            <a href="tel:9676070380"><i class="fa-solid fa-phone"></i> 96760 70380</a>
-          </div>
-        </div>
-        <div class="committee-member-card">
-          <div class="cmc-avatar"><i class="fa-solid fa-user-tie"></i></div>
-          <div class="cmc-info">
-            <strong data-translate="member_ronda_abbul">రోండా అబ్బుల్ రెడ్డి</strong>
-            <a href="tel:8008590094"><i class="fa-solid fa-phone"></i> 80085 90094</a>
-          </div>
-        </div>
-        <div class="committee-member-card">
-          <div class="cmc-avatar"><i class="fa-solid fa-user-tie"></i></div>
-          <div class="cmc-info">
-            <strong data-translate="member_yeluri_adinarayana">యేలూరి ఆదినారాయణ</strong>
-            <a href="tel:9346604205"><i class="fa-solid fa-phone"></i> 93466 04205</a>
-          </div>
-        </div>
-        <div class="committee-member-card">
-          <div class="cmc-avatar"><i class="fa-solid fa-user-tie"></i></div>
-          <div class="cmc-info">
-            <strong data-translate="member_vallambotla_sivaprasad">వల్లంభొట్ల శివప్రసాద్</strong>
-            <a href="tel:9010096587"><i class="fa-solid fa-phone"></i> 90100 96587</a>
-          </div>
-        </div>
-        <div class="committee-member-card">
-          <div class="cmc-avatar"><i class="fa-solid fa-user-tie"></i></div>
-          <div class="cmc-info">
-            <strong data-translate="member_atmakuri_nageswar">ఆత్మకూరి నాగేశ్వర రావు</strong>
-          </div>
-        </div>
-        <div class="committee-member-card">
-          <div class="cmc-avatar"><i class="fa-solid fa-user-tie"></i></div>
-          <div class="cmc-info">
-            <strong data-translate="member_ronda_ashok">రోండా అశోక్ రెడ్డి</strong>
-            <a href="tel:9985575809"><i class="fa-solid fa-phone"></i> 99855 75809</a>
-          </div>
-        </div>
-        <div class="committee-member-card">
-          <div class="cmc-avatar"><i class="fa-solid fa-user-tie"></i></div>
-          <div class="cmc-info">
-            <strong data-translate="member_pabbati_lakshmi">పబ్బాటి లక్ష్మీనారాయణ</strong>
-            <a href="tel:9866679145"><i class="fa-solid fa-phone"></i> 98666 79145</a>
-          </div>
-        </div>
-        <div class="committee-member-card">
-          <div class="cmc-avatar"><i class="fa-solid fa-user-tie"></i></div>
-          <div class="cmc-info">
-            <strong data-translate="member_jinugu_vijaybhaskar">జినుగు విజయభాస్కర్ రెడ్డి</strong>
-            <a href="tel:8553589685"><i class="fa-solid fa-phone"></i> 85535 89685</a>
-          </div>
-        </div>
-        <div class="committee-member-card">
-          <div class="cmc-avatar"><i class="fa-solid fa-user-tie"></i></div>
-          <div class="cmc-info">
-            <strong data-translate="member_kypu_ramachanra">కైపు రామచంద్ర రెడ్డి</strong>
-            <a href="tel:8790441593"><i class="fa-solid fa-phone"></i> 87904 41593</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Respected Advisors -->
-      <p class="committee-section-label" data-translate="advisors_title" style="margin-top: 2.5rem;">గౌరవ సలహాదారులు</p>
-      <div class="committee-members-grid">
-        <div class="committee-member-card">
-          <div class="cmc-avatar"><i class="fa-solid fa-user-tie"></i></div>
-          <div class="cmc-info">
-            <strong data-translate="advisor_garikapati_ramamurty">గరికిపాటి రామమూర్తి</strong>
-          </div>
-        </div>
-        <div class="committee-member-card">
-          <div class="cmc-avatar"><i class="fa-solid fa-user-tie"></i></div>
-          <div class="cmc-info">
-            <strong data-translate="advisor_badri_venkata">బద్రి వెంకట రమణ రెడ్డి</strong>
-          </div>
-        </div>
-        <div class="committee-member-card">
-          <div class="cmc-avatar"><i class="fa-solid fa-user-tie"></i></div>
-          <div class="cmc-info">
-            <strong data-translate="advisor_jinugu_chandrasekhara">జినుగు చంద్రశేఖర రెడ్డి</strong>
-          </div>
-        </div>
-        <div class="committee-member-card">
-          <div class="cmc-avatar"><i class="fa-solid fa-user-tie"></i></div>
-          <div class="cmc-info">
-            <strong data-translate="advisor_kypu_ravindra">కైపు రవీంద్ర రెడ్డి</strong>
-          </div>
-        </div>
-        <div class="committee-member-card">
-          <div class="cmc-avatar"><i class="fa-solid fa-user-tie"></i></div>
-          <div class="cmc-info">
-            <strong data-translate="advisor_avula_venkata">ఆవుల వెంకట స్వామి రెడ్డి</strong>
-          </div>
-        </div>
-        <div class="committee-member-card">
-          <div class="cmc-avatar"><i class="fa-solid fa-user-tie"></i></div>
-          <div class="cmc-info">
-            <strong data-translate="advisor_segu_ramesh">సేగు రమేష్ బాబు</strong>
-          </div>
-        </div>
       </div>
 
       <!-- Motto -->
@@ -1110,7 +1078,7 @@
             <span>+91 81253 54063</span>
           </li>
           <li>
-            <img src="lord shiva.jpg" alt="Sri Kasi Visweswara Swamy" style="width:22px;height:22px;border-radius:50%;object-fit:cover;vertical-align:middle;border:1px solid var(--gold-metallic);">
+            <i class="fa-solid fa-globe"></i>
             <a href="https://www.narasingapadusivalayam.com/" target="_blank" rel="noopener noreferrer" style="color: var(--gold-metallic); text-decoration: none; font-weight: 600;">www.narasingapadusivalayam.com</a>
           </li>
         </ul>
