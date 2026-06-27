@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://narasingapadu-temple.vercel.app/sitemap.xml
+
+# Disallow private/backup files
+Disallow: /original_index_backup.html
+Disallow: /index.html.bak
+Disallow: /index.html.bak2
+Disallow: /package-lock.json
+Disallow: /node_modules/
