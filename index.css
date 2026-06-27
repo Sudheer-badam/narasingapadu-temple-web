@@ -15,6 +15,7 @@
   --bg-cream: #FFFDF9;
   --bg-parchment: #FAF5EB;
   --bg-dark-accent: #2E1B10;
+  --bg-deep-dark: #1a0f08;
   --text-dark: #20130B;
   --text-light: #FFFBF5;
   --text-muted: #7E6B5A;
@@ -72,7 +73,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  background-color: var(--bg-deep-dark);
+  background-color: #1a0f08;
   color: var(--text-dark);
   overscroll-behavior: none;
 }
@@ -81,9 +82,9 @@ body {
   font-family: var(--font-english-body);
   line-height: 1.6;
   overflow-x: hidden;
-  background-color: var(--bg-deep-dark);
+  background-color: #1a0f08;
   background-image: radial-gradient(circle at 50% 0%, rgba(255, 215, 0, 0.05), transparent 60%);
-  overscroll-behavior-y: none;
+  overscroll-behavior-y: contain;
 }
 
 /* Bilingual Language Toggles and Adjustments */
