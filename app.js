@@ -64,7 +64,8 @@ const translations = {
     timeline_d4: "విశ్వనాథ వారు నరసింగపాడు శివునిపై రాసిన పద్యాలతో కూడిన 'విశ్వనాథ మధ్యాక్కరలు' కావ్యానికి ప్రతిష్టాత్మకమైన కేంద్ర సాహిత్య అకాడమీ పురస్కారం లభించింది. ఇది ఆలయ సాహిత్య ప్రతిష్టను జగద్విదితం చేసింది.",
     timeline_t5: "మహా రాజగోపుర ప్రతిష్ట",
     timeline_d5: "పల్నాడు ప్రాంతానికే తలమానికంగా నిలిచే విధంగా ఆలయానికి నూతన రాజగోపురం నిర్మించి ప్రతిష్ఠాపన జరిపారు. శ్రీకాళహస్తి తరహాలో ఇక్కడ జరిగే రాహు-కేతు పూజలు భక్తులకు దోషాలను హరిస్తున్నాయి.",
-    
+    timeline_t6: "ఆలయ నిర్మాణ పునరుద్ధరణ",
+    timeline_d6: "శకం 1802 (క్రీ.శ. 1880) లో చెరుకుపల్లి ధర్మకర్తల పర్యవేక్షణలో మండపాలు, ప్రాకారాలు మరియు పుష్కరిణి నిర్మించబడ్డాయి. కాళ్ళమొగం వరదరాజు గారు 40 వసంతాల పాటు 108 కలశాభిషేకాలతో స్వామి సేవ నిర్వహించారు.",
     poems_heading: "విశ్వనాథ సత్యనారాయణ మధ్యాక్కరల సేకరణ",
     poems_search_placeholder: "పద్యం, అనువాదం లేదా కీలక పదం ద్వారా వెతకండి (Search poems...)",
     filter_all: "అన్ని పద్యాలు",
@@ -227,6 +228,9 @@ const translations = {
     role_hon_trustee: "గౌరవ ధర్మకర్త",
     role_chairman: "చైర్మన్",
     role_chief_priest: "ప్రధాన అర్చకులు",
+    role_eo: "కార్యనిర్వహణాధికారి (E.O.)",
+    member_ganapati_suresh: "గణపతి సురేష్",
+    role_eo_desc: "ఆంధ్రప్రదేశ్ దేవాదాయ ధర్మాదాయ శాఖ",
     member_anjaneyulu: "చెరుకుపల్లి ఆంజనేయులు",
     member_krishna_reddy: "బిజ్జం కృష్ణారెడ్డి",
     member_pavan_sharma: "కొమ్మవరపు పవన్ కుమార్ శర్మ",
@@ -319,6 +323,8 @@ const translations = {
     timeline_d4: "His collection 'Viswanatha Madhyakkaralu', which included the Narasingapadu verses, was awarded the national Sahitya Akademi Award in 1962, cementing the temple's fame in modern Indian literature.",
     timeline_t5: "Consecration of the Rajagopuram",
     timeline_d5: "A grand and tall South Indian Rajagopuram was constructed in 2009, becoming a landmark of Palnadu. Rahu-Ketu and planetary dosha rectifications are conducted here in Sri Kalahasti style.",
+    timeline_t6: "Temple Renovation & Construction",
+    timeline_d6: "In Shakam 1802 (1880 CE), under the supervision of the Cherukupalli trustees, the mandapas, enclosure walls, and pushkarani (sacred pond) were constructed. Kallamo gam Varadaraju served the Lord for 40 years, performing 108-kalasha abhishekams.",
     
     poems_heading: "Viswanatha Satyanarayana's Madhyaakkara Archive",
     poems_search_placeholder: "Search poems by words, translations, or keywords...",
@@ -482,6 +488,9 @@ const translations = {
     role_hon_trustee: "Hon. Trustee",
     role_chairman: "Chairman",
     role_chief_priest: "Chief Priest",
+    role_eo: "Executive Officer (E.O.)",
+    member_ganapati_suresh: "Ganapati Suresh",
+    role_eo_desc: "Govt. of AP Endowments Dept",
     member_anjaneyulu: "Cherukupalli Anjaneyulu",
     member_krishna_reddy: "Bijjam Krishna Reddy",
     member_pavan_sharma: "Kommarapu Pavan Kumar Sharma",
@@ -3342,7 +3351,7 @@ function renderPoems() {
       const q = searchQuery.toLowerCase();
       const matchTe = poem.titleTe.toLowerCase().includes(q) || poem.verseTe.toLowerCase().includes(q) || poem.wordMeaningTe.toLowerCase().includes(q);
       const matchEn = poem.titleEn.toLowerCase().includes(q) || poem.verseEn.toLowerCase().includes(q) || poem.wordMeaningEn.toLowerCase().includes(q);
-      return matchTe || matchEn;
+            return matchTe || matchEn ;
     }
     return true;
   });
@@ -3367,8 +3376,8 @@ function renderPoems() {
     card.setAttribute('data-id', poem.id);
     
     // Choose appropriate values based on language state
-    const title = currentLang === 'te' ? poem.titleTe : poem.titleEn;
-    const verse = currentLang === 'te' ? poem.verseTe : poem.verseEn;
+    const title = currentLang === 'te' ? poem.titleTe : (poem.titleEn);
+    const verse = currentLang === 'te' ? poem.verseTe : (poem.verseEn);
     
     const formattedVerse = verse.replace(/\n/g, '<br>');
     
@@ -3418,7 +3427,7 @@ function renderPoems() {
               "${poem.verseEn}"
             </p>
             <div style="white-space: pre-line; line-height: 1.6; font-size: 0.9rem; color: var(--text-muted);">
-              ${poem.wordMeaningEn.replace(/\*/g, '•')}
+              ${(poem.wordMeaningEn).replace(/\*/g, '•')}
             </div>
           </div>
         </div>
@@ -3457,231 +3466,231 @@ const galleryImages = [
     titleTe: "భక్త జన సమూహం",
     titleEn: "Devotees' Congregation",
     descTe: "ఆలయంలో జరుగుతున్న ప్రత్యేక ధార్మిక కార్యక్రమంలో పాల్గొంటున్న భక్తులు.",
-    descEn: "Hundreds of devotees gathered for a special religious programme held in the temple premises."
+    descEn: "Hundreds of devotees gathered for a special religious programme held in the temple premises.",
   },
   {
     src: "assets/images/photo_2026-06-16_00-22-17.jpg",
     titleTe: "శ్రీ అన్నపూర్ణా దేవి అలంకారం",
     titleEn: "Sri Annapurna Devi Alankaram",
     descTe: "ఆలయంలో పువ్వులు, పండ్లతో అలంకరించిన శ్రీ అన్నపూర్ణా దేవి విశేష అలంకరణ.",
-    descEn: "Sri Annapurna Devi beautifully adorned with fruits and flowers — a stunning festive decoration."
+    descEn: "Sri Annapurna Devi beautifully adorned with fruits and flowers — a stunning festive decoration.",
   },
   {
     src: "assets/images/photo_2026-06-16_00-22-24.jpg",
     titleTe: "రాహు-కేతు పూజా దృశ్యం",
     titleEn: "Rahu-Ketu Dosha Puja",
     descTe: "పవిత్ర వృక్షం సమీపంలో రాహు-కేతు దోష నివారణ పూజ — భక్తులు దీపాలతో పూజ చేస్తున్న దృశ్యం.",
-    descEn: "Devotees performing the Rahu-Ketu dosha nivarana puja with oil lamps around the sacred ancient tree."
+    descEn: "Devotees performing the Rahu-Ketu dosha nivarana puja with oil lamps around the sacred ancient tree.",
   },
   {
     src: "assets/images/photo_2026-06-16_00-22-34.jpg",
     titleTe: "ఉత్సవ వేళ ఆలయ ప్రవేశ ద్వారం",
     titleEn: "Temple Entrance During Festival",
     descTe: "వార్షిక మహోత్సవం సందర్భంగా కాంతుల వెలుతురులో అలంకరించబడిన ఆలయ ప్రవేశ ద్వారం.",
-    descEn: "The temple entrance gate illuminated with colorful lights during a grand annual festival night."
+    descEn: "The temple entrance gate illuminated with colorful lights during a grand annual festival night.",
   },
   {
     src: "assets/images/photo_2026-06-16_00-44-35.jpg",
     titleTe: "ఆలయ ఉపరి దృశ్యం",
     titleEn: "Aerial View of Temple Compound",
     descTe: "ఆలయ శిఖరం మీది నుండి కనిపించే ఆలయ ప్రాంగణం, మండపాలు మరియు దూరంగా పచ్చని పంట పొలాలు.",
-    descEn: "A top-angle view of the temple mandapams and compound with lush green agricultural fields in the distance."
+    descEn: "A top-angle view of the temple mandapams and compound with lush green agricultural fields in the distance.",
   },
   {
     src: "assets/images/photo_2026-06-16_00-44-39.jpg",
     titleTe: "పుష్కరిణి — సోపాన దృశ్యం",
     titleEn: "Pushkarini — Step-well View",
     descTe: "ఆలయ పుష్కరిణి మధ్యలో శివలింగ విగ్రహంతో సోపానాల నిర్మాణ వైభవం.",
-    descEn: "An aerial view of the sacred temple tank (Pushkarini) with its stepped walls and a Shiva idol at the center."
+    descEn: "An aerial view of the sacred temple tank (Pushkarini) with its stepped walls and a Shiva idol at the center.",
   },
   {
     src: "assets/images/photo_2026-06-16_00-44-42.jpg",
     titleTe: "మహా రాజగోపురం శిల్ప సంపద",
     titleEn: "Rajagopuram Sculptural Detail",
     descTe: "ఆలయ రాజగోపురం మీది రంగురంగుల దేవతా శిల్పాలు — నైపుణ్యమైన హస్తకళా నిదర్శనం.",
-    descEn: "Colorful deity sculptures on the grand Rajagopuram (entrance tower) — traditional Andhra craftsmanship."
+    descEn: "Colorful deity sculptures on the grand Rajagopuram (entrance tower) — traditional Andhra craftsmanship.",
   },
   {
     src: "assets/images/photo_2026-06-16_00-44-47.jpg",
     titleTe: "నరసింగపాడు ప్రకృతి సౌందర్యం",
     titleEn: "Narasingapadu Village Landscape",
     descTe: "పచ్చని పంట పొలాలు, కొబ్బరి తోటలు మరియు నల్లమల కొండలు నేపథ్యంగా నరసింగపాడు గ్రామం.",
-    descEn: "Green paddy fields, coconut groves, and the Nallamala hills forming a serene backdrop to the sacred village."
+    descEn: "Green paddy fields, coconut groves, and the Nallamala hills forming a serene backdrop to the sacred village.",
   },
   {
     src: "assets/images/photo_2026-06-16_00-44-53.jpg",
     titleTe: "పుష్కరిణిలో శివ విగ్రహం",
     titleEn: "Shiva Idol in Filled Pushkarini",
     descTe: "వర్షాల తర్వాత నీటితో నిండిన పుష్కరిణిలో శివమూర్తి విగ్రహం — పాతాళ గంగాజల సౌందర్యం.",
-    descEn: "Lord Shiva idol standing in the rainwater-filled Pushkarini — the visible grace of Patala Ganga."
+    descEn: "Lord Shiva idol standing in the rainwater-filled Pushkarini — the visible grace of Patala Ganga.",
   },
   {
     src: "assets/images/Screenshot 2026-06-16 002119.png",
     titleTe: "కవిసమ్రాట్ విశ్వనాథ సత్యనారాయణ",
     titleEn: "Kavi Samrat Viswanatha Satyanarayana",
     descTe: "ఆలయాన్ని దర్శించి నెకరికల్లు శతకం రచించిన తొలి తెలుగు జ్ఞానపీఠ అవార్డు గ్రహీత విశ్వనాథ సత్యనారాయణ చిత్రపటం.",
-    descEn: "Sketch of the first Telugu Jnanpith Award recipient who visited the temple and composed the Nekarikallu Satakam."
+    descEn: "Sketch of the first Telugu Jnanpith Award recipient who visited the temple and composed the Nekarikallu Satakam.",
   },
   {
     src: "assets/images/history_inscription_1.jpg",
     titleTe: "శ్రీ కాశీ విశ్వేశ్వర స్వామి గర్భాలయ మూర్తి",
     titleEn: "Sri Kasi Visweswara Swamy Garbhagudi Deity",
     descTe: "అలంకార పూజల అనంతరం గర్భాలయంలో దేదీప్యమానంగా వెలిగిపోతున్న శ్రీ కాశీ విశ్వేశ్వర స్వామి జ్యోతిర్లింగ స్వరూపం.",
-    descEn: "The sacred Shiva Lingam in the sanctum sanctorum, beautifully decorated with flowers and traditional garlands."
+    descEn: "The sacred Shiva Lingam in the sanctum sanctorum, beautifully decorated with flowers and traditional garlands.",
   },
   {
     src: "assets/images/history_inscription_2.jpg",
     titleTe: "శ్రీ అన్నపూర్ణా దేవి గర్భాలయ మూర్తి",
     titleEn: "Sri Annapurna Devi Garbhagudi Deity",
     descTe: "పట్టు వస్త్రాలు, బంగారు ఆభరణాలు మరియు పండ్ల మాలలతో శోభాయమానంగా అలంకరించబడిన శ్రీ అన్నపూర్ణా దేవి మూర్తి.",
-    descEn: "Mother Sri Annapurna Devi adorned with gold ornaments, silk saree, and fresh flower garlands."
+    descEn: "Mother Sri Annapurna Devi adorned with gold ornaments, silk saree, and fresh flower garlands.",
   },
   {
     src: "TEPPOSTAVAM.jpg",
     titleTe: "తెప్పోత్సవ వేడుక",
     titleEn: "Teppotsavam Celebration",
     descTe: "పవిత్ర పుష్కరిణిలో కార్తీక మాస ముగింపు వేళ జరుపబడిన స్వామివారి తెప్పోత్సవ వైభవం.",
-    descEn: "Lord's divine float festival celebrated in the temple tank (Pushkarini) during Karthika Masam."
+    descEn: "Lord's divine float festival celebrated in the temple tank (Pushkarini) during Karthika Masam.",
   },
   {
     src: "TEPPOSTAVAM2.jpg",
     titleTe: "దివ్య తెప్పోత్సవ కాంతులు",
     titleEn: "Divine Light of Teppotsavam",
     descTe: "హంస వాహనంపై వెలిగిపోతున్న స్వామివారి కల్యాణ మూర్తులు - విద్యుత్ దీపాల అలంకరణ.",
-    descEn: "Beautifully illuminated float carrying the deities during the holy float festival."
+    descEn: "Beautifully illuminated float carrying the deities during the holy float festival.",
   },
   {
     src: "TEMPLE1.jpg",
     titleTe: "నరసింగపాడు ఆలయ రాజగోపురం",
     titleEn: "Rajagopuram View",
     descTe: "శోభాయమానమైన ప్రవేశ గోపురం మరియు దేదీప్యమానంగా వెలిగిపోతున్న ఆలయ ప్రాంగణం.",
-    descEn: "A beautiful and clear view of the temple's entrance tower (Rajagopuram)."
+    descEn: "A beautiful and clear view of the temple's entrance tower (Rajagopuram).",
   },
   {
     src: "koneru1.jpg",
     titleTe: "ఆలయ పుష్కరిణి మెట్లు",
     titleEn: "Pushkarini Steps",
     descTe: "నరసింగపాడు ఆలయంలో నిర్మించబడిన పవిత్ర పుష్కరిణి సోపానాలు మరియు శివ ప్రతిమ.",
-    descEn: "Steps of the sacred temple pond where devotees take a holy dip."
+    descEn: "Steps of the sacred temple pond where devotees take a holy dip.",
   },
   {
     src: "koneru2.jpg",
     titleTe: "పవిత్ర పుష్కరిణి నీరు",
     titleEn: "Holy Water of Pushkarini",
     descTe: "భక్తుల పాపాలను హరించే గంగాజల రూప పుష్కరిణి జలాల విహంగ వీక్షణం.",
-    descEn: "Overhead view of the sacred water body within the temple premises."
+    descEn: "Overhead view of the sacred water body within the temple premises.",
   },
   {
     src: "koneru3.jpg",
     titleTe: "స్వామివారి పవిత్ర త్రిశూల పూజ",
     titleEn: "Sacred Trishula Worship Ceremony",
     descTe: "ఆలయ మహోత్సవాల సందర్భంగా గులాబీ పూలమాలలు మరియు పసుపుతో అలంకరించిన స్వామివారి బంగారు త్రిశూలాన్ని భక్తులకు దర్శనమిస్తున్న అర్చకులు.",
-    descEn: "Priests presenting the sacred golden Trishula adorned with rose garlands and turmeric to devotees during the temple festival."
+    descEn: "Priests presenting the sacred golden Trishula adorned with rose garlands and turmeric to devotees during the temple festival.",
   },
   {
     src: "KONERU4.jpg",
     titleTe: "నిండుగా ఉన్న పుష్కరిణి",
     titleEn: "Fully Water-filled Pond",
     descTe: "జలకళతో ఉట్టిపడుతూ ప్రశాంతతను పంచే ఆలయ పవిత్ర కోనేరు.",
-    descEn: "The filled temple pond offering a serene and beautiful reflection."
+    descEn: "The filled temple pond offering a serene and beautiful reflection.",
   },
   {
     src: "ayaagaru.jpg",
     titleTe: "ఆలయ ప్రధాన అర్చకులు",
     titleEn: "Temple Chief Priest",
     descTe: "కొమ్మవరపు పవన్ కుమార్ శర్మ గారు గర్భాలయంలో ప్రత్యేక పూజా కార్యక్రమం నిర్వహిస్తున్న దృశ్యం.",
-    descEn: "Chief Priest Kommavarapu Pavan Kumar Sharma performing holy rituals in the temple."
+    descEn: "Chief Priest Kommavarapu Pavan Kumar Sharma performing holy rituals in the temple.",
   },
   {
     src: "584040273_2980930055441845_3872573188393959859_n.jpg",
     titleTe: "శూలధారి శివలింగ అలంకరణ",
     titleEn: "Deity with Trishula",
     descTe: "ఆలయంలో త్రిశూలంతో కూడిన శివలింగ ప్రత్యేక పర్వదిన అలంకారం.",
-    descEn: "Lord Shiva decorated with his sacred trident during a festival."
+    descEn: "Lord Shiva decorated with his sacred trident during a festival.",
   },
   {
     src: "506134140_2817888845079301_942981617837414528_n.jpg",
     titleTe: "ఆలయ వేద ఆశీర్వచనం",
     titleEn: "Vedic Blessings",
     descTe: "ప్రత్యేక పూజలు మరియు హోమాల్లో పాల్గొన్న భక్తులకు వేద పండితులు ఆశీర్వచనం ఇస్తున్న దృశ్యం.",
-    descEn: "Devotees receiving sacred blessings from the priests after the Vedic rituals."
+    descEn: "Devotees receiving sacred blessings from the priests after the Vedic rituals.",
   },
   {
     src: "503621600_2811534949048024_3441603826954840512_n.jpg",
     titleTe: "గోపూజ మరియు గోమాత విశిష్టత",
     titleEn: "Go-Puja Ceremony",
     descTe: "ఆలయ గోశాలలో నిర్వహించిన గోపూజ మహోత్సవం - గోమాతకు హారతి సమర్పిస్తున్న దృశ్యం.",
-    descEn: "Worship of the sacred cow (Gomata) in the temple courtyard."
+    descEn: "Worship of the sacred cow (Gomata) in the temple courtyard.",
   },
   {
     src: "503402317_2811535035714682_659316703820665744_n.jpg",
     titleTe: "భక్తుల సామూహిక పూజలు",
     titleEn: "Mass Prayers by Devotees",
     descTe: "పండుగ దినాల్లో ఆలయ ప్రాంగణంలో భక్తులు సామూహికంగా కూర్చుని పూజల్లో నిమగ్నమైన దృశ్యం.",
-    descEn: "Large congregation of devotees sitting in rows for mass prayer recitations."
+    descEn: "Large congregation of devotees sitting in rows for mass prayer recitations.",
   },
   {
     src: "497543860_2788267061374813_5569776460651914481_n.jpg",
     titleTe: "అన్నప్రసాద వితరణ",
     titleEn: "Annaprasadam Distribution",
     descTe: "నిత్య అన్నదాన పథకంలో భాగంగా భక్తులకు పవిత్ర ప్రసాద వితరణ జరుగుతున్న దృశ్యం.",
-    descEn: "Serving of free sanctified food (Annadanam) to visiting devotees."
+    descEn: "Serving of free sanctified food (Annadanam) to visiting devotees.",
   },
   {
     src: "497446320_2788266908041495_8109925532219446433_n.jpg",
     titleTe: "ఆలయ కళ్యాణ వేదిక",
     titleEn: "Temple Kalyanavedika",
     descTe: "కల్యాణోత్సవాలు మరియు సంస్కృతి కార్యక్రమాలకు వేదికైన ఆలయ మండపం.",
-    descEn: "The main assembly hall utilized for marriage rituals and cultural events."
+    descEn: "The main assembly hall utilized for marriage rituals and cultural events.",
   },
   {
     src: "487114226_2740285739506279_3352002442628797878_n.jpg",
     titleTe: "అభిషేక మూర్తి కాశీ విశ్వేశ్వరుడు",
     titleEn: "Abhisheka Murti",
     descTe: "గర్భాలయంలో పంచామృతాలతో అభిషేకించబడుతున్న శివలింగ స్వరూపం.",
-    descEn: "The sacred Shivalingam being bathed in holy waters and milk during abhishekam."
+    descEn: "The sacred Shivalingam being bathed in holy waters and milk during abhishekam.",
   },
   {
     src: "486783430_2738827269652126_1449065531526879479_n.jpg",
     titleTe: "ధ్వజస్తంభ ప్రతిష్ఠాపన",
     titleEn: "Dhwajasthambham Shrine",
     descTe: "ఆలయంలో ప్రతిష్ఠించబడిన పవిత్ర ధ్వజస్తంభం మరియు నంది విగ్రహం.",
-    descEn: "The sacred flagpole (Dhwajasthambham) and Lord Nandi facing the main deity."
+    descEn: "The sacred flagpole (Dhwajasthambham) and Lord Nandi facing the main deity.",
   },
   {
     src: "486605343_2737713173096869_6461884784616467264_n.jpg",
     titleTe: "నిత్య దీపాల కాంతులు",
     titleEn: "Festival Oil Lamps",
     descTe: "ప్రదోష కాలంలో ఆలయం చుట్టూ భక్తులు వెలిగించిన దీపమాలలు - దీపారాధన శోభ.",
-    descEn: "Hundreds of tiny oil lamps lit by devotees around the temple corridors."
+    descEn: "Hundreds of tiny oil lamps lit by devotees around the temple corridors.",
   },
   {
     src: "486457216_2738287389706114_1649016170593422592_n.jpg",
     titleTe: "బిల్వదళాలతో శివలింగం",
     titleEn: "Bilva Leaf Decoration",
     descTe: "బిల్వ పత్రాలు మరియు త్రిశూలంతో శాస్త్రోక్తంగా అలంకరించబడిన గర్భాలయ లింగం.",
-    descEn: "The holy Shiva Lingam beautifully adorned with Bilva leaves and a trident."
+    descEn: "The holy Shiva Lingam beautifully adorned with Bilva leaves and a trident.",
   },
   {
     src: "486149347_2736464436555076_3174052681622745570_n.jpg",
     titleTe: "కనువిందు చేసే ఆలయ అలంకరణ",
     titleEn: "Exquisite Floral Decorations",
     descTe: "వార్షిక బ్రహ్మోత్సవాలలో వివిధ వర్ణాల పుష్పాలతో సర్వాంగ సుందరంగా అలంకరించిన ఆలయం.",
-    descEn: "Entrance arches and pillars beautifully decorated with fresh flowers during Brahmotsavam."
+    descEn: "Entrance arches and pillars beautifully decorated with fresh flowers during Brahmotsavam.",
   },
   {
     src: "485306360_2732940010240852_8863961340903751486_n.jpg",
     titleTe: "ఆలయ గోపూజ మహోత్సవం",
     titleEn: "Sacred Go-Puja Ritual",
     descTe: "పండుగ దినాన గోమాతకు మరియు దూడకు పసుపు కుంకుమలతో శాస్త్రోక్తంగా పూజ జరిపిన దృశ్యం.",
-    descEn: "Traditional worship of Mother Cow and calf representing all Vedic deities."
+    descEn: "Traditional worship of Mother Cow and calf representing all Vedic deities.",
   },
   {
     src: "484794801_2729538933914293_877479801758957658_n.jpg",
     titleTe: "రజత కవచ కాశీ విశ్వేశ్వర స్వామి",
     titleEn: "Silver-Adorned Kasi Visweswara Swami",
     descTe: "వెండి ముఖపద్మం, రజత కిరీటం, నాగాభరణాలతో గర్భాలయంలో తేజోమయంగా వెలిగిపోతున్న శ్రీ కాశీ విశ్వేశ్వర స్వామి దివ్య మంగళ స్వరూపం — వెనుక దీపాల వెలుతురులో.",
-    descEn: "The divine form of Sri Kasi Visweswara Swami in the sanctum sanctorum, adorned with a silver face mask, crown, and serpent ornaments, glowing beautifully in the light of sacred lamps."
+    descEn: "The divine form of Sri Kasi Visweswara Swami in the sanctum sanctorum, adorned with a silver face mask, crown, and serpent ornaments, glowing beautifully in the light of sacred lamps.",
   },
 ];
 

@@ -190,6 +190,23 @@ h2::after {
   transform: translateY(-2px);
 }
 
+/* Endowment Banner */
+.endowment-banner {
+  width: 100%;
+  background-color: #fff; /* Ensure it matches the banner background */
+  text-align: center;
+  position: relative;
+  z-index: 1001; /* Above header */
+}
+
+.endowment-banner img {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
 /* Header & Sticky Navigation */
 header {
   position: absolute;
