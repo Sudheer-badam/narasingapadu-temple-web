@@ -4093,21 +4093,45 @@ body:not(.map-marker-container) @keyframes bounce {
 }
 
 /* ============================================================
-   BADAM SUDHEER REDDY — FULL PAGE WATERMARK
+   AUTHOR BADGE (BOTTOM RIGHT)
    ============================================================ */
-#site-watermark {
+.author-badge {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(26, 15, 8, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--gold-metallic);
+  padding: 8px 16px 8px 8px;
+  border-radius: 50px;
   z-index: 9999;
-  overflow: hidden;
-  user-select: none;
-  -webkit-user-select: none;
-  /* More visible text */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='220'%3E%3Ctext transform='rotate(-35 210 110)' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' font-family='sans-serif' font-size='24' font-weight='bold' letter-spacing='2' fill='rgba(212, 175, 55, 0.4)'%3EBADAM SUDHEER REDDY%3C%2Ftext%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 420px 220px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(212, 175, 55, 0.2);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none; /* Allows clicking through it */
+}
+
+.author-badge.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+.author-badge-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold-bright);
+}
+
+.author-badge-text {
+  font-family: var(--font-english-title);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--gold-bright);
+  letter-spacing: 1px;
+  white-space: nowrap;
 }

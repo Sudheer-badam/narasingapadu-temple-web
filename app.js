@@ -4019,36 +4019,36 @@ window.switchRitualTab = function(tabName, btn) {
   if (btn) btn.classList.add('active');
 };
 
-// --- WATERMARK VISIBILITY LOGIC ---
+// --- AUTHOR BADGE VISIBILITY LOGIC ---
 document.addEventListener('DOMContentLoaded', () => {
-  const watermark = document.querySelector('.site-watermark');
-  if (!watermark) return;
+  const badge = document.getElementById('author-badge');
+  if (!badge) return;
   
-  // Select images that should hide the watermark when they scroll into view
-  const imagesToObserve = document.querySelectorAll('img:not(.watermark-circle img):not(.logo-photo):not(.footer-logo img)');
+  // Select all videos and prominent images, but ignore splash, badge, and logos
+  const mediaToObserve = document.querySelectorAll('video, img:not(.author-badge-img):not(.logo-photo):not(.footer-logo img):not(#intro-splash img)');
   
-  let intersectingImagesCount = 0;
+  let intersectingMediaCount = 0;
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        intersectingImagesCount++;
+        intersectingMediaCount++;
       } else {
-        intersectingImagesCount = Math.max(0, intersectingImagesCount - 1);
+        intersectingMediaCount = Math.max(0, intersectingMediaCount - 1);
       }
     });
 
-    // Hide watermark if any image is currently in the viewport
-    if (intersectingImagesCount > 0) {
-      watermark.classList.add('hidden');
+    // Hide badge if any media is currently in the viewport
+    if (intersectingMediaCount > 0) {
+      badge.classList.add('hidden');
     } else {
-      watermark.classList.remove('hidden');
+      badge.classList.remove('hidden');
     }
   }, {
-    rootMargin: '-10% 0px -10% 0px', 
-    threshold: 0.05
+    rootMargin: '-5% 0px -5% 0px', 
+    threshold: 0.1
   });
 
-  imagesToObserve.forEach(img => observer.observe(img));
+  mediaToObserve.forEach(media => observer.observe(media));
 });
 
 // --- VIDEO AUDIO: ON SCREEN = SOUND, OFF SCREEN = SILENT ---
