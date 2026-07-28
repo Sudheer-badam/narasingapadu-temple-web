@@ -4019,12 +4019,12 @@ window.switchRitualTab = function(tabName, btn) {
   if (btn) btn.classList.add('active');
 };
 
-// --- AUTHOR BADGE VISIBILITY LOGIC ---
+// --- WATERMARK & AUTHOR BADGE VISIBILITY LOGIC ---
 document.addEventListener('DOMContentLoaded', () => {
   const badge = document.getElementById('author-badge');
-  if (!badge) return;
+  const watermark = document.querySelector('.site-watermark');
   
-  // Select ONLY large/important media that should hide the badge
+  // Select ONLY large/important media that should hide the watermarks
   const mediaToObserve = document.querySelectorAll('video, .gallery-img, .poet-image-container img, .intro-visual img, .lightbox-content');
   
   const intersectingMedia = new Set();
@@ -4037,11 +4037,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Hide badge if any media is currently in the viewport
+    // Hide watermarks if any large media is currently in the viewport
     if (intersectingMedia.size > 0) {
-      badge.classList.add('hidden');
+      if (badge) badge.classList.add('hidden');
+      if (watermark) watermark.classList.add('hidden');
     } else {
-      badge.classList.remove('hidden');
+      if (badge) badge.classList.remove('hidden');
+      if (watermark) watermark.classList.remove('hidden');
     }
   }, {
     rootMargin: '-5% 0px -5% 0px', 
