@@ -4019,13 +4019,12 @@ window.switchRitualTab = function(tabName, btn) {
   if (btn) btn.classList.add('active');
 };
 
-// --- WATERMARK & AUTHOR BADGE VISIBILITY LOGIC ---
+// --- WATERMARK VISIBILITY LOGIC ---
 document.addEventListener('DOMContentLoaded', () => {
-  const badge = document.getElementById('author-badge');
   const watermark = document.querySelector('.site-watermark');
   
   // Select all videos and images, but exclude logos, intro splash images, and the watermark images themselves
-  const mediaToObserve = document.querySelectorAll('video, img:not(.logo-photo):not(.watermark-circle img):not(.author-badge-img):not(#intro-splash img)');
+  const mediaToObserve = document.querySelectorAll('video, img:not(.logo-photo):not(.watermark-circle img):not(#intro-splash img)');
   
   const intersectingMedia = new Set();
   const observer = new IntersectionObserver((entries) => {
@@ -4039,10 +4038,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Hide watermarks if any large media is currently in the viewport
     if (intersectingMedia.size > 0) {
-      if (badge) badge.classList.add('hidden');
       if (watermark) watermark.classList.add('hidden');
     } else {
-      if (badge) badge.classList.remove('hidden');
       if (watermark) watermark.classList.remove('hidden');
     }
   }, {
