@@ -4102,13 +4102,13 @@ body:not(.map-marker-container) @keyframes bounce {
   display: flex;
   align-items: center;
   gap: 12px;
-  background: rgba(26, 15, 8, 0.85);
+  background: rgba(26, 15, 8, 0.95);
   backdrop-filter: blur(8px);
   border: 1px solid var(--gold-metallic);
   padding: 8px 16px 8px 8px;
   border-radius: 50px;
-  z-index: 9999;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(212, 175, 55, 0.2);
+  z-index: 999999;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8), 0 0 10px rgba(212, 175, 55, 0.4);
   transition: opacity 0.5s ease, transform 0.5s ease;
   pointer-events: none; /* Allows clicking through it */
 }
@@ -4129,9 +4129,10 @@ body:not(.map-marker-container) @keyframes bounce {
 
 .author-badge-text {
   font-family: var(--font-english-title);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--gold-bright);
   letter-spacing: 1px;
   white-space: nowrap;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 1);
 }

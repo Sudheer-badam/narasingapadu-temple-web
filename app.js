@@ -4024,21 +4024,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const badge = document.getElementById('author-badge');
   if (!badge) return;
   
-  // Select all videos and prominent images, but ignore splash, badge, and logos
-  const mediaToObserve = document.querySelectorAll('video, img:not(.author-badge-img):not(.logo-photo):not(.footer-logo img):not(#intro-splash img)');
+  // Select ONLY large/important media that should hide the badge
+  const mediaToObserve = document.querySelectorAll('video, .gallery-img, .poet-image-container img, .intro-visual img, .lightbox-content');
   
-  let intersectingMediaCount = 0;
+  const intersectingMedia = new Set();
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        intersectingMediaCount++;
+        intersectingMedia.add(entry.target);
       } else {
-        intersectingMediaCount = Math.max(0, intersectingMediaCount - 1);
+        intersectingMedia.delete(entry.target);
       }
     });
 
     // Hide badge if any media is currently in the viewport
-    if (intersectingMediaCount > 0) {
+    if (intersectingMedia.size > 0) {
       badge.classList.add('hidden');
     } else {
       badge.classList.remove('hidden');
