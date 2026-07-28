@@ -4051,3 +4051,33 @@ document.addEventListener('DOMContentLoaded', () => {
   imagesToObserve.forEach(img => observer.observe(img));
 });
 
+// --- VIDEO AUDIO: ON SCREEN = SOUND, OFF SCREEN = SILENT ---
+// Plays audio when video is visible on screen.
+// Mutes IMMEDIATELY when video scrolls off in ANY direction.
+// Restores audio when user comes back to the video.
+(function () {
+  const video = document.getElementById('temple-video');
+  if (!video) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // ✅ Video is ON SCREEN — enable audio
+          video.muted = false;
+          video.volume = 1.0;
+          if (video.paused) video.play().catch(() => {});
+        } else {
+          // 🔇 Video is OFF SCREEN — mute immediately
+          video.muted = true;
+        }
+      });
+    },
+    {
+      threshold: 0.1, // Triggers when even 10% of video enters or leaves view
+    }
+  );
+
+  observer.observe(video);
+})();
+
