@@ -4024,8 +4024,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const badge = document.getElementById('author-badge');
   const watermark = document.querySelector('.site-watermark');
   
-  // Select ONLY large/important media that should hide the watermarks
-  const mediaToObserve = document.querySelectorAll('video, .gallery-img, .poet-image-container img, .intro-visual img, .lightbox-content');
+  // Select all videos and images, but exclude logos, intro splash images, and the watermark images themselves
+  const mediaToObserve = document.querySelectorAll('video, img:not(.logo-photo):not(.watermark-circle img):not(.author-badge-img):not(#intro-splash img)');
   
   const intersectingMedia = new Set();
   const observer = new IntersectionObserver((entries) => {
