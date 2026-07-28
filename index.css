@@ -4101,14 +4101,13 @@ body:not(.map-marker-container) @keyframes bounce {
   left: 0;
   width: 100vw;
   height: 100vh;
-  pointer-events: none;        /* Never blocks clicks */
-  z-index: 9999;               /* Always on top */
+  pointer-events: none;
+  z-index: 9999;
   overflow: hidden;
   user-select: none;
   -webkit-user-select: none;
-
-  /* Repeating diagonal text via SVG data URI */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='220'%3E%3Ctext transform='rotate(-35 210 110)' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' font-family='Cinzel%2C serif' font-size='18' font-weight='700' letter-spacing='4' fill='%23D4AF37' opacity='0.10'%3EBADAM SUDHEER REDDY%3C%2Ftext%3E%3C/svg%3E");
+  /* More visible text */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='220'%3E%3Ctext transform='rotate(-35 210 110)' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' font-family='sans-serif' font-size='24' font-weight='bold' letter-spacing='2' fill='rgba(212, 175, 55, 0.4)'%3EBADAM SUDHEER REDDY%3C%2Ftext%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 420px 220px;
 }
