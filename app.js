@@ -3836,17 +3836,15 @@ document.addEventListener('DOMContentLoaded', () => {
   if (introSplash) {
     document.body.style.overflow = 'hidden'; // Lock scroll
     
-    let secondsLeft = 7;
-    const interval = setInterval(() => {
-      secondsLeft--;
-      if (secondsLeft <= 0) {
-        clearInterval(interval);
-        dismissIntro();
-      }
-    }, 1000);
-    
     const dismissIntro = () => {
-      clearInterval(interval);
+      if (!window.isUserSignedIn) {
+        alert("Please sign in with Google to enter the temple page.");
+        if (typeof window.handleGoogleSignIn === 'function') {
+          window.handleGoogleSignIn();
+        }
+        return;
+      }
+      
       introSplash.classList.add('fade-out');
       document.body.style.overflow = ''; // Restore scroll
       setTimeout(() => {
@@ -3857,6 +3855,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (skipBtn) {
       skipBtn.addEventListener('click', dismissIntro);
     }
+    
+    // Listen for auth change to auto-dismiss once signed in (optional, but good UX)
+    const checkAuthInterval = setInterval(() => {
+      if (window.isUserSignedIn && introSplash.style.display !== 'none') {
+        clearInterval(checkAuthInterval);
+        dismissIntro();
+      }
+    }, 1000);
   }
 
   // 1. Setup sticky navigation background toggle

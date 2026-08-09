@@ -90,6 +90,7 @@ function updateLoginUI(user) {
 
 // ── Listen for auth state changes ───────────────────────────────
 onAuthStateChanged(auth, user => {
+  window.isUserSignedIn = !!user;
   updateLoginUI(user);
   if (user) recordUniqueVisitor(user);
   refreshVisitorCount(); // always show count
