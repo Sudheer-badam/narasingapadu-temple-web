@@ -17,19 +17,22 @@ import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChang
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import { getFirestore, doc, setDoc, getDoc, collection, getCountFromServer }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
 
 // ─── REPLACE THESE VALUES WITH YOUR FIREBASE PROJECT CONFIG ───
 const firebaseConfig = {
-  apiKey:            "YOUR_API_KEY",
-  authDomain:        "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId:         "YOUR_PROJECT_ID",
-  storageBucket:     "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId:             "YOUR_APP_ID"
+  apiKey: "AIzaSyCUygM1Hai7P7viYBbLrMVayAADGGe3PbU",
+  authDomain: "narasingapadu-temple.firebaseapp.com",
+  projectId: "narasingapadu-temple",
+  storageBucket: "narasingapadu-temple.firebasestorage.app",
+  messagingSenderId: "418348404034",
+  appId: "1:418348404034:web:1b7f1b8490b7be3538ccdb",
+  measurementId: "G-QVV9YE4T3Z"
 };
 // ──────────────────────────────────────────────────────────────
 
 const app      = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 const auth     = getAuth(app);
 const db       = getFirestore(app);
 const provider = new GoogleAuthProvider();
