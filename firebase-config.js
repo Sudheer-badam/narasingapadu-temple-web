@@ -15,7 +15,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-import { getFirestore, doc, setDoc, getDoc, collection, getCountFromServer }
+import { getFirestore, doc, setDoc, getDoc, collection, onSnapshot }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
 
@@ -37,19 +37,22 @@ const auth     = getAuth(app);
 const db       = getFirestore(app);
 const provider = new GoogleAuthProvider();
 
-// ── Fetch & display the total unique visitor count ──────────────
-async function refreshVisitorCount() {
+// ── Listen & display the total unique visitor count in real-time ──
+function setupRealtimeVisitorCount() {
   try {
-    const col   = collection(db, "uniqueVisitors");
-    const snap  = await getCountFromServer(col);
-    const count = snap.data().count;
-    document.querySelectorAll(".visitor-count-number").forEach(el => {
-      el.textContent = count.toLocaleString("en-IN");
+    const col = collection(db, "uniqueVisitors");
+    onSnapshot(col, (snapshot) => {
+      const count = snapshot.size;
+      document.querySelectorAll(".visitor-count-number").forEach(el => {
+        el.textContent = count.toLocaleString("en-IN");
+      });
     });
   } catch (e) {
     // silently ignore if Firebase is not yet configured
   }
 }
+// Start listening immediately
+setupRealtimeVisitorCount();
 
 // ── Record a new unique visitor (only once per Google account) ──
 async function recordUniqueVisitor(user) {
@@ -64,7 +67,6 @@ async function recordUniqueVisitor(user) {
       uid:       user.uid
     });
   }
-  refreshVisitorCount();
 }
 
 // ── Update the Sign-In button UI ────────────────────────────────
@@ -93,7 +95,6 @@ onAuthStateChanged(auth, user => {
   window.isUserSignedIn = !!user;
   updateLoginUI(user);
   if (user) recordUniqueVisitor(user);
-  refreshVisitorCount(); // always show count
 });
 
 // ── Handle Sign-In / Sign-Out button click ──────────────────────
@@ -106,4 +107,4 @@ window.handleGoogleSignIn = function () {
   }
 };
 
-export { refreshVisitorCount };
+export { setupRealtimeVisitorCount };
