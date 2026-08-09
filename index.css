@@ -216,16 +216,55 @@ header {
   z-index: 1000;
   transition: var(--transition-smooth);
   border-bottom: 1px solid rgba(255, 215, 0, 0.1);
-  padding: 1.5rem 0;
+  padding: 0 0 1.5rem 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .header-scrolled {
   position: fixed;
   background: rgba(46, 27, 16, 0.95);
   backdrop-filter: blur(10px);
-  padding: 0.8rem 0;
+  padding: 0 0 0.8rem 0;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
   border-bottom: 2px solid var(--gold-metallic);
+}
+
+/* Scrolling Ticker Styles */
+.scrolling-ticker {
+  background: transparent;
+  color: #ffffff;
+  font-family: var(--font-interface);
+  font-size: 0.95rem;
+  font-weight: 400;
+  padding: 6px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  position: relative;
+  width: 100%;
+  border-bottom: none;
+  z-index: 1002;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  flex-shrink: 0;
+}
+
+.scrolling-ticker .ticker-text-wrapper {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: ticker-scroll 130s linear infinite;
+}
+
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+body.lang-te .scrolling-ticker .ticker-text-wrapper {
+  font-family: var(--font-telugu-bold);
+  font-size: 0.95rem;
+  color: #ffffff;
 }
 
 .header-scrolled h1 {
@@ -246,7 +285,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
+  padding: 1.5rem 2rem 0 2rem;
 }
 
 .logo-block {
@@ -431,13 +470,6 @@ body.lang-te .lang-btn {
   height: 100vh;
   min-height: 600px;
   background-color: #1c0f0a;
-  background-image:
-    linear-gradient(rgba(30, 15, 8, 0.68), rgba(20, 8, 3, 0.82)),
-    url('WhatsApp Image 2026-06-17 at 11.48.54 AM.jpeg'),
-    url('672682917_3125476854320497_8084528180267233510_n.jpg');
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: center, left center, right center;
-  background-size: cover, 50% 100%, 50% 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -456,11 +488,44 @@ body.lang-te .lang-btn {
   bottom: 0;
   background: radial-gradient(ellipse at center, rgba(180, 100, 20, 0.12) 0%, transparent 70%);
   pointer-events: none;
+  z-index: 4;
 }
 
-/* Mobile crossfade slides — hidden on desktop */
-.hero-slide,
-.hero-slide-overlay { display: none; }
+/* Desktop Split-Screen Backgrounds */
+.hero-slide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Photo 1: Shiva Lingam (Left Half) */
+.hero-slide-1 {
+  left: 0;
+  width: 50%;
+  background-image: url('WhatsApp Image 2026-06-17 at 11.48.54 AM.jpeg');
+  background-position: center 30%;
+  z-index: 1;
+}
+
+/* Photo 2: Annapurna Devi (Right Half) */
+.hero-slide-2 {
+  left: 50%;
+  width: 50%;
+  background-image: url('672682917_3125476854320497_8084528180267233510_n.jpg');
+  background-position: center 20%;
+  z-index: 1;
+}
+
+/* Dark overlay on top of slides */
+.hero-slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(20, 10, 5, 0.4), rgba(15, 5, 2, 0.5));
+  z-index: 2;
+  pointer-events: none;
+}
 
 /* ── Glass God Panels ── */
 .hero-god-panel {
@@ -682,7 +747,8 @@ section {
 .intro-text p {
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
-  color: var(--text-dark);
+  color: #20130B;
+  line-height: 1.8;
 }
 
 .intro-text p:first-of-type::first-letter {
@@ -2537,6 +2603,18 @@ body:not(.map-marker-container) @keyframes bounce {
 }
 
 /* ============================
+   HOME / INTRODUCTION SECTION
+   ============================ */
+#intro {
+  background-color: #FAF5EB;
+  color: #333;
+}
+
+#intro p {
+  color: #555;
+}
+
+/* ============================
    MAP + DIRECTIONS SECTION
    ============================ */
 
@@ -3274,40 +3352,29 @@ body:not(.map-marker-container) @keyframes bounce {
     padding: 0 1rem;
   }
 
-  /* Shared slide styles */
+  /* Shared slide styles - full screen on mobile */
   .hero-slide {
-    display: block;
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-repeat: no-repeat;
+    left: 0 !important;
+    width: 100% !important;
     background-position: center center;
   }
 
   /* Photo 1: Shiva Lingam */
   .hero-slide-1 {
-    background-image: url('WhatsApp Image 2026-06-17 at 11.48.54 AM.jpeg');
-    background-position: center 30%;
     animation: heroFade1 8s ease-in-out infinite;
     z-index: 1;
   }
 
   /* Photo 2: Annapurna Devi */
   .hero-slide-2 {
-    background-image: url('672682917_3125476854320497_8084528180267233510_n.jpg');
-    background-position: center 10%;
     animation: heroFade2 8s ease-in-out infinite;
     z-index: 2;
   }
 
   /* Dark overlay on top of slides, below text */
   .hero-slide-overlay {
-    display: block;
-    position: absolute;
-    inset: 0;
     background: linear-gradient(rgba(10,4,1,0.62), rgba(5,2,0,0.85));
     z-index: 3;
-    pointer-events: none;
   }
 
   /* Crossfade keyframes — slide 1 visible first, then slide 2 */
@@ -4089,5 +4156,87 @@ body:not(.map-marker-container) @keyframes bounce {
   }
   .poet-heading {
     font-size: 1.3rem;
+  }
+}
+
+/* ===== FLOATING LEFT SOCIAL WIDGET (AP Police Style) ===== */
+.social-float-widget {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.social-float-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  color: #ffffff !important;
+  text-decoration: none;
+  position: relative;
+  transition: width 0.25s ease, padding-right 0.25s ease;
+  overflow: hidden;
+  border-radius: 8px;
+  margin: 2px 4px;
+}
+
+.social-float-btn:hover {
+  width: 52px;
+  color: #ffffff !important;
+}
+
+/* Brand colours — flat, no radius */
+.social-float-btn.facebook    { background: #1877F2; }
+.social-float-btn.phone       { background: #25D366; }
+.social-float-btn.instagram   { background: #C13584; }
+.social-float-btn.website     { background: #f39c12; }
+.social-float-btn.google-signin {
+  background: #ffffff;
+  color: #444 !important;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+.social-float-btn.google-signin:hover { background: #f1f1f1; }
+
+/* Tooltip on hover */
+.social-float-btn::after {
+  content: attr(title);
+  position: absolute;
+  left: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.82);
+  color: #fff;
+  font-size: 0.7rem;
+  white-space: nowrap;
+  padding: 3px 8px;
+  border-radius: 4px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.social-float-btn:hover::after {
+  opacity: 1;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .social-float-widget {
+    top: auto;
+    bottom: 70px;
+    transform: none;
+  }
+  .social-float-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 17px;
   }
 }
