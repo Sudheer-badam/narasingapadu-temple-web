@@ -92,12 +92,10 @@ async function recordUniqueVisitor(user) {
 function updateLoginUI(user) {
   const btn = document.getElementById("google-signin-btn");
   if (!btn) return;
-
   if (user) {
-    // Show user photo, change button to sign-out (for the floating widget)
-    btn.innerHTML = `<img src="${user.photoURL}" alt="${user.displayName}"
-                         style="width:28px;height:28px;border-radius:50%;object-fit:cover;">`;
-    btn.title = `${user.displayName} — Click to Sign Out`;
+    // Just show the profile photo in the floating widget, but DON'T make it log out
+    btn.innerHTML = `<img src="${user.photoURL || 'assets/images/favicon_circle.png'}" style="width:24px; height:24px; border-radius:50%; border:1px solid #d4af37; object-fit: cover;">`;
+    btn.title = `${user.displayName} — Logged In`;
     btn.setAttribute("data-signed-in", "true");
   } else {
     btn.innerHTML = `<i class="fa-brands fa-google"></i>`;
@@ -174,7 +172,9 @@ onAuthStateChanged(auth, user => {
 window.handleGoogleSignIn = function () {
   const btn = document.getElementById("google-signin-btn");
   if (btn && btn.getAttribute("data-signed-in")) {
-    window.handleLogout();
+    // DO NOTHING: The user clicked their profile photo in the floating widget.
+    // They should use the top right navigation menu dropdown to log out.
+    // We removed the auto-logout here as requested.
   } else {
     signInWithPopup(auth, provider).catch(console.error);
   }
