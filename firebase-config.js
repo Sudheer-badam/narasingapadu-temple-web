@@ -35,7 +35,11 @@ const firebaseConfig = {
 const app      = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
-// ── Firebase App Check (reCAPTCHA v3 protection) ────────────────────
+// ── Firebase App Check (reCAPTCHA v3 protection) ─────────────────────
+// Enable debug mode on localhost to avoid blocking login during development
+if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+  self.FIREBASE_APPCHECK_DEBUG_TOKEN = true;
+}
 const appCheck = initializeAppCheck(app, {
   provider: new ReCaptchaV3Provider('6Lfvxn4tAAAALkyyuXv-smsGUYaiiUx7jl9dQ1H'),
   isTokenAutoRefreshEnabled: true
