@@ -13,12 +13,28 @@
 // 7. Save this file and refresh the site
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { initializeAppCheck, ReCaptchaV3Provider } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app-check.js";
-import { getAuth, GoogleAuthProvider, FacebookAuthProvider, TwitterAuthProvider, signInWithPopup, signInWithRedirect, signOut, onAuthStateChanged }
+import { getAuth, GoogleAuthProvider, FacebookAuthProvider, TwitterAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import { getFirestore, doc, setDoc, getDoc, collection, onSnapshot }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
+
+// ── Helper: Show user-friendly sign-in error ────────────────────────
+function showAuthError(err) {
+  let msg = err.message;
+  if (err.code === 'auth/network-request-failed') {
+    msg = 'Network error. Please check your internet connection and try again.';
+  } else if (err.code === 'auth/unauthorized-domain') {
+    msg = 'This website domain is not authorized in Firebase. Please contact the admin to add this domain in Firebase Console → Authentication → Settings → Authorized Domains.';
+  } else if (err.code === 'auth/popup-blocked') {
+    msg = 'Pop-up was blocked by your browser. Please allow pop-ups for this site and try again.';
+  } else if (err.code === 'auth/popup-closed-by-user') {
+    return; // User closed the popup — no error needed
+  } else if (err.code === 'auth/cancelled-popup-request') {
+    return; // Multiple popups — ignore
+  }
+  alert('Sign-In Error: ' + msg);
+}
 
 // ─── REPLACE THESE VALUES WITH YOUR FIREBASE PROJECT CONFIG ───
 const firebaseConfig = {
@@ -35,20 +51,6 @@ const firebaseConfig = {
 const app      = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
-// ── Firebase App Check (reCAPTCHA v3 protection) ─────────────────────
-// Enable debug mode on localhost to avoid blocking login during development
-if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
-  self.FIREBASE_APPCHECK_DEBUG_TOKEN = true;
-}
-let appCheck;
-try {
-  appCheck = initializeAppCheck(app, {
-    provider: new ReCaptchaV3Provider('6Lfvxn4tAAAALkyyuXv-smsGUYaiiUx7jl9dQ1H'),
-    isTokenAutoRefreshEnabled: true
-  });
-} catch (e) {
-  console.error("Firebase App Check failed to initialize:", e);
-}
 
 const auth     = getAuth(app);
 const db       = getFirestore(app);
@@ -172,53 +174,29 @@ onAuthStateChanged(auth, user => {
 window.handleGoogleSignIn = function () {
   const btn = document.getElementById("google-signin-btn");
   if (btn && btn.getAttribute("data-signed-in")) {
-    // DO NOTHING
+    // Already signed in — do nothing
   } else {
-    try {
-      signInWithRedirect(auth, provider).catch(err => {
-        alert("Google Sign-In Error: " + err.message);
-      });
-    } catch (err) {
-      alert("Google Browser Error: " + err.message);
-    }
+    signInWithPopup(auth, provider).catch(showAuthError);
   }
 };
 
 // ── Facebook Sign-In ─────────────────────────────────────────────
 window.handleFacebookSignIn = function (event) {
   if (event) event.stopPropagation();
-  try {
-    signInWithRedirect(auth, fbProvider).catch(err => {
-      alert('Facebook sign-in error: ' + err.message);
-    });
-  } catch (err) {
-    alert("Facebook Browser Error: " + err.message);
-  }
+  signInWithPopup(auth, fbProvider).catch(showAuthError);
 };
 
 // ── Twitter Sign-In ──────────────────────────────────────────────
 window.handleTwitterSignIn = function (event) {
   if (event) event.stopPropagation();
-  try {
-    signInWithRedirect(auth, twitterProvider).catch(err => {
-      alert("Twitter sign-in error: " + err.message);
-    });
-  } catch (err) {
-    alert("Twitter Browser Error: " + err.message);
-  }
+  signInWithPopup(auth, twitterProvider).catch(showAuthError);
 };
 
 // ── YouTube (Google) Sign-In ─────────────────────────────────────
 window.handleYouTubeSignIn = function (event) {
   if (event) event.stopPropagation();
   const ytProvider = new GoogleAuthProvider();
-  try {
-    signInWithRedirect(auth, ytProvider).catch(err => {
-      alert("YouTube sign-in error: " + err.message);
-    });
-  } catch (err) {
-    alert("YouTube Browser Error: " + err.message);
-  }
+  signInWithPopup(auth, ytProvider).catch(showAuthError);
 };
 
 window.handleLogout = function (event) {
