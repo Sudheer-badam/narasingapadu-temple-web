@@ -14,7 +14,7 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { initializeAppCheck, ReCaptchaV3Provider } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app-check.js";
-import { getAuth, GoogleAuthProvider, FacebookAuthProvider, TwitterAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
+import { getAuth, GoogleAuthProvider, FacebookAuthProvider, TwitterAuthProvider, signInWithPopup, signInWithRedirect, signOut, onAuthStateChanged }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import { getFirestore, doc, setDoc, getDoc, collection, onSnapshot }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
@@ -174,7 +174,7 @@ window.handleGoogleSignIn = function () {
   if (btn && btn.getAttribute("data-signed-in")) {
     // DO NOTHING
   } else {
-    signInWithPopup(auth, provider).catch(err => {
+    signInWithRedirect(auth, provider).catch(err => {
       alert("Google Sign-In Error: " + err.message);
       console.error(err);
     });
@@ -184,23 +184,17 @@ window.handleGoogleSignIn = function () {
 // ── Facebook Sign-In ─────────────────────────────────────────────
 window.handleFacebookSignIn = function (event) {
   if (event) event.stopPropagation();
-  signInWithPopup(auth, fbProvider)
+  signInWithRedirect(auth, fbProvider)
     .catch(err => {
-      if (err.code === 'auth/popup-blocked') {
-        alert('Popup was blocked. Please allow popups for this site and try again.');
-      } else if (err.code === 'auth/account-exists-with-different-credential') {
-        alert('An account already exists with this email. Please sign in with Google instead.');
-      } else {
-        alert('Facebook sign-in error: ' + err.message);
-        console.error('Facebook sign-in error:', err.message);
-      }
+      alert('Facebook sign-in error: ' + err.message);
+      console.error('Facebook sign-in error:', err.message);
     });
 };
 
 // ── Twitter Sign-In ──────────────────────────────────────────────
 window.handleTwitterSignIn = function (event) {
   if (event) event.stopPropagation();
-  signInWithPopup(auth, twitterProvider)
+  signInWithRedirect(auth, twitterProvider)
     .catch(err => {
       alert("Twitter sign-in error: " + err.message);
       console.error('Twitter sign-in error:', err.message);
@@ -212,7 +206,7 @@ window.handleYouTubeSignIn = function (event) {
   if (event) event.stopPropagation();
   const ytProvider = new GoogleAuthProvider();
   
-  signInWithPopup(auth, ytProvider)
+  signInWithRedirect(auth, ytProvider)
     .catch(err => {
       alert("YouTube sign-in error: " + err.message);
       console.error(err);
