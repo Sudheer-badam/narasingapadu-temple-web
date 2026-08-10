@@ -3829,42 +3829,7 @@ function initPoetBioTabs() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 0. Setup Intro Splash Screen
-  const introSplash = document.getElementById('intro-splash');
-  const skipBtn = document.getElementById('skip-intro-btn');
-  
-  if (introSplash) {
-    document.body.style.overflow = 'hidden'; // Lock scroll
-    
-    const dismissIntro = () => {
-      if (!window.isUserSignedIn) {
-        alert("Please sign in with Google to enter the temple page.");
-        if (typeof window.handleGoogleSignIn === 'function') {
-          window.handleGoogleSignIn();
-        }
-        return;
-      }
-      
-      introSplash.classList.add('fade-out');
-      document.body.style.overflow = ''; // Restore scroll
-      setTimeout(() => {
-        introSplash.style.display = 'none';
-      }, 800); // Wait for CSS opacity fade out
-    };
-    
-    if (skipBtn) {
-      skipBtn.addEventListener('click', dismissIntro);
-    }
-    
-    // Listen for auth change to auto-dismiss once signed in (optional, but good UX)
-    const checkAuthInterval = setInterval(() => {
-      if (window.isUserSignedIn && introSplash.style.display !== 'none') {
-        clearInterval(checkAuthInterval);
-        dismissIntro();
-      }
-    }, 1000);
-  }
-
+  // Intro splash logic removed, now handled by firebase-config.js
   // 1. Setup sticky navigation background toggle
   const header = document.getElementById('site-header');
   window.addEventListener('scroll', () => {

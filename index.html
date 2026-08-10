@@ -94,11 +94,91 @@
   }
   </script>
 </head>
-<body class="lang-te">
+<body class="lang-te" style="overflow: hidden;"> <!-- Lock scroll by default for login portal -->
+
+  <!-- LOGIN PORTAL -->
+  <div id="login-portal" class="intro-splash" style="z-index: 9999999; background-color: #0a0502;">
+    <div class="intro-card" style="max-width: 500px;">
+      <div class="gold-border-outer"></div>
+      <div class="gold-border-inner"></div>
+      <div class="gold-corner top-left"></div>
+      <div class="gold-corner top-right"></div>
+      <div class="gold-corner bottom-left"></div>
+      <div class="gold-corner bottom-right"></div>
+
+      <div class="intro-card-content" style="text-align: center;">
+        <div class="intro-symbol-halo" style="margin-bottom: 1rem;">
+          <img src="WhatsApp Image 2026-06-17 at 11.48.54 AM.jpeg" alt="Sri Kasi Visweswara Swami Temple Logo"
+               style="width:110px; height:110px; border-radius:50%; object-fit:cover; border:4px solid #d4af37; box-shadow:0 0 20px rgba(212,175,55,0.6), 0 0 40px rgba(212,175,55,0.3);">
+        </div>
+        <h1 class="intro-title telugu-title" style="font-size:1.8rem; margin-bottom:0.3rem;">శ్రీ అన్నపూర్ణా సమేత కాశీ విశ్వేశ్వర స్వామి దేవస్థానం</h1>
+        <h2 class="intro-title english-title" style="font-size:1.05rem; margin-bottom:0.8rem;">Sri Annapurna Sameyta Kasi Visweswara Swami Temple</h2>
+        <!-- Address Card -->
+        <div style="background: rgba(212,175,55,0.08); border: 1px solid rgba(212,175,55,0.35); border-radius: 10px; padding: 10px 16px; margin-bottom: 1.4rem; display: inline-block; text-align: left;">
+          <div style="display: flex; align-items: flex-start; gap: 10px;">
+            <i class="fa-solid fa-location-dot" style="color:#d4af37; font-size:1.1rem; margin-top:3px; flex-shrink:0;"></i>
+            <div>
+              <p style="margin:0 0 3px 0; font-size:0.9rem; font-weight:700; color:#f5e6c8; letter-spacing:0.3px; line-height:1.5;">
+                నరసింగపాడు గ్రామం, నకరికల్లు మండలం,<br>పల్నాడు జిల్లా, ఆంధ్రప్రదేశ్
+              </p>
+              <p style="margin:0 0 6px 0; font-size:0.78rem; color:rgba(255,255,255,0.6); letter-spacing:0.2px; line-height:1.5;">
+                Narasingapadu Village, Nekarikallu Mandal,<br>Palnadu District, Andhra Pradesh
+              </p>
+              <span style="background: #d4af37; color: #1a0f08; font-size:0.72rem; font-weight:800; padding:2px 10px; border-radius:20px; letter-spacing:1px;">PIN: 522615</span>
+            </div>
+          </div>
+        </div>
+        <p class="intro-subtitle" style="margin-bottom: 1.5rem; color:#d4af37; font-weight:600; font-size:1.05rem;">Please Login to Enter the Sacred Temple</p>
+        
+        <div style="display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 300px; margin: 0 auto;">
+          <!-- Google Main Button -->
+          <button onclick="handleGoogleSignIn()" class="btn-primary" style="display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 1.05rem; padding: 10px 20px; background: white; color: #333; border: 2px solid #d4af37; border-radius: 30px; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); transition: transform 0.2s;">
+            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" style="width:22px;height:22px;">
+            <span style="font-weight:600;">Sign in with Google</span>
+          </button>
+          
+          <!-- OR Divider -->
+          <div style="display: flex; align-items: center; justify-content: center; margin: 5px 0;">
+            <div style="flex-grow: 1; height: 1px; background: rgba(212,175,55,0.3);"></div>
+            <span style="margin: 0 10px; color: #d4af37; font-size: 0.8rem; font-weight: 600;">OR</span>
+            <div style="flex-grow: 1; height: 1px; background: rgba(212,175,55,0.3);"></div>
+          </div>
+          
+          <!-- Icon-Only Social Buttons Row -->
+          <div style="display: flex; justify-content: center; gap: 15px;">
+            <!-- Facebook -->
+            <button onclick="handleFacebookSignIn(event)" class="btn-primary" style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; padding: 0; background: #1877F2; color: white; border: none; border-radius: 50%; box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3); transition: transform 0.2s;">
+              <i class="fa-brands fa-facebook-f" style="font-size: 20px;"></i>
+            </button>
+            
+            <!-- Twitter / X -->
+            <button onclick="handleTwitterSignIn(event)" class="btn-primary" style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; padding: 0; background: #000; color: white; border: 1px solid #555; border-radius: 50%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); transition: transform 0.2s;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" style="width:20px;height:20px;fill:white;">
+                <path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.1h26.46l102.4-116.59 81.8 116.59h89.34M36.01 19.54H76.66l187.13 262.13h-40.66"/>
+              </svg>
+            </button>
+
+            <!-- YouTube -->
+            <button onclick="handleYouTubeSignIn(event)" class="btn-primary" style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; padding: 0; background: #FF0000; color: white; border: none; border-radius: 50%; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3); transition: transform 0.2s;">
+              <i class="fa-brands fa-youtube" style="font-size: 20px;"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIVE VISITOR COUNT GLASS (BOTTOM RIGHT) -->
+  <div id="live-visitor-count-glass" style="position:fixed; bottom:90px; right:20px; background:rgba(20, 11, 7, 0.85); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border:1px solid rgba(212, 175, 55, 0.5); padding:12px 18px; border-radius:12px; z-index:999998; box-shadow:0 4px 20px rgba(0,0,0,0.8); text-align:center; transition: opacity 0.5s;">
+    <div style="font-size:0.75rem; color:#d4af37; font-weight:800; margin-bottom:6px; font-family:sans-serif; letter-spacing:0.8px;">NO OF USERS VISITED</div>
+    <div style="font-size:1.6rem; color:#fff; font-weight:bold; text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);" class="visitor-count-number">--</div>
+  </div>
 
 
+
+  <!-- FLOATING LEFT SOCIAL WIDGET (AP Police Style) -->
   <!-- INTRO SPLASH PAGE -->
-  <div id="intro-splash" class="intro-splash">
+  <div id="intro-splash" class="intro-splash" style="display:none;">
     <div class="intro-card">
       <!-- Gold borders & corners -->
       <div class="gold-border-outer"></div>
@@ -121,16 +201,28 @@
 
         <!-- Temple Info -->
         <div class="intro-info">
-          <div class="intro-symbol-halo">
-            <div class="intro-sacred-symbol">🕉️</div>
+          <div class="intro-symbol-halo" style="margin-bottom: 1rem;">
+            <img src="WhatsApp Image 2026-06-17 at 11.48.54 AM.jpeg" alt="Sri Kasi Visweswara Swami Temple Logo"
+                 style="width:110px; height:110px; border-radius:50%; object-fit:cover; border:4px solid #d4af37; box-shadow:0 0 20px rgba(212,175,55,0.6), 0 0 40px rgba(212,175,55,0.3);">
           </div>
           <h1 class="intro-title telugu-title">శ్రీ అన్నపూర్ణా సమేత కాశీ విశ్వేశ్వర స్వామి దేవస్థానం</h1>
           <h2 class="intro-title english-title">Sri Annapurna Sameyta Kasi Visweswara Swami Temple</h2>
           <p class="intro-subtitle">Ancient Sacred Shrine &middot; Historical Palnati Kasi &middot; నరసింగపాడు</p>
           <div class="divider-gold"></div>
-          <p class="intro-address">
-            <i class="fa-solid fa-map-marker-alt"></i> Narasingapadu Village, Nekarikallu Mandal, Palnadu District, Andhra Pradesh - 522615
-          </p>
+          <div style="background: rgba(212,175,55,0.08); border: 1px solid rgba(212,175,55,0.35); border-radius: 10px; padding: 10px 16px; margin-top: 8px; text-align: left;">
+            <div style="display: flex; align-items: flex-start; gap: 10px;">
+              <i class="fa-solid fa-location-dot" style="color:#d4af37; font-size:1.1rem; margin-top:3px; flex-shrink:0;"></i>
+              <div>
+                <p style="margin:0 0 3px 0; font-size:0.88rem; font-weight:700; color:#f5e6c8; letter-spacing:0.3px; line-height:1.5;">
+                  నరసింగపాడు గ్రామం, నకరికల్లు మండలం,<br>పల్నాడు జిల్లా, ఆంధ్రప్రదేశ్
+                </p>
+                <p style="margin:0 0 6px 0; font-size:0.78rem; color:rgba(255,255,255,0.6); letter-spacing:0.2px; line-height:1.5;">
+                  Narasingapadu Village, Nekarikallu Mandal,<br>Palnadu District, Andhra Pradesh
+                </p>
+                <span style="background: #d4af37; color: #1a0f08; font-size:0.72rem; font-weight:800; padding:2px 10px; border-radius:20px; letter-spacing:1px;">PIN: 522615</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Footer button without visible countdown text -->
@@ -145,6 +237,8 @@
     </div>
   </div>
 
+  <!-- MAIN SITE WRAPPER (To easily hide everything behind login/intro) -->
+  <div id="main-site-content" style="display:none;">
 
   <!-- FLOATING LEFT SOCIAL WIDGET (AP Police Style) -->
   <!-- FLOATING LEFT SOCIAL WIDGET (AP Police Style) -->
@@ -204,7 +298,148 @@
             <button class="lang-btn active" id="btn-te">తెలుగు</button>
             <button class="lang-btn" id="btn-en">English</button>
           </li>
+          
+          <!-- USER WELCOME BANNER (DROPDOWN) -->
+          <li id="user-welcome-banner" class="user-profile-widget" style="display:none; margin-left:15px; list-style:none;">
+            <div class="profile-dropdown-container" onclick="this.classList.toggle('active')">
+              <img id="welcome-user-photo" src="" alt="User" class="profile-photo" style="display:none;">
+              
+              <!-- Dropdown Menu -->
+              <div class="profile-dropdown-menu">
+                <div class="profile-header">
+                  <span id="welcome-text"></span>
+                  <span id="welcome-email"></span>
+                </div>
+                
+                <div class="profile-footer">
+                  <button onclick="handleLogout(event)" class="profile-logout-btn">
+                    <i class="fa-solid fa-right-from-bracket"></i> Logout
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
         </ul>
+
+        <style>
+          .user-profile-widget {
+            display: flex;
+            align-items: center;
+            position: relative;
+          }
+          .profile-dropdown-container {
+            position: relative;
+            cursor: pointer;
+            padding: 4px; /* Expand hit area */
+            -webkit-tap-highlight-color: transparent;
+          }
+          .profile-photo {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 2px solid #d4af37;
+            object-fit: cover;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            transition: border-color 0.3s, transform 0.3s;
+          }
+          .profile-dropdown-container:hover .profile-photo {
+            border-color: #ffd700;
+            transform: scale(1.05);
+          }
+          .profile-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 10px;
+            width: 220px;
+            background: rgba(15, 8, 4, 0.95);
+            border: 1px solid #d4af37;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.8), 0 0 0 1px rgba(212,175,55,0.2);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            z-index: 1000;
+            overflow: hidden;
+          }
+          /* Dropdown visible on hover OR active click */
+          .profile-dropdown-container:hover .profile-dropdown-menu,
+          .profile-dropdown-container.active .profile-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+          }
+          .profile-header {
+            padding: 16px 16px 12px;
+            border-bottom: 1px solid rgba(212,175,55,0.2);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+          }
+          
+          #welcome-text {
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          #welcome-email {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.75rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          .profile-footer {
+            padding: 12px 16px;
+            background: rgba(0,0,0,0.2);
+          }
+          .profile-logout-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #d35400, #c0392b);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 8px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 12px rgba(192, 57, 43, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+          }
+          .profile-logout-btn:hover {
+            background: linear-gradient(135deg, #e65c00, #d94130);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 15px rgba(192, 57, 43, 0.6);
+          }
+          
+          /* Mobile specific adjustments */
+          @media (max-width: 768px) {
+            .user-profile-widget { margin-left: 0; margin-top: 15px; align-self: flex-start; }
+            .profile-dropdown-menu {
+              position: static;
+              opacity: 1;
+              visibility: visible;
+              transform: none;
+              margin-top: 12px;
+              width: 100%;
+              border: 1px dashed rgba(212,175,55,0.4);
+              background: rgba(15, 8, 4, 0.6);
+            }
+            .profile-dropdown-container { pointer-events: none; width: 100%; } /* Disable hover on mobile */
+            .profile-photo { margin-bottom: 5px; }
+            .profile-logout-btn { pointer-events: auto; }
+          }
+        </style>
       </nav>
     </div>
   </header>
@@ -1234,6 +1469,8 @@
       <p class="watermark-author" style="margin-top:8px; font-weight:bold; color:var(--gold-bright); font-size:1.1rem; letter-spacing:1px; font-family:var(--font-english-title); text-shadow:0 1px 3px rgba(0,0,0,0.8);">BADAM SUDHEER REDDY</p>
     </div>
   </div>
+
+  </div> <!-- END MAIN SITE WRAPPER -->
 
   <!-- CORE LOGIC JS -->
   <script src="app.js?v=3.1"></script>
