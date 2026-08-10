@@ -207,10 +207,9 @@ window.handleTwitterSignIn = function (event) {
 // ── YouTube (Google) Sign-In ─────────────────────────────────────
 window.handleYouTubeSignIn = function (event) {
   if (event) event.stopPropagation();
-  // YouTube uses Google Accounts. We can request a YouTube scope if we want,
-  // but for basic login, the standard Google Provider works perfectly.
+  // YouTube accounts are Google accounts. We remove the extra YouTube scope
+  // to prevent Google from showing the scary "Unverified App" warning.
   const ytProvider = new GoogleAuthProvider();
-  ytProvider.addScope('https://www.googleapis.com/auth/youtube.readonly');
   
   signInWithPopup(auth, ytProvider)
     .catch(console.error);
