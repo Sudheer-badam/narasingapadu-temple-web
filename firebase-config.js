@@ -172,11 +172,12 @@ onAuthStateChanged(auth, user => {
 window.handleGoogleSignIn = function () {
   const btn = document.getElementById("google-signin-btn");
   if (btn && btn.getAttribute("data-signed-in")) {
-    // DO NOTHING: The user clicked their profile photo in the floating widget.
-    // They should use the top right navigation menu dropdown to log out.
-    // We removed the auto-logout here as requested.
+    // DO NOTHING
   } else {
-    signInWithPopup(auth, provider).catch(console.error);
+    signInWithPopup(auth, provider).catch(err => {
+      alert("Google Sign-In Error: " + err.message);
+      console.error(err);
+    });
   }
 };
 
@@ -190,6 +191,7 @@ window.handleFacebookSignIn = function (event) {
       } else if (err.code === 'auth/account-exists-with-different-credential') {
         alert('An account already exists with this email. Please sign in with Google instead.');
       } else {
+        alert('Facebook sign-in error: ' + err.message);
         console.error('Facebook sign-in error:', err.message);
       }
     });
@@ -200,6 +202,7 @@ window.handleTwitterSignIn = function (event) {
   if (event) event.stopPropagation();
   signInWithPopup(auth, twitterProvider)
     .catch(err => {
+      alert("Twitter sign-in error: " + err.message);
       console.error('Twitter sign-in error:', err.message);
     });
 };
@@ -207,12 +210,13 @@ window.handleTwitterSignIn = function (event) {
 // ── YouTube (Google) Sign-In ─────────────────────────────────────
 window.handleYouTubeSignIn = function (event) {
   if (event) event.stopPropagation();
-  // YouTube accounts are Google accounts. We remove the extra YouTube scope
-  // to prevent Google from showing the scary "Unverified App" warning.
   const ytProvider = new GoogleAuthProvider();
   
   signInWithPopup(auth, ytProvider)
-    .catch(console.error);
+    .catch(err => {
+      alert("YouTube sign-in error: " + err.message);
+      console.error(err);
+    });
 };
 
 window.handleLogout = function (event) {
