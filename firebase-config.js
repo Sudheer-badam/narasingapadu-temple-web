@@ -174,43 +174,51 @@ window.handleGoogleSignIn = function () {
   if (btn && btn.getAttribute("data-signed-in")) {
     // DO NOTHING
   } else {
-    signInWithRedirect(auth, provider).catch(err => {
-      alert("Google Sign-In Error: " + err.message);
-      console.error(err);
-    });
+    try {
+      signInWithRedirect(auth, provider).catch(err => {
+        alert("Google Sign-In Error: " + err.message);
+      });
+    } catch (err) {
+      alert("Google Browser Error: " + err.message);
+    }
   }
 };
 
 // ── Facebook Sign-In ─────────────────────────────────────────────
 window.handleFacebookSignIn = function (event) {
   if (event) event.stopPropagation();
-  signInWithRedirect(auth, fbProvider)
-    .catch(err => {
+  try {
+    signInWithRedirect(auth, fbProvider).catch(err => {
       alert('Facebook sign-in error: ' + err.message);
-      console.error('Facebook sign-in error:', err.message);
     });
+  } catch (err) {
+    alert("Facebook Browser Error: " + err.message);
+  }
 };
 
 // ── Twitter Sign-In ──────────────────────────────────────────────
 window.handleTwitterSignIn = function (event) {
   if (event) event.stopPropagation();
-  signInWithRedirect(auth, twitterProvider)
-    .catch(err => {
+  try {
+    signInWithRedirect(auth, twitterProvider).catch(err => {
       alert("Twitter sign-in error: " + err.message);
-      console.error('Twitter sign-in error:', err.message);
     });
+  } catch (err) {
+    alert("Twitter Browser Error: " + err.message);
+  }
 };
 
 // ── YouTube (Google) Sign-In ─────────────────────────────────────
 window.handleYouTubeSignIn = function (event) {
   if (event) event.stopPropagation();
   const ytProvider = new GoogleAuthProvider();
-  
-  signInWithRedirect(auth, ytProvider)
-    .catch(err => {
+  try {
+    signInWithRedirect(auth, ytProvider).catch(err => {
       alert("YouTube sign-in error: " + err.message);
-      console.error(err);
     });
+  } catch (err) {
+    alert("YouTube Browser Error: " + err.message);
+  }
 };
 
 window.handleLogout = function (event) {
