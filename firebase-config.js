@@ -40,10 +40,15 @@ const analytics = getAnalytics(app);
 if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
   self.FIREBASE_APPCHECK_DEBUG_TOKEN = true;
 }
-const appCheck = initializeAppCheck(app, {
-  provider: new ReCaptchaV3Provider('6Lfvxn4tAAAALkyyuXv-smsGUYaiiUx7jl9dQ1H'),
-  isTokenAutoRefreshEnabled: true
-});
+let appCheck;
+try {
+  appCheck = initializeAppCheck(app, {
+    provider: new ReCaptchaV3Provider('6Lfvxn4tAAAALkyyuXv-smsGUYaiiUx7jl9dQ1H'),
+    isTokenAutoRefreshEnabled: true
+  });
+} catch (e) {
+  console.error("Firebase App Check failed to initialize:", e);
+}
 
 const auth     = getAuth(app);
 const db       = getFirestore(app);
