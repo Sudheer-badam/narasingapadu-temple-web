@@ -13,6 +13,7 @@
 // 7. Save this file and refresh the site
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { initializeAppCheck, ReCaptchaV3Provider } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app-check.js";
 import { getAuth, GoogleAuthProvider, FacebookAuthProvider, TwitterAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import { getFirestore, doc, setDoc, getDoc, collection, onSnapshot }
@@ -33,6 +34,13 @@ const firebaseConfig = {
 
 const app      = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+
+// ── Firebase App Check (reCAPTCHA v3 protection) ────────────────────
+const appCheck = initializeAppCheck(app, {
+  provider: new ReCaptchaV3Provider('6Lfvxn4tAAAALkyyuXv-smsGUYaiiUx7jl9dQ1H'),
+  isTokenAutoRefreshEnabled: true
+});
+
 const auth     = getAuth(app);
 const db       = getFirestore(app);
 const provider = new GoogleAuthProvider();
