@@ -136,32 +136,12 @@ onAuthStateChanged(auth, user => {
     // Hide Login Portal
     if (loginPortal) loginPortal.style.display = 'none';
     
-    // Handle Intro Splash (3 seconds)
-    if (!sessionStorage.getItem('introShown')) {
-      if (introSplash) {
-        introSplash.style.display = 'flex';
-        introSplash.style.opacity = '1';
-        introSplash.style.visibility = 'visible';
-        introSplash.classList.remove('fade-out');
-        
-        setTimeout(() => {
-          introSplash.classList.add('fade-out');
-          setTimeout(() => {
-            introSplash.style.display = 'none';
-            if (mainContent) mainContent.style.display = 'block';
-            if (welcomeBanner) welcomeBanner.style.display = 'flex';
-            document.body.style.overflow = ''; // Unlock scroll
-            sessionStorage.setItem('introShown', 'true');
-          }, 800); // wait for CSS fade
-        }, 3000); // 3 seconds intro
-      }
-    } else {
-      // Already shown intro in this session
-      if (introSplash) introSplash.style.display = 'none';
-      if (mainContent) mainContent.style.display = 'block';
-      if (welcomeBanner) welcomeBanner.style.display = 'flex';
-      document.body.style.overflow = ''; // Unlock scroll
-    }
+    // Instantly show main content
+    if (introSplash) introSplash.style.display = 'none';
+    if (mainContent) mainContent.style.display = 'block';
+    if (welcomeBanner) welcomeBanner.style.display = 'flex';
+    document.body.style.overflow = ''; // Unlock scroll
+    sessionStorage.setItem('introShown', 'true');
   } else {
     // User is logged out
     sessionStorage.removeItem('introShown');
