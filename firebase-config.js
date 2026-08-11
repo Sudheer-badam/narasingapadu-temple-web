@@ -78,18 +78,40 @@ function setupRealtimeVisitorCount() {
 // Start listening immediately
 setupRealtimeVisitorCount();
 
-// ── Record a new unique visitor (only once per Google account) ──
+// ── Record or Update unique visitor (with IP & Time) ──
 async function recordUniqueVisitor(user) {
   const ref = doc(db, "uniqueVisitors", user.uid);
   const snap = await getDoc(ref);
+  
+  // Fetch current IP address
+  let ipAddress = 'Unknown';
+  try {
+    const ipRes = await fetch('https://api.ipify.org?format=json');
+    const ipData = await ipRes.json();
+    ipAddress = ipData.ip;
+  } catch(e) {
+    console.error("Could not fetch IP address");
+  }
+
+  // Get readable Indian timezone string (e.g. 11/8/2026, 3:00:00 pm)
+  const currentTime = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
+
   if (!snap.exists()) {
     await setDoc(ref, {
       name:      user.displayName,
       email:     user.email,
       photo:     user.photoURL,
-      firstVisit: new Date().toISOString(),
+      firstVisit: currentTime,
+      lastLogin: currentTime,
+      ipAddress: ipAddress,
       uid:       user.uid
     });
+  } else {
+    // If they already exist, just update their last login time and IP
+    await setDoc(ref, {
+      lastLogin: currentTime,
+      ipAddress: ipAddress
+    }, { merge: true });
   }
 }
 
