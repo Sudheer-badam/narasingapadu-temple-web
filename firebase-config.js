@@ -79,21 +79,43 @@ function setupRealtimeVisitorCount() {
 // Start listening immediately
 setupRealtimeVisitorCount();
 
-// ── Record or Update unique visitor (with IP & Time) ──
+// ── Helper to detect device ──
+function getDeviceName() {
+  const ua = navigator.userAgent;
+  if (/windows phone/i.test(ua)) return "Windows Phone";
+  if (/android/i.test(ua)) return "Android";
+  if (/iPad|iPhone|iPod/.test(ua)) return "iOS";
+  if (/Macintosh/i.test(ua)) return "Mac";
+  if (/Windows/i.test(ua)) return "Windows PC";
+  if (/Linux/i.test(ua)) return "Linux";
+  return "Unknown Device";
+}
+
+// ── Record or Update unique visitor (with IP, Time, Location & Device) ──
 async function recordUniqueVisitor(user) {
   const ref = doc(db, "uniqueVisitors", user.uid);
   const snap = await getDoc(ref);
   
-  // Fetch current IP address
+  // Fetch IP and Location
   let ipAddress = 'Unknown';
+  let placeName = 'Unknown Location';
   try {
-    const ipRes = await fetch('https://api.ipify.org?format=json');
-    const ipData = await ipRes.json();
-    ipAddress = ipData.ip;
+    const res = await fetch('https://ipapi.co/json/');
+    const data = await res.json();
+    if (data.ip) ipAddress = data.ip;
+    if (data.city && data.region) {
+      placeName = `${data.city}, ${data.region}, ${data.country_name || ''}`;
+    } else {
+      // Fallback if ipapi fails
+      const fallbackRes = await fetch('https://api.ipify.org?format=json');
+      const fallbackData = await fallbackRes.json();
+      if (fallbackData.ip) ipAddress = fallbackData.ip;
+    }
   } catch(e) {
-    console.error("Could not fetch IP address");
+    console.error("Could not fetch location data");
   }
 
+  const deviceName = getDeviceName();
   // Get readable Indian timezone string (e.g. 11/8/2026, 3:00:00 pm)
   const currentTime = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
 
@@ -105,13 +127,17 @@ async function recordUniqueVisitor(user) {
       firstVisit: currentTime,
       lastLogin: currentTime,
       ipAddress: ipAddress,
+      placeName: placeName,
+      deviceName: deviceName,
       uid:       user.uid
     });
   } else {
-    // If they already exist, just update their last login time and IP
+    // If they already exist, update login time, IP, location, and device
     await setDoc(ref, {
       lastLogin: currentTime,
-      ipAddress: ipAddress
+      ipAddress: ipAddress,
+      placeName: placeName,
+      deviceName: deviceName
     }, { merge: true });
   }
 }
