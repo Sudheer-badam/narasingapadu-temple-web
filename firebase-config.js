@@ -96,23 +96,25 @@ async function recordUniqueVisitor(user) {
   const ref = doc(db, "uniqueVisitors", user.uid);
   const snap = await getDoc(ref);
   
-  // Fetch IP and Location
+  // Fetch IP and Location using ip-api.com (free, reliable, no key needed)
   let ipAddress = 'Unknown';
   let placeName = 'Unknown Location';
   try {
-    const res = await fetch('https://ipapi.co/json/');
+    const res = await fetch('https://ip-api.com/json/?fields=status,city,regionName,country,query');
     const data = await res.json();
-    if (data.ip) ipAddress = data.ip;
-    if (data.city && data.region) {
-      placeName = `${data.city}, ${data.region}, ${data.country_name || ''}`;
-    } else {
-      // Fallback if ipapi fails
-      const fallbackRes = await fetch('https://api.ipify.org?format=json');
-      const fallbackData = await fallbackRes.json();
-      if (fallbackData.ip) ipAddress = fallbackData.ip;
+    if (data.status === 'success') {
+      ipAddress = data.query || 'Unknown';
+      const parts = [data.city, data.regionName, data.country].filter(Boolean);
+      placeName = parts.length > 0 ? parts.join(', ') : 'Unknown Location';
     }
   } catch(e) {
-    console.error("Could not fetch location data");
+    // Final fallback — just get IP
+    try {
+      const fallback = await fetch('https://api.ipify.org?format=json');
+      const fd = await fallback.json();
+      if (fd.ip) ipAddress = fd.ip;
+    } catch(e2) {}
+    console.error("Could not fetch location data", e);
   }
 
   const deviceName = getDeviceName();
