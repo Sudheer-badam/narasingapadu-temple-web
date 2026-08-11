@@ -14,7 +14,7 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 
-import { getAuth, GoogleAuthProvider, FacebookAuthProvider, TwitterAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
+import { getAuth, GoogleAuthProvider, FacebookAuthProvider, TwitterAuthProvider, OAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import { getFirestore, doc, setDoc, getDoc, collection, onSnapshot }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
@@ -60,6 +60,7 @@ const db       = getFirestore(app);
 const provider = new GoogleAuthProvider();
 const fbProvider = new FacebookAuthProvider();
 const twitterProvider = new TwitterAuthProvider();
+const microsoftProvider = new OAuthProvider('microsoft.com');
 
 // ── Listen & display the total unique visitor count in real-time ──
 function setupRealtimeVisitorCount() {
@@ -202,6 +203,12 @@ window.handleYouTubeSignIn = function (event) {
   if (event) event.stopPropagation();
   const ytProvider = new GoogleAuthProvider();
   signInWithPopup(auth, ytProvider).catch(showAuthError);
+};
+
+// ── Microsoft Sign-In ────────────────────────────────────────────
+window.handleMicrosoftSignIn = function (event) {
+  if (event) event.stopPropagation();
+  signInWithPopup(auth, microsoftProvider).catch(showAuthError);
 };
 
 window.handleLogout = function (event) {
