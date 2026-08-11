@@ -96,25 +96,38 @@ async function recordUniqueVisitor(user) {
   const ref = doc(db, "uniqueVisitors", user.uid);
   const snap = await getDoc(ref);
   
-  // Fetch IP and Location using ip-api.com (free, reliable, no key needed)
+  // Fetch IP and Location — use HTTPS-compatible APIs only
   let ipAddress = 'Unknown';
   let placeName = 'Unknown Location';
+
+  // Primary: ipwho.is — free, HTTPS, no API key needed
   try {
-    const res = await fetch('https://ip-api.com/json/?fields=status,city,regionName,country,query');
+    const res = await fetch('https://ipwho.is/');
     const data = await res.json();
-    if (data.status === 'success') {
-      ipAddress = data.query || 'Unknown';
-      const parts = [data.city, data.regionName, data.country].filter(Boolean);
+    if (data.success) {
+      ipAddress = data.ip || 'Unknown';
+      const parts = [data.city, data.region, data.country].filter(Boolean);
       placeName = parts.length > 0 ? parts.join(', ') : 'Unknown Location';
     }
-  } catch(e) {
-    // Final fallback — just get IP
+  } catch(e1) {
+    // Fallback 1: freeipapi.com — free, HTTPS, no API key needed
     try {
-      const fallback = await fetch('https://api.ipify.org?format=json');
-      const fd = await fallback.json();
-      if (fd.ip) ipAddress = fd.ip;
-    } catch(e2) {}
-    console.error("Could not fetch location data", e);
+      const res2 = await fetch('https://freeipapi.com/api/json');
+      const data2 = await res2.json();
+      if (data2.ipAddress) {
+        ipAddress = data2.ipAddress;
+        const parts2 = [data2.cityName, data2.regionName, data2.countryName].filter(Boolean);
+        placeName = parts2.length > 0 ? parts2.join(', ') : 'Unknown Location';
+      }
+    } catch(e2) {
+      // Fallback 2: just get IP
+      try {
+        const res3 = await fetch('https://api.ipify.org?format=json');
+        const data3 = await res3.json();
+        if (data3.ip) ipAddress = data3.ip;
+      } catch(e3) {}
+      console.error("Could not fetch location data", e2);
+    }
   }
 
   const deviceName = getDeviceName();
