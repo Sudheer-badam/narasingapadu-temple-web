@@ -134,11 +134,17 @@ async function recordUniqueVisitor(user) {
   // Get readable Indian timezone string (e.g. 11/8/2026, 3:00:00 pm)
   const currentTime = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
 
+  // Get the primary provider (e.g. google.com, facebook.com, twitter.com)
+  const loginProvider = (user.providerData && user.providerData.length > 0) 
+    ? user.providerData[0].providerId 
+    : 'Unknown';
+
   if (!snap.exists()) {
     await setDoc(ref, {
-      name:      user.displayName,
-      email:     user.email,
-      photo:     user.photoURL,
+      name:      user.displayName || "Unknown",
+      email:     user.email || "No Email Provided",
+      photo:     user.photoURL || "",
+      provider:  loginProvider,
       firstVisit: currentTime,
       lastLogin: currentTime,
       ipAddress: ipAddress,
@@ -147,8 +153,12 @@ async function recordUniqueVisitor(user) {
       uid:       user.uid
     });
   } else {
-    // If they already exist, update login time, IP, location, and device
+    // If they already exist, update login time, IP, location, device, and profile info
     await setDoc(ref, {
+      name:      user.displayName || "Unknown",
+      email:     user.email || "No Email Provided",
+      photo:     user.photoURL || "",
+      provider:  loginProvider,
       lastLogin: currentTime,
       ipAddress: ipAddress,
       placeName: placeName,
