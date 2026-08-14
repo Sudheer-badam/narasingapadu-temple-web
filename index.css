@@ -308,7 +308,7 @@ body.lang-te .scrolling-ticker .ticker-text-wrapper {
   align-items: center;
   gap: 15px;
   text-decoration: none;
-  flex-shrink: 0;
+  flex-shrink: 1;
   max-width: 420px;
 }
 
@@ -357,7 +357,7 @@ body.lang-te .logo-main {
   line-height: 1.3;
   color: var(--gold-bright);
   text-shadow: 0 1px 4px rgba(0,0,0,0.4);
-  white-space: nowrap;
+  white-space: normal;
 }
 
 body.lang-te .logo-sub {
@@ -453,6 +453,7 @@ body.lang-te .lang-btn {
   font-size: 1.8rem;
   color: var(--text-light);
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 /* Language Toggle Button */
