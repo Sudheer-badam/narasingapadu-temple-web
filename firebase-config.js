@@ -192,8 +192,8 @@ onAuthStateChanged(auth, user => {
     const welcomePhoto = document.getElementById('welcome-user-photo');
     if (welcomeText) welcomeText.textContent = user.displayName || 'User';
     if (welcomeEmail) welcomeEmail.textContent = user.email || '';
-    if (welcomePhoto && user.photoURL) {
-      welcomePhoto.src = user.photoURL;
+    if (welcomePhoto) {
+      welcomePhoto.src = user.photoURL || 'assets/images/favicon_circle.png';
       welcomePhoto.style.display = "inline-block";
     }
     
