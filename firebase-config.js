@@ -227,39 +227,79 @@ onAuthStateChanged(auth, user => {
   }
 });
 
+import { getFunctions, httpsCallable } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-functions.js";
+
+const functions = getFunctions(app);
+
+// ── Backend reCAPTCHA Verification Helper ────────────────────────
+async function verifyRecaptchaBackend() {
+  if (typeof grecaptcha === 'undefined' || !grecaptcha.enterprise) {
+    alert("reCAPTCHA is not loaded yet.");
+    return false;
+  }
+  
+  const token = grecaptcha.enterprise.getResponse();
+  if (!token) {
+    alert("Please check the 'I am not a robot' box first.");
+    return false;
+  }
+
+  try {
+    const verifyRecaptcha = httpsCallable(functions, 'verifyRecaptcha');
+    const result = await verifyRecaptcha({ token: token, action: 'login' });
+    if (result.data.success) {
+      return true;
+    }
+  } catch (error) {
+    console.error("reCAPTCHA backend verification failed:", error);
+    alert("reCAPTCHA verification failed. Please try again.");
+    grecaptcha.enterprise.reset();
+  }
+  return false;
+}
+
 // ── Handle Sign-In / Sign-Out button click ──────────────────────
-window.handleGoogleSignIn = function () {
+window.handleGoogleSignIn = async function () {
   const btn = document.getElementById("google-signin-btn");
   if (btn && btn.getAttribute("data-signed-in")) {
-    // Already signed in — do nothing
-  } else {
+    return;
+  }
+  if (await verifyRecaptchaBackend()) {
     signInWithPopup(auth, provider).catch(showAuthError);
   }
 };
 
 // ── Facebook Sign-In ─────────────────────────────────────────────
-window.handleFacebookSignIn = function (event) {
+window.handleFacebookSignIn = async function (event) {
   if (event) event.stopPropagation();
-  signInWithPopup(auth, fbProvider).catch(showAuthError);
+  if (await verifyRecaptchaBackend()) {
+    signInWithPopup(auth, fbProvider).catch(showAuthError);
+  }
 };
 
 // ── Twitter Sign-In ──────────────────────────────────────────────
-window.handleTwitterSignIn = function (event) {
+window.handleTwitterSignIn = async function (event) {
   if (event) event.stopPropagation();
-  signInWithPopup(auth, twitterProvider).catch(showAuthError);
+  if (await verifyRecaptchaBackend()) {
+    signInWithPopup(auth, twitterProvider).catch(showAuthError);
+  }
 };
 
 // ── YouTube (Google) Sign-In ─────────────────────────────────────
-window.handleYouTubeSignIn = function (event) {
+window.handleYouTubeSignIn = async function (event) {
   if (event) event.stopPropagation();
   const ytProvider = new GoogleAuthProvider();
-  signInWithPopup(auth, ytProvider).catch(showAuthError);
+  if (await verifyRecaptchaBackend()) {
+    signInWithPopup(auth, ytProvider).catch(showAuthError);
+  }
 };
 
 // ── Microsoft Sign-In ────────────────────────────────────────────
-window.handleMicrosoftSignIn = function (event) {
+window.handleMicrosoftSignIn = async function (event) {
   if (event) event.stopPropagation();
-  signInWithPopup(auth, microsoftProvider).catch(showAuthError);
+  if (await verifyRecaptchaBackend()) {
+    signInWithPopup(auth, microsoftProvider).catch(showAuthError);
+  }
 };
 
 window.handleLogout = function (event) {
