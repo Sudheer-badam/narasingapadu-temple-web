@@ -224,6 +224,9 @@ onAuthStateChanged(auth, user => {
     if (mainContent) mainContent.style.display = 'none';
     if (welcomeBanner) welcomeBanner.style.display = 'none';
     document.body.style.overflow = 'hidden'; // Lock scroll
+  }
+});
+
 // ── Handle Sign-In / Sign-Out button click ──────────────────────
 window.handleGoogleSignIn = function () {
   const btn = document.getElementById("google-signin-btn");
