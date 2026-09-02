@@ -37,8 +37,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="index.css?v=31">
 
-  <!-- reCAPTCHA Enterprise Protection -->
-  <script src="https://www.google.com/recaptcha/enterprise.js?render=6Le0eX0tAAAAAPkZ7HrMy_50651_sE3jl_8E2QH9" async defer></script>
+  <!-- reCAPTCHA v2 API -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
   <!-- Structured Data / JSON-LD for SEO -->
   <script type="application/ld+json">
@@ -130,45 +130,62 @@
         </div>
         <p class="intro-subtitle" style="margin-bottom: 1.5rem; color:#d4af37; font-weight:600; font-size:1.05rem;">Please Login to Enter the Sacred Temple</p>
         
-        <div style="display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 300px; margin: 0 auto;">
-          <!-- Google Main Button -->
-          <button onclick="handleGoogleSignIn()" class="btn-primary" style="display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 1.05rem; padding: 10px 20px; background: white; color: #333; border: 2px solid #d4af37; border-radius: 30px; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); transition: transform 0.2s;">
-            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" style="width:22px;height:22px;">
-            <span style="font-weight:600;">Sign in with Google</span>
-          </button>
-          
-          <!-- OR Divider -->
-          <div style="display: flex; align-items: center; justify-content: center; margin: 5px 0;">
-            <div style="flex-grow: 1; height: 1px; background: rgba(212,175,55,0.3);"></div>
-            <span style="margin: 0 10px; color: #d4af37; font-size: 0.8rem; font-weight: 600;">OR</span>
-            <div style="flex-grow: 1; height: 1px; background: rgba(212,175,55,0.3);"></div>
-          </div>
-          
-          <!-- Icon-Only Social Buttons Row -->
-          <div style="display: flex; justify-content: center; gap: 15px;">
-            <!-- Facebook -->
-            <button onclick="handleFacebookSignIn(event)" class="btn-primary" style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; padding: 0; background: #1877F2; color: white; border: none; border-radius: 50%; box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3); transition: transform 0.2s;">
-              <i class="fa-brands fa-facebook-f" style="font-size: 20px;"></i>
+        <div style="display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 300px; margin: 0 auto; align-items: center;">
+          <!-- reCAPTCHA v2 Widget -->
+          <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-callback="enableLoginButtons"></div>
+
+          <!-- Login Buttons Container (Disabled until reCAPTCHA is verified) -->
+          <div id="login-buttons-container" style="display: flex; flex-direction: column; gap: 15px; width: 100%; opacity: 0.4; pointer-events: none; transition: opacity 0.3s ease;">
+            <!-- Google Main Button -->
+            <button onclick="handleGoogleSignIn()" class="btn-primary" style="display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 1.05rem; padding: 10px 20px; background: white; color: #333; border: 2px solid #d4af37; border-radius: 30px; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); transition: transform 0.2s;">
+              <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" style="width:22px;height:22px;">
+              <span style="font-weight:600;">Sign in with Google</span>
             </button>
             
-            <!-- Twitter / X -->
-            <button onclick="handleTwitterSignIn(event)" class="btn-primary" style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; padding: 0; background: #000; color: white; border: 1px solid #555; border-radius: 50%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); transition: transform 0.2s;">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" style="width:20px;height:20px;fill:white;">
-                <path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.1h26.46l102.4-116.59 81.8 116.59h89.34M36.01 19.54H76.66l187.13 262.13h-40.66"/>
-              </svg>
-            </button>
+            <!-- OR Divider -->
+            <div style="display: flex; align-items: center; justify-content: center; margin: 5px 0;">
+              <div style="flex-grow: 1; height: 1px; background: rgba(212,175,55,0.3);"></div>
+              <span style="margin: 0 10px; color: #d4af37; font-size: 0.8rem; font-weight: 600;">OR</span>
+              <div style="flex-grow: 1; height: 1px; background: rgba(212,175,55,0.3);"></div>
+            </div>
+            
+            <!-- Icon-Only Social Buttons Row -->
+            <div style="display: flex; justify-content: center; gap: 15px;">
+              <!-- Facebook -->
+              <button onclick="handleFacebookSignIn(event)" class="btn-primary" style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; padding: 0; background: #1877F2; color: white; border: none; border-radius: 50%; box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3); transition: transform 0.2s;">
+                <i class="fa-brands fa-facebook-f" style="font-size: 20px;"></i>
+              </button>
+              
+              <!-- Twitter / X -->
+              <button onclick="handleTwitterSignIn(event)" class="btn-primary" style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; padding: 0; background: #000; color: white; border: 1px solid #555; border-radius: 50%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); transition: transform 0.2s;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" style="width:20px;height:20px;fill:white;">
+                  <path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.1h26.46l102.4-116.59 81.8 116.59h89.34M36.01 19.54H76.66l187.13 262.13h-40.66"/>
+                </svg>
+              </button>
 
-            <!-- YouTube -->
-            <button onclick="handleYouTubeSignIn(event)" class="btn-primary" style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; padding: 0; background: #FF0000; color: white; border: none; border-radius: 50%; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3); transition: transform 0.2s;">
-              <i class="fa-brands fa-youtube" style="font-size: 20px;"></i>
-            </button>
+              <!-- YouTube -->
+              <button onclick="handleYouTubeSignIn(event)" class="btn-primary" style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; padding: 0; background: #FF0000; color: white; border: none; border-radius: 50%; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3); transition: transform 0.2s;">
+                <i class="fa-brands fa-youtube" style="font-size: 20px;"></i>
+              </button>
 
-            <!-- Microsoft -->
-            <button onclick="handleMicrosoftSignIn(event)" class="btn-primary" style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; padding: 0; background: white; border: 1px solid #d4af37; border-radius: 50%; box-shadow: 0 4px 15px rgba(0, 164, 239, 0.3); transition: transform 0.2s;">
-              <img src="microsoft-logo.png" alt="Microsoft" style="width:26px; height:26px; object-fit:contain;">
-            </button>
+              <!-- Microsoft -->
+              <button onclick="handleMicrosoftSignIn(event)" class="btn-primary" style="display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; padding: 0; background: white; border: 1px solid #d4af37; border-radius: 50%; box-shadow: 0 4px 15px rgba(0, 164, 239, 0.3); transition: transform 0.2s;">
+                <img src="microsoft-logo.png" alt="Microsoft" style="width:26px; height:26px; object-fit:contain;">
+              </button>
+            </div>
           </div>
         </div>
+        
+        <!-- Script to enable login buttons upon reCAPTCHA success -->
+        <script>
+          function enableLoginButtons() {
+            var container = document.getElementById('login-buttons-container');
+            if (container) {
+              container.style.opacity = '1';
+              container.style.pointerEvents = 'auto';
+            }
+          }
+        </script>
       </div>
     </div>
   </div>
