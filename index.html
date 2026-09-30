@@ -91,8 +91,29 @@
     "knowsAbout": ["Viswanatha Satyanarayana", "Telugu devotional poetry", "Viswanatha Madhyakkaralu", "Lord Kasi Visweswara", "Goddess Annapurna"]
   }
   </script>
+  <!-- Leaflet CSS and JS for Free Admin Live Users Map (Satellite) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body class="lang-te" style="overflow: hidden;"> <!-- Lock scroll by default for login portal -->
+
+  <!-- LOCATION PERMISSION OVERLAY -->
+  <div id="location-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(10, 5, 2, 0.95); z-index:99999999; flex-direction:column; align-items:center; justify-content:center; color:white; text-align:center; padding:20px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+    <i class="fa-solid fa-location-dot" style="font-size: 4rem; color: #d4af37; margin-bottom: 20px; text-shadow: 0 0 20px rgba(212,175,55,0.5);"></i>
+    <h2 style="color: #d4af37; margin-bottom: 10px; font-size: 1.8rem; font-family: sans-serif;">Location Access Required</h2>
+    <p style="margin-bottom: 25px; max-width: 400px; font-size: 1.1rem; line-height: 1.6; color: #f5e6c8; font-family: sans-serif;">You must grant location access to view this website. Please allow location permissions in your browser prompt.</p>
+    <button id="grant-location-btn" class="btn-primary" style="padding: 12px 30px; font-size: 1.1rem; border-radius: 30px; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); font-weight: bold; cursor: pointer;">Grant Location Access</button>
+    <p id="location-error-msg" style="color: #ff4d4d; margin-top: 20px; font-size: 0.95rem; max-width: 400px; display: none; background: rgba(255,0,0,0.1); padding: 10px; border-radius: 8px; border: 1px solid rgba(255,0,0,0.3); font-family: sans-serif;"></p>
+  </div>
+
+  <!-- ADMIN MAP OVERLAY -->
+  <div id="admin-map-container" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#1a0f08; z-index:999999; flex-direction:column;">
+    <div style="padding: 15px 20px; background: #0a0502; border-bottom: 1px solid rgba(212,175,55,0.3); display: flex; justify-content: space-between; align-items: center;">
+      <h2 style="color: #d4af37; margin: 0; font-size: 1.3rem; font-family: sans-serif;"><i class="fa-solid fa-map-location-dot"></i> Admin Live Users Map</h2>
+      <button onclick="window.closeAdminMap()" class="btn-primary" style="padding: 6px 15px; border-radius: 20px; font-size: 0.9rem; cursor: pointer;"><i class="fa-solid fa-xmark"></i> Close Map</button>
+    </div>
+    <div id="admin-map" style="flex-grow: 1; width: 100%;"></div>
+  </div>
 
   <!-- LOGIN PORTAL -->
   <div id="login-portal" class="intro-splash" style="z-index: 9999999; background-color: #0a0502;">

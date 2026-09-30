@@ -16,7 +16,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/fireba
 
 import { getAuth, GoogleAuthProvider, FacebookAuthProvider, TwitterAuthProvider, OAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-import { getFirestore, doc, setDoc, getDoc, collection, onSnapshot }
+import { getFirestore, doc, setDoc, getDoc, deleteDoc, collection, onSnapshot }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
 
@@ -48,6 +48,9 @@ const firebaseConfig = {
   measurementId: "G-QVV9YE4T3Z"
 };
 // ──────────────────────────────────────────────────────────────
+
+// Firebase App Check Debug Token (Localhost development)
+self.FIREBASE_APPCHECK_DEBUG_TOKEN = "AVweKogafAW1OzxCjTMl3i_deYmm-XWSoIGNH6K1B8MFpwGy4LoGAKhXJgwHK-eSjpGYcSdqaMrl59S4KNX5kEuZ6N9A72xWXIwWxDIHO7zEwS_DAYF3_i4kBFqRCEQcCiu-ksySMec8g0WgMj3AVpt9ZA";
 
 const app      = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
@@ -92,7 +95,7 @@ function getDeviceName() {
 }
 
 // ── Record or Update unique visitor (with IP, Time, Location & Device) ──
-async function recordUniqueVisitor(user) {
+async function recordUniqueVisitor(user, lat = null, lng = null) {
   const ref = doc(db, "uniqueVisitors", user.uid);
   const snap = await getDoc(ref);
   
@@ -150,7 +153,9 @@ async function recordUniqueVisitor(user) {
       ipAddress: ipAddress,
       placeName: placeName,
       deviceName: deviceName,
-      uid:       user.uid
+      uid:       user.uid,
+      lat:       lat,
+      lng:       lng
     });
   } else {
     // If they already exist, update login time, IP, location, device, and profile info
@@ -162,7 +167,9 @@ async function recordUniqueVisitor(user) {
       lastLogin: currentTime,
       ipAddress: ipAddress,
       placeName: placeName,
-      deviceName: deviceName
+      deviceName: deviceName,
+      lat:       lat,
+      lng:       lng
     }, { merge: true });
   }
 }
@@ -183,6 +190,220 @@ function updateLoginUI(user) {
   }
 }
 
+// ── Admin & Location Config ──
+const ADMIN_EMAILS = [
+  "badamsudheerreddy@gmail.com",
+  "2300033278@kluniversity.in",
+  "2300033278cseh2@gmail.com"
+];
+
+function enforceLocationAccess(user, onSuccess) {
+  const overlay = document.getElementById('location-overlay');
+  const errorMsg = document.getElementById('location-error-msg');
+  const grantBtn = document.getElementById('grant-location-btn');
+  
+  if (overlay) overlay.style.display = 'flex';
+
+  function requestLocation() {
+    if (errorMsg) errorMsg.style.display = 'none';
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        async (position) => {
+          // Success
+          const lat = position.coords.latitude;
+          const lng = position.coords.longitude;
+          await recordUniqueVisitor(user, lat, lng);
+          onSuccess();
+        },
+        (error) => {
+          // Denied or error
+          if (errorMsg) {
+            errorMsg.style.display = 'block';
+            if (error.code === error.PERMISSION_DENIED) {
+              errorMsg.textContent = "Location access denied. Please enable it in your browser/device settings and click the button again.";
+            } else {
+              errorMsg.textContent = "Error getting location. Please try again.";
+            }
+          }
+        },
+        { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+      );
+    } else {
+      if (errorMsg) {
+        errorMsg.style.display = 'block';
+        errorMsg.textContent = "Geolocation is not supported by your browser.";
+      }
+    }
+  }
+
+  // Request immediately
+  requestLocation();
+
+  // Also bind to button for retries
+  if (grantBtn) {
+    grantBtn.onclick = requestLocation;
+  }
+}
+
+function checkAdminAndShowMapButton(user) {
+  if (ADMIN_EMAILS.includes(user.email)) {
+    let adminBtn = document.getElementById('admin-map-btn');
+    if (!adminBtn) {
+      adminBtn = document.createElement('button');
+      adminBtn.id = 'admin-map-btn';
+      adminBtn.className = 'btn-primary';
+      adminBtn.innerHTML = '<i class="fa-solid fa-map-location-dot"></i> Live Map';
+      adminBtn.style.cssText = 'margin-left: 10px; padding: 6px 12px; font-size: 0.85rem; border-radius: 20px; cursor: pointer;';
+      adminBtn.onclick = window.showAdminMap;
+      
+      const navMenu = document.getElementById('nav-menu');
+      if (navMenu) {
+        const li = document.createElement('li');
+        li.appendChild(adminBtn);
+        navMenu.insertBefore(li, document.getElementById('user-welcome-banner'));
+      }
+    }
+  }
+}
+
+let adminMap = null;
+let adminMarkers = {};
+
+window.deleteUserRecord = async function(uid) {
+  if (confirm("Are you sure you want to delete this user's data?")) {
+    try {
+      await deleteDoc(doc(db, "uniqueVisitors", uid));
+    } catch (e) {
+      console.error("Error deleting user: ", e);
+      alert("Error deleting user data.");
+    }
+  }
+};
+
+window.closeAdminMap = function() {
+  const container = document.getElementById('admin-map-container');
+  if (container) container.style.display = 'none';
+  document.body.style.overflow = ''; // Restore scroll
+};
+
+window.showAdminMap = function() {
+  const container = document.getElementById('admin-map-container');
+  if (container) {
+    container.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Lock scroll while map is open
+    window.initAdminMap();
+  }
+};
+
+window.initAdminMap = function() {
+  if (typeof L === 'undefined') {
+    alert("Map library (Leaflet) is not loaded.");
+    return;
+  }
+
+  if (!adminMap) {
+    adminMap = L.map('admin-map').setView([16.417255, 79.992644], 6);
+
+    // Free Satellite Map (Esri World Imagery)
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+      maxZoom: 19
+    }).addTo(adminMap);
+    
+    // Labels layer on top
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 19,
+      attribution: ''
+    }).addTo(adminMap);
+
+    const col = collection(db, "uniqueVisitors");
+    onSnapshot(col, (snapshot) => {
+      snapshot.docChanges().forEach((change) => {
+        const data = change.doc.data();
+        const uid = change.doc.id;
+        
+        if (change.type === "added" || change.type === "modified") {
+          if (data.lat && data.lng) {
+            const position = [data.lat, data.lng];
+            
+            // Determine device icon
+            let deviceIconClass = "fa-solid fa-desktop";
+            let deviceNameLower = (data.deviceName || "").toLowerCase();
+            if (deviceNameLower.includes("windows")) deviceIconClass = "fa-brands fa-windows";
+            else if (deviceNameLower.includes("android")) deviceIconClass = "fa-brands fa-android";
+            else if (deviceNameLower.includes("ios") || deviceNameLower.includes("mac")) deviceIconClass = "fa-brands fa-apple";
+            
+            const infoContent = `
+              <div style="color: #333; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-align: center; min-width: 220px; padding: 5px;">
+                <div style="font-weight: bold; font-size: 16px; margin-bottom: 2px; display: flex; justify-content: center; align-items: center; gap: 8px;">
+                  <img src="${data.photo || ''}" style="width:24px;height:24px;border-radius:50%;object-fit:cover;" onerror="this.style.display='none'">
+                  ${data.name}
+                </div>
+                <div style="font-size: 12px; color: #666; margin-bottom: 8px;">${data.email}</div>
+                
+                <div style="display: inline-block; background: #e8f5e9; color: #2e7d32; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: bold; margin-bottom: 8px; border: 1px solid #c8e6c9;">
+                  <span style="display:inline-block; width:8px; height:8px; background:#4caf50; border-radius:50%; margin-right:4px;"></span> LIVE NOW
+                </div>
+                
+                <div style="font-size: 12px; margin-bottom: 10px; font-weight: 600;">
+                  <i class="${deviceIconClass}" style="color: #555;"></i> Device: <span style="color:#000;">${data.deviceName || 'Unknown'}</span>
+                </div>
+                
+                <hr style="border: 0; border-top: 1px solid #e0e0e0; margin: 10px 0;">
+                
+                <div style="font-size: 13px; font-weight: bold; margin-bottom: 3px;">Lat: ${(data.lat || 0).toFixed(5)}</div>
+                <div style="font-size: 13px; font-weight: bold; margin-bottom: 8px;">Lng: ${(data.lng || 0).toFixed(5)}</div>
+                
+                <div style="font-size: 11px; color: #2e7d32; margin-bottom: 15px; font-weight: 600;">
+                  Last Update: ${data.lastLogin}
+                </div>
+                
+                <button onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=${data.lat},${data.lng}', '_blank')" style="width: 100%; background: #007bff; color: white; border: none; padding: 8px; border-radius: 5px; font-weight: bold; cursor: pointer; margin-bottom: 8px; font-size: 13px; box-shadow: 0 2px 4px rgba(0,123,255,0.3);">
+                  <i class="fa-solid fa-map-location-dot"></i> Get Directions
+                </button>
+                
+                <button onclick="window.deleteUserRecord('${uid}')" style="width: 100%; background: #dc3545; color: white; border: none; padding: 8px; border-radius: 5px; font-weight: bold; cursor: pointer; font-size: 13px; box-shadow: 0 2px 4px rgba(220,53,69,0.3);">
+                  Delete User Data
+                </button>
+              </div>
+            `;
+
+            if (adminMarkers[uid]) {
+              adminMarkers[uid].setLatLng(position);
+              adminMarkers[uid].getPopup().setContent(infoContent);
+            } else {
+              const greenIconHtml = \`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" style="fill: #28a745; filter: drop-shadow(0px 3px 5px rgba(0,0,0,0.6));"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/><circle cx="12" cy="9" r="2.5" fill="white"/></svg>\`;
+
+              const customIcon = L.divIcon({
+                className: 'custom-map-marker',
+                html: greenIconHtml,
+                iconSize: [36, 36],
+                iconAnchor: [18, 36],
+                popupAnchor: [0, -32]
+              });
+
+              const marker = L.marker(position, { icon: customIcon }).addTo(adminMap);
+              marker.bindPopup(infoContent);
+              adminMarkers[uid] = marker;
+            }
+          }
+        }
+        if (change.type === "removed") {
+          if (adminMarkers[uid]) {
+            adminMap.removeLayer(adminMarkers[uid]);
+            delete adminMarkers[uid];
+          }
+        }
+      });
+    });
+    
+    // Invalidate size to ensure it renders correctly after unhiding container
+    setTimeout(() => { adminMap.invalidateSize(); }, 300);
+  } else {
+    setTimeout(() => { adminMap.invalidateSize(); }, 300);
+  }
+};
+
 // ── Listen for auth state changes ───────────────────────────────
 onAuthStateChanged(auth, user => {
   window.isUserSignedIn = !!user;
@@ -194,28 +415,32 @@ onAuthStateChanged(auth, user => {
   const welcomeBanner = document.getElementById('user-welcome-banner');
 
   if (user) {
-    recordUniqueVisitor(user);
-    
-    // Set Welcome text
-    const welcomeText = document.getElementById('welcome-text');
-    const welcomeEmail = document.getElementById('welcome-email');
-    const welcomePhoto = document.getElementById('welcome-user-photo');
-    if (welcomeText) welcomeText.textContent = user.displayName || 'User';
-    if (welcomeEmail) welcomeEmail.textContent = user.email || '';
-    if (welcomePhoto) {
-      welcomePhoto.src = user.photoURL || 'assets/images/favicon_circle.png';
-      welcomePhoto.style.display = "inline-block";
-    }
-    
-    // Hide Login Portal
+    // Hide Login Portal first
     if (loginPortal) loginPortal.style.display = 'none';
-    
-    // Instantly show main content
-    if (introSplash) introSplash.style.display = 'none';
-    if (mainContent) mainContent.style.display = 'block';
-    if (welcomeBanner) welcomeBanner.style.display = 'flex';
-    document.body.style.overflow = ''; // Unlock scroll
-    sessionStorage.setItem('introShown', 'true');
+
+    enforceLocationAccess(user, () => {
+      // Set Welcome text
+      const welcomeText = document.getElementById('welcome-text');
+      const welcomeEmail = document.getElementById('welcome-email');
+      const welcomePhoto = document.getElementById('welcome-user-photo');
+      if (welcomeText) welcomeText.textContent = user.displayName || 'User';
+      if (welcomeEmail) welcomeEmail.textContent = user.email || '';
+      if (welcomePhoto) {
+        welcomePhoto.src = user.photoURL || 'assets/images/favicon_circle.png';
+        welcomePhoto.style.display = "inline-block";
+      }
+      
+      // Instantly show main content
+      const locationOverlay = document.getElementById('location-overlay');
+      if (locationOverlay) locationOverlay.style.display = 'none';
+      if (introSplash) introSplash.style.display = 'none';
+      if (mainContent) mainContent.style.display = 'block';
+      if (welcomeBanner) welcomeBanner.style.display = 'flex';
+      document.body.style.overflow = ''; // Unlock scroll
+      sessionStorage.setItem('introShown', 'true');
+
+      checkAdminAndShowMapButton(user);
+    });
   } else {
     // User is logged out
     sessionStorage.removeItem('introShown');
@@ -223,6 +448,8 @@ onAuthStateChanged(auth, user => {
     if (introSplash) introSplash.style.display = 'none';
     if (mainContent) mainContent.style.display = 'none';
     if (welcomeBanner) welcomeBanner.style.display = 'none';
+    const locationOverlay = document.getElementById('location-overlay');
+    if (locationOverlay) locationOverlay.style.display = 'none';
     document.body.style.overflow = 'hidden'; // Lock scroll
   }
 });
