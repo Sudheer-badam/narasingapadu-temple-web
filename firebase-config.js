@@ -233,12 +233,22 @@ async function enforceLocationAccess(user, onSuccess) {
   const errorMsg = document.getElementById('location-error-msg');
   const grantBtn = document.getElementById('grant-location-btn');
   
+  let hasPermission = false;
   try {
     const perm = await navigator.permissions.query({ name: 'geolocation' });
-    if (perm.state !== 'granted' && overlay) {
-      overlay.style.display = 'flex';
+    if (perm.state === 'granted') {
+      hasPermission = true;
     }
   } catch(e) {
+    // Fallback for Safari which doesn't support permissions.query
+  }
+
+  if (hasPermission) {
+    // Instantly unlock UI without waiting for GPS or reverse geocoding
+    if (overlay) overlay.style.display = 'none';
+    onSuccess();
+  } else {
+    // Show overlay to explain why we need location
     if (overlay) overlay.style.display = 'flex';
   }
 
@@ -246,12 +256,17 @@ async function enforceLocationAccess(user, onSuccess) {
     if (errorMsg) errorMsg.style.display = 'none';
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
-        async (position) => {
-          // Success
+        (position) => {
+          // If we haven't unlocked the UI yet, do it instantly now!
+          if (!hasPermission) {
+            hasPermission = true;
+            onSuccess();
+          }
+          
+          // Background location tracking
           const lat = position.coords.latitude;
           const lng = position.coords.longitude;
-          await recordUniqueVisitor(user, lat, lng);
-          onSuccess();
+          recordUniqueVisitor(user, lat, lng).catch(console.error);
         },
         (error) => {
           // Denied or error
