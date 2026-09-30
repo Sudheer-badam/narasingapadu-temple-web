@@ -249,20 +249,48 @@
       </div>
     </div>
     <div class="nav-container">
-      <a href="#hero" class="logo-block" id="nav-logo">
-        <div class="logo-icon">
-          <img src="lord shiva.jpg" alt="Narasingapadu Temple Logo" class="logo-photo">
-        </div>
-        <div class="logo-text">
-          <span class="logo-main" data-translate="logo_title">శ్రీ అన్నపూర్ణా సమేత కాశీ విశ్వేశ్వర స్వామి దేవస్థానం</span>
-          <span class="logo-sub" data-translate="logo_location">నరసింగపాడు, పల్నాడు జిల్లా</span>
-        </div>
-      </a>
-      
-      <button class="mobile-nav-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
 
+      <!-- ROW 1: Logo | Language Buttons | Profile Photo -->
+      <div class="nav-top-row">
+        <a href="#hero" class="logo-block" id="nav-logo">
+          <div class="logo-icon">
+            <img src="lord shiva.jpg" alt="Narasingapadu Temple Logo" class="logo-photo">
+          </div>
+          <div class="logo-text">
+            <span class="logo-main" data-translate="logo_title">శ్రీ అన్నపూర్ణా సమేత కాశీ విశ్వేశ్వర స్వామి దేవస్థానం</span>
+            <span class="logo-sub" data-translate="logo_location">నరసింగపాడు, పల్నాడు జిల్లా</span>
+          </div>
+        </a>
+
+        <!-- Language buttons - centre -->
+        <div class="lang-toggle-container">
+          <button class="lang-btn active" id="btn-te">తెలుగు</button>
+          <button class="lang-btn" id="btn-en">English</button>
+        </div>
+
+        <!-- Profile Photo - far right -->
+        <ul class="nav-actions" id="nav-actions">
+          <!-- USER WELCOME BANNER (DROPDOWN) -->
+          <li id="user-welcome-banner" class="user-profile-widget" style="display:none; list-style:none;">
+            <div class="profile-dropdown-container" onclick="this.classList.toggle('active')">
+              <img id="welcome-user-photo" src="" alt="User" class="profile-photo" style="display:none;">
+              <div class="profile-dropdown-menu">
+                <div class="profile-header">
+                  <span id="welcome-text"></span>
+                  <span id="welcome-email"></span>
+                </div>
+                <div class="profile-footer">
+                  <button onclick="handleLogout(event)" class="profile-logout-btn">
+                    <i class="fa-solid fa-right-from-bracket"></i> Logout
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ROW 2: Scrollable Nav Links (Home → Contact) -->
       <nav class="main-nav-wrapper">
         <ul class="nav-menu" id="nav-menu">
           <li><a href="#hero" class="nav-link active" data-translate="nav_home">హోమ్</a></li>
@@ -274,34 +302,6 @@
           <li><a href="#rituals" class="nav-link" data-translate="nav_rituals">నిత్య సేవలు</a></li>
           <li><a href="#committee" class="nav-link" data-translate="nav_committee">కమిటీ</a></li>
           <li><a href="#contact" class="nav-link" data-translate="nav_contact">సంప్రదించండి</a></li>
-        </ul>
-        
-        <ul class="nav-actions" id="nav-actions">
-          <li class="lang-toggle-container">
-            <button class="lang-btn active" id="btn-te">తెలుగు</button>
-            <button class="lang-btn" id="btn-en">English</button>
-          </li>
-          
-          <!-- USER WELCOME BANNER (DROPDOWN) -->
-          <li id="user-welcome-banner" class="user-profile-widget" style="display:none; margin-left:5px; list-style:none;">
-            <div class="profile-dropdown-container" onclick="this.classList.toggle('active')">
-              <img id="welcome-user-photo" src="" alt="User" class="profile-photo" style="display:none;">
-              
-              <!-- Dropdown Menu -->
-              <div class="profile-dropdown-menu">
-                <div class="profile-header">
-                  <span id="welcome-text"></span>
-                  <span id="welcome-email"></span>
-                </div>
-                
-                <div class="profile-footer">
-                  <button onclick="handleLogout(event)" class="profile-logout-btn">
-                    <i class="fa-solid fa-right-from-bracket"></i> Logout
-                  </button>
-                </div>
-              </div>
-            </div>
-          </li>
         </ul>
       </nav>
 
