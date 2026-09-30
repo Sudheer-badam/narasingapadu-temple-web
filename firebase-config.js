@@ -282,7 +282,7 @@ function checkAdminAndShowMapButton(user) {
       adminBtn.id = 'admin-map-btn';
       adminBtn.className = 'btn-primary';
       adminBtn.innerHTML = '<i class="fa-solid fa-map-location-dot"></i> Live Map';
-      adminBtn.style.cssText = 'margin-left: 10px; padding: 6px 12px; font-size: 0.85rem; border-radius: 20px; cursor: pointer;';
+      adminBtn.style.cssText = 'margin-left: 10px; padding: 4px 8px; font-size: 0.75rem; border-radius: 15px; cursor: pointer;';
       adminBtn.onclick = window.showAdminMap;
       
       const navMenu = document.getElementById('nav-menu');
