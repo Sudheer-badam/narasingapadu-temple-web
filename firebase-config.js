@@ -307,6 +307,17 @@ async function enforceLocationAccess(user, onSuccess) {
 
 function checkAdminAndShowMapButton(user) {
   if (ADMIN_EMAILS.includes(user.email)) {
+    // ── Sync Public Counter ──
+    // Because we just switched to a secure public counter, we need to initialize it 
+    // to the real total number of visitors. Since you are an admin, you have permission to count them!
+    import('https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js').then(async ({ getDocs, collection, doc, setDoc }) => {
+      try {
+        const snap = await getDocs(collection(db, "uniqueVisitors"));
+        const realCount = snap.size;
+        await setDoc(doc(db, "siteStats", "visitors"), { count: realCount }, { merge: true });
+      } catch(e) { console.error("Error syncing counter:", e); }
+    });
+
     let adminBtn = document.getElementById('admin-map-btn');
     if (!adminBtn) {
       adminBtn = document.createElement('button');
@@ -402,9 +413,7 @@ window.initAdminMap = function() {
       "Google Terrain": googleTerrain
     };
 
-    const overlayMaps = {
-      "Borders & Labels": labels
-    };
+    const overlayMaps = {};
 
     // Add the Google Maps style layer toggle to top right
     L.control.layers(baseMaps, overlayMaps, { position: 'topright' }).addTo(adminMap);
