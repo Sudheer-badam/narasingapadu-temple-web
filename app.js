@@ -3861,25 +3861,38 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 3. Set up scroll navigation active highlighter
-  const sections = document.querySelectorAll('section');
+  const sections = document.querySelectorAll('section, .hero');
   const navLinks = document.querySelectorAll('.nav-link');
+  let currentActiveId = '';
   
   window.addEventListener('scroll', () => {
     let current = '';
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      if (window.scrollY >= (sectionTop - 200)) {
+      if (window.scrollY >= (sectionTop - 250)) {
         current = section.getAttribute('id');
       }
     });
 
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
-    });
+    if (current && currentActiveId !== current) {
+      currentActiveId = current;
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+          
+          // Auto scroll nav menu to keep active link in view
+          const navMenuEl = document.getElementById('nav-menu');
+          if (navMenuEl) {
+            const scrollPos = link.offsetLeft - navMenuEl.offsetLeft - (navMenuEl.clientWidth / 2) + (link.clientWidth / 2);
+            navMenuEl.scrollTo({
+              left: scrollPos,
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+    }
   });
 
   // 4. Set up language selectors
