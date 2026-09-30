@@ -262,7 +262,8 @@ async function enforceLocationAccess(user, onSuccess) {
   function requestLocation() {
     if (errorMsg) errorMsg.style.display = 'none';
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
+      if (window.locationWatchId) navigator.geolocation.clearWatch(window.locationWatchId);
+      window.locationWatchId = navigator.geolocation.watchPosition(
         (position) => {
           // If we haven't unlocked the UI yet, do it instantly now!
           if (!hasPermission) {
@@ -270,10 +271,19 @@ async function enforceLocationAccess(user, onSuccess) {
             onSuccess();
           }
           
-          // Background location tracking
+          // Background live location tracking
           const lat = position.coords.latitude;
           const lng = position.coords.longitude;
-          recordUniqueVisitor(user, lat, lng).catch(console.error);
+          
+          // Store globally so the heartbeat can push it continuously
+          window.currentLat = lat;
+          window.currentLng = lng;
+          
+          // Only do the heavy reverse geocoding API call once
+          if (!window.addressLookedUp) {
+            window.addressLookedUp = true;
+            recordUniqueVisitor(user, lat, lng).catch(console.error);
+          }
         },
         (error) => {
           // Denied or error
@@ -489,12 +499,24 @@ window.initAdminMap = function() {
               </div>
             `;
 
+            const isOnlineStatus = data.lastActiveTimestamp && (Date.now() - data.lastActiveTimestamp < 5000);
+            const markerColor = isOnlineStatus ? '#4caf50' : '#2196f3';
+
             if (adminMarkers[uid]) {
               adminMarkers[uid].setLatLng(position);
+              if (adminMarkers[uid].setStyle) {
+                adminMarkers[uid].setStyle({ fillColor: markerColor });
+              }
               adminMarkers[uid].getPopup().setContent(infoContent);
             } else {
-              // Use default Leaflet marker (blue pin) to match user preference
-              const marker = L.marker(position).addTo(adminMap);
+              const marker = L.circleMarker(position, {
+                radius: 8,
+                fillColor: markerColor,
+                color: '#ffffff',
+                weight: 2,
+                opacity: 1,
+                fillOpacity: 1
+              }).addTo(adminMap);
               marker.bindPopup(infoContent);
               adminMarkers[uid] = marker;
             }
@@ -533,13 +555,17 @@ onAuthStateChanged(auth, user => {
     // Register user instantly so their DB document exists immediately
     recordUniqueVisitor(user).catch(console.error);
 
-    // Heartbeat for accurate online status
+    // Heartbeat for accurate online status and LIVE physical movement tracking
     if (window.presenceHeartbeat) clearInterval(window.presenceHeartbeat);
     window.presenceHeartbeat = setInterval(async () => {
       try {
-        await updateDoc(doc(db, "uniqueVisitors", user.uid), {
-          lastActiveTimestamp: Date.now()
-        });
+        const updates = { lastActiveTimestamp: Date.now() };
+        // If they are moving around, push their exact live GPS coords!
+        if (window.currentLat && window.currentLng) {
+          updates.lat = window.currentLat;
+          updates.lng = window.currentLng;
+        }
+        await updateDoc(doc(db, "uniqueVisitors", user.uid), updates);
       } catch (e) {}
     }, 1000); // 1 second
 
@@ -569,6 +595,10 @@ onAuthStateChanged(auth, user => {
   } else {
     // User is logged out
     if (window.presenceHeartbeat) clearInterval(window.presenceHeartbeat);
+    if (window.locationWatchId) navigator.geolocation.clearWatch(window.locationWatchId);
+    window.addressLookedUp = false;
+    window.currentLat = null;
+    window.currentLng = null;
     sessionStorage.removeItem('introShown');
     if (loginPortal) loginPortal.style.display = 'flex';
     if (introSplash) introSplash.style.display = 'none';
