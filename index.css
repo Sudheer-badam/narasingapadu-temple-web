@@ -284,18 +284,22 @@ body.lang-te .scrolling-ticker .ticker-text-wrapper {
   width: 100%;
   margin: 0 auto;
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
-  padding: 0.8rem 1.5rem 0 1.5rem;
+  padding: 0.6rem 1rem 0 1rem;
+  gap: 0;
 }
 
-@media (min-width: 1024px) {
+/* Desktop: everything in one row */
+@media (min-width: 769px) {
+  .nav-container {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 0.8rem 1.5rem 0 1.5rem;
+  }
   .nav-container > .logo-block {
     flex: 0 1 auto;
-    justify-content: flex-start;
   }
-  
   .main-nav-wrapper {
     flex: 1 1 auto;
     display: flex;
@@ -303,6 +307,42 @@ body.lang-te .scrolling-ticker .ticker-text-wrapper {
     align-items: center;
     min-width: 0;
     gap: 15px;
+  }
+  .nav-actions {
+    flex-shrink: 0;
+  }
+}
+
+/* Mobile: two-row layout */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-wrap: wrap;
+    padding: 0.5rem 0.8rem 0 0.8rem;
+    gap: 0;
+    align-items: center;
+  }
+  /* Row 1: Logo takes most space, actions pin to right */
+  .nav-container > .logo-block {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .nav-actions {
+    flex: 0 0 auto !important;
+    margin-left: auto !important;
+    order: 2;
+  }
+  /* Row 2: Full-width scrollable nav */
+  .main-nav-wrapper {
+    order: 3;
+    width: 100%;
+    flex: 0 0 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 4px;
+  }
+  /* Hide hamburger - we use horizontal scroll instead */
+  .mobile-nav-toggle {
+    display: none !important;
   }
 }
 
