@@ -184,7 +184,8 @@ async function recordUniqueVisitor(user, lat = null, lng = null) {
       deviceName: deviceName,
       uid:       user.uid,
       lat:       lat,
-      lng:       lng
+      lng:       lng,
+      lastActiveTimestamp: Date.now()
     });
   } else {
     // If they already exist, update login time, IP, location, device, and profile info
@@ -198,7 +199,8 @@ async function recordUniqueVisitor(user, lat = null, lng = null) {
       placeName: placeName,
       deviceName: deviceName,
       lat:       lat,
-      lng:       lng
+      lng:       lng,
+      lastActiveTimestamp: Date.now()
     }, { merge: true });
   }
 }
@@ -403,9 +405,20 @@ window.initAdminMap = function() {
                 </div>
                 <div style="font-size: 12px; color: #666; margin-bottom: 8px;">${data.email}</div>
                 
-                <div style="display: inline-block; background: #e8f5e9; color: #2e7d32; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: bold; margin-bottom: 8px; border: 1px solid #c8e6c9;">
-                  <span style="display:inline-block; width:8px; height:8px; background:#4caf50; border-radius:50%; margin-right:4px;"></span> LIVE NOW
-                </div>
+                ${ (() => {
+                  const isOnline = data.lastActiveTimestamp && (Date.now() - data.lastActiveTimestamp < 120000); // 2 minutes
+                  if (isOnline) {
+                    return `
+                    <div style="display: inline-block; background: #e8f5e9; color: #2e7d32; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: bold; margin-bottom: 8px; border: 1px solid #c8e6c9;">
+                      <span style="display:inline-block; width:8px; height:8px; background:#4caf50; border-radius:50%; margin-right:4px;"></span> ONLINE
+                    </div>`;
+                  } else {
+                    return `
+                    <div style="display: inline-block; background: #f5f5f5; color: #757575; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: bold; margin-bottom: 8px; border: 1px solid #e0e0e0;">
+                      <span style="display:inline-block; width:8px; height:8px; background:#9e9e9e; border-radius:50%; margin-right:4px;"></span> OFFLINE
+                    </div>`;
+                  }
+                })() }
                 
                 <div style="font-size: 12px; margin-bottom: 10px; font-weight: 600;">
                   <i class="${deviceIconClass}" style="color: #555;"></i> Device: <span style="color:#000;">${data.deviceName || 'Unknown'}</span>
@@ -475,6 +488,16 @@ onAuthStateChanged(auth, user => {
     // Hide Login Portal first
     if (loginPortal) loginPortal.style.display = 'none';
 
+    // Heartbeat for accurate online status
+    if (window.presenceHeartbeat) clearInterval(window.presenceHeartbeat);
+    window.presenceHeartbeat = setInterval(async () => {
+      try {
+        await updateDoc(doc(db, "uniqueVisitors", user.uid), {
+          lastActiveTimestamp: Date.now()
+        });
+      } catch (e) {}
+    }, 60000); // 1 minute
+
     enforceLocationAccess(user, () => {
       // Set Welcome text
       const welcomeText = document.getElementById('welcome-text');
@@ -500,6 +523,7 @@ onAuthStateChanged(auth, user => {
     });
   } else {
     // User is logged out
+    if (window.presenceHeartbeat) clearInterval(window.presenceHeartbeat);
     sessionStorage.removeItem('introShown');
     if (loginPortal) loginPortal.style.display = 'flex';
     if (introSplash) introSplash.style.display = 'none';
