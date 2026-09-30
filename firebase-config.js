@@ -342,38 +342,31 @@ window.initAdminMap = function() {
   if (!adminMap) {
     adminMap = L.map('admin-map').setView([16.417255, 79.992644], 6);
 
-    const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-      attribution: 'Tiles &copy; Esri',
+    const googleHybrid = L.tileLayer('https://{s}.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
       maxZoom: 22,
-      maxNativeZoom: 17
+      subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+      attribution: '&copy; Google Maps'
     });
 
-    const street = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors',
+    const googleStreets = L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
       maxZoom: 22,
-      maxNativeZoom: 19
-    });
-    
-    const topo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
-      attribution: 'Tiles &copy; Esri',
-      maxZoom: 22,
-      maxNativeZoom: 17
+      subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+      attribution: '&copy; Google Maps'
     });
 
-    const labels = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
+    const googleTerrain = L.tileLayer('https://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}', {
       maxZoom: 22,
-      maxNativeZoom: 17,
-      attribution: ''
+      subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+      attribution: '&copy; Google Maps'
     });
 
     // Add default layers
-    satellite.addTo(adminMap);
-    labels.addTo(adminMap);
+    googleHybrid.addTo(adminMap);
 
     const baseMaps = {
-      "Satellite Map": satellite,
-      "Street Map": street,
-      "Terrain Map": topo
+      "Google Satellite": googleHybrid,
+      "Google Streets": googleStreets,
+      "Google Terrain": googleTerrain
     };
 
     const overlayMaps = {
