@@ -4355,13 +4355,10 @@ html { -webkit-text-size-adjust: 100%; }
 
 /* ── Tablet (max 1024px) ── */
 @media (max-width: 1024px) {
-  .nav-container { flex-wrap: wrap; gap: 8px; padding: 0.6rem 1rem 0 1rem; }
   .logo-block    { max-width: 300px; }
   .logo-icon     { width: 52px; height: 52px; }
   .logo-main     { font-size: 0.8rem; }
-  .main-nav-wrapper { order: 3; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .nav-menu  { gap: 1.2rem; padding: 6px 4px; }
-  .nav-actions { gap: 6px; }
   .hero-god-panel { width: 44%; height: 72%; }
   .section-padded { padding: 60px 1.2rem; }
   h2 { font-size: 1.8rem; }
@@ -4374,15 +4371,12 @@ html { -webkit-text-size-adjust: 100%; }
   p  { font-size: 0.95rem; line-height: 1.7; }
 
   header { padding: 0 0 0.5rem 0; }
-  .nav-container { padding: 0.5rem 0.8rem 0 0.8rem; gap: 6px; }
   .logo-icon { width: 44px; height: 44px; }
   .logo-main { font-size: 0.72rem; }
   .logo-sub  { font-size: 0.65rem; }
-  .main-nav-wrapper { order: 3; width: 100%; padding: 0 0.5rem; }
-  .nav-menu  { gap: 1rem; padding: 4px 2px 8px 2px; }
+  .logo-block { max-width: 200px !important; }
   .nav-link  { font-size: 0.7rem; padding: 4px 0; }
   body.lang-te .nav-link { font-size: 0.85rem; }
-  .nav-actions { gap: 6px; }
   .lang-btn { padding: 3px 7px; font-size: 0.7rem; }
 
   /* ── Hero ── */
