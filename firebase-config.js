@@ -500,23 +500,24 @@ window.initAdminMap = function() {
             `;
 
             const isOnlineStatus = data.lastActiveTimestamp && (Date.now() - data.lastActiveTimestamp < 5000);
-            const markerColor = isOnlineStatus ? '#4caf50' : '#2196f3';
+            
+            const pinIcon = new L.Icon({
+              iconUrl: isOnlineStatus 
+                ? 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png'
+                : 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+              shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+              iconSize: [25, 41],
+              iconAnchor: [12, 41],
+              popupAnchor: [1, -34],
+              shadowSize: [41, 41]
+            });
 
             if (adminMarkers[uid]) {
               adminMarkers[uid].setLatLng(position);
-              if (adminMarkers[uid].setStyle) {
-                adminMarkers[uid].setStyle({ fillColor: markerColor });
-              }
+              adminMarkers[uid].setIcon(pinIcon);
               adminMarkers[uid].getPopup().setContent(infoContent);
             } else {
-              const marker = L.circleMarker(position, {
-                radius: 8,
-                fillColor: markerColor,
-                color: '#ffffff',
-                weight: 2,
-                opacity: 1,
-                fillOpacity: 1
-              }).addTo(adminMap);
+              const marker = L.marker(position, { icon: pinIcon }).addTo(adminMap);
               marker.bindPopup(infoContent);
               adminMarkers[uid] = marker;
             }
