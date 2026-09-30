@@ -304,17 +304,43 @@ window.initAdminMap = function() {
   if (!adminMap) {
     adminMap = L.map('admin-map').setView([16.417255, 79.992644], 6);
 
-    // Free Satellite Map (Esri World Imagery)
-    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+    const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      attribution: 'Tiles &copy; Esri',
       maxZoom: 19
-    }).addTo(adminMap);
+    });
+
+    const street = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors',
+      maxZoom: 19
+    });
     
-    // Labels layer on top
-    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
+    const topo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+      attribution: 'Tiles &copy; Esri',
+      maxZoom: 19
+    });
+
+    const labels = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
       maxZoom: 19,
       attribution: ''
-    }).addTo(adminMap);
+    });
+
+    // Add default layers
+    satellite.addTo(adminMap);
+    labels.addTo(adminMap);
+
+    const baseMaps = {
+      "Satellite Map": satellite,
+      "Street Map": street,
+      "Terrain Map": topo
+    };
+
+    const overlayMaps = {
+      "Borders & Labels": labels
+    };
+
+    // Add the Google Maps style layer toggle to top right
+    L.control.layers(baseMaps, overlayMaps, { position: 'topright' }).addTo(adminMap);
+
 
     const col = collection(db, "uniqueVisitors");
     onSnapshot(col, (snapshot) => {
