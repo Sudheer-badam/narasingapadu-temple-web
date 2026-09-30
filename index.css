@@ -382,7 +382,7 @@ body.lang-te .logo-sub {
   display: flex;
   flex: 1 1 auto;
   min-width: 0;
-  gap: 1.0rem;
+  gap: 1.8rem;
   list-style: none;
   align-items: center;
   overflow-x: auto;
@@ -482,7 +482,7 @@ body.lang-te .lang-btn {
 .lang-toggle-container {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 12px;
 }
 
 .lang-btn {
