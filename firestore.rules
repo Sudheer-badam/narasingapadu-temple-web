@@ -1,0 +1,32 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+  
+    // 1. Check if the user is an Admin
+    function isAdmin() {
+      return request.auth != null && (
+        request.auth.token.email == "badamsudheerreddy@gmail.com" || 
+        request.auth.token.email == "2300033278@kluniversity.in" || 
+        request.auth.token.email == "2300033278cseh2@gmail.com"
+      );
+    }
+
+    match /uniqueVisitors/{uid} {
+      // 2. DANGER FIX: Lock down reading so hackers cannot steal GPS coordinates and emails!
+      // ONLY Admins or the user themselves can read this document.
+      allow read: if isAdmin() || (request.auth != null && request.auth.uid == uid);
+      
+      // 3. Allow users to write/update ONLY their own document
+      allow create, update: if request.auth != null && request.auth.uid == uid;
+      
+      // 4. Allow ONLY Admins to DELETE user data
+      allow delete: if isAdmin();
+    }
+    
+    // 5. Safe public counter for the website footer
+    match /siteStats/visitors {
+      allow read: if true; // Publicly readable for the counter
+      allow write: if request.auth != null; // Any logged in user can increment it
+    }
+  }
+}
