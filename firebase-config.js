@@ -357,6 +357,9 @@ window.initAdminMap = function() {
 
     // Add the Google Maps style layer toggle to top right
     L.control.layers(baseMaps, overlayMaps, { position: 'topright' }).addTo(adminMap);
+    
+    // Add the map scale control
+    L.control.scale({ imperial: true, metric: true }).addTo(adminMap);
 
 
     const col = collection(db, "uniqueVisitors");
@@ -419,17 +422,8 @@ window.initAdminMap = function() {
               adminMarkers[uid].setLatLng(position);
               adminMarkers[uid].getPopup().setContent(infoContent);
             } else {
-              const greenIconHtml = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" style="fill: #28a745; filter: drop-shadow(0px 3px 5px rgba(0,0,0,0.6));"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/><circle cx="12" cy="9" r="2.5" fill="white"/></svg>`;
-
-              const customIcon = L.divIcon({
-                className: 'custom-map-marker',
-                html: greenIconHtml,
-                iconSize: [36, 36],
-                iconAnchor: [18, 36],
-                popupAnchor: [0, -32]
-              });
-
-              const marker = L.marker(position, { icon: customIcon }).addTo(adminMap);
+              // Use default Leaflet marker (blue pin) to match user preference
+              const marker = L.marker(position).addTo(adminMap);
               marker.bindPopup(infoContent);
               adminMarkers[uid] = marker;
             }
