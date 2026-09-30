@@ -417,6 +417,7 @@ body.lang-te .logo-sub {
   gap: 10px;
   list-style: none;
   flex-shrink: 0;
+  margin-left: auto;
 }
 body.lang-te .nav-link {
   font-family: var(--font-telugu-bold);
