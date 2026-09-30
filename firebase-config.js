@@ -68,12 +68,19 @@ const microsoftProvider = new OAuthProvider('microsoft.com');
 // ── Listen & display the total unique visitor count in real-time ──
 function setupRealtimeVisitorCount() {
   try {
-    const col = collection(db, "uniqueVisitors");
-    onSnapshot(col, (snapshot) => {
-      const count = snapshot.size;
-      document.querySelectorAll(".visitor-count-number").forEach(el => {
-        el.textContent = count.toLocaleString("en-IN");
-      });
+    const statsRef = doc(db, "siteStats", "visitors");
+    onSnapshot(statsRef, (docSnap) => {
+      if (docSnap.exists()) {
+        const count = docSnap.data().count || 0;
+        document.querySelectorAll(".visitor-count-number").forEach(el => {
+          el.textContent = count.toLocaleString("en-IN");
+        });
+      } else {
+        // Fallback if document doesn't exist yet
+        document.querySelectorAll(".visitor-count-number").forEach(el => {
+          el.textContent = "0";
+        });
+      }
     });
   } catch (e) {
     // silently ignore if Firebase is not yet configured
@@ -192,6 +199,13 @@ async function recordUniqueVisitor(user, lat = null, lng = null) {
     payload.firstVisit = currentTime;
     payload.uid = user.uid;
     await setDoc(ref, payload);
+    
+    // Increment the public, safe visitor counter
+    try {
+      const { increment } = await import('https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js');
+      const statsRef = doc(db, "siteStats", "visitors");
+      await setDoc(statsRef, { count: increment(1) }, { merge: true });
+    } catch(e) { console.error("Could not increment stats"); }
   } else {
     // If they already exist, merge the update
     await setDoc(ref, payload, { merge: true });
