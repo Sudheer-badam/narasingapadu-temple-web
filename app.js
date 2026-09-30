@@ -3842,7 +3842,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. Mobile navbar menu controls
   const menuToggle = document.getElementById('menu-toggle');
-  const navMenu = document.getElementById('nav-menu');
+  const navMenu = document.querySelector('.main-nav-wrapper');
   
   if (menuToggle && navMenu) {
     menuToggle.addEventListener('click', () => {

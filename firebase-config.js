@@ -285,11 +285,11 @@ function checkAdminAndShowMapButton(user) {
       adminBtn.style.cssText = 'margin-left: 10px; padding: 4px 8px; font-size: 0.75rem; border-radius: 15px; cursor: pointer; white-space: nowrap;';
       adminBtn.onclick = window.showAdminMap;
       
-      const navMenu = document.getElementById('nav-menu');
-      if (navMenu) {
+      const navActions = document.getElementById('nav-actions');
+      if (navActions) {
         const li = document.createElement('li');
         li.appendChild(adminBtn);
-        navMenu.insertBefore(li, document.getElementById('user-welcome-banner'));
+        navActions.insertBefore(li, document.getElementById('user-welcome-banner'));
       }
     }
   }

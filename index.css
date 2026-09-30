@@ -296,11 +296,13 @@ body.lang-te .scrolling-ticker .ticker-text-wrapper {
     justify-content: flex-start;
   }
   
-  .nav-container > nav {
+  .main-nav-wrapper {
     flex: 1 1 auto;
     display: flex;
     justify-content: flex-end;
-    min-width: 0; /* Allows flex children to shrink below their content size */
+    align-items: center;
+    min-width: 0;
+    gap: 15px;
   }
 }
 
@@ -378,6 +380,8 @@ body.lang-te .logo-sub {
 
 .nav-menu {
   display: flex;
+  flex: 1 1 auto;
+  min-width: 0;
   gap: 1.0rem;
   list-style: none;
   align-items: center;
@@ -407,7 +411,13 @@ body.lang-te .logo-sub {
   white-space: nowrap;
 }
 
-/* Telugu nav links — proper script styling */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  flex-shrink: 0;
+}
 body.lang-te .nav-link {
   font-family: var(--font-telugu-bold);
   font-size: 0.95rem;
@@ -468,52 +478,34 @@ body.lang-te .lang-btn {
 }
 
 /* Language Toggle Button */
-/* Floating Right Language Widget */
-.lang-float-widget {
-  position: fixed;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
+/* Language Toggle Button */
+.lang-toggle-container {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 9999;
+  align-items: center;
+  gap: 4px;
 }
 
-.lang-float-btn {
-  background: rgba(30, 20, 10, 0.95);
-  border: 2px solid var(--gold-metallic);
+.lang-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--gold-metallic);
   color: var(--text-light);
-  padding: 8px 16px;
-  border-radius: 20px;
+  padding: 4px 8px;
+  border-radius: 15px;
   font-family: var(--font-interface);
-  font-weight: bold;
-  font-size: 0.9rem;
+  font-weight: 600;
+  font-size: 0.75rem;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  transition: var(--transition-smooth);
 }
 
-.lang-float-btn.active {
+.lang-btn.active {
   background: var(--gold-metallic);
   color: var(--text-dark);
 }
 
-.lang-float-btn:hover {
+.lang-btn:hover {
   background: var(--gold-bright);
   color: var(--text-dark);
-  transform: translateX(-3px);
-}
-
-@media (max-width: 600px) {
-  .lang-float-widget {
-    right: 10px;
-    gap: 8px;
-  }
-  .lang-float-btn {
-    padding: 6px 12px;
-    font-size: 0.8rem;
-  }
 }
 
 .lang-btn.active {
@@ -2236,7 +2228,7 @@ body:not(.map-marker-container) @keyframes bounce {
     display: block;
     z-index: 1001;
   }
-  .nav-menu {
+  .main-nav-wrapper {
     position: fixed;
     top: 0;
     right: -100%;
@@ -2252,8 +2244,19 @@ body:not(.map-marker-container) @keyframes bounce {
     z-index: 1000;
     overflow-y: auto;
   }
-  .nav-menu.open {
+  .main-nav-wrapper.open {
     right: 0;
+  }
+  .nav-menu, .nav-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    overflow-x: visible;
+  }
+  .nav-actions {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
   }
   .nav-link {
     color: var(--text-light);
