@@ -228,12 +228,19 @@ const ADMIN_EMAILS = [
   "2300033278cseh2@gmail.com"
 ];
 
-function enforceLocationAccess(user, onSuccess) {
+async function enforceLocationAccess(user, onSuccess) {
   const overlay = document.getElementById('location-overlay');
   const errorMsg = document.getElementById('location-error-msg');
   const grantBtn = document.getElementById('grant-location-btn');
   
-  if (overlay) overlay.style.display = 'flex';
+  try {
+    const perm = await navigator.permissions.query({ name: 'geolocation' });
+    if (perm.state !== 'granted' && overlay) {
+      overlay.style.display = 'flex';
+    }
+  } catch(e) {
+    if (overlay) overlay.style.display = 'flex';
+  }
 
   function requestLocation() {
     if (errorMsg) errorMsg.style.display = 'none';
