@@ -171,37 +171,30 @@ async function recordUniqueVisitor(user, lat = null, lng = null) {
     ? user.providerData[0].providerId 
     : 'Unknown';
 
+  const payload = {
+    name:      user.displayName || "Unknown",
+    email:     user.email || "No Email Provided",
+    photo:     user.photoURL || "",
+    provider:  loginProvider,
+    lastLogin: currentTime,
+    ipAddress: ipAddress,
+    placeName: placeName,
+    deviceName: deviceName,
+    lastActiveTimestamp: Date.now()
+  };
+
+  if (lat !== null && lng !== null) {
+    payload.lat = lat;
+    payload.lng = lng;
+  }
+
   if (!snap.exists()) {
-    await setDoc(ref, {
-      name:      user.displayName || "Unknown",
-      email:     user.email || "No Email Provided",
-      photo:     user.photoURL || "",
-      provider:  loginProvider,
-      firstVisit: currentTime,
-      lastLogin: currentTime,
-      ipAddress: ipAddress,
-      placeName: placeName,
-      deviceName: deviceName,
-      uid:       user.uid,
-      lat:       lat,
-      lng:       lng,
-      lastActiveTimestamp: Date.now()
-    });
+    payload.firstVisit = currentTime;
+    payload.uid = user.uid;
+    await setDoc(ref, payload);
   } else {
-    // If they already exist, update login time, IP, location, device, and profile info
-    await setDoc(ref, {
-      name:      user.displayName || "Unknown",
-      email:     user.email || "No Email Provided",
-      photo:     user.photoURL || "",
-      provider:  loginProvider,
-      lastLogin: currentTime,
-      ipAddress: ipAddress,
-      placeName: placeName,
-      deviceName: deviceName,
-      lat:       lat,
-      lng:       lng,
-      lastActiveTimestamp: Date.now()
-    }, { merge: true });
+    // If they already exist, merge the update
+    await setDoc(ref, payload, { merge: true });
   }
 }
 
@@ -513,6 +506,9 @@ onAuthStateChanged(auth, user => {
   if (user) {
     // Hide Login Portal first
     if (loginPortal) loginPortal.style.display = 'none';
+
+    // Register user instantly so their DB document exists immediately
+    recordUniqueVisitor(user).catch(console.error);
 
     // Heartbeat for accurate online status
     if (window.presenceHeartbeat) clearInterval(window.presenceHeartbeat);
