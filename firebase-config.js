@@ -355,6 +355,60 @@ function checkAdminAndShowMapButton(user) {
 
 let adminMap = null;
 let adminMarkers = {};
+window.adminUsersData = {};
+
+window.generateAdminMapPopup = function(data, uid) {
+  let deviceIconClass = "fa-solid fa-desktop";
+  let deviceNameLower = (data.deviceName || "").toLowerCase();
+  if (deviceNameLower.includes("windows")) deviceIconClass = "fa-brands fa-windows";
+  else if (deviceNameLower.includes("android")) deviceIconClass = "fa-brands fa-android";
+  else if (deviceNameLower.includes("ios") || deviceNameLower.includes("mac")) deviceIconClass = "fa-brands fa-apple";
+  
+  const isOnline = data.lastActiveTimestamp && (Date.now() - data.lastActiveTimestamp < 5000); // 5 seconds timeout
+  
+  return `
+    <div style="color: #333; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-align: center; min-width: 220px; padding: 5px;">
+      <div style="font-weight: bold; font-size: 16px; margin-bottom: 2px; display: flex; justify-content: center; align-items: center; gap: 8px;">
+        <img src="${data.photo || ''}" style="width:24px;height:24px;border-radius:50%;object-fit:cover;" onerror="this.style.display='none'">
+        ${data.name}
+      </div>
+      <div style="font-size: 12px; color: #666; margin-bottom: 8px;">${data.email}</div>
+      
+      ${ isOnline ? `
+      <div style="display: inline-block; background: #e8f5e9; color: #2e7d32; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: bold; margin-bottom: 8px; border: 1px solid #c8e6c9;">
+        <span style="display:inline-block; width:8px; height:8px; background:#4caf50; border-radius:50%; margin-right:4px;"></span> ONLINE
+      </div>` : `
+      <div style="display: inline-block; background: #f5f5f5; color: #757575; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: bold; margin-bottom: 8px; border: 1px solid #e0e0e0;">
+        <span style="display:inline-block; width:8px; height:8px; background:#9e9e9e; border-radius:50%; margin-right:4px;"></span> OFFLINE
+      </div>` }
+      
+      <div style="font-size: 12px; margin-bottom: 10px; font-weight: 600;">
+        <i class="${deviceIconClass}" style="color: #555;"></i> Device: <span style="color:#000;">${data.deviceName || 'Unknown'}</span>
+      </div>
+      
+      <hr style="border: 0; border-top: 1px solid #e0e0e0; margin: 10px 0;">
+      
+      <div style="font-size: 11px; margin-bottom: 8px; color: #444; line-height: 1.4; max-width: 100%; word-wrap: break-word;">
+        <i class="fa-solid fa-location-dot" style="color: #d4af37; margin-right: 4px;"></i> ${data.placeName || 'Location unknown'}
+      </div>
+      
+      <div style="font-size: 13px; font-weight: bold; margin-bottom: 3px;">Lat: ${(data.lat || 0).toFixed(5)}</div>
+      <div style="font-size: 13px; font-weight: bold; margin-bottom: 8px;">Lng: ${(data.lng || 0).toFixed(5)}</div>
+      
+      <div style="font-size: 11px; color: #2e7d32; margin-bottom: 15px; font-weight: 600;">
+        Last Update: ${data.lastLogin}
+      </div>
+      
+      <button onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=${data.lat},${data.lng}', '_blank')" style="width: 100%; background: #007bff; color: white; border: none; padding: 8px; border-radius: 5px; font-weight: bold; cursor: pointer; margin-bottom: 8px; font-size: 13px; box-shadow: 0 2px 4px rgba(0,123,255,0.3);">
+        <i class="fa-solid fa-map-location-dot"></i> Get Directions
+      </button>
+      
+      <button onclick="window.deleteUserRecord('${uid}')" style="width: 100%; background: #dc3545; color: white; border: none; padding: 8px; border-radius: 5px; font-weight: bold; cursor: pointer; font-size: 13px; box-shadow: 0 2px 4px rgba(220,53,69,0.3);">
+        Delete User Data
+      </button>
+    </div>
+  `;
+};
 
 window.deleteUserRecord = async function(uid) {
   if (!auth.currentUser || !ADMIN_EMAILS.includes(auth.currentUser.email)) return;
@@ -442,62 +496,8 @@ window.initAdminMap = function() {
           if (data.lat && data.lng) {
             const position = [data.lat, data.lng];
             
-            // Determine device icon
-            let deviceIconClass = "fa-solid fa-desktop";
-            let deviceNameLower = (data.deviceName || "").toLowerCase();
-            if (deviceNameLower.includes("windows")) deviceIconClass = "fa-brands fa-windows";
-            else if (deviceNameLower.includes("android")) deviceIconClass = "fa-brands fa-android";
-            else if (deviceNameLower.includes("ios") || deviceNameLower.includes("mac")) deviceIconClass = "fa-brands fa-apple";
-            
-            const infoContent = `
-              <div style="color: #333; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-align: center; min-width: 220px; padding: 5px;">
-                <div style="font-weight: bold; font-size: 16px; margin-bottom: 2px; display: flex; justify-content: center; align-items: center; gap: 8px;">
-                  <img src="${data.photo || ''}" style="width:24px;height:24px;border-radius:50%;object-fit:cover;" onerror="this.style.display='none'">
-                  ${data.name}
-                </div>
-                <div style="font-size: 12px; color: #666; margin-bottom: 8px;">${data.email}</div>
-                
-                ${ (() => {
-                  const isOnline = data.lastActiveTimestamp && (Date.now() - data.lastActiveTimestamp < 5000); // 5 seconds timeout
-                  if (isOnline) {
-                    return `
-                    <div style="display: inline-block; background: #e8f5e9; color: #2e7d32; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: bold; margin-bottom: 8px; border: 1px solid #c8e6c9;">
-                      <span style="display:inline-block; width:8px; height:8px; background:#4caf50; border-radius:50%; margin-right:4px;"></span> ONLINE
-                    </div>`;
-                  } else {
-                    return `
-                    <div style="display: inline-block; background: #f5f5f5; color: #757575; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: bold; margin-bottom: 8px; border: 1px solid #e0e0e0;">
-                      <span style="display:inline-block; width:8px; height:8px; background:#9e9e9e; border-radius:50%; margin-right:4px;"></span> OFFLINE
-                    </div>`;
-                  }
-                })() }
-                
-                <div style="font-size: 12px; margin-bottom: 10px; font-weight: 600;">
-                  <i class="${deviceIconClass}" style="color: #555;"></i> Device: <span style="color:#000;">${data.deviceName || 'Unknown'}</span>
-                </div>
-                
-                <hr style="border: 0; border-top: 1px solid #e0e0e0; margin: 10px 0;">
-                
-                <div style="font-size: 11px; margin-bottom: 8px; color: #444; line-height: 1.4; max-width: 100%; word-wrap: break-word;">
-                  <i class="fa-solid fa-location-dot" style="color: #d4af37; margin-right: 4px;"></i> ${data.placeName || 'Location unknown'}
-                </div>
-                
-                <div style="font-size: 13px; font-weight: bold; margin-bottom: 3px;">Lat: ${(data.lat || 0).toFixed(5)}</div>
-                <div style="font-size: 13px; font-weight: bold; margin-bottom: 8px;">Lng: ${(data.lng || 0).toFixed(5)}</div>
-                
-                <div style="font-size: 11px; color: #2e7d32; margin-bottom: 15px; font-weight: 600;">
-                  Last Update: ${data.lastLogin}
-                </div>
-                
-                <button onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=${data.lat},${data.lng}', '_blank')" style="width: 100%; background: #007bff; color: white; border: none; padding: 8px; border-radius: 5px; font-weight: bold; cursor: pointer; margin-bottom: 8px; font-size: 13px; box-shadow: 0 2px 4px rgba(0,123,255,0.3);">
-                  <i class="fa-solid fa-map-location-dot"></i> Get Directions
-                </button>
-                
-                <button onclick="window.deleteUserRecord('${uid}')" style="width: 100%; background: #dc3545; color: white; border: none; padding: 8px; border-radius: 5px; font-weight: bold; cursor: pointer; font-size: 13px; box-shadow: 0 2px 4px rgba(220,53,69,0.3);">
-                  Delete User Data
-                </button>
-              </div>
-            `;
+            window.adminUsersData[uid] = data;
+            const infoContent = window.generateAdminMapPopup(data, uid);
 
             const isOnlineStatus = data.lastActiveTimestamp && (Date.now() - data.lastActiveTimestamp < 5000);
             
@@ -527,11 +527,43 @@ window.initAdminMap = function() {
           if (adminMarkers[uid]) {
             adminMap.removeLayer(adminMarkers[uid]);
             delete adminMarkers[uid];
+            delete window.adminUsersData[uid];
           }
         }
       });
     });
     
+    // Client-side loop to catch users who went offline without triggering DB updates!
+    if (!window.adminMapStatusLoop) {
+      window.adminMapStatusLoop = setInterval(() => {
+        for (const uid in window.adminUsersData) {
+          const data = window.adminUsersData[uid];
+          const marker = adminMarkers[uid];
+          if (data && marker) {
+            const isOnlineStatus = data.lastActiveTimestamp && (Date.now() - data.lastActiveTimestamp < 5000);
+            const expectedIconUrl = isOnlineStatus 
+                ? 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png'
+                : 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png';
+            
+            const currentIconUrl = marker.getIcon().options.iconUrl;
+            if (currentIconUrl !== expectedIconUrl) {
+              const pinIcon = new L.Icon({
+                iconUrl: expectedIconUrl,
+                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34],
+                shadowSize: [41, 41]
+              });
+              marker.setIcon(pinIcon);
+              // Force popup HTML update so the badge switches to OFFLINE instantly!
+              marker.getPopup().setContent(window.generateAdminMapPopup(data, uid));
+            }
+          }
+        }
+      }, 2000); // Check every 2 seconds completely locally!
+    }
+
     // Invalidate size to ensure it renders correctly after unhiding container
     setTimeout(() => { adminMap.invalidateSize(); }, 300);
   } else {
