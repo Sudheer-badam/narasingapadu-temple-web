@@ -4383,24 +4383,6 @@ html { -webkit-text-size-adjust: 100%; }
   #login-portal .card { padding: 2rem 1.2rem !important; border-radius: 16px !important; margin: 1rem !important; }
   #location-overlay > div { padding: 2rem 1.2rem !important; margin: 1rem !important; border-radius: 16px !important; max-width: 95vw !important; }
 
-  /* ── Social Widget — horizontal row at bottom ── */
-  .social-float-widget {
-    top: auto !important;
-    bottom: 12px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    flex-direction: row !important;
-    gap: 4px !important;
-    background: rgba(26,15,8,0.88) !important;
-    border-radius: 40px !important;
-    padding: 6px 10px !important;
-    backdrop-filter: blur(8px) !important;
-    border: 1px solid rgba(212,175,55,0.35) !important;
-  }
-  .social-float-btn { width: 38px !important; height: 38px !important; font-size: 17px !important; margin: 0 !important; border-radius: 50% !important; }
-  .social-float-btn:hover { width: 38px !important; }
-  .social-float-btn::after { display: none !important; }
-
   /* ── Admin map ── */
   #admin-map-container { padding: 10px !important; }
   #admin-map { border-radius: 6px !important; }
@@ -4417,8 +4399,6 @@ html { -webkit-text-size-adjust: 100%; }
   .gallery-grid { grid-template-columns: 1fr !important; }
   .section-padded { padding: 40px 0.8rem; }
   .scrolling-ticker { font-size: 0.78rem; padding: 5px 0; }
-  .social-float-widget { bottom: 8px !important; }
-  .social-float-btn { width: 34px !important; height: 34px !important; font-size: 15px !important; }
   .visitor-count-number { font-size: 1.6rem !important; }
   #admin-map-container h2 { font-size: 1rem !important; margin-bottom: 0.5rem !important; }
   .hero-god-panel { width: 92% !important; height: 36% !important; }
@@ -4431,7 +4411,6 @@ html { -webkit-text-size-adjust: 100%; }
   .nav-link { padding: 8px 2px; }
   .lang-btn { padding: 6px 10px; }
   .btn-primary, .btn-secondary { padding: 0.85rem 1.6rem; }
-  .social-float-btn { width: 44px !important; height: 44px !important; }
   .hero-god-panel:hover {
     transform: translateX(-50%) !important;
     box-shadow: 0 0 0 1px rgba(255,255,255,0.15), 0 0 25px rgba(255,180,40,0.45), 0 12px 40px rgba(0,0,0,0.7);
@@ -4441,6 +4420,5 @@ html { -webkit-text-size-adjust: 100%; }
 
 /* ── iPhone notch / home bar safe area ── */
 @supports (padding: max(0px)) {
-  .social-float-widget { bottom: max(8px, env(safe-area-inset-bottom)) !important; }
   header { padding-top: env(safe-area-inset-top); }
 }
