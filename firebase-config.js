@@ -316,6 +316,12 @@ function checkAdminAndShowMapButton(user) {
         navActions.insertBefore(li, document.getElementById('user-welcome-banner'));
       }
     }
+  } else {
+    // Ensure the button is removed if a non-admin logs in or an admin logs out
+    const adminBtn = document.getElementById('admin-map-btn');
+    if (adminBtn && adminBtn.parentElement) {
+      adminBtn.parentElement.remove();
+    }
   }
 }
 
@@ -323,6 +329,7 @@ let adminMap = null;
 let adminMarkers = {};
 
 window.deleteUserRecord = async function(uid) {
+  if (!auth.currentUser || !ADMIN_EMAILS.includes(auth.currentUser.email)) return;
   if (confirm("Are you sure you want to delete this user's data?")) {
     try {
       await deleteDoc(doc(db, "uniqueVisitors", uid));
@@ -340,6 +347,10 @@ window.closeAdminMap = function() {
 };
 
 window.showAdminMap = function() {
+  if (!auth.currentUser || !ADMIN_EMAILS.includes(auth.currentUser.email)) {
+    alert("Access Denied: Admins Only");
+    return;
+  }
   const container = document.getElementById('admin-map-container');
   if (container) {
     container.style.display = 'flex';
