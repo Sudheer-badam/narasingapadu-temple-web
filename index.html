@@ -1476,5 +1476,60 @@
     // Execute after a short delay to not block main rendering
     setTimeout(executeRecaptcha, 2000);
   </script>
+
+  <!-- Nav Menu Drag-to-Scroll Feature -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const slider = document.querySelector('.nav-menu');
+      if (!slider) return;
+
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+      let isDragging = false;
+
+      slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        isDragging = false;
+        slider.style.cursor = 'grabbing';
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+
+      slider.addEventListener('mouseleave', () => {
+        isDown = false;
+        slider.style.cursor = 'grab';
+      });
+
+      slider.addEventListener('mouseup', () => {
+        isDown = false;
+        slider.style.cursor = 'grab';
+      });
+
+      slider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2; // Scroll fast
+        if (Math.abs(walk) > 5) {
+          isDragging = true;
+        }
+        slider.scrollLeft = scrollLeft - walk;
+      });
+
+      // Prevent link clicks if user was dragging
+      slider.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', (e) => {
+          if (isDragging) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        });
+      });
+      
+      // Set initial cursor
+      slider.style.cursor = 'grab';
+    });
+  </script>
 </body>
 </html>
