@@ -133,6 +133,19 @@ async function recordUniqueVisitor(user, lat = null, lng = null) {
     }
   }
 
+  // Use Nominatim to get precise address from Lat/Lng if available
+  if (lat && lng) {
+    try {
+      const geoRes = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=18&addressdetails=1`);
+      const geoData = await geoRes.json();
+      if (geoData && geoData.display_name) {
+        placeName = geoData.display_name;
+      }
+    } catch (e) {
+      console.error("Reverse geocoding failed", e);
+    }
+  }
+
   const deviceName = getDeviceName();
   // Get readable Indian timezone string (e.g. 11/8/2026, 3:00:00 pm)
   const currentTime = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
@@ -376,6 +389,10 @@ window.initAdminMap = function() {
                 </div>
                 
                 <hr style="border: 0; border-top: 1px solid #e0e0e0; margin: 10px 0;">
+                
+                <div style="font-size: 11px; margin-bottom: 8px; color: #444; line-height: 1.4; max-width: 100%; word-wrap: break-word;">
+                  <i class="fa-solid fa-location-dot" style="color: #d4af37; margin-right: 4px;"></i> ${data.placeName || 'Location unknown'}
+                </div>
                 
                 <div style="font-size: 13px; font-weight: bold; margin-bottom: 3px;">Lat: ${(data.lat || 0).toFixed(5)}</div>
                 <div style="font-size: 13px; font-weight: bold; margin-bottom: 8px;">Lng: ${(data.lng || 0).toFixed(5)}</div>
