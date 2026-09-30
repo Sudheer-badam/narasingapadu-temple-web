@@ -138,7 +138,23 @@ async function recordUniqueVisitor(user, lat = null, lng = null) {
     try {
       const geoRes = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=18&addressdetails=1`);
       const geoData = await geoRes.json();
-      if (geoData && geoData.display_name) {
+      if (geoData && geoData.address) {
+        const addr = geoData.address;
+        // Find the most relevant local area name
+        const localArea = addr.village || addr.town || addr.suburb || addr.city_district || addr.city;
+        
+        // Build a clean, short address like Google Maps (e.g. "Temple Road, Narasingapadu, Andhra Pradesh")
+        const parts = [];
+        if (addr.road && localArea !== addr.road) parts.push(addr.road);
+        if (localArea) parts.push(localArea);
+        if (addr.state) parts.push(addr.state);
+        
+        if (parts.length > 0) {
+           placeName = parts.join(', ');
+        } else if (geoData.display_name) {
+           placeName = geoData.display_name; // fallback
+        }
+      } else if (geoData && geoData.display_name) {
         placeName = geoData.display_name;
       }
     } catch (e) {
