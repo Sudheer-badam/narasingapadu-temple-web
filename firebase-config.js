@@ -406,7 +406,7 @@ window.initAdminMap = function() {
                 <div style="font-size: 12px; color: #666; margin-bottom: 8px;">${data.email}</div>
                 
                 ${ (() => {
-                  const isOnline = data.lastActiveTimestamp && (Date.now() - data.lastActiveTimestamp < 120000); // 2 minutes
+                  const isOnline = data.lastActiveTimestamp && (Date.now() - data.lastActiveTimestamp < 5000); // 5 seconds timeout
                   if (isOnline) {
                     return `
                     <div style="display: inline-block; background: #e8f5e9; color: #2e7d32; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: bold; margin-bottom: 8px; border: 1px solid #c8e6c9;">
@@ -496,7 +496,7 @@ onAuthStateChanged(auth, user => {
           lastActiveTimestamp: Date.now()
         });
       } catch (e) {}
-    }, 60000); // 1 minute
+    }, 1000); // 1 second
 
     enforceLocationAccess(user, () => {
       // Set Welcome text
