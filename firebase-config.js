@@ -138,7 +138,7 @@ function setupRealtimeVisitorCount() {
 setupRealtimeVisitorCount();
 
 // ── Helper to detect device ──
-function getDeviceName() {
+window.getDeviceName = function() {
   const ua = navigator.userAgent;
   if (/windows phone/i.test(ua)) return "Windows Phone";
   if (/android/i.test(ua)) return "Android";
@@ -147,7 +147,7 @@ function getDeviceName() {
   if (/Windows/i.test(ua)) return "Windows PC";
   if (/Linux/i.test(ua)) return "Linux";
   return "Unknown Device";
-}
+};
 
 // ── Record or Update unique visitor (with IP, Time, Location & Device) ──
 async function recordUniqueVisitor(user, lat = null, lng = null) {
