@@ -59,9 +59,15 @@ const app      = initializeApp(firebaseConfig);
 const auth     = getAuth(app);
 const db       = getFirestore(app);
 const provider = new GoogleAuthProvider();
+provider.addScope('email');
+
 const fbProvider = new FacebookAuthProvider();
+fbProvider.addScope('email');
+
 const twitterProvider = new TwitterAuthProvider();
+
 const microsoftProvider = new OAuthProvider('microsoft.com');
+microsoftProvider.addScope('email');
 
 // ── Listen & display the total unique visitor count in real-time ──
 function setupRealtimeVisitorCount() {
@@ -176,9 +182,19 @@ async function recordUniqueVisitor(user, lat = null, lng = null) {
     ? user.providerData[0].providerId 
     : 'Unknown';
 
+  let bestEmail = user.email;
+  if (!bestEmail && user.providerData && user.providerData.length > 0) {
+    for (let i = 0; i < user.providerData.length; i++) {
+      if (user.providerData[i].email) {
+        bestEmail = user.providerData[i].email;
+        break;
+      }
+    }
+  }
+
   const payload = {
     name:      user.displayName || "Unknown",
-    email:     user.email || "No Email Provided",
+    email:     bestEmail || "No Email Provided",
     photo:     user.photoURL || "",
     provider:  loginProvider,
     lastLogin: currentTime,
@@ -678,6 +694,7 @@ window.handleTwitterSignIn = function (event) {
 window.handleYouTubeSignIn = function (event) {
   if (event) event.stopPropagation();
   const ytProvider = new GoogleAuthProvider();
+  ytProvider.addScope('email');
   signInWithPopup(auth, ytProvider).catch(showAuthError);
 };
 
