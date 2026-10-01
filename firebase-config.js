@@ -18,7 +18,6 @@ import { getAuth, GoogleAuthProvider, FacebookAuthProvider, TwitterAuthProvider,
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import { getFirestore, doc, setDoc, getDoc, deleteDoc, collection, onSnapshot }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
 
 // ── Helper: Show user-friendly sign-in error ────────────────────────
 function showAuthError(err) {
@@ -53,7 +52,6 @@ const firebaseConfig = {
 self.FIREBASE_APPCHECK_DEBUG_TOKEN = "AVweKogafAW1OzxCjTMl3i_deYmm-XWSoIGNH6K1B8MFpwGy4LoGAKhXJgwHK-eSjpGYcSdqaMrl59S4KNX5kEuZ6N9A72xWXIwWxDIHO7zEwS_DAYF3_i4kBFqRCEQcCiu-ksySMec8g0WgMj3AVpt9ZA";
 
 const app      = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
 
 
@@ -647,6 +645,19 @@ window.handleGoogleSignIn = function () {
   if (btn && btn.getAttribute("data-signed-in")) {
     // Already signed in — do nothing
   } else {
+    // Show immediate warning about popup blocking in in-app browsers
+    const container = document.getElementById("login-buttons-container");
+    if (container) {
+      let warningDiv = document.getElementById("in-app-warning-msg");
+      if (!warningDiv) {
+        warningDiv = document.createElement("div");
+        warningDiv.id = "in-app-warning-msg";
+        warningDiv.style = "color: #f39c12; font-weight: bold; margin-bottom: 15px; font-size: 0.85rem; text-align: center;";
+        container.parentElement.insertBefore(warningDiv, container);
+      }
+      warningDiv.style.display = "block";
+      warningDiv.innerHTML = "Opening Google Login... <br><br>&#9888; If nothing happens, your current app is blocking it. Please tap the <b>three dots (⋮)</b> at the top right and select <b>'Open in Chrome'</b>!";
+    }
     signInWithPopup(auth, provider).catch(showAuthError);
   }
 };
