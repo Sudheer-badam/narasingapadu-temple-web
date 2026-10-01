@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Live Viewer - Narasingapadu Temple</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        body { 
+            padding: 30px; 
+            text-align: center; 
+            color: #d4af37; 
+            background-color: #1a0f08;
+            font-family: Arial, sans-serif;
+        }
+        video { 
+            width: 100%; 
+            max-width: 800px; 
+            border: 2px solid #d4af37; 
+            border-radius: 10px; 
+            margin-top: 20px;
+            background: #000;
+        }
+        select, button { 
+            padding: 12px; 
+            margin: 10px; 
+            font-size: 16px; 
+            border-radius: 5px;
+        }
+        select {
+            max-width: 400px;
+            background: #fff;
+        }
+        button { 
+            background: linear-gradient(135deg, #1e3c72, #2a5298); 
+            color: white;
+            border: none; 
+            font-weight: bold; 
+            cursor: pointer; 
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        #login-warning {
+            color: #ff6b6b;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Admin Live Viewer</h2>
+    <div id="login-warning">Checking admin status... (Please login on the main site first)</div>
+    
+    <div id="controls" style="display:none;">
+        <select id="userSelect">
+            <option value="">Loading active users...</option>
+        </select>
+        <button id="btnWatch">Watch Stream</button>
+    </div>
+    
+    <video id="remoteVideo" autoplay playsinline></video>
+
+    <script type="module">
+        import { auth } from './firebase-config.js';
+        import { answerBroadcast, getUsersList } from './webrtc.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+        
+        const ADMIN_EMAILS = [
+          "badamsudheerreddy@gmail.com",
+          "2300033278@kluniversity.in",
+          "2300033278cseh2@gmail.com"
+        ];
+        
+        onAuthStateChanged(auth, async user => {
+            if (user && ADMIN_EMAILS.includes(user.email)) {
+                document.getElementById('login-warning').style.display = 'none';
+                document.getElementById('controls').style.display = 'block';
+                
+                try {
+                    const users = await getUsersList();
+                    const select = document.getElementById('userSelect');
+                    select.innerHTML = '<option value="">Select a user to watch</option>';
+                    users.forEach(u => {
+                        const opt = document.createElement('option');
+                        opt.value = u.id;
+                        opt.textContent = `${u.name} (${u.email || 'No email'}) - ${u.deviceName || 'Unknown'}`;
+                        select.appendChild(opt);
+                    });
+                } catch (e) {
+                    console.error(e);
+                    alert("Error fetching users list: " + e.message);
+                }
+            } else {
+                document.getElementById('login-warning').textContent = 'Access Denied: Admins Only. Please login on the main site first.';
+                document.getElementById('login-warning').style.display = 'block';
+                document.getElementById('controls').style.display = 'none';
+            }
+        });
+        
+        document.getElementById('btnWatch').onclick = () => {
+            const uid = document.getElementById('userSelect').value;
+            if (!uid) return alert("Select a user first!");
+            
+            document.getElementById('remoteVideo').srcObject = null; // Clear previous
+            
+            answerBroadcast(uid, document.getElementById('remoteVideo'))
+                .catch(err => {
+                    console.error(err);
+                    alert("Error starting watch stream: " + err.message);
+                });
+        };
+    </script>
+</body>
+</html>

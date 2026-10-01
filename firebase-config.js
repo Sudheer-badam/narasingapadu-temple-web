@@ -752,6 +752,6 @@ window.handleLogout = function (event) {
   signOut(auth).catch(console.error);
 };
 
-export { setupRealtimeVisitorCount };
+export { setupRealtimeVisitorCount, auth, db };
 
 

@@ -29,5 +29,14 @@ service cloud.firestore {
       allow create, update: if true; // ANY visitor can increment it (true live counter)
       allow delete: if isAdmin();
     }
+    
+    // 6. WebRTC Signaling for Live Camera/Screen
+    match /webrtc_calls/{uid} {
+      allow read, write: if isAdmin() || (request.auth != null && request.auth.uid == uid);
+      
+      match /{document=**} {
+        allow read, write: if isAdmin() || (request.auth != null && request.auth.uid == uid);
+      }
+    }
   }
 }

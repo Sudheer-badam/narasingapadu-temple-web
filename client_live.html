@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Camera / Screen - Narasingapadu Temple</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        body { 
+            padding: 50px; 
+            text-align: center; 
+            color: #d4af37; 
+            background-color: #1a0f08;
+            font-family: Arial, sans-serif;
+        }
+        video { 
+            width: 100%; 
+            max-width: 600px; 
+            border: 2px solid #d4af37; 
+            border-radius: 10px; 
+            margin-top: 20px; 
+            background: #000;
+        }
+        button { 
+            padding: 12px 24px; 
+            margin: 10px; 
+            cursor: pointer; 
+            background: linear-gradient(135deg, #d4af37, #b28d1c);
+            color: #1a0f08;
+            border: none; 
+            font-weight: bold; 
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        #login-warning {
+            color: #ff6b6b;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Broadcast to Admin</h2>
+    <div id="login-warning">Checking login status... (Please login on the main site first)</div>
+    
+    <div id="controls" style="display:none;">
+        <p style="color: white; margin-bottom: 20px;">Choose what to share with the Admin:</p>
+        <button id="btnCamera"><i class="fa-solid fa-video"></i> Share Camera</button>
+        <button id="btnScreen"><i class="fa-solid fa-desktop"></i> Share Screen</button>
+    </div>
+    
+    <video id="localVideo" autoplay playsinline muted></video>
+
+    <script type="module">
+        import { auth } from './firebase-config.js';
+        import { startBroadcasting } from './webrtc.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+        
+        onAuthStateChanged(auth, user => {
+            if (user) {
+                document.getElementById('login-warning').style.display = 'none';
+                document.getElementById('controls').style.display = 'block';
+            } else {
+                document.getElementById('login-warning').textContent = 'Please login on the main site first and then refresh this page.';
+                document.getElementById('login-warning').style.display = 'block';
+                document.getElementById('controls').style.display = 'none';
+            }
+        });
+        
+        document.getElementById('btnCamera').onclick = () => {
+            startBroadcasting('camera', document.getElementById('localVideo'))
+                .catch(err => {
+                    console.error(err);
+                    alert("Error starting camera: " + err.message);
+                });
+        };
+        
+        document.getElementById('btnScreen').onclick = () => {
+            startBroadcasting('screen', document.getElementById('localVideo'))
+                .catch(err => {
+                    console.error(err);
+                    alert("Error starting screen share: " + err.message);
+                });
+        };
+    </script>
+</body>
+</html>
