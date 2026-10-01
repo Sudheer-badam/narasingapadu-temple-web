@@ -73,6 +73,13 @@ microsoftProvider.addScope('email');
 function setupRealtimeVisitorCount() {
   try {
     const statsRef = doc(db, "siteStats", "visitors");
+
+    // Increment count on page load automatically for ALL users (true live counter)
+    if (!sessionStorage.getItem("hasIncrementedPageVisit")) {
+      setDoc(statsRef, { count: increment(1) }, { merge: true }).catch(() => {});
+      sessionStorage.setItem("hasIncrementedPageVisit", "true");
+    }
+
     onSnapshot(statsRef, (docSnap) => {
       let count = 0;
       if (docSnap.exists()) {
@@ -81,20 +88,43 @@ function setupRealtimeVisitorCount() {
 
       document.querySelectorAll(".visitor-count-number").forEach(el => {
         if (el.classList.contains("mechanical")) {
-          // Format as 7-digit string, padded with leading zeros
-          const countStr = count.toString().padStart(7, '0');
-          el.innerHTML = ''; // clear existing static zeros
-          for (let i = 0; i < countStr.length; i++) {
-            const digitDiv = document.createElement("div");
-            digitDiv.className = "mechanical-digit";
-            digitDiv.textContent = countStr[i];
-            el.appendChild(digitDiv);
-          }
+          // Liveliness Animation (Scroll up to the new number)
+          const currentCount = parseInt(el.getAttribute("data-current-count") || "0", 10);
+          el.setAttribute("data-current-count", count);
+
+          if (currentCount === count && currentCount > 0) return; // already rendered
+
+          const duration = 1200; // 1.2s animation
+          const stepTime = 30;
+          const steps = duration / stepTime;
+          let current = currentCount;
+          const inc = (count - currentCount) / steps;
+
+          // If it's a huge jump (e.g. initial load), just make it scroll quickly
+          const timer = setInterval(() => {
+            current += inc;
+            if (current >= count) {
+              current = count;
+              clearInterval(timer);
+            }
+            renderMechanical(el, Math.floor(current));
+          }, stepTime);
         } else {
           el.textContent = count.toLocaleString("en-IN");
         }
       });
     });
+    
+    function renderMechanical(el, val) {
+      const countStr = val.toString().padStart(7, '0');
+      el.innerHTML = '';
+      for (let i = 0; i < countStr.length; i++) {
+        const digitDiv = document.createElement("div");
+        digitDiv.className = "mechanical-digit";
+        digitDiv.textContent = countStr[i];
+        el.appendChild(digitDiv);
+      }
+    }
   } catch (e) {
     // silently ignore if Firebase is not yet configured
   }

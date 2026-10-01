@@ -26,7 +26,8 @@ service cloud.firestore {
     // 5. Safe public counter for the website footer
     match /siteStats/visitors {
       allow read: if true; // Publicly readable for the counter
-      allow write: if request.auth != null; // Any logged in user can increment it
+      allow create, update: if true; // ANY visitor can increment it (true live counter)
+      allow delete: if isAdmin();
     }
   }
 }
