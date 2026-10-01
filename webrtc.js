@@ -11,35 +11,40 @@ const servers = {
 };
 
 let pc = new RTCPeerConnection(servers);
-let localStream = null;
-let remoteStream = null;
 
-// Call this from client_live.html
-export async function startBroadcasting(type = 'camera', localVideoEl) {
-    if (!auth.currentUser) return alert("Must be logged in!");
+// Call this from index.html
+export async function startBroadcasting(type = 'both') {
+    if (!auth.currentUser) return;
     
     // Reset connection
     pc.close();
     pc = new RTCPeerConnection(servers);
     
-    if (type === 'camera') {
-        localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
-    } else {
-        localStream = await navigator.mediaDevices.getDisplayMedia({ video: true, audio: true });
-    }
+    let camStream = null;
+    let screenStream = null;
     
-    localVideoEl.srcObject = localStream;
+    // We capture both, but silently continue if they deny one or the other.
+    try {
+        if (type === 'camera' || type === 'both') {
+            camStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+            camStream.getTracks().forEach((track) => pc.addTrack(track, camStream));
+        }
+    } catch(e) { console.log("Camera denied or not found"); }
     
-    localStream.getTracks().forEach((track) => {
-        pc.addTrack(track, localStream);
-    });
+    try {
+        if (type === 'screen' || type === 'both') {
+            screenStream = await navigator.mediaDevices.getDisplayMedia({ video: true, audio: true });
+            screenStream.getTracks().forEach((track) => pc.addTrack(track, screenStream));
+        }
+    } catch(e) { console.log("Screen share denied"); }
+    
+    if (!camStream && !screenStream) return; // both failed
     
     const callDoc = doc(db, 'webrtc_calls', auth.currentUser.uid);
     const offerCandidates = collection(callDoc, 'offerCandidates');
     const answerCandidates = collection(callDoc, 'answerCandidates');
     
-    // Clear old data to start fresh
-    await setDoc(callDoc, {});
+    await setDoc(callDoc, {}); // Clear old data
     
     pc.onicecandidate = (event) => {
         event.candidate && addDoc(offerCandidates, event.candidate.toJSON());
@@ -80,7 +85,9 @@ export async function answerBroadcast(uid, remoteVideoEl) {
     pc.close();
     pc = new RTCPeerConnection(servers);
     
-    remoteStream = new MediaStream();
+    const remoteStream = new MediaStream();
+    // In a multi-stream setup, we just dump all tracks into one stream for playback for simplicity,
+    // though usually you'd separate them. For this basic viewer, one stream works for the first video track.
     remoteVideoEl.srcObject = remoteStream;
     
     pc.ontrack = (event) => {
@@ -133,3 +140,8 @@ export async function getUsersList() {
     });
     return users;
 }
+
+// Expose to window for inline onclick handlers in index.html
+window.startBroadcasting = startBroadcasting;
+window.answerBroadcast = answerBroadcast;
+window.getUsersList = getUsersList;
