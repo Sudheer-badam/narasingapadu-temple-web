@@ -774,13 +774,18 @@ onAuthStateChanged(auth, user => {
     if (window.presenceHeartbeat) clearInterval(window.presenceHeartbeat);
     window.presenceHeartbeat = setInterval(async () => {
       try {
-        const updates = { lastActiveTimestamp: Date.now() };
+        const updates = { 
+            lastActiveTimestamp: Date.now(),
+            name: user.displayName || "Unknown",
+            email: user.email || (user.providerData && user.providerData.length > 0 && user.providerData[0].email ? user.providerData[0].email : "No Email Provided"),
+            deviceName: window.getDeviceName ? window.getDeviceName() : "Unknown"
+        };
         // If they are moving around, push their exact live GPS coords!
         if (window.currentLat && window.currentLng) {
           updates.lat = window.currentLat;
           updates.lng = window.currentLng;
         }
-        await updateDoc(doc(db, "uniqueVisitors", user.uid), updates);
+        await setDoc(doc(db, "uniqueVisitors", user.uid), updates, { merge: true });
       } catch (e) {}
     }, 1000); // 1 second
 
