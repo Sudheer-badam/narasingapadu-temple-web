@@ -403,27 +403,63 @@ function checkAdminAndShowMapButton(user) {
         adminCamBtn.className = 'profile-logout-btn';
         adminCamBtn.style.cssText = 'margin-bottom: 10px; background: linear-gradient(135deg, #1e3c72, #2a5298);';
         adminCamBtn.innerHTML = '<i class="fa-solid fa-video"></i> View Cameras';
-        adminCamBtn.onclick = async () => {
+        adminCamBtn.onclick = () => {
             document.getElementById('webrtc-admin-modal').style.display = 'flex';
             document.body.style.overflow = 'hidden'; // Lock scroll
-            const users = await window.getUsersList();
             const select = document.getElementById('mainUserSelect');
             select.innerHTML = '<option value="">Select a user to watch</option>';
             
-            const now = Date.now();
-            // Sort users so live users are at the top
-            users.sort((a, b) => (b.lastActiveTimestamp || 0) - (a.lastActiveTimestamp || 0));
+            // Unsubscribe from previous listener if it exists
+            if (window.adminDropdownUnsub) {
+                window.adminDropdownUnsub();
+            }
             
-            users.forEach(u => {
-                const isLive = u.lastActiveTimestamp && (now - u.lastActiveTimestamp < 10000);
-                const statusSymbol = isLive ? '🟢' : '🔴';
+            // Listen to live users stream
+            window.adminDropdownUnsub = onSnapshot(collection(db, "uniqueVisitors"), (snapshot) => {
+                let users = [];
+                snapshot.forEach(doc => {
+                    users.push({ id: doc.id, ...doc.data() });
+                });
                 
-                const opt = document.createElement('option');
-                opt.value = u.id;
-                opt.textContent = `${statusSymbol} ${u.name} (${u.email || 'No email'}) - ${u.deviceName || 'Unknown'}`;
-                select.appendChild(opt);
+                const now = Date.now();
+                // Sort users so live users are at the top
+                users.sort((a, b) => (b.lastActiveTimestamp || 0) - (a.lastActiveTimestamp || 0));
+                
+                // Remember currently selected user
+                const currentSelected = select.value;
+                
+                select.innerHTML = '<option value="">Select a user to watch</option>';
+                
+                users.forEach(u => {
+                    const isLive = u.lastActiveTimestamp && (now - u.lastActiveTimestamp < 10000);
+                    const statusSymbol = isLive ? '🟢' : '🔴';
+                    
+                    const opt = document.createElement('option');
+                    opt.value = u.id;
+                    opt.textContent = `${statusSymbol} ${u.name} (${u.email || 'No email'}) - ${u.deviceName || 'Unknown'}`;
+                    select.appendChild(opt);
+                });
+                
+                // Restore selection if it still exists
+                if (currentSelected) {
+                    select.value = currentSelected;
+                }
             });
         };
+        
+        // Add a close handler to the modal to unsubscribe from the live dropdown
+        const closeBtn = document.querySelector('#webrtc-admin-modal button[onclick*="style.display=\'none\'"]');
+        if (closeBtn) {
+            const oldOnclick = closeBtn.onclick;
+            closeBtn.onclick = (e) => {
+                if (window.adminDropdownUnsub) {
+                    window.adminDropdownUnsub();
+                    window.adminDropdownUnsub = null;
+                }
+                if (oldOnclick) oldOnclick.call(closeBtn, e);
+            };
+        }
+        
         profileFooter.insertBefore(adminCamBtn, profileFooter.firstChild);
       }
     }
