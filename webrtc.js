@@ -184,21 +184,29 @@ export async function answerBroadcast(uid, remoteVideoCamEl, remoteVideoScreenEl
     remoteVideoCamEl.srcObject = remoteStreamCam;
     if(remoteVideoScreenEl) remoteVideoScreenEl.srcObject = remoteStreamScreen;
     
-    let videoTracksCount = 0;
+    let streamMap = new Map();
+    let streamCount = 0;
     
     pc.ontrack = (event) => {
-        const track = event.track;
-        if (track.kind === 'video') {
-            videoTracksCount++;
-            if (videoTracksCount === 1) {
-                remoteStreamCam.addTrack(track);
-                remoteVideoCamEl.style.display = 'block';
+        const stream = event.streams[0];
+        if (!stream) return;
+        
+        if (!streamMap.has(stream.id)) {
+            streamCount++;
+            if (streamCount === 1) {
+                streamMap.set(stream.id, { mediaStream: remoteStreamCam, videoEl: remoteVideoCamEl });
             } else if (remoteVideoScreenEl) {
-                remoteStreamScreen.addTrack(track);
-                remoteVideoScreenEl.style.display = 'block';
+                streamMap.set(stream.id, { mediaStream: remoteStreamScreen, videoEl: remoteVideoScreenEl });
             }
-        } else if (track.kind === 'audio') {
-            remoteStreamCam.addTrack(track); // Route audio through the primary element
+        }
+        
+        const mapped = streamMap.get(stream.id);
+        if (mapped) {
+            mapped.mediaStream.addTrack(event.track);
+            mapped.videoEl.style.display = 'block';
+            // Show the corresponding mute button if it exists
+            const muteBtn = document.getElementById(mapped.videoEl.id + 'MuteBtn');
+            if (muteBtn) muteBtn.style.display = 'block';
         }
     };
     
