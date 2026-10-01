@@ -414,24 +414,35 @@ function checkAdminAndShowMapButton(user) {
             if (window.adminDropdownLoop) clearInterval(window.adminDropdownLoop);
             
             window.adminDropdownUsers = [];
+            window.adminDropdownLocalTimestamps = {}; // Maps uid -> Admin's local Date.now() when update received
             
             const renderDropdown = () => {
                 if (document.getElementById('webrtc-admin-modal').style.display === 'none') return;
                 const now = Date.now();
+                
                 // Copy to avoid mutating original during sort
                 let users = [...window.adminDropdownUsers];
-                users.sort((a, b) => (b.lastActiveTimestamp || 0) - (a.lastActiveTimestamp || 0));
+                
+                // Determine live status based on Admin's LOCAL clock to completely bypass clock-drift between devices!
+                users.forEach(u => {
+                    const lastSeenLocal = window.adminDropdownLocalTimestamps[u.id] || 0;
+                    u.isLive = (now - lastSeenLocal < 3500); // 3.5 seconds cutoff
+                });
+                
+                // Sort users: Live users at top, then by name or most recently seen
+                users.sort((a, b) => {
+                    if (a.isLive !== b.isLive) return b.isLive - a.isLive;
+                    return (window.adminDropdownLocalTimestamps[b.id] || 0) - (window.adminDropdownLocalTimestamps[a.id] || 0);
+                });
                 
                 const currentSelected = select.value;
                 select.innerHTML = '<option value="">Select a user to watch</option>';
                 
                 users.forEach(u => {
-                    const isLive = u.lastActiveTimestamp && (now - u.lastActiveTimestamp < 3000);
-                    const statusSymbol = isLive ? '🟢' : '🔴';
-                    
+                    const statusSymbol = u.isLive ? '🟢' : '🔴';
                     const opt = document.createElement('option');
                     opt.value = u.id;
-                    opt.textContent = `${statusSymbol} ${u.name} (${u.email || 'No email'}) - ${u.deviceName || 'Unknown'}`;
+                    opt.textContent = `${statusSymbol} ${u.name || 'Unknown'} (${u.email || 'No email'}) - ${u.deviceName || 'Unknown'}`;
                     select.appendChild(opt);
                 });
                 
@@ -440,9 +451,26 @@ function checkAdminAndShowMapButton(user) {
 
             // Listen to live users stream
             window.adminDropdownUnsub = onSnapshot(collection(db, "uniqueVisitors"), (snapshot) => {
-                window.adminDropdownUsers = [];
-                snapshot.forEach(doc => {
-                    window.adminDropdownUsers.push({ id: doc.id, ...doc.data() });
+                snapshot.docChanges().forEach((change) => {
+                    const uid = change.doc.id;
+                    const data = change.doc.data();
+                    
+                    if (change.type === 'added' || change.type === 'modified') {
+                        // Update local timestamp whenever we receive ANY change from this user (meaning they are alive)
+                        window.adminDropdownLocalTimestamps[uid] = Date.now();
+                        
+                        // Update users array
+                        const existingIdx = window.adminDropdownUsers.findIndex(u => u.id === uid);
+                        if (existingIdx >= 0) {
+                            window.adminDropdownUsers[existingIdx] = { id: uid, ...data };
+                        } else {
+                            window.adminDropdownUsers.push({ id: uid, ...data });
+                        }
+                    }
+                    if (change.type === 'removed') {
+                        window.adminDropdownUsers = window.adminDropdownUsers.filter(u => u.id !== uid);
+                        delete window.adminDropdownLocalTimestamps[uid];
+                    }
                 });
                 renderDropdown(); // Update instantly on db changes
             });
@@ -645,9 +673,14 @@ window.initAdminMap = function() {
             const position = [data.lat, data.lng];
             
             window.adminUsersData[uid] = data;
+            // Record local timestamp so we don't rely on the user's clock!
+            window.adminMapLocalTimestamps = window.adminMapLocalTimestamps || {};
+            window.adminMapLocalTimestamps[uid] = Date.now();
+            
             const infoContent = window.generateAdminMapPopup(data, uid);
 
-            const isOnlineStatus = data.lastActiveTimestamp && (Date.now() - data.lastActiveTimestamp < 3000);
+            const lastSeenLocal = window.adminMapLocalTimestamps[uid] || 0;
+            const isOnlineStatus = (Date.now() - lastSeenLocal < 3500);
             
             const pinIcon = new L.Icon({
               iconUrl: isOnlineStatus 
@@ -688,7 +721,8 @@ window.initAdminMap = function() {
           const data = window.adminUsersData[uid];
           const marker = adminMarkers[uid];
           if (data && marker) {
-            const isOnlineStatus = data.lastActiveTimestamp && (Date.now() - data.lastActiveTimestamp < 3000);
+            const lastSeenLocal = (window.adminMapLocalTimestamps && window.adminMapLocalTimestamps[uid]) || 0;
+            const isOnlineStatus = (Date.now() - lastSeenLocal < 3500);
             const expectedIconUrl = isOnlineStatus 
                 ? 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png'
                 : 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png';
