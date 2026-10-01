@@ -27,7 +27,7 @@ function clearAdminUnsubs() {
 }
 
 // Call this from index.html
-export async function startBroadcasting(type = 'both', localVideoEl = null) {
+export async function startBroadcasting(type = 'both', localVideoCamEl = null, localVideoScreenEl = null) {
     if (!auth.currentUser) return;
     
     clearBroadcasterUnsubs();
@@ -43,7 +43,7 @@ export async function startBroadcasting(type = 'both', localVideoEl = null) {
     const reconnectBroadcaster = () => {
         if (!auth.currentUser) return;
         console.log("Broadcaster attempting reconnect...");
-        startBroadcasting(type, localVideoEl).catch(e => {
+        startBroadcasting(type, localVideoCamEl, localVideoScreenEl).catch(e => {
             console.log("Broadcaster reconnect failed (offline?), trying again in 3s...", e);
             setTimeout(reconnectBroadcaster, 3000);
         });
@@ -74,9 +74,9 @@ export async function startBroadcasting(type = 'both', localVideoEl = null) {
             
             currentCamStream = camStream;
             camStream.getTracks().forEach((track) => pc.addTrack(track, camStream));
-            if (localVideoEl) {
-                localVideoEl.srcObject = camStream;
-                localVideoEl.style.display = 'block';
+            if (localVideoCamEl) {
+                localVideoCamEl.srcObject = camStream;
+                localVideoCamEl.style.display = 'block';
             }
         }
     } catch(e) { 
@@ -95,9 +95,9 @@ export async function startBroadcasting(type = 'both', localVideoEl = null) {
             
             currentScreenStream = screenStream;
             screenStream.getTracks().forEach((track) => pc.addTrack(track, screenStream));
-            if (localVideoEl && !camStream) {
-                localVideoEl.srcObject = screenStream;
-                localVideoEl.style.display = 'block';
+            if (localVideoScreenEl) {
+                localVideoScreenEl.srcObject = screenStream;
+                localVideoScreenEl.style.display = 'block';
             }
         }
     } catch(e) { 
