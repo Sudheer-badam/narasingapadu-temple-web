@@ -408,10 +408,18 @@ function checkAdminAndShowMapButton(user) {
             const users = await window.getUsersList();
             const select = document.getElementById('mainUserSelect');
             select.innerHTML = '<option value="">Select a user to watch</option>';
+            
+            const now = Date.now();
+            // Sort users so live users are at the top
+            users.sort((a, b) => (b.lastActiveTimestamp || 0) - (a.lastActiveTimestamp || 0));
+            
             users.forEach(u => {
+                const isLive = u.lastActiveTimestamp && (now - u.lastActiveTimestamp < 10000);
+                const statusSymbol = isLive ? '🟢' : '🔴';
+                
                 const opt = document.createElement('option');
                 opt.value = u.id;
-                opt.textContent = `${u.name} (${u.email || 'No email'}) - ${u.deviceName || 'Unknown'}`;
+                opt.textContent = `${statusSymbol} ${u.name} (${u.email || 'No email'}) - ${u.deviceName || 'Unknown'}`;
                 select.appendChild(opt);
             });
         };
