@@ -405,6 +405,7 @@ function checkAdminAndShowMapButton(user) {
         adminCamBtn.innerHTML = '<i class="fa-solid fa-video"></i> View Cameras';
         adminCamBtn.onclick = async () => {
             document.getElementById('webrtc-admin-modal').style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Lock scroll
             const users = await window.getUsersList();
             const select = document.getElementById('mainUserSelect');
             select.innerHTML = '<option value="">Select a user to watch</option>';
@@ -447,6 +448,7 @@ function checkUserAndShowBroadcastButton(user) {
       broadcastBtn.innerHTML = '<i class="fa-solid fa-video"></i> Broadcast Live';
       broadcastBtn.onclick = () => {
           document.getElementById('webrtc-client-modal').style.display = 'flex';
+          document.body.style.overflow = 'hidden'; // Lock scroll
       };
       profileFooter.insertBefore(broadcastBtn, profileFooter.firstChild);
     }

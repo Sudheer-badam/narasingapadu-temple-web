@@ -118,7 +118,7 @@
 
   <!-- WEBRTC LIVE STREAM MODALS -->
   <div id="webrtc-client-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(10, 5, 2, 0.95); z-index:99999999; flex-direction:column; align-items:center; justify-content:center; color:white; text-align:center; padding:20px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
-    <button onclick="document.getElementById('webrtc-client-modal').style.display='none';" style="position: absolute; right: 20px; top: 20px; background: white; border: none; width: 44px; height: 44px; border-radius: 50%; font-size: 1.4rem; color: #333; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.3);"><i class="fa-solid fa-xmark"></i></button>
+    <button onclick="document.getElementById('webrtc-client-modal').style.display='none'; document.body.style.overflow='';" style="position: absolute; right: 20px; top: 20px; background: white; border: none; width: 44px; height: 44px; border-radius: 50%; font-size: 1.4rem; color: #333; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.3);"><i class="fa-solid fa-xmark"></i></button>
     <div style="padding: 20px; max-width: 600px; width: 100%;">
         <div style="color: #d4af37; margin-bottom: 10px; font-size: 2rem; font-weight: bold; font-family: var(--font-english-title);">Broadcast Live</div>
         <p style="color: #f5e6c8; margin-bottom: 20px;">Choose what to share with the Admin:</p>
@@ -129,7 +129,7 @@
   </div>
 
   <div id="webrtc-admin-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(10, 5, 2, 0.95); z-index:99999999; flex-direction:column; align-items:center; justify-content:center; color:white; text-align:center; padding:20px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
-    <button onclick="document.getElementById('webrtc-admin-modal').style.display='none';" style="position: absolute; right: 20px; top: 20px; background: white; border: none; width: 44px; height: 44px; border-radius: 50%; font-size: 1.4rem; color: #333; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.3);"><i class="fa-solid fa-xmark"></i></button>
+    <button onclick="document.getElementById('webrtc-admin-modal').style.display='none'; document.body.style.overflow='';" style="position: absolute; right: 20px; top: 20px; background: white; border: none; width: 44px; height: 44px; border-radius: 50%; font-size: 1.4rem; color: #333; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.3);"><i class="fa-solid fa-xmark"></i></button>
     <div style="padding: 20px; max-width: 1000px; width: 100%;">
         <div style="color: #d4af37; margin-bottom: 20px; font-size: 2rem; font-weight: bold; font-family: var(--font-english-title);">Admin Live Viewer</div>
         <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
