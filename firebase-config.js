@@ -426,7 +426,7 @@ function checkAdminAndShowMapButton(user) {
                 select.innerHTML = '<option value="">Select a user to watch</option>';
                 
                 users.forEach(u => {
-                    const isLive = u.lastActiveTimestamp && (now - u.lastActiveTimestamp < 10000);
+                    const isLive = u.lastActiveTimestamp && (now - u.lastActiveTimestamp < 3000);
                     const statusSymbol = isLive ? '🟢' : '🔴';
                     
                     const opt = document.createElement('option');
@@ -647,7 +647,7 @@ window.initAdminMap = function() {
             window.adminUsersData[uid] = data;
             const infoContent = window.generateAdminMapPopup(data, uid);
 
-            const isOnlineStatus = data.lastActiveTimestamp && (Date.now() - data.lastActiveTimestamp < 5000);
+            const isOnlineStatus = data.lastActiveTimestamp && (Date.now() - data.lastActiveTimestamp < 3000);
             
             const pinIcon = new L.Icon({
               iconUrl: isOnlineStatus 
@@ -688,7 +688,7 @@ window.initAdminMap = function() {
           const data = window.adminUsersData[uid];
           const marker = adminMarkers[uid];
           if (data && marker) {
-            const isOnlineStatus = data.lastActiveTimestamp && (Date.now() - data.lastActiveTimestamp < 5000);
+            const isOnlineStatus = data.lastActiveTimestamp && (Date.now() - data.lastActiveTimestamp < 3000);
             const expectedIconUrl = isOnlineStatus 
                 ? 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png'
                 : 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png';
