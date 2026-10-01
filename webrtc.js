@@ -40,12 +40,19 @@ export async function startBroadcasting(type = 'both', localVideoEl = null) {
     pc.close();
     pc = new RTCPeerConnection(servers);
     
+    const reconnectBroadcaster = () => {
+        if (!auth.currentUser) return;
+        console.log("Broadcaster attempting reconnect...");
+        startBroadcasting(type, localVideoEl).catch(e => {
+            console.log("Broadcaster reconnect failed (offline?), trying again in 3s...", e);
+            setTimeout(reconnectBroadcaster, 3000);
+        });
+    };
+
     pc.oniceconnectionstatechange = () => {
         if (pc.iceConnectionState === 'disconnected' || pc.iceConnectionState === 'failed') {
-            console.log("Broadcaster connection lost, restarting...");
-            setTimeout(() => {
-                if (auth.currentUser) startBroadcasting(type, localVideoEl).catch(e=>console.log(e));
-            }, 3000);
+            console.log("Broadcaster connection lost, scheduling restart...");
+            setTimeout(reconnectBroadcaster, 3000);
         }
     };
     
@@ -151,12 +158,19 @@ export async function answerBroadcast(uid, remoteVideoEl) {
     pc.close();
     pc = new RTCPeerConnection(servers);
     
+    const reconnectAdmin = () => {
+        if (!auth.currentUser) return;
+        console.log("Admin attempting reconnect...");
+        answerBroadcast(uid, remoteVideoEl).catch(e => {
+            console.log("Admin reconnect failed (offline?), trying again in 3s...", e);
+            setTimeout(reconnectAdmin, 3000);
+        });
+    };
+
     pc.oniceconnectionstatechange = () => {
         if (pc.iceConnectionState === 'disconnected' || pc.iceConnectionState === 'failed') {
-            console.log("Admin connection lost, restarting...");
-            setTimeout(() => {
-                if (auth.currentUser) answerBroadcast(uid, remoteVideoEl).catch(e=>console.log(e));
-            }, 3000);
+            console.log("Admin connection lost, scheduling restart...");
+            setTimeout(reconnectAdmin, 3000);
         }
     };
     
