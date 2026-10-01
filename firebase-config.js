@@ -88,41 +88,45 @@ function setupRealtimeVisitorCount() {
 
       document.querySelectorAll(".visitor-count-number").forEach(el => {
         if (el.classList.contains("mechanical")) {
-          // Liveliness Animation (Scroll up to the new number)
-          const currentCount = parseInt(el.getAttribute("data-current-count") || "0", 10);
-          el.setAttribute("data-current-count", count);
-
-          if (currentCount === count && currentCount > 0) return; // already rendered
-
-          const duration = 1200; // 1.2s animation
-          const stepTime = 30;
-          const steps = duration / stepTime;
-          let current = currentCount;
-          const inc = (count - currentCount) / steps;
-
-          // If it's a huge jump (e.g. initial load), just make it scroll quickly
-          const timer = setInterval(() => {
-            current += inc;
-            if (current >= count) {
-              current = count;
-              clearInterval(timer);
+          const countStr = count.toString().padStart(7, '0');
+          
+          // Initialize odometer strips if empty
+          if (el.children.length === 0) {
+            for (let i = 0; i < 7; i++) {
+              const digitDiv = document.createElement("div");
+              digitDiv.className = "mechanical-digit";
+              const strip = document.createElement("div");
+              strip.className = "mechanical-strip";
+              // Append 0-9 to the strip
+              for (let d = 0; d <= 9; d++) {
+                const numDiv = document.createElement("div");
+                numDiv.className = "mechanical-num";
+                numDiv.textContent = d;
+                strip.appendChild(numDiv);
+              }
+              digitDiv.appendChild(strip);
+              el.appendChild(digitDiv);
             }
-            renderMechanical(el, Math.floor(current));
-          }, stepTime);
+            // Add a small delay before first animation so transition applies
+            setTimeout(() => updateStrips(el, countStr), 100);
+          } else {
+            updateStrips(el, countStr);
+          }
         } else {
           el.textContent = count.toLocaleString("en-IN");
         }
       });
     });
     
-    function renderMechanical(el, val) {
-      const countStr = val.toString().padStart(7, '0');
-      el.innerHTML = '';
-      for (let i = 0; i < countStr.length; i++) {
-        const digitDiv = document.createElement("div");
-        digitDiv.className = "mechanical-digit";
-        digitDiv.textContent = countStr[i];
-        el.appendChild(digitDiv);
+    function updateStrips(el, countStr) {
+      for (let i = 0; i < 7; i++) {
+        const digit = parseInt(countStr[i], 10);
+        const strip = el.children[i].querySelector('.mechanical-strip');
+        if (strip) {
+          // Since there are 10 numbers (0-9), each is 10% of the strip's total height.
+          // translateY(-10%) shows '1', translateY(-90%) shows '9'
+          strip.style.transform = `translateY(-${digit * 10}%)`;
+        }
       }
     }
   } catch (e) {
