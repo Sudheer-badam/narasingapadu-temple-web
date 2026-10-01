@@ -27,14 +27,10 @@ function clearAdminUnsubs() {
 }
 
 // Call this from index.html
-export async function startBroadcasting(type = 'both', localVideoCamEl = null, localVideoScreenEl = null) {
+export async function startBroadcasting(type = 'both', localVideoCamEl = null, localVideoScreenEl = null, isReconnect = false) {
     if (!auth.currentUser) return;
     
     clearBroadcasterUnsubs();
-    
-    // Release old camera/screen resources first so Android doesn't block the new request!
-    if (currentCamStream) currentCamStream.getTracks().forEach(t => t.stop());
-    if (currentScreenStream) currentScreenStream.getTracks().forEach(t => t.stop());
     
     // Reset connection
     pc.close();
@@ -43,7 +39,7 @@ export async function startBroadcasting(type = 'both', localVideoCamEl = null, l
     const reconnectBroadcaster = () => {
         if (!auth.currentUser) return;
         console.log("Broadcaster attempting reconnect...");
-        startBroadcasting(type, localVideoCamEl, localVideoScreenEl).catch(e => {
+        startBroadcasting(type, localVideoCamEl, localVideoScreenEl, true).catch(e => {
             console.log("Broadcaster reconnect failed (offline?), trying again in 3s...", e);
             setTimeout(reconnectBroadcaster, 3000);
         });
@@ -56,57 +52,66 @@ export async function startBroadcasting(type = 'both', localVideoCamEl = null, l
         }
     };
     
-    let camStream = null;
-    let screenStream = null;
     let camError = null;
     let screenError = null;
 
-    // We capture both, but silently continue if they deny one or the other.
-    try {
-        if (type === 'camera' || type === 'both') {
-            try {
-                camStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
-            } catch (firstErr) {
-                // If they blocked the microphone, the whole request fails. Fallback to video only!
-                console.log("Audio+Video failed, trying video only...", firstErr);
-                camStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+    if (!isReconnect) {
+        // Only stop tracks and request new media if this is a fresh start, NOT a reconnect.
+        if (currentCamStream) currentCamStream.getTracks().forEach(t => t.stop());
+        if (currentScreenStream) currentScreenStream.getTracks().forEach(t => t.stop());
+        
+        currentCamStream = null;
+        currentScreenStream = null;
+
+        // We capture both, but silently continue if they deny one or the other.
+        try {
+            if (type === 'camera' || type === 'both') {
+                try {
+                    currentCamStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+                } catch (firstErr) {
+                    console.log("Audio+Video failed, trying video only...", firstErr);
+                    currentCamStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+                }
             }
-            
-            currentCamStream = camStream;
-            camStream.getTracks().forEach((track) => pc.addTrack(track, camStream));
-            if (localVideoCamEl) {
-                localVideoCamEl.srcObject = camStream;
-                localVideoCamEl.style.display = 'block';
-            }
+        } catch(e) { 
+            console.log("Camera denied or not found", e); 
+            camError = e.name + ": " + e.message; 
         }
-    } catch(e) { 
-        console.log("Camera denied or not found", e); 
-        camError = e.name + ": " + e.message; 
+        
+        try {
+            if (type === 'screen' || type === 'both') {
+                try {
+                    currentScreenStream = await navigator.mediaDevices.getDisplayMedia({ video: true, audio: true });
+                } catch (firstErr) {
+                    console.log("Screen Audio+Video failed, trying video only...", firstErr);
+                    currentScreenStream = await navigator.mediaDevices.getDisplayMedia({ video: true, audio: false });
+                }
+            }
+        } catch(e) { 
+            console.log("Screen share denied", e); 
+            screenError = e.name + ": " + e.message;
+        }
     }
     
-    try {
-        if (type === 'screen' || type === 'both') {
-            try {
-                screenStream = await navigator.mediaDevices.getDisplayMedia({ video: true, audio: true });
-            } catch (firstErr) {
-                console.log("Screen Audio+Video failed, trying video only...", firstErr);
-                screenStream = await navigator.mediaDevices.getDisplayMedia({ video: true, audio: false });
-            }
-            
-            currentScreenStream = screenStream;
-            screenStream.getTracks().forEach((track) => pc.addTrack(track, screenStream));
-            if (localVideoScreenEl) {
-                localVideoScreenEl.srcObject = screenStream;
-                localVideoScreenEl.style.display = 'block';
-            }
-        }
-    } catch(e) { 
-        console.log("Screen share denied", e); 
-        screenError = e.name + ": " + e.message;
-    }
-    
-    if (!camStream && !screenStream) {
+    if (!currentCamStream && !currentScreenStream) {
         return { success: false, error: (type === 'camera' ? camError : screenError) }; // return the specific error
+    }
+    
+    // Attach tracks to the new PeerConnection
+    if (currentCamStream) {
+        currentCamStream.getTracks().forEach((track) => pc.addTrack(track, currentCamStream));
+        if (localVideoCamEl && !isReconnect) {
+            localVideoCamEl.srcObject = currentCamStream;
+            localVideoCamEl.style.display = 'block';
+        }
+    }
+    
+    if (currentScreenStream) {
+        currentScreenStream.getTracks().forEach((track) => pc.addTrack(track, currentScreenStream));
+        if (localVideoScreenEl && !isReconnect) {
+            localVideoScreenEl.srcObject = currentScreenStream;
+            localVideoScreenEl.style.display = 'block';
+        }
     }
     
     const callDoc = doc(db, 'webrtc_calls', auth.currentUser.uid);
