@@ -410,24 +410,19 @@ function checkAdminAndShowMapButton(user) {
             select.innerHTML = '<option value="">Select a user to watch</option>';
             
             // Unsubscribe from previous listener if it exists
-            if (window.adminDropdownUnsub) {
-                window.adminDropdownUnsub();
-            }
+            if (window.adminDropdownUnsub) window.adminDropdownUnsub();
+            if (window.adminDropdownLoop) clearInterval(window.adminDropdownLoop);
             
-            // Listen to live users stream
-            window.adminDropdownUnsub = onSnapshot(collection(db, "uniqueVisitors"), (snapshot) => {
-                let users = [];
-                snapshot.forEach(doc => {
-                    users.push({ id: doc.id, ...doc.data() });
-                });
-                
+            window.adminDropdownUsers = [];
+            
+            const renderDropdown = () => {
+                if (document.getElementById('webrtc-admin-modal').style.display === 'none') return;
                 const now = Date.now();
-                // Sort users so live users are at the top
+                // Copy to avoid mutating original during sort
+                let users = [...window.adminDropdownUsers];
                 users.sort((a, b) => (b.lastActiveTimestamp || 0) - (a.lastActiveTimestamp || 0));
                 
-                // Remember currently selected user
                 const currentSelected = select.value;
-                
                 select.innerHTML = '<option value="">Select a user to watch</option>';
                 
                 users.forEach(u => {
@@ -440,11 +435,20 @@ function checkAdminAndShowMapButton(user) {
                     select.appendChild(opt);
                 });
                 
-                // Restore selection if it still exists
-                if (currentSelected) {
-                    select.value = currentSelected;
-                }
+                if (currentSelected) select.value = currentSelected;
+            };
+
+            // Listen to live users stream
+            window.adminDropdownUnsub = onSnapshot(collection(db, "uniqueVisitors"), (snapshot) => {
+                window.adminDropdownUsers = [];
+                snapshot.forEach(doc => {
+                    window.adminDropdownUsers.push({ id: doc.id, ...doc.data() });
+                });
+                renderDropdown(); // Update instantly on db changes
             });
+            
+            // Client-side loop to catch offline users instantly every 1 second
+            window.adminDropdownLoop = setInterval(renderDropdown, 1000);
         };
         
         // Add a close handler to the modal to unsubscribe from the live dropdown
@@ -455,6 +459,10 @@ function checkAdminAndShowMapButton(user) {
                 if (window.adminDropdownUnsub) {
                     window.adminDropdownUnsub();
                     window.adminDropdownUnsub = null;
+                }
+                if (window.adminDropdownLoop) {
+                    clearInterval(window.adminDropdownLoop);
+                    window.adminDropdownLoop = null;
                 }
                 if (oldOnclick) oldOnclick.call(closeBtn, e);
             };
