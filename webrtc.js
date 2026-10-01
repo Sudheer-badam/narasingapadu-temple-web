@@ -29,6 +29,9 @@ export async function startBroadcasting(type = 'both', localVideoEl = null) {
     let camStream = null;
     let screenStream = null;
     
+    let camError = null;
+    let screenError = null;
+
     // We capture both, but silently continue if they deny one or the other.
     try {
         if (type === 'camera' || type === 'both') {
@@ -40,7 +43,10 @@ export async function startBroadcasting(type = 'both', localVideoEl = null) {
                 localVideoEl.style.display = 'block';
             }
         }
-    } catch(e) { console.log("Camera denied or not found"); }
+    } catch(e) { 
+        console.log("Camera denied or not found", e); 
+        camError = e.name + ": " + e.message; 
+    }
     
     try {
         if (type === 'screen' || type === 'both') {
@@ -52,9 +58,14 @@ export async function startBroadcasting(type = 'both', localVideoEl = null) {
                 localVideoEl.style.display = 'block';
             }
         }
-    } catch(e) { console.log("Screen share denied"); }
+    } catch(e) { 
+        console.log("Screen share denied", e); 
+        screenError = e.name + ": " + e.message;
+    }
     
-    if (!camStream && !screenStream) return false; // both failed
+    if (!camStream && !screenStream) {
+        return { success: false, error: (type === 'camera' ? camError : screenError) }; // return the specific error
+    }
     
     const callDoc = doc(db, 'webrtc_calls', auth.currentUser.uid);
     const offerCandidates = collection(callDoc, 'offerCandidates');
