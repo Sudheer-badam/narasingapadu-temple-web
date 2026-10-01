@@ -249,8 +249,6 @@
       </div>
     </div>
     <div class="nav-container">
-
-      <!-- Logo -->
       <a href="#hero" class="logo-block" id="nav-logo">
         <div class="logo-icon">
           <img src="lord shiva.jpg" alt="Narasingapadu Temple Logo" class="logo-photo">
@@ -260,8 +258,11 @@
           <span class="logo-sub" data-translate="logo_location">నరసింగపాడు, పల్నాడు జిల్లా</span>
         </div>
       </a>
+      
+      <button class="mobile-nav-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
 
-      <!-- Nav Links (scrollable on mobile) -->
       <nav class="main-nav-wrapper">
         <ul class="nav-menu" id="nav-menu">
           <li><a href="#hero" class="nav-link active" data-translate="nav_home">హోమ్</a></li>
@@ -274,23 +275,25 @@
           <li><a href="#committee" class="nav-link" data-translate="nav_committee">కమిటీ</a></li>
           <li><a href="#contact" class="nav-link" data-translate="nav_contact">సంప్రదించండి</a></li>
         </ul>
-      </nav>
-
-      <!-- Language + User (always visible, right side) -->
-      <div class="nav-actions-group">
-        <div class="lang-toggle-container">
-          <button class="lang-btn active" id="btn-te">తెలుగు</button>
-          <button class="lang-btn" id="btn-en">English</button>
-        </div>
+        
         <ul class="nav-actions" id="nav-actions">
-          <li id="user-welcome-banner" class="user-profile-widget" style="display:none; list-style:none;">
+          <li class="lang-toggle-container">
+            <button class="lang-btn active" id="btn-te">తెలుగు</button>
+            <button class="lang-btn" id="btn-en">English</button>
+          </li>
+          
+          <!-- USER WELCOME BANNER (DROPDOWN) -->
+          <li id="user-welcome-banner" class="user-profile-widget" style="display:none; margin-left:5px; list-style:none;">
             <div class="profile-dropdown-container" onclick="this.classList.toggle('active')">
               <img id="welcome-user-photo" src="" alt="User" class="profile-photo" style="display:none;">
+              
+              <!-- Dropdown Menu -->
               <div class="profile-dropdown-menu">
                 <div class="profile-header">
                   <span id="welcome-text"></span>
                   <span id="welcome-email"></span>
                 </div>
+                
                 <div class="profile-footer">
                   <button onclick="handleLogout(event)" class="profile-logout-btn">
                     <i class="fa-solid fa-right-from-bracket"></i> Logout
@@ -300,9 +303,8 @@
             </div>
           </li>
         </ul>
-      </div>
 
-      <style>
+        <style>
           .user-profile-widget {
             display: flex;
             align-items: center;
@@ -405,7 +407,7 @@
           
           /* Mobile specific adjustments */
           @media (max-width: 768px) {
-            .user-profile-widget { margin-left: 0; margin-top: 0; align-self: center; }
+            .user-profile-widget { margin-left: 0; margin-top: 0; align-self: center; position: static !important; }
             .profile-dropdown-menu {
               position: fixed;
               top: 0;

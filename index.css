@@ -279,7 +279,6 @@ body.lang-te .scrolling-ticker .ticker-text-wrapper {
   color: var(--gold-bright);
 }
 
-/* ── NAV CONTAINER ── */
 .nav-container {
   max-width: 100%;
   width: 100%;
@@ -291,66 +290,21 @@ body.lang-te .scrolling-ticker .ticker-text-wrapper {
   padding: 0.8rem 1.5rem 0 1.5rem;
 }
 
-/* ── DESKTOP (≥769px): original single-row ── */
-@media (min-width: 769px) {
-  .nav-container > .logo-block { flex: 0 1 auto; }
+@media (min-width: 1024px) {
+  .nav-container > .logo-block {
+    flex: 0 1 auto;
+    justify-content: flex-start;
+  }
+  
   .main-nav-wrapper {
     flex: 1 1 auto;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     min-width: 0;
-    overflow-x: auto;
-    scrollbar-width: none;
-    margin-top: 0;
+    gap: 15px;
   }
-  .main-nav-wrapper::-webkit-scrollbar { display: none; }
-  .nav-actions-group {
-    flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .nav-actions-group .lang-toggle-container { display: flex; gap: 6px; }
-  .nav-actions-group .nav-actions { display: flex; align-items: center; list-style: none; padding: 0; margin: 0; }
-  .nav-menu { flex: 1 1 auto; overflow-x: visible; }
 }
-
-/* ── MOBILE (≤768px): two-row layout ── */
-@media (max-width: 768px) {
-  .nav-container {
-    flex-wrap: wrap;
-    padding: 0.5rem 0.8rem 0 0.8rem;
-    align-items: center;
-  }
-  /* Row 1: Logo (left) + Actions group (right) */
-  .nav-container > .logo-block { flex: 1 1 auto; min-width: 0; order: 1; }
-  .nav-actions-group {
-    flex: 0 0 auto;
-    order: 2;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .nav-actions-group .lang-toggle-container { display: flex; gap: 5px; }
-  .nav-actions-group .nav-actions { display: flex; align-items: center; list-style: none; padding: 0; margin: 0; }
-  /* Row 2: Full-width scrollable nav links */
-  .main-nav-wrapper {
-    order: 3;
-    flex: 0 0 100%;
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    margin-top: 6px;
-    display: block;
-  }
-  .main-nav-wrapper::-webkit-scrollbar { display: none; }
-  .nav-menu { display: flex; flex-wrap: nowrap; gap: 1rem; padding: 4px 2px 8px 2px; width: max-content; }
-}
-
-.mobile-nav-toggle { display: none !important; }
-
 
 .logo-block {
   display: flex;
@@ -463,7 +417,6 @@ body.lang-te .logo-sub {
   gap: 10px;
   list-style: none;
   flex-shrink: 0;
-  margin-left: auto;
 }
 body.lang-te .nav-link {
   font-family: var(--font-telugu-bold);
@@ -4346,120 +4299,46 @@ body:not(.map-marker-container) @keyframes bounce {
   }
 }
 
-/* ============================================================
-   MOBILE-FIRST RESPONSIVE DESIGN
-   Comprehensive overhaul for phones and tablets
-   ============================================================ */
-
-html { -webkit-text-size-adjust: 100%; }
-
-/* ── Tablet (max 1024px) ── */
-@media (max-width: 1024px) {
-  .logo-block    { max-width: 300px; }
-  .logo-icon     { width: 52px; height: 52px; }
-  .logo-main     { font-size: 0.8rem; }
-  .nav-menu  { gap: 1.2rem; padding: 6px 4px; }
-  .hero-god-panel { width: 44%; height: 72%; }
-  .section-padded { padding: 60px 1.2rem; }
-  h2 { font-size: 1.8rem; }
-}
-
-/* ── Mobile (max 768px) ── */
 @media (max-width: 768px) {
-  h2 { font-size: 1.5rem; margin-bottom: 2.5rem; }
-  h3 { font-size: 1.2rem; }
-  p  { font-size: 0.95rem; line-height: 1.7; }
-
-  header { padding: 0 0 0.5rem 0; }
-  .logo-icon { width: 44px; height: 44px; }
-  .logo-main { font-size: 0.72rem; }
-  .logo-sub  { font-size: 0.65rem; }
-  .logo-block { max-width: 200px !important; }
-  .nav-link  { font-size: 0.7rem; padding: 4px 0; }
-  body.lang-te .nav-link { font-size: 0.85rem; }
-  .lang-btn { padding: 3px 7px; font-size: 0.7rem; }
-
-  /* ── Hero ── */
-  .hero { height: 100svh; min-height: 500px; }
-  .hero-god-panel {
-    width: 88% !important;
-    height: 38% !important;
-    left: 50% !important;
-    right: auto !important;
-    transform: translateX(-50%) !important;
+  .nav-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    height: auto;
   }
-  .hero-god-left  { top: 4%  !important; }
-  .hero-god-right { top: 50% !important; }
-  .hero-god-panel:hover { transform: translateX(-50%) translateY(-5px) !important; }
-
-  /* ── Sections & Grids ── */
-  .section-padded { padding: 50px 1rem; }
-  section { padding-left: 1rem !important; padding-right: 1rem !important; }
-
-  .timings-grid,
-  .gallery-grid,
-  .events-grid,
-  .services-grid,
-  .puja-grid,
-  .facilities-grid,
-  .contact-grid { grid-template-columns: 1fr !important; gap: 1rem !important; }
-
-  .gallery-grid { grid-template-columns: repeat(2, 1fr) !important; }
-
-  .history-content,
-  .about-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
-  .history-image { height: 250px !important; }
-
-  .visitor-stats-section { flex-direction: column !important; gap: 1rem !important; padding: 1.5rem 1rem !important; }
-
-  .contact-wrapper,
-  .donate-wrapper { flex-direction: column !important; gap: 1.5rem !important; }
-  .contact-form-block,
-  .donate-info-block { width: 100% !important; min-width: 0 !important; }
-
-  .btn-primary, .btn-secondary { padding: 0.7rem 1.4rem; font-size: 0.9rem; }
-
-  /* ── Login & Overlays ── */
-  #login-portal .login-box,
-  #login-portal .card { padding: 2rem 1.2rem !important; border-radius: 16px !important; margin: 1rem !important; }
-  #location-overlay > div { padding: 2rem 1.2rem !important; margin: 1rem !important; border-radius: 16px !important; max-width: 95vw !important; }
-
-  /* ── Admin map ── */
-  #admin-map-container { padding: 10px !important; }
-  #admin-map { border-radius: 6px !important; }
-}
-
-/* ── Small Mobile (max 480px) ── */
-@media (max-width: 480px) {
-  h2 { font-size: 1.3rem; margin-bottom: 2rem; }
-  .logo-icon  { width: 38px; height: 38px; border-width: 2px; }
-  .logo-main  { font-size: 0.65rem; }
-  .logo-text  { max-width: 130px; }
-  .nav-link   { font-size: 0.65rem; }
-  .nav-menu   { gap: 0.8rem; }
-  .gallery-grid { grid-template-columns: 1fr !important; }
-  .section-padded { padding: 40px 0.8rem; }
-  .scrolling-ticker { font-size: 0.78rem; padding: 5px 0; }
-  .visitor-count-number { font-size: 1.6rem !important; }
-  #admin-map-container h2 { font-size: 1rem !important; margin-bottom: 0.5rem !important; }
-  .hero-god-panel { width: 92% !important; height: 36% !important; }
-  .hero-god-left  { top: 3%  !important; }
-  .hero-god-right { top: 47% !important; }
-}
-
-/* ── Touch device: larger tap targets, disable hover transforms ── */
-@media (hover: none) and (pointer: coarse) {
-  .nav-link { padding: 8px 2px; }
-  .lang-btn { padding: 6px 10px; }
-  .btn-primary, .btn-secondary { padding: 0.85rem 1.6rem; }
-  .hero-god-panel:hover {
-    transform: translateX(-50%) !important;
-    box-shadow: 0 0 0 1px rgba(255,255,255,0.15), 0 0 25px rgba(255,180,40,0.45), 0 12px 40px rgba(0,0,0,0.7);
+  .logo-block {
+    max-width: 70% !important;
   }
-  .hero-god-panel:hover .hero-god-img { transform: none; }
+  .main-nav-wrapper {
+    width: 100%;
+    margin-top: 15px;
+    overflow-x: auto;
+  }
+  .nav-menu {
+    justify-content: flex-start !important;
+  }
+  /* Absolute position the actions */
+  .nav-actions {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+  }
 }
 
-/* ── iPhone notch / home bar safe area ── */
-@supports (padding: max(0px)) {
-  header { padding-top: env(safe-area-inset-top); }
+@media (max-width: 768px) {
+  .mobile-nav-toggle {
+    display: none !important;
+  }
+  .main-nav-wrapper {
+    position: static !important;
+    height: auto !important;
+    padding: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    flex-direction: row !important;
+  }
 }
