@@ -129,6 +129,7 @@ export async function answerBroadcast(uid, remoteVideoEl) {
     // In a multi-stream setup, we just dump all tracks into one stream for playback for simplicity,
     // though usually you'd separate them. For this basic viewer, one stream works for the first video track.
     remoteVideoEl.srcObject = remoteStream;
+    remoteVideoEl.style.display = 'block';
     
     pc.ontrack = (event) => {
         event.streams[0].getTracks().forEach((track) => {
