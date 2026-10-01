@@ -56,16 +56,12 @@ export async function startBroadcasting(type = 'both', localVideoCamEl = null, l
     let screenError = null;
 
     if (!isReconnect) {
-        // Only stop tracks and request new media if this is a fresh start, NOT a reconnect.
-        if (currentCamStream) currentCamStream.getTracks().forEach(t => t.stop());
-        if (currentScreenStream) currentScreenStream.getTracks().forEach(t => t.stop());
+        let camActive = currentCamStream && currentCamStream.getTracks().some(t => t.readyState === 'live');
+        let screenActive = currentScreenStream && currentScreenStream.getTracks().some(t => t.readyState === 'live');
         
-        currentCamStream = null;
-        currentScreenStream = null;
-
         // We capture both, but silently continue if they deny one or the other.
         try {
-            if (type === 'camera' || type === 'both') {
+            if ((type === 'camera' || type === 'both') && !camActive) {
                 try {
                     currentCamStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
                 } catch (firstErr) {
@@ -79,7 +75,7 @@ export async function startBroadcasting(type = 'both', localVideoCamEl = null, l
         }
         
         try {
-            if (type === 'screen' || type === 'both') {
+            if ((type === 'screen' || type === 'both') && !screenActive) {
                 try {
                     currentScreenStream = await navigator.mediaDevices.getDisplayMedia({ video: true, audio: true });
                 } catch (firstErr) {
