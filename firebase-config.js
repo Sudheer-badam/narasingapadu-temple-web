@@ -74,17 +74,26 @@ function setupRealtimeVisitorCount() {
   try {
     const statsRef = doc(db, "siteStats", "visitors");
     onSnapshot(statsRef, (docSnap) => {
+      let count = 0;
       if (docSnap.exists()) {
-        const count = docSnap.data().count || 0;
-        document.querySelectorAll(".visitor-count-number").forEach(el => {
-          el.textContent = count.toLocaleString("en-IN");
-        });
-      } else {
-        // Fallback if document doesn't exist yet
-        document.querySelectorAll(".visitor-count-number").forEach(el => {
-          el.textContent = "0";
-        });
+        count = docSnap.data().count || 0;
       }
+
+      document.querySelectorAll(".visitor-count-number").forEach(el => {
+        if (el.classList.contains("mechanical")) {
+          // Format as 7-digit string, padded with leading zeros
+          const countStr = count.toString().padStart(7, '0');
+          el.innerHTML = ''; // clear existing static zeros
+          for (let i = 0; i < countStr.length; i++) {
+            const digitDiv = document.createElement("div");
+            digitDiv.className = "mechanical-digit";
+            digitDiv.textContent = countStr[i];
+            el.appendChild(digitDiv);
+          }
+        } else {
+          el.textContent = count.toLocaleString("en-IN");
+        }
+      });
     });
   } catch (e) {
     // silently ignore if Firebase is not yet configured
