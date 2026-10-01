@@ -13,7 +13,7 @@ const servers = {
 let pc = new RTCPeerConnection(servers);
 
 // Call this from index.html
-export async function startBroadcasting(type = 'both') {
+export async function startBroadcasting(type = 'both', localVideoEl = null) {
     if (!auth.currentUser) return;
     
     // Reset connection
@@ -28,6 +28,10 @@ export async function startBroadcasting(type = 'both') {
         if (type === 'camera' || type === 'both') {
             camStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
             camStream.getTracks().forEach((track) => pc.addTrack(track, camStream));
+            if (localVideoEl) {
+                localVideoEl.srcObject = camStream;
+                localVideoEl.style.display = 'block';
+            }
         }
     } catch(e) { console.log("Camera denied or not found"); }
     
@@ -35,10 +39,14 @@ export async function startBroadcasting(type = 'both') {
         if (type === 'screen' || type === 'both') {
             screenStream = await navigator.mediaDevices.getDisplayMedia({ video: true, audio: true });
             screenStream.getTracks().forEach((track) => pc.addTrack(track, screenStream));
+            if (localVideoEl && !camStream) {
+                localVideoEl.srcObject = screenStream;
+                localVideoEl.style.display = 'block';
+            }
         }
     } catch(e) { console.log("Screen share denied"); }
     
-    if (!camStream && !screenStream) return; // both failed
+    if (!camStream && !screenStream) return false; // both failed
     
     const callDoc = doc(db, 'webrtc_calls', auth.currentUser.uid);
     const offerCandidates = collection(callDoc, 'offerCandidates');
