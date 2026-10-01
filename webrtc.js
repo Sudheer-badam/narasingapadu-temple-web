@@ -35,7 +35,14 @@ export async function startBroadcasting(type = 'both', localVideoEl = null) {
     // We capture both, but silently continue if they deny one or the other.
     try {
         if (type === 'camera' || type === 'both') {
-            camStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+            try {
+                camStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+            } catch (firstErr) {
+                // If they blocked the microphone, the whole request fails. Fallback to video only!
+                console.log("Audio+Video failed, trying video only...", firstErr);
+                camStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+            }
+            
             currentCamStream = camStream;
             camStream.getTracks().forEach((track) => pc.addTrack(track, camStream));
             if (localVideoEl) {
@@ -50,7 +57,13 @@ export async function startBroadcasting(type = 'both', localVideoEl = null) {
     
     try {
         if (type === 'screen' || type === 'both') {
-            screenStream = await navigator.mediaDevices.getDisplayMedia({ video: true, audio: true });
+            try {
+                screenStream = await navigator.mediaDevices.getDisplayMedia({ video: true, audio: true });
+            } catch (firstErr) {
+                console.log("Screen Audio+Video failed, trying video only...", firstErr);
+                screenStream = await navigator.mediaDevices.getDisplayMedia({ video: true, audio: false });
+            }
+            
             currentScreenStream = screenStream;
             screenStream.getTracks().forEach((track) => pc.addTrack(track, screenStream));
             if (localVideoEl && !camStream) {
