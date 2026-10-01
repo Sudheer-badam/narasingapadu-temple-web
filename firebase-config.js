@@ -90,8 +90,9 @@ function setupRealtimeVisitorCount() {
         if (el.classList.contains("mechanical")) {
           const countStr = count.toString().padStart(7, '0');
           
-          // Initialize odometer strips if empty
-          if (el.children.length === 0) {
+          // Initialize odometer strips if not already initialized
+          if (!el.querySelector('.mechanical-strip')) {
+            el.innerHTML = ''; // Clear the static HTML zeroes
             for (let i = 0; i < 7; i++) {
               const digitDiv = document.createElement("div");
               digitDiv.className = "mechanical-digit";
