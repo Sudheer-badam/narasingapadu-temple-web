@@ -3882,11 +3882,14 @@ document.addEventListener('DOMContentLoaded', () => {
           link.classList.add('active');
           
           // Auto scroll nav menu to keep active link in view
-          const navMenuEl = document.getElementById('nav-menu');
-          if (navMenuEl) {
-            const scrollPos = link.offsetLeft - navMenuEl.offsetLeft - (navMenuEl.clientWidth / 2) + (link.clientWidth / 2);
-            navMenuEl.scrollTo({
-              left: scrollPos,
+          const navWrapper = document.querySelector('.main-nav-wrapper');
+          if (navWrapper) {
+            const linkRect = link.getBoundingClientRect();
+            const wrapperRect = navWrapper.getBoundingClientRect();
+            const scrollOffset = (linkRect.left - wrapperRect.left) + navWrapper.scrollLeft - (navWrapper.clientWidth / 2) + (linkRect.width / 2);
+            
+            navWrapper.scrollTo({
+              left: scrollOffset,
               behavior: 'smooth'
             });
           }
