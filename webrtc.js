@@ -13,10 +13,24 @@ const servers = {
 let pc = new RTCPeerConnection(servers);
 let currentCamStream = null;
 let currentScreenStream = null;
+let broadcasterUnsubs = [];
+let adminUnsubs = [];
+
+function clearBroadcasterUnsubs() {
+    broadcasterUnsubs.forEach(unsub => unsub());
+    broadcasterUnsubs = [];
+}
+
+function clearAdminUnsubs() {
+    adminUnsubs.forEach(unsub => unsub());
+    adminUnsubs = [];
+}
 
 // Call this from index.html
 export async function startBroadcasting(type = 'both', localVideoEl = null) {
     if (!auth.currentUser) return;
+    
+    clearBroadcasterUnsubs();
     
     // Release old camera/screen resources first so Android doesn't block the new request!
     if (currentCamStream) currentCamStream.getTracks().forEach(t => t.stop());
@@ -26,9 +40,17 @@ export async function startBroadcasting(type = 'both', localVideoEl = null) {
     pc.close();
     pc = new RTCPeerConnection(servers);
     
+    pc.oniceconnectionstatechange = () => {
+        if (pc.iceConnectionState === 'disconnected' || pc.iceConnectionState === 'failed') {
+            console.log("Broadcaster connection lost, restarting...");
+            setTimeout(() => {
+                if (auth.currentUser) startBroadcasting(type, localVideoEl).catch(e=>console.log(e));
+            }, 3000);
+        }
+    };
+    
     let camStream = null;
     let screenStream = null;
-    
     let camError = null;
     let screenError = null;
 
@@ -100,15 +122,16 @@ export async function startBroadcasting(type = 'both', localVideoEl = null) {
     
     await setDoc(callDoc, { offer });
     
-    onSnapshot(callDoc, (snapshot) => {
+    const unsubCall = onSnapshot(callDoc, (snapshot) => {
         const data = snapshot.data();
         if (!pc.currentRemoteDescription && data?.answer) {
             const answerDescription = new RTCSessionDescription(data.answer);
             pc.setRemoteDescription(answerDescription);
         }
     });
+    broadcasterUnsubs.push(unsubCall);
     
-    onSnapshot(answerCandidates, (snapshot) => {
+    const unsubAnswer = onSnapshot(answerCandidates, (snapshot) => {
         snapshot.docChanges().forEach((change) => {
             if (change.type === 'added') {
                 const candidate = new RTCIceCandidate(change.doc.data());
@@ -116,14 +139,26 @@ export async function startBroadcasting(type = 'both', localVideoEl = null) {
             }
         });
     });
+    broadcasterUnsubs.push(unsubAnswer);
 }
 
 // Call this from admin_live.html
 export async function answerBroadcast(uid, remoteVideoEl) {
     if (!auth.currentUser) return alert("Must be logged in!");
     
+    clearAdminUnsubs();
+    
     pc.close();
     pc = new RTCPeerConnection(servers);
+    
+    pc.oniceconnectionstatechange = () => {
+        if (pc.iceConnectionState === 'disconnected' || pc.iceConnectionState === 'failed') {
+            console.log("Admin connection lost, restarting...");
+            setTimeout(() => {
+                if (auth.currentUser) answerBroadcast(uid, remoteVideoEl).catch(e=>console.log(e));
+            }, 3000);
+        }
+    };
     
     const remoteStream = new MediaStream();
     // In a multi-stream setup, we just dump all tracks into one stream for playback for simplicity,
@@ -147,7 +182,8 @@ export async function answerBroadcast(uid, remoteVideoEl) {
     
     const callData = (await getDoc(callDoc)).data();
     if (!callData || !callData.offer) {
-        return alert("No active stream found for this user!");
+        console.log("No active stream found for this user yet, waiting for reconnect...");
+        return; // Will be retried manually or by another mechanism
     }
     
     const offerDescription = callData.offer;
@@ -163,7 +199,7 @@ export async function answerBroadcast(uid, remoteVideoEl) {
     
     await setDoc(callDoc, { answer }, { merge: true });
     
-    onSnapshot(offerCandidates, (snapshot) => {
+    const unsubOffer = onSnapshot(offerCandidates, (snapshot) => {
         snapshot.docChanges().forEach((change) => {
             if (change.type === 'added') {
                 let data = change.doc.data();
@@ -171,6 +207,7 @@ export async function answerBroadcast(uid, remoteVideoEl) {
             }
         });
     });
+    adminUnsubs.push(unsubOffer);
 }
 
 export async function getUsersList() {
