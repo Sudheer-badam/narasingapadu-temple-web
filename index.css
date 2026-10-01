@@ -4366,6 +4366,8 @@ body:not(.map-marker-container) @keyframes bounce {
   .lang-toggle-container {
     margin-top: 0 !important;
     width: auto !important;
+    flex-direction: column !important;
+    gap: 5px !important;
   }
   
   /* Center profile widget vertically with lang buttons */
