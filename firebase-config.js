@@ -451,15 +451,25 @@ function checkAdminAndShowMapButton(user) {
 
             // Listen to live users stream
             window.adminDropdownUnsub = onSnapshot(collection(db, "uniqueVisitors"), (snapshot) => {
+                const now = Date.now();
                 snapshot.docChanges().forEach((change) => {
                     const uid = change.doc.id;
                     const data = change.doc.data();
                     
+                    if (change.type === 'added') {
+                        // On initial load, only trust them as "alive" if their absolute timestamp is somewhat recent
+                        // This prevents marking 50 offline users as 🟢 for 3.5 seconds when opening the menu!
+                        if (data.lastActiveTimestamp && (now - data.lastActiveTimestamp < 15000)) {
+                            window.adminDropdownLocalTimestamps[uid] = now;
+                        } else {
+                            window.adminDropdownLocalTimestamps[uid] = 0;
+                        }
+                    } else if (change.type === 'modified') {
+                        // If they modified their document, they are definitely alive right now
+                        window.adminDropdownLocalTimestamps[uid] = now;
+                    }
+                    
                     if (change.type === 'added' || change.type === 'modified') {
-                        // Update local timestamp whenever we receive ANY change from this user (meaning they are alive)
-                        window.adminDropdownLocalTimestamps[uid] = Date.now();
-                        
-                        // Update users array
                         const existingIdx = window.adminDropdownUsers.findIndex(u => u.id === uid);
                         if (existingIdx >= 0) {
                             window.adminDropdownUsers[existingIdx] = { id: uid, ...data };
