@@ -4315,7 +4315,17 @@ body:not(.map-marker-container) @keyframes bounce {
     height: auto;
   }
   .logo-block {
-    max-width: 70% !important;
+    max-width: 60% !important; /* Reduced to guarantee space for the stacked buttons */
+  }
+  
+  /* Force smaller font sizes on mobile to prevent overlap */
+  .logo-main, body.lang-te .logo-main {
+    font-size: 0.8rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  .logo-sub, body.lang-te .logo-sub {
+    font-size: 0.65rem !important;
   }
   
   /* Reset Main Nav Wrapper to be a static row container */
