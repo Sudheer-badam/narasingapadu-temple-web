@@ -4069,3 +4069,18 @@ document.addEventListener('DOMContentLoaded', () => {
   observer.observe(video);
 })();
 
+
+// Handle Profile Drawer Click Outside
+document.addEventListener('click', (e) => {
+  const profileContainer = document.querySelector('.profile-dropdown-container');
+  if (profileContainer) {
+    if (e.target.closest('.profile-photo')) {
+      // Toggle drawer when clicking the profile photo
+      profileContainer.classList.toggle('active');
+    } else if (!e.target.closest('.profile-dropdown-menu')) {
+      // Close drawer if clicking outside both the photo and the menu
+      profileContainer.classList.remove('active');
+    }
+  }
+});
+
