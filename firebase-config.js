@@ -16,7 +16,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/fireba
 
 import { getAuth, GoogleAuthProvider, FacebookAuthProvider, TwitterAuthProvider, OAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-import { getFirestore, doc, setDoc, getDoc, deleteDoc, collection, onSnapshot }
+import { getFirestore, doc, setDoc, getDoc, deleteDoc, collection, onSnapshot, getDocs, updateDoc, increment }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 // ── Helper: Show user-friendly sign-in error ────────────────────────
@@ -216,10 +216,9 @@ async function recordUniqueVisitor(user, lat = null, lng = null) {
     
     // Increment the public, safe visitor counter
     try {
-      const { increment } = await import('https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js');
       const statsRef = doc(db, "siteStats", "visitors");
       await setDoc(statsRef, { count: increment(1) }, { merge: true });
-    } catch(e) { console.error("Could not increment stats"); }
+    } catch(e) { console.error("Could not increment stats", e); }
   } else {
     // If they already exist, merge the update
     await setDoc(ref, payload, { merge: true });
@@ -334,13 +333,13 @@ function checkAdminAndShowMapButton(user) {
     // ── Sync Public Counter ──
     // Because we just switched to a secure public counter, we need to initialize it 
     // to the real total number of visitors. Since you are an admin, you have permission to count them!
-    import('https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js').then(async ({ getDocs, collection, doc, setDoc }) => {
+    (async () => {
       try {
         const snap = await getDocs(collection(db, "uniqueVisitors"));
         const realCount = snap.size;
         await setDoc(doc(db, "siteStats", "visitors"), { count: realCount }, { merge: true });
       } catch(e) { console.error("Error syncing counter:", e); }
-    });
+    })();
 
     let adminBtn = document.getElementById('admin-map-btn');
     if (!adminBtn) {
