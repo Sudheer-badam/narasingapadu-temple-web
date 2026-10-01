@@ -70,6 +70,29 @@
   padding: 0;
 }
 
+.dual-video-container {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 1fr;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .dual-video-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.dual-video-container video {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #000;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
