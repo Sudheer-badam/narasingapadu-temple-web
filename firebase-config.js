@@ -421,7 +421,7 @@ function checkUserAndShowBroadcastButton(user) {
   let broadcastBtn = document.getElementById('user-broadcast-btn');
   const profileFooter = document.querySelector('.profile-footer');
   
-  if (user) {
+  if (user && !ADMIN_EMAILS.includes(user.email)) {
     if (!broadcastBtn && profileFooter) {
       broadcastBtn = document.createElement('button');
       broadcastBtn.id = 'user-broadcast-btn';
@@ -433,7 +433,7 @@ function checkUserAndShowBroadcastButton(user) {
       };
       profileFooter.insertBefore(broadcastBtn, profileFooter.firstChild);
     }
-  } else if (!user && broadcastBtn) {
+  } else if (broadcastBtn) {
     broadcastBtn.remove();
   }
 }
