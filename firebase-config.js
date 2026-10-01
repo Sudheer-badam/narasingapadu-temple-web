@@ -332,23 +332,21 @@ function checkAdminAndShowMapButton(user) {
     if (!adminBtn) {
       adminBtn = document.createElement('button');
       adminBtn.id = 'admin-map-btn';
-      adminBtn.className = 'btn-primary';
+      adminBtn.className = 'profile-logout-btn'; // Use same styling as logout
+      adminBtn.style.cssText = 'margin-bottom: 10px; background: linear-gradient(135deg, #1e3c72, #2a5298);'; // Different color for differentiation
       adminBtn.innerHTML = '<i class="fa-solid fa-map-location-dot"></i> Live Map';
-      adminBtn.style.cssText = 'margin-left: 10px; padding: 4px 8px; font-size: 0.75rem; border-radius: 15px; cursor: pointer; white-space: nowrap;';
       adminBtn.onclick = window.showAdminMap;
       
-      const navActions = document.getElementById('nav-actions');
-      if (navActions) {
-        const li = document.createElement('li');
-        li.appendChild(adminBtn);
-        navActions.insertBefore(li, document.getElementById('user-welcome-banner'));
+      const profileFooter = document.querySelector('.profile-footer');
+      if (profileFooter) {
+        profileFooter.insertBefore(adminBtn, profileFooter.firstChild);
       }
     }
   } else {
     // Ensure the button is removed if a non-admin logs in or an admin logs out
     const adminBtn = document.getElementById('admin-map-btn');
-    if (adminBtn && adminBtn.parentElement) {
-      adminBtn.parentElement.remove();
+    if (adminBtn) {
+      adminBtn.remove();
     }
   }
 }

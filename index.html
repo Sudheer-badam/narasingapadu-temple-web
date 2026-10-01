@@ -250,19 +250,62 @@
     </div>
     <div class="nav-container">
 
-      <!-- Logo -->
-      <a href="#hero" class="logo-block" id="nav-logo">
-        <div class="logo-icon">
-          <img src="lord shiva.jpg" alt="Narasingapadu Temple Logo" class="logo-photo">
-        </div>
-        <div class="logo-text">
-          <span class="logo-main" data-translate="logo_title">శ్రీ అన్నపూర్ణా సమేత కాశీ విశ్వేశ్వర స్వామి దేవస్థానం</span>
-          <span class="logo-sub" data-translate="logo_location">నరసింగపాడు, పల్నాడు జిల్లా</span>
-        </div>
-      </a>
+      <!-- MOBILE ROW 1 + DESKTOP ROW: Logo | Lang | User -->
+      <div class="nav-row1">
+        <a href="#hero" class="logo-block" id="nav-logo">
+          <div class="logo-icon">
+            <img src="lord shiva.jpg" alt="Narasingapadu Temple Logo" class="logo-photo">
+          </div>
+          <div class="logo-text">
+            <span class="logo-main" data-translate="logo_title">శ్రీ అన్నపూర్ణా సమేత కాశీ విశ్వేశ్వర స్వామి దేవస్థానం</span>
+            <span class="logo-sub" data-translate="logo_location">నరసింగపాడు, పల్నాడు జిల్లా</span>
+          </div>
+        </a>
 
-      <!-- Nav Links (scrollable on mobile) -->
-      <nav class="main-nav-wrapper">
+        <!-- Desktop nav links live inside row1 on large screens -->
+        <nav class="main-nav-wrapper desktop-only-nav">
+          <ul class="nav-menu" id="nav-menu-desktop">
+            <li><a href="#hero" class="nav-link active" data-translate="nav_home">హోమ్</a></li>
+            <li><a href="#history" class="nav-link" data-translate="nav_history">చరిత్ర</a></li>
+            <li><a href="#poems" class="nav-link" data-translate="nav_poems">పద్యాలు</a></li>
+            <li><a href="#poet" class="nav-link" data-translate="nav_poet">కవి పరిచయం</a></li>
+            <li><a href="#gallery" class="nav-link" data-translate="nav_gallery">చిత్రమాలిక</a></li>
+            <li><a href="#festivals" class="nav-link" data-translate="nav_festivals">పండుగలు</a></li>
+            <li><a href="#rituals" class="nav-link" data-translate="nav_rituals">నిత్య సేవలు</a></li>
+            <li><a href="#committee" class="nav-link" data-translate="nav_committee">కమిటీ</a></li>
+            <li><a href="#contact" class="nav-link" data-translate="nav_contact">సంప్రదించండి</a></li>
+          </ul>
+        </nav>
+
+        <!-- Language + User: always on the right -->
+        <div class="nav-actions-group">
+          <div class="lang-toggle-container">
+            <button class="lang-btn active" id="btn-te">తెలుగు</button>
+            <button class="lang-btn" id="btn-en">English</button>
+          </div>
+          <ul class="nav-actions" id="nav-actions">
+            <li id="user-welcome-banner" class="user-profile-widget" style="display:none; list-style:none;">
+              <div class="profile-dropdown-container" onclick="this.classList.toggle('active')">
+                <img id="welcome-user-photo" src="" alt="User" class="profile-photo" style="display:none;">
+                <div class="profile-dropdown-menu">
+                  <div class="profile-header">
+                    <span id="welcome-text"></span>
+                    <span id="welcome-email"></span>
+                  </div>
+                  <div class="profile-footer">
+                    <button onclick="handleLogout(event)" class="profile-logout-btn">
+                      <i class="fa-solid fa-right-from-bracket"></i> Logout
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- MOBILE ROW 2 ONLY: Scrollable nav links -->
+      <nav class="main-nav-wrapper mobile-only-nav">
         <ul class="nav-menu" id="nav-menu">
           <li><a href="#hero" class="nav-link active" data-translate="nav_home">హోమ్</a></li>
           <li><a href="#history" class="nav-link" data-translate="nav_history">చరిత్ర</a></li>
@@ -275,32 +318,6 @@
           <li><a href="#contact" class="nav-link" data-translate="nav_contact">సంప్రదించండి</a></li>
         </ul>
       </nav>
-
-      <!-- Language + User (always visible, right side) -->
-      <div class="nav-actions-group">
-        <div class="lang-toggle-container">
-          <button class="lang-btn active" id="btn-te">తెలుగు</button>
-          <button class="lang-btn" id="btn-en">English</button>
-        </div>
-        <ul class="nav-actions" id="nav-actions">
-          <li id="user-welcome-banner" class="user-profile-widget" style="display:none; list-style:none;">
-            <div class="profile-dropdown-container" onclick="this.classList.toggle('active')">
-              <img id="welcome-user-photo" src="" alt="User" class="profile-photo" style="display:none;">
-              <div class="profile-dropdown-menu">
-                <div class="profile-header">
-                  <span id="welcome-text"></span>
-                  <span id="welcome-email"></span>
-                </div>
-                <div class="profile-footer">
-                  <button onclick="handleLogout(event)" class="profile-logout-btn">
-                    <i class="fa-solid fa-right-from-bracket"></i> Logout
-                  </button>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
 
       <style>
           .user-profile-widget {
@@ -405,20 +422,41 @@
           
           /* Mobile specific adjustments */
           @media (max-width: 768px) {
-            .user-profile-widget { margin-left: 0; margin-top: 15px; align-self: flex-start; }
+            .user-profile-widget { margin-left: 0; margin-top: 0; align-self: center; }
             .profile-dropdown-menu {
-              position: static;
+              position: fixed;
+              top: 0;
+              left: -320px; /* Hide off-screen to the left */
+              width: 280px;
+              height: 100vh;
+              border: none;
+              border-right: 2px solid #d4af37;
+              border-radius: 0;
+              background: rgba(10, 5, 2, 0.98);
+              margin-top: 0;
               opacity: 1;
               visibility: visible;
               transform: none;
-              margin-top: 12px;
-              width: 100%;
-              border: 1px dashed rgba(212,175,55,0.4);
-              background: rgba(15, 8, 4, 0.6);
+              transition: left 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+              display: flex;
+              flex-direction: column;
             }
-            .profile-dropdown-container { pointer-events: none; width: 100%; } /* Disable hover on mobile */
-            .profile-photo { margin-bottom: 5px; }
-            .profile-logout-btn { pointer-events: auto; }
+            .profile-dropdown-container { pointer-events: auto; width: auto; }
+            .profile-dropdown-container.active .profile-dropdown-menu {
+              left: 0; /* Slide in from left */
+            }
+            .profile-header {
+              padding-top: 50px;
+            }
+            .profile-footer {
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              margin-top: auto;
+              margin-bottom: 20px;
+              background: transparent;
+            }
+            .profile-photo { margin-bottom: 0; }
           }
         </style>
       </nav>
