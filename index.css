@@ -75,7 +75,6 @@ html {
   font-size: 16px;
   background-color: #1a0f08;
   color: var(--text-dark);
-  overscroll-behavior: none;
 }
 
 body {
@@ -84,7 +83,6 @@ body {
   overflow-x: hidden;
   background-color: #1a0f08;
   background-image: radial-gradient(circle at 50% 0%, rgba(255, 215, 0, 0.05), transparent 60%);
-  overscroll-behavior-y: contain;
 }
 
 /* Bilingual Language Toggles and Adjustments */
