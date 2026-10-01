@@ -80,7 +80,6 @@ html {
 body {
   font-family: var(--font-english-body);
   line-height: 1.6;
-  overflow-x: hidden;
   background-color: #1a0f08;
   background-image: radial-gradient(circle at 50% 0%, rgba(255, 215, 0, 0.05), transparent 60%);
 }
