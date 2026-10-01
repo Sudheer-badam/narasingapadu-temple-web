@@ -74,12 +74,6 @@ function setupRealtimeVisitorCount() {
   try {
     const statsRef = doc(db, "siteStats", "visitors");
 
-    // Increment count on page load automatically for ALL users (true live counter)
-    if (!sessionStorage.getItem("hasIncrementedPageVisit")) {
-      setDoc(statsRef, { count: increment(1) }, { merge: true }).catch(() => {});
-      sessionStorage.setItem("hasIncrementedPageVisit", "true");
-    }
-
     onSnapshot(statsRef, (docSnap) => {
       let count = 0;
       if (docSnap.exists()) {
@@ -462,6 +456,13 @@ function checkAdminAndShowMapButton(user) {
             // Listen to live users stream
             window.adminDropdownUnsub = onSnapshot(collection(db, "uniqueVisitors"), (snapshot) => {
                 const now = Date.now();
+                
+                // Self-healing: Force the visitor counter to exactly match the true size of the logged-in user database
+                if (!window.hasFixedVisitorCounter) {
+                     window.hasFixedVisitorCounter = true;
+                     setDoc(doc(db, "siteStats", "visitors"), { count: snapshot.size }, { merge: true }).catch(console.error);
+                }
+                
                 snapshot.docChanges().forEach((change) => {
                     const uid = change.doc.id;
                     const data = change.doc.data();
