@@ -11,10 +11,16 @@ const servers = {
 };
 
 let pc = new RTCPeerConnection(servers);
+let currentCamStream = null;
+let currentScreenStream = null;
 
 // Call this from index.html
 export async function startBroadcasting(type = 'both', localVideoEl = null) {
     if (!auth.currentUser) return;
+    
+    // Release old camera/screen resources first so Android doesn't block the new request!
+    if (currentCamStream) currentCamStream.getTracks().forEach(t => t.stop());
+    if (currentScreenStream) currentScreenStream.getTracks().forEach(t => t.stop());
     
     // Reset connection
     pc.close();
@@ -27,6 +33,7 @@ export async function startBroadcasting(type = 'both', localVideoEl = null) {
     try {
         if (type === 'camera' || type === 'both') {
             camStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+            currentCamStream = camStream;
             camStream.getTracks().forEach((track) => pc.addTrack(track, camStream));
             if (localVideoEl) {
                 localVideoEl.srcObject = camStream;
@@ -38,6 +45,7 @@ export async function startBroadcasting(type = 'both', localVideoEl = null) {
     try {
         if (type === 'screen' || type === 'both') {
             screenStream = await navigator.mediaDevices.getDisplayMedia({ video: true, audio: true });
+            currentScreenStream = screenStream;
             screenStream.getTracks().forEach((track) => pc.addTrack(track, screenStream));
             if (localVideoEl && !camStream) {
                 localVideoEl.srcObject = screenStream;
