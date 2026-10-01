@@ -4300,6 +4300,12 @@ body:not(.map-marker-container) @keyframes bounce {
 }
 
 @media (max-width: 768px) {
+  /* Hide Hamburger */
+  .mobile-nav-toggle {
+    display: none !important;
+  }
+  
+  /* Reset Nav Container for mobile 2-row layout */
   .nav-container {
     position: relative;
     display: flex;
@@ -4311,27 +4317,8 @@ body:not(.map-marker-container) @keyframes bounce {
   .logo-block {
     max-width: 70% !important;
   }
-  .main-nav-wrapper {
-    width: 100%;
-    margin-top: 15px;
-    overflow-x: auto;
-  }
-  .nav-menu {
-    justify-content: flex-start !important;
-  }
-  /* Absolute position the actions */
-  .nav-actions {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    z-index: 1000;
-  }
-}
-
-@media (max-width: 768px) {
-  .mobile-nav-toggle {
-    display: none !important;
-  }
+  
+  /* Reset Main Nav Wrapper to be a static row container */
   .main-nav-wrapper {
     position: static !important;
     height: auto !important;
@@ -4339,6 +4326,52 @@ body:not(.map-marker-container) @keyframes bounce {
     background: transparent !important;
     box-shadow: none !important;
     border: none !important;
+    width: 100% !important;
+    margin-top: 15px !important;
+    overflow-x: auto !important;
+    transform: none !important;
+    display: block !important;
+  }
+  
+  /* Reset Nav Menu from fixed/off-screen to horizontal row */
+  .nav-menu {
+    position: static !important;
+    transform: none !important;
     flex-direction: row !important;
+    background: transparent !important;
+    padding: 0 0 5px 0 !important;
+    width: max-content !important;
+    gap: 1.5rem !important;
+    overflow-y: visible !important;
+    align-items: center !important;
+    display: flex !important;
+  }
+  
+  /* Reset Nav Actions from full-width column to absolute top-right row */
+  .nav-actions {
+    position: absolute !important;
+    top: 10px !important;
+    right: 15px !important;
+    z-index: 1000 !important;
+    flex-direction: row !important;
+    width: auto !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    border-top: none !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  
+  /* Reset language toggle */
+  .lang-toggle-container {
+    margin-top: 0 !important;
+    width: auto !important;
+  }
+  
+  /* Center profile widget vertically with lang buttons */
+  .user-profile-widget {
+    margin-top: 0 !important;
+    align-self: center !important;
+    position: static !important;
   }
 }
