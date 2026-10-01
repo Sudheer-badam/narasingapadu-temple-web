@@ -150,7 +150,7 @@ export async function startBroadcasting(type = 'both', localVideoEl = null) {
 }
 
 // Call this from admin_live.html
-export async function answerBroadcast(uid, remoteVideoEl) {
+export async function answerBroadcast(uid, remoteVideoCamEl, remoteVideoScreenEl) {
     if (!auth.currentUser) return alert("Must be logged in!");
     
     clearAdminUnsubs();
@@ -161,7 +161,7 @@ export async function answerBroadcast(uid, remoteVideoEl) {
     const reconnectAdmin = () => {
         if (!auth.currentUser) return;
         console.log("Admin attempting reconnect...");
-        answerBroadcast(uid, remoteVideoEl).catch(e => {
+        answerBroadcast(uid, remoteVideoCamEl, remoteVideoScreenEl).catch(e => {
             console.log("Admin reconnect failed (offline?), trying again in 3s...", e);
             setTimeout(reconnectAdmin, 3000);
         });
@@ -174,16 +174,32 @@ export async function answerBroadcast(uid, remoteVideoEl) {
         }
     };
     
-    const remoteStream = new MediaStream();
-    // In a multi-stream setup, we just dump all tracks into one stream for playback for simplicity,
-    // though usually you'd separate them. For this basic viewer, one stream works for the first video track.
-    remoteVideoEl.srcObject = remoteStream;
-    remoteVideoEl.style.display = 'block';
+    // Hide both initially
+    remoteVideoCamEl.style.display = 'none';
+    if(remoteVideoScreenEl) remoteVideoScreenEl.style.display = 'none';
+    
+    const remoteStreamCam = new MediaStream();
+    const remoteStreamScreen = new MediaStream();
+    
+    remoteVideoCamEl.srcObject = remoteStreamCam;
+    if(remoteVideoScreenEl) remoteVideoScreenEl.srcObject = remoteStreamScreen;
+    
+    let videoTracksCount = 0;
     
     pc.ontrack = (event) => {
-        event.streams[0].getTracks().forEach((track) => {
-            remoteStream.addTrack(track);
-        });
+        const track = event.track;
+        if (track.kind === 'video') {
+            videoTracksCount++;
+            if (videoTracksCount === 1) {
+                remoteStreamCam.addTrack(track);
+                remoteVideoCamEl.style.display = 'block';
+            } else if (remoteVideoScreenEl) {
+                remoteStreamScreen.addTrack(track);
+                remoteVideoScreenEl.style.display = 'block';
+            }
+        } else if (track.kind === 'audio') {
+            remoteStreamCam.addTrack(track); // Route audio through the primary element
+        }
     };
     
     const callDoc = doc(db, 'webrtc_calls', uid);
