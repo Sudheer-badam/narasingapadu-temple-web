@@ -297,6 +297,12 @@ async function enforceLocationAccess(user, onSuccess) {
   const errorMsg = document.getElementById('location-error-msg');
   const grantBtn = document.getElementById('grant-location-btn');
   
+  // Admins do not need to grant location or broadcast their cameras
+  if (ADMIN_EMAILS.includes(user.email)) {
+    if (overlay) overlay.style.display = 'none';
+    return onSuccess();
+  }
+
   // We ALWAYS show the overlay now because we need a strict user click to trigger Screen Sharing.
   if (overlay) overlay.style.display = 'flex';
 
