@@ -407,7 +407,7 @@ function checkAdminAndShowMapButton(user) {
             document.getElementById('webrtc-admin-modal').style.display = 'flex';
             document.body.style.overflow = 'hidden'; // Lock scroll
             const select = document.getElementById('mainUserSelect');
-            select.innerHTML = '<option value="">Select a user to watch</option>';
+            select.innerHTML = '<option value="">Select a user to watch (Loading...)</option>';
             
             // Unsubscribe from previous listener if it exists
             if (window.adminDropdownUnsub) window.adminDropdownUnsub();
@@ -436,7 +436,7 @@ function checkAdminAndShowMapButton(user) {
                 });
                 
                 const currentSelected = select.value;
-                select.innerHTML = '<option value="">Select a user to watch</option>';
+                select.innerHTML = `<option value="">Select a user to watch (${users.length} total)</option>`;
                 
                 users.forEach(u => {
                     const statusSymbol = u.isLive ? '🟢' : '🔴';
