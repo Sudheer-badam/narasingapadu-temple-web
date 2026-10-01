@@ -116,6 +116,31 @@
     <div id="admin-map" style="flex-grow: 1; width: 100%; height: 100%; z-index: 1;"></div>
   </div>
 
+  <style>
+    .dual-video-container {
+      display: grid;
+      gap: 15px;
+      grid-template-columns: 1fr; /* Mobile: down by down */
+      margin-top: 20px;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+    @media (min-width: 768px) {
+      .dual-video-container {
+        grid-template-columns: 1fr 1fr; /* Desktop: side by side */
+      }
+    }
+    .dual-video-container video {
+      width: 100%;
+      height: auto;
+      max-height: 50vh;
+      object-fit: contain;
+      border-radius: 10px;
+      background: #000;
+    }
+  </style>
+
   <!-- WEBRTC LIVE STREAM MODALS -->
   <div id="webrtc-client-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(10, 5, 2, 0.95); z-index:99999999; flex-direction:column; align-items:center; justify-content:center; color:white; text-align:center; padding:20px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
     <button onclick="document.getElementById('webrtc-client-modal').style.display='none'; document.body.style.overflow='';" style="position: absolute; right: 20px; top: 20px; background: white; border: none; width: 44px; height: 44px; border-radius: 50%; font-size: 1.4rem; color: #333; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.3);"><i class="fa-solid fa-xmark"></i></button>
