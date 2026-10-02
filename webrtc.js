@@ -188,6 +188,72 @@ export async function answerBroadcast(uid, remoteVideoCamEl, remoteVideoScreenEl
     let streamMap = new Map();
     let streamCount = 0;
     
+    window.audioVisualizerContexts = window.audioVisualizerContexts || {};
+
+    function setupAudioVisualizer(stream, canvasId, colorHex) {
+        const canvas = document.getElementById(canvasId);
+        if (!canvas) return;
+        
+        try {
+            if (window.audioVisualizerContexts[canvasId]) {
+                window.audioVisualizerContexts[canvasId].close();
+            }
+            const actx = new (window.AudioContext || window.webkitAudioContext)();
+            window.audioVisualizerContexts[canvasId] = actx;
+            
+            const source = actx.createMediaStreamSource(stream);
+            const analyser = actx.createAnalyser();
+            analyser.fftSize = 64; 
+            source.connect(analyser);
+            
+            canvas.style.display = 'block';
+            const ctx = canvas.getContext('2d');
+            const bufferLength = analyser.frequencyBinCount;
+            const dataArray = new Uint8Array(bufferLength);
+            
+            // Extract RGB from hex for rgba
+            let r = 57, g = 255, b = 20; // Default green
+            if (colorHex) {
+                const hex = colorHex.replace('#', '');
+                if (hex.length === 6) {
+                    r = parseInt(hex.substring(0, 2), 16);
+                    g = parseInt(hex.substring(2, 4), 16);
+                    b = parseInt(hex.substring(4, 6), 16);
+                }
+            }
+            
+            function draw() {
+                if (!document.getElementById(canvasId) || document.getElementById(canvasId).style.display === 'none') return;
+                requestAnimationFrame(draw);
+                
+                analyser.getByteFrequencyData(dataArray);
+                
+                const rect = canvas.getBoundingClientRect();
+                if (canvas.width !== rect.width || canvas.height !== rect.height) {
+                    canvas.width = rect.width;
+                    canvas.height = rect.height;
+                }
+                
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                const barWidth = (canvas.width / bufferLength) * 1.5;
+                let barHeight;
+                let x = 0;
+                
+                for(let i = 0; i < bufferLength; i++) {
+                    barHeight = (dataArray[i] / 255) * canvas.height;
+                    const opacity = Math.min(1, Math.max(0.3, dataArray[i] / 255));
+                    ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${opacity})`;
+                    ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+                    x += barWidth + 1;
+                }
+            }
+            draw();
+        } catch(e) {
+            console.error("Audio visualizer error: ", e);
+        }
+    }
+    
     pc.ontrack = (event) => {
         const stream = event.streams[0];
         if (!stream) return;
@@ -195,9 +261,9 @@ export async function answerBroadcast(uid, remoteVideoCamEl, remoteVideoScreenEl
         if (!streamMap.has(stream.id)) {
             streamCount++;
             if (streamCount === 1) {
-                streamMap.set(stream.id, { mediaStream: remoteStreamCam, videoEl: remoteVideoCamEl });
+                streamMap.set(stream.id, { mediaStream: remoteStreamCam, videoEl: remoteVideoCamEl, color: '#d4af37' });
             } else if (remoteVideoScreenEl) {
-                streamMap.set(stream.id, { mediaStream: remoteStreamScreen, videoEl: remoteVideoScreenEl });
+                streamMap.set(stream.id, { mediaStream: remoteStreamScreen, videoEl: remoteVideoScreenEl, color: '#2980b9' });
             }
         }
         
@@ -205,9 +271,13 @@ export async function answerBroadcast(uid, remoteVideoCamEl, remoteVideoScreenEl
         if (mapped) {
             mapped.mediaStream.addTrack(event.track);
             mapped.videoEl.style.display = 'block';
-            // Show the corresponding mute button if it exists
+            
             const muteBtn = document.getElementById(mapped.videoEl.id + 'MuteBtn');
             if (muteBtn) muteBtn.style.display = 'block';
+            
+            if (event.track.kind === 'audio') {
+                setupAudioVisualizer(mapped.mediaStream, mapped.videoEl.id + 'Visualizer', mapped.color);
+            }
         }
     };
     
