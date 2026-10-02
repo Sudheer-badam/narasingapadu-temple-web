@@ -163,7 +163,7 @@
     <div style="padding: 20px; max-width: 1000px; width: 100%;">
         <div style="color: #d4af37; margin-bottom: 20px; font-size: 2rem; font-weight: bold; font-family: var(--font-english-title);">Admin Live Viewer</div>
         <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-            <select id="mainUserSelect" style="padding: 12px; font-size: 16px; border-radius: 5px; max-width: 400px; width: 100%; color: #000;">
+            <select id="mainUserSelect" style="padding: 12px; font-size: 16px; border-radius: 5px; max-width: 400px; width: 100%; color: #000; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
                 <option value="">Select a user to watch</option>
             </select>
             <button onclick="if(!document.getElementById('mainUserSelect').value) { alert('Select a user!'); return; } window.answerBroadcast(document.getElementById('mainUserSelect').value, document.getElementById('mainRemoteVideoCam'), document.getElementById('mainRemoteVideoScreen')).catch(e => alert(e.message));" style="padding: 12px 24px; background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; border: none; font-weight: bold; cursor: pointer; border-radius: 5px; font-size: 16px;">Watch Stream</button>

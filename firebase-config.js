@@ -446,7 +446,22 @@ function checkAdminAndShowMapButton(user) {
                     const statusSymbol = u.isLive ? '🟢' : '🔴';
                     const opt = document.createElement('option');
                     opt.value = u.id;
-                    opt.textContent = `${statusSymbol} ${u.name || 'Unknown'} (${u.email || 'No email'}) - ${u.deviceName || 'Unknown'}`;
+                    
+                    let dName = u.name || 'Unknown';
+                    let dEmail = u.email || 'No email';
+                    let dDevice = u.deviceName || 'Unknown';
+                    
+                    if (dName.length > 20) dName = dName.substring(0, 17) + '...';
+                    if (dEmail.length > 25) {
+                        const parts = dEmail.split('@');
+                        if (parts.length === 2) {
+                            dEmail = parts[0].substring(0, 10) + '..@' + parts[1];
+                        } else {
+                            dEmail = dEmail.substring(0, 22) + '...';
+                        }
+                    }
+                    
+                    opt.textContent = `${statusSymbol} ${dName} (${dEmail}) - ${dDevice}`;
                     select.appendChild(opt);
                 });
                 
