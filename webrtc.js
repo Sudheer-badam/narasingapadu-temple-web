@@ -222,6 +222,10 @@ export async function answerBroadcast(uid, remoteVideoCamEl, remoteVideoScreenEl
                 }
             }
             
+            const dbSpanId = canvasId.replace('Visualizer', 'Decibel');
+            const dbSpan = document.getElementById(dbSpanId);
+            if (dbSpan) dbSpan.style.display = 'inline-block';
+            
             function draw() {
                 if (!document.getElementById(canvasId) || document.getElementById(canvasId).style.display === 'none') return;
                 requestAnimationFrame(draw);
@@ -239,13 +243,26 @@ export async function answerBroadcast(uid, remoteVideoCamEl, remoteVideoScreenEl
                 const barWidth = (canvas.width / bufferLength) * 1.5;
                 let barHeight;
                 let x = 0;
+                let sum = 0;
                 
                 for(let i = 0; i < bufferLength; i++) {
+                    sum += dataArray[i];
                     barHeight = (dataArray[i] / 255) * canvas.height;
                     const opacity = Math.min(1, Math.max(0.3, dataArray[i] / 255));
                     ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${opacity})`;
                     ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
                     x += barWidth + 1;
+                }
+                
+                if (dbSpan) {
+                    const average = sum / bufferLength;
+                    let db = -100;
+                    if (average > 0) {
+                        db = 20 * Math.log10(average / 255);
+                    }
+                    if (db < -100) db = -100;
+                    
+                    dbSpan.textContent = Math.round(db) + ' dB';
                 }
             }
             draw();
