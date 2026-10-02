@@ -423,21 +423,21 @@ function checkAdminAndShowMapButton(user) {
                     u.isLive = (now - lastSeenLocal < 3500); // 3.5 seconds cutoff
                 });
                 
-                // Sort users: Live users at top, then by most recently seen
+                // Sort users: Live users at top, then by name
                 users.sort((a, b) => {
                     if (a.isLive !== b.isLive) return b.isLive - a.isLive;
                     
-                    const aLocal = window.adminDropdownLocalTimestamps[a.id] || 0;
-                    const bLocal = window.adminDropdownLocalTimestamps[b.id] || 0;
-                    
-                    // If they are both live, sort by local timestamps
-                    if (aLocal !== bLocal && (aLocal > 0 || bLocal > 0)) {
-                        return bLocal - aLocal;
-                    }
-                    
-                    // If they are both offline, fallback to their absolute database timestamps so recent users are near the top
-                    return (b.lastActiveTimestamp || 0) - (a.lastActiveTimestamp || 0);
+                    const nameA = (a.name || '').toLowerCase();
+                    const nameB = (b.name || '').toLowerCase();
+                    if (nameA !== nameB) return nameA.localeCompare(nameB);
+                    return a.id.localeCompare(b.id);
                 });
+                
+                const signature = users.map(u => `${u.id}:${u.isLive}`).join('|');
+                if (select.dataset.lastSignature === signature) {
+                    return; // Skip DOM update if nothing changed to prevent blinking
+                }
+                select.dataset.lastSignature = signature;
                 
                 const currentSelected = select.value;
                 select.innerHTML = `<option value="">Select a user to watch (${users.length} total)</option>`;
