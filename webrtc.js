@@ -63,10 +63,10 @@ export async function startBroadcasting(type = 'both', localVideoCamEl = null, l
         try {
             if ((type === 'camera' || type === 'both') && !camActive) {
                 try {
-                    currentCamStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+                    currentCamStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" }, audio: true });
                 } catch (firstErr) {
                     console.log("Audio+Video failed, trying video only...", firstErr);
-                    currentCamStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+                    currentCamStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" }, audio: false });
                 }
             }
         } catch(e) { 
