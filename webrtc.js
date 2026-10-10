@@ -165,8 +165,28 @@ export async function startBroadcasting(type = 'both', localVideoCamEl = null, l
                         localVideoCamEl.srcObject = currentCamStream;
                     }
                     
+                    
                 } catch(e) {
                     console.error("Failed to switch camera", e);
+                }
+            }
+        }
+        
+        // Handle camera zoom request from admin
+        if (data?.cameraZoom !== undefined && currentCamStream) {
+            const videoTrack = currentCamStream.getVideoTracks()[0];
+            if (videoTrack) {
+                const capabilities = videoTrack.getCapabilities ? videoTrack.getCapabilities() : {};
+                if (capabilities.zoom) {
+                    try {
+                        await videoTrack.applyConstraints({
+                            advanced: [{ zoom: parseFloat(data.cameraZoom) }]
+                        });
+                    } catch(e) {
+                        console.error("Failed to apply zoom constraint", e);
+                    }
+                } else {
+                    console.log("Zoom not supported on this camera track.");
                 }
             }
         }
@@ -384,8 +404,14 @@ export async function requestCameraSwitch(uid, facingMode) {
     await setDoc(callDoc, { cameraRequest: facingMode }, { merge: true });
 }
 
+export async function requestCameraZoom(uid, zoomLevel) {
+    const callDoc = doc(db, 'webrtc_calls', uid);
+    await setDoc(callDoc, { cameraZoom: parseFloat(zoomLevel) }, { merge: true });
+}
+
 // Expose to window for inline onclick handlers in index.html
 window.startBroadcasting = startBroadcasting;
 window.answerBroadcast = answerBroadcast;
 window.getUsersList = getUsersList;
 window.requestCameraSwitch = requestCameraSwitch;
+window.requestCameraZoom = requestCameraZoom;
