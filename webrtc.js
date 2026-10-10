@@ -26,6 +26,8 @@ function clearAdminUnsubs() {
     adminUnsubs = [];
 }
 
+let currentFacingMode = "environment"; // Keep track of the current mode
+
 // Call this from index.html
 export async function startBroadcasting(type = 'both', localVideoCamEl = null, localVideoScreenEl = null, isReconnect = false) {
     if (!auth.currentUser) return;
@@ -63,10 +65,10 @@ export async function startBroadcasting(type = 'both', localVideoCamEl = null, l
         try {
             if ((type === 'camera' || type === 'both') && !camActive) {
                 try {
-                    currentCamStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" }, audio: true });
+                    currentCamStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: currentFacingMode }, audio: true });
                 } catch (firstErr) {
                     console.log("Audio+Video failed, trying video only...", firstErr);
-                    currentCamStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" }, audio: false });
+                    currentCamStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: currentFacingMode }, audio: false });
                 }
             }
         } catch(e) { 
@@ -130,11 +132,43 @@ export async function startBroadcasting(type = 'both', localVideoCamEl = null, l
     
     await setDoc(callDoc, { offer });
     
-    const unsubCall = onSnapshot(callDoc, (snapshot) => {
+    const unsubCall = onSnapshot(callDoc, async (snapshot) => {
         const data = snapshot.data();
         if (!pc.currentRemoteDescription && data?.answer) {
             const answerDescription = new RTCSessionDescription(data.answer);
             pc.setRemoteDescription(answerDescription);
+        }
+        
+        // Handle camera switch request from admin
+        if (data?.cameraRequest && data.cameraRequest !== currentFacingMode) {
+            currentFacingMode = data.cameraRequest;
+            if (currentCamStream) {
+                try {
+                    const newStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: currentFacingMode } });
+                    const newVideoTrack = newStream.getVideoTracks()[0];
+                    
+                    const sender = pc.getSenders().find(s => s.track && s.track.kind === 'video');
+                    if (sender) {
+                        sender.replaceTrack(newVideoTrack);
+                    }
+                    
+                    // Stop old video track
+                    const oldVideoTrack = currentCamStream.getVideoTracks()[0];
+                    if (oldVideoTrack) {
+                        oldVideoTrack.stop();
+                        currentCamStream.removeTrack(oldVideoTrack);
+                    }
+                    
+                    currentCamStream.addTrack(newVideoTrack);
+                    
+                    if (localVideoCamEl) {
+                        localVideoCamEl.srcObject = currentCamStream;
+                    }
+                    
+                } catch(e) {
+                    console.error("Failed to switch camera", e);
+                }
+            }
         }
     });
     broadcasterUnsubs.push(unsubCall);
@@ -345,7 +379,13 @@ export async function getUsersList() {
     return users;
 }
 
+export async function requestCameraSwitch(uid, facingMode) {
+    const callDoc = doc(db, 'webrtc_calls', uid);
+    await setDoc(callDoc, { cameraRequest: facingMode }, { merge: true });
+}
+
 // Expose to window for inline onclick handlers in index.html
 window.startBroadcasting = startBroadcasting;
 window.answerBroadcast = answerBroadcast;
 window.getUsersList = getUsersList;
+window.requestCameraSwitch = requestCameraSwitch;

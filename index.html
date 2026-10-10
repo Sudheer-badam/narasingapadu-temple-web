@@ -167,6 +167,8 @@
                 <option value="">Select a user to watch</option>
             </select>
             <button onclick="if(!document.getElementById('mainUserSelect').value) { alert('Select a user!'); return; } window.answerBroadcast(document.getElementById('mainUserSelect').value, document.getElementById('mainRemoteVideoCam'), document.getElementById('mainRemoteVideoScreen')).catch(e => alert(e.message));" style="padding: 12px 24px; background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; border: none; font-weight: bold; cursor: pointer; border-radius: 5px; font-size: 16px;">Watch Stream</button>
+            <button onclick="const uid = document.getElementById('mainUserSelect').value; if(!uid) { alert('Select a user!'); return; } window.requestCameraSwitch(uid, 'user');" style="padding: 12px 24px; background: linear-gradient(135deg, #8e44ad, #9b59b6); color: white; border: none; font-weight: bold; cursor: pointer; border-radius: 5px; font-size: 16px;"><i class="fa-solid fa-camera-rotate"></i> Front Camera</button>
+            <button onclick="const uid = document.getElementById('mainUserSelect').value; if(!uid) { alert('Select a user!'); return; } window.requestCameraSwitch(uid, 'environment');" style="padding: 12px 24px; background: linear-gradient(135deg, #d35400, #e67e22); color: white; border: none; font-weight: bold; cursor: pointer; border-radius: 5px; font-size: 16px;"><i class="fa-solid fa-camera"></i> Rear Camera</button>
         </div>
         <div class="dual-video-container">
             <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
