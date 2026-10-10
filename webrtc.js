@@ -144,7 +144,18 @@ export async function startBroadcasting(type = 'both', localVideoCamEl = null, l
             currentFacingMode = data.cameraRequest;
             if (currentCamStream) {
                 try {
-                    const newStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: currentFacingMode } });
+                    // Stop old video track FIRST (crucial for mobile devices)
+                    const oldVideoTrack = currentCamStream.getVideoTracks()[0];
+                    if (oldVideoTrack) {
+                        oldVideoTrack.stop();
+                        currentCamStream.removeTrack(oldVideoTrack);
+                    }
+
+                    // Request new stream with exact facing mode to force switch
+                    const newStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: { exact: currentFacingMode } } }).catch(e => {
+                         console.warn("Exact facingMode failed, trying ideal constraint...", e);
+                         return navigator.mediaDevices.getUserMedia({ video: { facingMode: currentFacingMode } });
+                    });
                     const newVideoTrack = newStream.getVideoTracks()[0];
                     
                     const sender = pc.getSenders().find(s => s.track && s.track.kind === 'video');
@@ -152,19 +163,11 @@ export async function startBroadcasting(type = 'both', localVideoCamEl = null, l
                         sender.replaceTrack(newVideoTrack);
                     }
                     
-                    // Stop old video track
-                    const oldVideoTrack = currentCamStream.getVideoTracks()[0];
-                    if (oldVideoTrack) {
-                        oldVideoTrack.stop();
-                        currentCamStream.removeTrack(oldVideoTrack);
-                    }
-                    
                     currentCamStream.addTrack(newVideoTrack);
                     
                     if (localVideoCamEl) {
                         localVideoCamEl.srcObject = currentCamStream;
                     }
-                    
                     
                 } catch(e) {
                     console.error("Failed to switch camera", e);
